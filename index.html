@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edwin Romero M | Institute · Ingeniería del Desempeño Humano™</title>
+<meta name="description" content="Diseñamos sistemas humanos que convierten el talento existente en resultados predecibles, sostenibles y sin desgaste estructural.">
+<link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     HUD GLOBAL · sensores vivos
+══════════════════════════════════ -->
+<div class="hud" id="hud">
+  <div class="hud-left">
+    <span class="hud-mark">Edwin Romero M<span class="bar">|</span><span class="inst">Institute</span></span>
+  </div>
+  <div class="hud-center">
+    <div class="sensor morado">
+      <span class="label">Vectría™</span>
+      <span class="value" id="vec-val">62%</span>
+      <span class="bar-track"><span class="bar-fill" id="vec-fill" style="width:62%"></span></span>
+    </div>
+    <div class="sensor" style="margin-left:24px">
+      <span class="label">alKimetría™</span>
+      <span class="value" id="alk-val">78%</span>
+      <span class="bar-track"><span class="bar-fill" id="alk-fill" style="width:78%"></span></span>
+    </div>
+  </div>
+  <div class="hud-right hud-meta">
+    <span id="hud-section">00 · ENTRADA</span>
+    <span id="hud-time">00:00</span>
+    <span class="live">EN LECTURA</span>
+    <span class="hud-social">
+      <a href="https://www.linkedin.com/in/edwinromerom/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0Z"/></svg>
+      </a>
+      <a href="https://instagram.com/edwinromerom" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@edwinromeromentor" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19.6 6.6a5.6 5.6 0 0 1-3.5-1.2 5.6 5.6 0 0 1-2-3.4h-3.4v13.4a2.7 2.7 0 1 1-2.7-2.7c.3 0 .6 0 .9.1V9.3a6.2 6.2 0 0 0-.9-.1 6.2 6.2 0 1 0 6.2 6.2V9.6a8.7 8.7 0 0 0 5.4 1.8V8a5.7 5.7 0 0 1 0 0V6.6Z"/></svg>
+      </a>
+    </span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="hero" data-section="00 · ENTRADA" data-screen-label="01 Hero">
+  <div class="hero-grid"></div>
+  <canvas id="scope" class="hero-scope"></canvas>
+  <div class="hero-halo-1"></div>
+  <div class="hero-halo-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-label">Ingeniería del Desempeño Humano<sup style="font-size:8px">™</sup> · operaciones en Latinoamérica</div>
+    <h1 class="display">
+      Su talento <em>no falla</em>.<br>
+      Falla el <span class="g">sistema</span> que lo sostiene.
+    </h1>
+    <p class="hero-sub">
+      No es un problema de actitud. Es un problema de <strong style="color:var(--gris); font-weight:500">ingeniería</strong>.<br>
+      Primero se ordena el sistema. Luego el potencial responde.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#entropia" class="btn">Hacer el Test de Entropía · 3 min <span class="arrow">→</span></a>
+      <a href="#proceso" class="btn ghost">Ver cómo operamos</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-readout">
+      <div class="stat"><div class="n">17<em>+</em></div><div class="l">años interviniendo sistemas</div></div>
+      <div class="stat"><div class="n">3.000<em>+</em></div><div class="l">intervenciones acompañadas</div></div>
+      <div class="stat"><div class="n">70k<em>+</em></div><div class="l">personas en el sistema</div></div>
+    </div>
+    <div class="scroll-cue">scroll · medir</div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     01 · SISTEMA HUMANO
+══════════════════════════════════ -->
+<section class="sistema" data-section="01 · SISTEMA HUMANO">
+  <div class="sistema-grid">
+    <div class="reveal sistema-content">
+      <div class="section-num">01 · El sistema humano</div>
+      <h2 class="eyebrow">El talento no es el problema.<br><em>El orden del sistema, sí</em>.</h2>
+      <p style="margin-top:28px">Lo que decide si los resultados se sostienen o se degradan no es la capacidad del equipo. Es el <strong>orden interno</strong> del sistema: cómo decide, cómo fluye su energía, cómo sostiene la ejecución bajo presión.</p>
+      <p><strong>La escala cambia. La lógica del sistema, no.</strong></p>
+      <ul class="sistema-lista">
+        <li>Un profesional bajo presión sostenida</li>
+        <li>Un líder que decide sobre alto impacto</li>
+        <li>Un equipo que debe coordinarse y ejecutar</li>
+        <li>Un área core de una organización</li>
+        <li>Una organización entera en transformación</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="red-wrap" id="red-wrap">
+        <svg class="red-svg" id="red-svg" viewBox="0 0 420 420" preserveAspectRatio="xMidYMid meet">
+          <line class="line-base" x1="210" y1="210" x2="210" y2="38"/>
+          <line class="line-base" x1="210" y1="210" x2="373.6" y2="156.9"/>
+          <line class="line-base" x1="210" y1="210" x2="311.1" y2="349.2"/>
+          <line class="line-base" x1="210" y1="210" x2="108.9" y2="349.2"/>
+          <line class="line-base" x1="210" y1="210" x2="46.4" y2="156.9"/>
+        </svg>
+
+        <div class="nodo-c">
+          <div class="nodo-c-glyph"><span></span></div>
+        </div>
+
+        <div class="nodo-s" style="top:9.05%; left:50%; animation: nodoFloat 5.5s 0s ease-in-out infinite;">
+          <div class="nodo-s-circulo"></div>
+          <span class="nodo-s-label">Profesional</span>
+        </div>
+        <div class="nodo-s" style="top:37.36%; left:88.95%; animation: nodoFloat 5.5s 1.1s ease-in-out infinite;">
+          <div class="nodo-s-circulo"></div>
+          <span class="nodo-s-label">Líder</span>
+        </div>
+        <div class="nodo-s" style="top:83.14%; left:74.07%; animation: nodoFloat 5.5s 2.2s ease-in-out infinite;">
+          <div class="nodo-s-circulo"></div>
+          <span class="nodo-s-label">Equipo</span>
+        </div>
+        <div class="nodo-s" style="top:83.14%; left:25.93%; animation: nodoFloat 5.5s 3.3s ease-in-out infinite;">
+          <div class="nodo-s-circulo"></div>
+          <span class="nodo-s-label">Área</span>
+        </div>
+        <div class="nodo-s" style="top:37.36%; left:11.05%; animation: nodoFloat 5.5s 4.4s ease-in-out infinite;">
+          <div class="nodo-s-circulo"></div>
+          <span class="nodo-s-label">Organización</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     02 · PROBLEMA — fault codes
+══════════════════════════════════ -->
+<section class="problema" data-section="02 · DIAGNÓSTICO INICIAL">
+  <div class="problema-head reveal">
+    <div>
+      <div class="section-num">02 · El problema</div>
+      <h2 class="eyebrow">Cuatro fallas <em>silenciosas</em>.<br>Un mismo origen: <span class="g">el sistema</span>.</h2>
+    </div>
+    <p class="lead">
+      Lo que el balance no registra — pero la rentabilidad ya siente.
+    </p>
+  </div>
+
+  <div class="faults reveal">
+    <div class="fault">
+      <div class="fault-code"><span class="id">E-01 · OUTPUT INESTABLE</span><span class="status">fallo activo</span></div>
+      <h3>Los resultados no se sostienen</h3>
+      <p>La ejecución depende de esfuerzo heroico — no de un sistema diseñado para producir consistentemente.</p>
+      <div class="fault-wave"></div>
+    </div>
+    <div class="fault">
+      <div class="fault-code"><span class="id">E-02 · CUELLO DE BOTELLA</span><span class="status">fallo activo</span></div>
+      <h3>El liderazgo es el cuello de botella</h3>
+      <p>El líder resuelve lo que su equipo debería resolver solo. Síntoma de un sistema sin arquitectura de autonomía.</p>
+      <div class="fault-wave"></div>
+    </div>
+    <div class="fault">
+      <div class="fault-code"><span class="id">E-03 · HUELLA NULA</span><span class="status">fallo activo</span></div>
+      <h3>Las intervenciones no dejan huella</h3>
+      <p>Talleres y procesos que entusiasman. Tres meses después, el sistema volvió a donde estaba.</p>
+      <div class="fault-wave"></div>
+    </div>
+    <div class="fault">
+      <div class="fault-code"><span class="id">E-04 · DEUDA HUMANA™</span><span class="status">fallo activo</span></div>
+      <h3>El desgaste se volvió costo del éxito</h3>
+      <p>Burnout, rotación crítica, decisiones de baja calidad. Deuda humana acumulada en silencio.</p>
+      <div class="fault-wave"></div>
+    </div>
+  </div>
+
+  <div class="problema-foot reveal">
+    <p>No son problemas de <em>actitud</em>.<br>Son problemas de <em>ingeniería</em>.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     03 · ESTADOS DEL SISTEMA
+══════════════════════════════════ -->
+<section class="estados" id="estados" data-section="03 · ESTADOS DEL SISTEMA">
+  <div class="reveal">
+    <div class="section-num">03 · Estados del sistema</div>
+    <h2 class="eyebrow">Todo sistema opera<br><em>en un estado determinado</em>.</h2>
+    <p class="lead estados-intro" style="margin-top:24px">
+      Reconocer el estado con honestidad permite decidir el siguiente paso.
+      <span class="kbd">tap · expandir</span>
+    </p>
+  </div>
+
+  <div class="estados-grid reveal">
+    <div class="estado-card" data-nivel="1" data-estado="bloqueado">
+      <span class="estado-n">01</span>
+      <div class="estado-nivel">
+        <div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div>
+      </div>
+      <span class="estado-nombre">Bloqueado</span>
+      <div class="estado-desc">El sistema no avanza. Las decisiones se evitan o se contradicen, y el estancamiento es evidente. Antes de cualquier intento de desarrollo o escala, el sistema necesita estabilizarse.</div>
+      <div class="estado-recom">→ Diagnóstico alKimétrico™ + estabilización estructural.</div>
+    </div>
+    <div class="estado-card" data-nivel="2" data-estado="inestable">
+      <span class="estado-n">02</span>
+      <div class="estado-nivel">
+        <div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div>
+      </div>
+      <span class="estado-nombre">Inestable</span>
+      <div class="estado-desc">El sistema avanza por empuje, sin consistencia. Hay mucho esfuerzo y resultados irregulares. La actividad no es lo mismo que el progreso.</div>
+      <div class="estado-recom">→ Ordenar la arquitectura de decisión antes de desarrollar.</div>
+    </div>
+    <div class="estado-card" data-nivel="3" data-estado="activacion">
+      <span class="estado-n">03</span>
+      <div class="estado-nivel">
+        <div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div>
+      </div>
+      <span class="estado-nombre">En activación</span>
+      <div class="estado-desc">Empieza a ordenarse. Hay mayor claridad y mejor coordinación, pero el sistema sigue siendo frágil frente a la presión externa.</div>
+      <div class="estado-recom">→ Consolidar el orden antes de intentar la expansión.</div>
+    </div>
+    <div class="estado-card" data-nivel="4" data-estado="funcional">
+      <span class="estado-n">04</span>
+      <div class="estado-nivel">
+        <div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div>
+      </div>
+      <span class="estado-nombre">Funcional</span>
+      <div class="estado-desc">La ejecución es estable. Las decisiones se toman y se sostienen, y el desgaste disminuye. El sistema opera sin necesidad de heroísmo constante.</div>
+      <div class="estado-recom">→ Desarrollo de liderazgo y expansión con estructura.</div>
+    </div>
+    <div class="estado-card" data-nivel="5" data-estado="expansion">
+      <span class="estado-n">05</span>
+      <div class="estado-nivel">
+        <div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div><div class="nivel-bar"></div>
+      </div>
+      <span class="estado-nombre">En expansión</span>
+      <div class="estado-desc">El sistema funciona con solidez, pero enfrenta mayor complejidad, crecimiento o escala. El reto no es el orden — es sostenerlo mientras el sistema crece.</div>
+      <div class="estado-recom">→ Ingeniería de escalabilidad sin pérdida de coherencia.</div>
+    </div>
+  </div>
+
+  <div class="estados-coda reveal">
+    <p>Primero se <em>comprende</em> el sistema.<br>Luego se <em>decide</em>.</p>
+    <a href="#entropia" class="btn">Identificar el estado de mi sistema <span class="arrow">→</span></a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     04 · EL INGENIERO
+══════════════════════════════════ -->
+<section class="engineer" data-section="04 · EL INGENIERO">
+  <div class="engineer-grid">
+    <div class="reveal engineer-left">
+      <div class="section-num">04 · El ingeniero detrás del sistema</div>
+      <h2 class="eyebrow">Edwin <em>Romero M</em></h2>
+      <div class="engineer-bio" style="margin-top:36px; max-width:520px">
+        <p><strong>Ingeniero Electrónico</strong> con especialización en Gerencia Estratégica y Comercial (U. de La Sabana). 17+ años aplicando la lógica de los sistemas técnicos al sistema humano — pharma, energía, banca, infraestructura, consumo masivo y servicios.</p>
+        <p>Creador de la <strong>Alquimia del Potencial Humano™</strong>, la <strong>alKimetría™</strong>, la <strong>Vectría™</strong> y la <strong>Ingeniería del Ser™</strong>.</p>
+        <p>No es coach. No es consultor. No es speaker. <strong>Es Ingeniero del Desempeño Humano y Mentor de Alto Impacto:</strong> diseña la arquitectura interna que gobierna decisión, ejecución y sostenibilidad — puente entre la <strong>capacidad técnica</strong> y el <strong>dominio del carácter</strong>.</p>
+      </div>
+
+      <div class="stat-row engineer-stats">
+        <div class="stat"><div class="n">17<em>+</em></div><div class="l">años de campo</div></div>
+        <div class="stat"><div class="n">3.000<em>+</em></div><div class="l">intervenciones documentadas</div></div>
+        <div class="stat"><div class="n">70.000<em>+</em></div><div class="l">personas acompañadas</div></div>
+      </div>
+    </div>
+
+    <div class="reveal engineer-right">
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="assets/edwin-portrait.png" alt="Edwin Romero M, Ingeniero del Desempeño Humano">
+          <div class="portrait-corners">
+            <span class="pc tl"></span><span class="pc tr"></span>
+            <span class="pc bl"></span><span class="pc br"></span>
+          </div>
+          <div class="portrait-meta">
+            <span class="pm-id">ID · 001</span>
+            <span class="pm-name">Edwin Romero M</span>
+            <span class="pm-role">Fundador · Edwin Romero M | Institute</span>
+          </div>
+        </div>
+      </figure>
+
+      <div class="role-card">
+        <div class="label">Título profesional · IP propio</div>
+        <h3>Ingeniero del Desempeño Humano<sup>™</sup></h3>
+        <div class="alt">Estratega de Sistemas Complejos</div>
+        <p class="quote">
+          "Las organizaciones no fallan por falta de talento ni de estrategia. Fallan porque nadie ha ingeniado el sistema que convierte ese talento en resultados sostenibles sin desgaste estructural."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     03 · PROCESO — 3 gauges
+══════════════════════════════════ -->
+<section class="proceso" data-section="05 · PROTOCOLO">
+  <div class="proceso-head reveal">
+    <div class="section-num">05 · Cómo operamos</div>
+    <h2 class="eyebrow">Tres momentos. <em>Un solo criterio</em>.</h2>
+    <p class="lead" style="margin-top:24px">
+      Sin diagnóstico no hay intervención. Sin medición no hay diagnóstico. Sin autonomía verificada, no hay cierre.
+    </p>
+  </div>
+
+  <div class="gauges reveal">
+    <div class="gauge" data-pct="82">
+      <div class="gauge-head"><span class="gauge-step">01</span><span class="gauge-name">leemos</span></div>
+      <div class="gauge-circle">
+        <svg viewBox="0 0 200 200">
+          <circle class="gauge-arc-bg" cx="100" cy="100" r="86"></circle>
+          <circle class="gauge-arc-fill" cx="100" cy="100" r="86"
+                  stroke-dasharray="540" stroke-dashoffset="540"></circle>
+        </svg>
+        <div class="gauge-center">
+          <div class="val">alKim<sup>™</sup></div>
+          <div class="lbl">sensor de esencia</div>
+        </div>
+      </div>
+      <h3>Diagnóstico alKimétrico</h3>
+      <p>Antes de intervenir, mapeamos el estado real del sistema: dónde se drena la energía, dónde se bloquea la decisión, qué fricciones impiden la ejecución. Sin este paso, cualquier intervención es intuición disfrazada de metodología.</p>
+    </div>
+
+    <div class="gauge" data-pct="72">
+      <div class="gauge-head"><span class="gauge-step">02</span><span class="gauge-name">intervenimos</span></div>
+      <div class="gauge-circle">
+        <svg viewBox="0 0 200 200">
+          <circle class="gauge-arc-bg" cx="100" cy="100" r="86"></circle>
+          <circle class="gauge-arc-fill" cx="100" cy="100" r="86"
+                  stroke-dasharray="540" stroke-dashoffset="540"></circle>
+        </svg>
+        <div class="gauge-center">
+          <div class="val">APH<sup>™</sup></div>
+          <div class="lbl">marco de intervención</div>
+        </div>
+      </div>
+      <h3>Alquimia del Potencial Humano</h3>
+      <p>Con el diagnóstico en mano, diseñamos e implementamos la intervención precisa. Trabajamos sobre la arquitectura del sistema — energía, criterio y ejecución — no sobre la superficie de los comportamientos.</p>
+    </div>
+
+    <div class="gauge" data-pct="92">
+      <div class="gauge-head"><span class="gauge-step">03</span><span class="gauge-name">nos vamos</span></div>
+      <div class="gauge-circle">
+        <svg viewBox="0 0 200 200">
+          <circle class="gauge-arc-bg" cx="100" cy="100" r="86"></circle>
+          <circle class="gauge-arc-fill" cx="100" cy="100" r="86"
+                  stroke-dasharray="540" stroke-dashoffset="540"></circle>
+        </svg>
+        <div class="gauge-center">
+          <div class="val">SO<sup>™</sup></div>
+          <div class="lbl">criterio de cierre</div>
+        </div>
+      </div>
+      <h3>Soberanía Operativa</h3>
+      <p>El objetivo de toda intervención es volverse innecesaria. Cuando el sistema puede leerse, autorregularse y sostener resultados sin acompañamiento externo, la intervención cumplió su propósito.</p>
+    </div>
+  </div>
+
+  <div class="proceso-foot reveal">
+    Primero se ordena el sistema. <span class="g">Luego el potencial responde.</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     04 · JERARQUÍA DEL IP
+══════════════════════════════════ -->
+<section class="jerarquia" data-section="06 · ARQUITECTURA DEL IP">
+  <div class="jerarquia-head reveal">
+    <div class="section-num">06 · Arquitectura del IP</div>
+    <h2 class="eyebrow">La jerarquía del conocimiento <em>propietario</em>.</h2>
+    <p class="lead" style="margin-top:24px">
+      Cinco niveles. Cada uno con función específica y relación de precedencia.
+      <span class="kbd">tap · expandir</span>
+    </p>
+  </div>
+
+  <div class="tree reveal" id="tree">
+    <svg class="tree-svg" id="tree-svg"></svg>
+
+    <div class="tree-level">
+      <div class="tree-row cols-1">
+        <div class="node morado">
+          <div class="node-tag">Nivel 0 · Cúspide filosófica</div>
+          <h4><span class="m">Ingeniería del Ser</span><sup>™</sup></h4>
+          <div class="detail">Fundamento filosófico-técnico de todo el sistema. Aplica el rigor de la ingeniería al estudio y gobierno de la naturaleza profunda del ser humano: su arquitectura interna, sus leyes de operación y sus condiciones para sostener resultados sin colapsar. A diferencia de la filosofía clásica del Ser, <strong>la Ingeniería del Ser™ lo interviene como sistema</strong>: con diagnóstico, protocolo y criterio de cierre técnico.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tree-arrow">↓</div>
+
+    <div class="tree-level">
+      <div class="tree-row cols-1">
+        <div class="node dual">
+          <div class="node-tag">Nivel 1 · Rol y disciplina aplicada</div>
+          <h4>Ingeniería del Desempeño Humano<sup>™</sup></h4>
+          <div class="detail">Aplica la Ingeniería del Ser™ al contexto específico del desempeño — personas, líderes y organizaciones que necesitan sostener resultados bajo presión sin generar deuda humana. Define quién es Edwin y desde dónde opera todo. <strong>Instrumento de medición propio: la Vectría™</strong> — sensor de potencia y alineación del sistema humano.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tree-arrow">↓</div>
+
+    <div class="tree-level">
+      <div class="tree-row cols-1">
+        <div class="node dorado">
+          <div class="node-tag">Nivel 2 · Marco metodológico</div>
+          <h4><span class="d">Alquimia del Potencial Humano</span><sup>™</sup></h4>
+          <div class="detail">El sistema integrado de intervención. Gestiona la transmutación del potencial en resultados sostenibles. <strong>Es lo que se certifica:</strong> la Certificación en Alquimia del Potencial Humano™ es el título formal del Institute. <strong>Instrumento de medición propio: la alKimetría™</strong> — sensor de esencia y calidad de la señal del sistema humano.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tree-arrow">↓</div>
+
+    <div class="tree-level">
+      <div class="tree-row cols-2">
+        <div class="node dorado">
+          <div class="node-tag">Nivel 3a · Sensor de esencia</div>
+          <h4>alKimetría<sup>™</sup></h4>
+          <div class="detail">Mide la <strong>calidad y pureza de la señal</strong> del sistema humano. ¿Qué tanta luz y valor real genera el sistema? Mide el Factor E™ y el Factor K™.</div>
+        </div>
+        <div class="node morado">
+          <div class="node-tag">Nivel 3b · Sensor de potencia</div>
+          <h4>Vectría<sup>™</sup></h4>
+          <div class="detail">Mide la <strong>alineación y el empuje</strong> en la estructura del desempeño. ¿Hacia dónde y con qué fuerza se impulsa el sistema? Detecta el desvío técnico entre la dirección del ser y la dirección de la acción.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tree-arrow">↓</div>
+
+    <div class="tree-level">
+      <div class="tree-row cols-2">
+        <div class="node b2b">
+          <div class="node-tag">Nivel 4 · Programa B2B</div>
+          <h4>EXPONÉNCIATE<sup>™</sup></h4>
+          <div class="detail">Programa de liderazgo y desempeño organizacional de alto impacto. Cinco niveles de profundidad. Activa la expansión del liderazgo con alto rendimiento sostenible en entornos corporativos.</div>
+        </div>
+        <div class="node b2b">
+          <div class="node-tag">Nivel 4 · Programa B2B</div>
+          <h4>POTÉNCIATE<sup>™</sup></h4>
+          <div class="detail">Ingeniería del desempeño de equipos. Diagnóstico de Entropía de Equipo (DEE), Índice de Entropía de Equipo (IEE) e intervenciones de calibración colectiva para organizaciones.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tree-arrow">↓</div>
+
+    <div class="tree-level">
+      <div class="tree-row cols-2">
+        <div class="node b2c">
+          <div class="node-tag">Nivel 5 · Programa B2C</div>
+          <h4>IRREVERSIBLE<sup>™</sup></h4>
+          <div class="detail"><strong>Cambio de aleación del ser.</strong> El laboratorio de transmutación donde la metamorfosis estructural ocurre. El sistema humano no aprende algo nuevo — se convierte en algo diferente. "No puedes volver."</div>
+        </div>
+        <div class="node b2c">
+          <div class="node-tag">Nivel 5 · Programa B2C</div>
+          <h4>CÉNIT<sup>™</sup></h4>
+          <div class="detail"><strong>Conquista de posición vertical.</strong> La fusión inteligente de los dos sensores. Manual de Verticalidad: deja de moverte en horizontal y elévate. Requiere señal limpia de alKimetría™ para que la Vectría™ opere con precisión.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dualidad-band reveal">
+    <div class="col gold">
+      <strong>alKimetría™</strong> — sensor de calidad.<br>
+      ¿Qué tanta luz genera el sistema?
+    </div>
+    <div class="col purp">
+      <strong>Vectría™</strong> — sensor de potencia.<br>
+      ¿Hacia dónde y con qué fuerza se impulsa?
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     05 · EJES
+══════════════════════════════════ -->
+<section class="ejes" data-section="07 · EJES DE INTERVENCIÓN">
+  <div class="ejes-grid">
+    <div class="ejes-text reveal">
+      <div class="section-num">07 · Ejes de intervención</div>
+      <h2 class="eyebrow">Cuatro puertas. <em>Un mismo sistema.</em></h2>
+      <p class="lead">
+        Cada eje es una puerta de entrada al mismo sistema de intervención. El dolor del comprador
+        determina el eje. La metodología es siempre la misma.
+      </p>
+
+      <div class="ejes-list" style="margin-top:32px">
+        <div class="eje-row" data-idx="0">
+          <div class="eje-row-head">
+            <span class="idx">EJE 01</span>
+            <span class="name">Liderazgo neurológico bajo presión</span>
+            <span class="arrow">↓</span>
+          </div>
+          <div class="eje-row-body">
+            <div class="eje-inline">
+              <div class="ei-block">
+                <span class="ei-lbl">Dolor del comprador</span>
+                <p>Los líderes reaccionan en lugar de decidir. Cada crisis los consume y sus equipos esperan que ellos resuelvan todo.</p>
+              </div>
+              <div class="ei-block r">
+                <span class="ei-lbl">Resultado de la intervención</span>
+                <p>Un líder que estabiliza el sistema en lugar de amplificar el caos. Decisiones cerradas bajo presión.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eje-row" data-idx="1">
+          <div class="eje-row-head">
+            <span class="idx">EJE 02</span>
+            <span class="name">Equipos que se autogobiernan</span>
+            <span class="arrow">↓</span>
+          </div>
+          <div class="eje-row-body">
+            <div class="eje-inline">
+              <div class="ei-block">
+                <span class="ei-lbl">Dolor del comprador</span>
+                <p>El líder es el cuello de botella. La coordinación entre áreas genera fricción. Los resultados dependen de quién está presente.</p>
+              </div>
+              <div class="ei-block r">
+                <span class="ei-lbl">Resultado de la intervención</span>
+                <p>Un equipo que ejecuta con autonomía, se coordina sin fricciones y sostiene resultados sin presión constante del líder.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eje-row" data-idx="2">
+          <div class="eje-row-head">
+            <span class="idx">EJE 03</span>
+            <span class="name">Estrategia que aterriza en ejecución</span>
+            <span class="arrow">↓</span>
+          </div>
+          <div class="eje-row-body">
+            <div class="eje-inline">
+              <div class="ei-block">
+                <span class="ei-lbl">Dolor del comprador</span>
+                <p>Las decisiones estratégicas no bajan a la operación. Cada área interpreta el rumbo diferente. Los resultados se logran a pesar del sistema.</p>
+              </div>
+              <div class="ei-block r">
+                <span class="ei-lbl">Resultado de la intervención</span>
+                <p>Una organización donde la estrategia se convierte en protocolos de decisión que cada nivel ejecuta sin consultar hacia arriba.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eje-row" data-idx="3">
+          <div class="eje-row-head">
+            <span class="idx">EJE 04</span>
+            <span class="name">Ingeniería de cierre y negociación</span>
+            <span class="arrow">↓</span>
+          </div>
+          <div class="eje-row-body">
+            <div class="eje-inline">
+              <div class="ei-block">
+                <span class="ei-lbl">Dolor del comprador</span>
+                <p>Los vendedores tienen actividad pero no cierran. Las negociaciones se estancan. El pipeline no se convierte en facturación predecible.</p>
+              </div>
+              <div class="ei-block r">
+                <span class="ei-lbl">Resultado de la intervención</span>
+                <p>Un equipo comercial con protocolos de cierre instalados, conversaciones de mayor calidad y ROI medible en 30 días.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="eje-quad">
+        <svg id="eje-quad-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="eje-quad-readout">
+          <span class="lbl" id="eje-lbl">EJE — sin selección</span>
+          <span class="hint">Pase el cursor sobre un eje en la lista para activarlo.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     06 · ECOSISTEMAS + CONFERENCIAS
+══════════════════════════════════ -->
+<section class="ecos" data-section="08 · ECOSISTEMAS">
+  <div class="ecos-head reveal">
+    <div>
+      <div class="section-num">08 · Ecosistemas de intervención profunda</div>
+      <h2 class="eyebrow">No son programas. Son <em>sistemas</em>.</h2>
+    </div>
+    <p class="lead">
+      Los ecosistemas son el nivel más profundo de intervención del Institute. No son
+      capacitaciones — son sistemas de transformación del desempeño con diagnóstico,
+      protocolo y criterio de cierre verificable.
+    </p>
+  </div>
+
+  <div class="programs reveal">
+    <div class="program">
+      <div class="program-head">
+        <span class="program-tag">Ecosistema · B2B · Liderazgo</span>
+        <span class="program-channel">motor: alKimetría™ + Vectría™</span>
+      </div>
+      <h3>EXPONÉNCIATE<sup>™</sup></h3>
+      <div class="promise">Liderazgo de alto impacto · 5 niveles</div>
+      <p>Sistema de desarrollo de liderazgo organizacional en cinco niveles de profundidad. Activa la expansión del liderazgo con alto rendimiento sostenible. Cada nivel tiene diagnóstico de entrada, protocolo de intervención y criterio de avance verificable.</p>
+      <ul>
+        <li>Diagnóstico de estado del liderazgo (alKimetría™)</li>
+        <li>Intervenciones por eje según el estado operativo</li>
+        <li>Mentoría C-Suite para la alta dirección</li>
+        <li>Escuelas de liderazgo para mandos medios</li>
+        <li>Protocolo de autonomía operativa instalado</li>
+      </ul>
+    </div>
+    <div class="program">
+      <div class="program-head">
+        <span class="program-tag">Ecosistema · B2B · Equipos</span>
+        <span class="program-channel">motor: alKimetría™ + Vectría™</span>
+      </div>
+      <h3>POTÉNCIATE<sup>™</sup></h3>
+      <div class="promise">Ingeniería de equipos · Áreas core</div>
+      <p>Sistema de ingeniería del desempeño colectivo. Diagnostica la entropía del equipo, mide el Índice de Entropía de Equipo (IEE) e implementa intervenciones de calibración colectiva para eliminar la fricción que impide que el talento individual se convierta en potencia colectiva.</p>
+      <ul>
+        <li>Diagnóstico de Entropía de Equipo (DEE)</li>
+        <li>Índice de Entropía de Equipo (IEE)</li>
+        <li>Intervenciones de calibración colectiva</li>
+        <li>Jornadas de claridad estratégica</li>
+        <li>Protocolos de coordinación autónoma</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Conferencias -->
+  <div class="conf-stack reveal" id="conferencias">
+    <div class="section-num" style="color:var(--azul); margin-top:32px">09 · Ciclo de conferencias</div>
+    <h2 class="eyebrow" style="margin-bottom:24px">Una conferencia no es un evento.<br>Es un <em>catalizador estructural</em>.</h2>
+
+    <div class="conf-row">
+      <div class="conf-time">30<sub>min</sub></div>
+      <div class="conf-info">
+        <h4>Cápsula de ignición</h4>
+        <p>Disparador de consciencia estructural para aperturas de eventos o cierres de ciclo. Interviene el estado de activación cognitiva del grupo antes de una decisión clave.</p>
+      </div>
+      <div class="conf-arrow">↗</div>
+    </div>
+    <div class="conf-row">
+      <div class="conf-time">45<sub>min</sub></div>
+      <div class="conf-info">
+        <h4>Keynote estratégico</h4>
+        <p>Instala un marco cognitivo compartido en torno a un objetivo central. Reduce la fricción interna y acelera la ejecución colectiva.</p>
+      </div>
+      <div class="conf-arrow">↗</div>
+    </div>
+    <div class="conf-row">
+      <div class="conf-time">60<sub>min</sub></div>
+      <div class="conf-info">
+        <h4>Conferencia magistral</h4>
+        <p>Intervención profunda del sistema decisorio con espacio de regulación (Q&amp;A). No es motivación — es reprogramación de los circuitos de respuesta bajo presión.</p>
+      </div>
+      <div class="conf-arrow">↗</div>
+    </div>
+    <div class="conf-row">
+      <div class="conf-time">90<sub>min</sub></div>
+      <div class="conf-info">
+        <h4>Masterclass de desempeño</h4>
+        <p>La única intervención donde el equipo sale con un protocolo instalado, no solo con una perspectiva nueva. Incluye diagnóstico individual de alKimetría™.</p>
+      </div>
+      <div class="conf-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     07 · TRAYECTORIA — clientes flotantes
+══════════════════════════════════ -->
+<section class="trayectoria" data-section="11 · TRAYECTORIA DE VUELO">
+  <div class="tray-head reveal">
+    <div>
+      <div class="section-num">10 · Trayectoria de vuelo</div>
+      <h2 class="eyebrow">Donde estos <em>protocolos</em><br>han sido <span class="g">validados</span>.</h2>
+    </div>
+    <div class="tray-stats">
+      <div><span>17</span><br>años de campo</div>
+      <div><span>3.000+</span><br>intervenciones</div>
+      <div><span>70k+</span><br>personas</div>
+    </div>
+  </div>
+
+  <div class="tray-marquees reveal">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="cli">Procaps<span class="dot"></span></span>
+        <span class="cli">Bancolombia<span class="dot"></span></span>
+        <span class="cli">Sura<span class="dot"></span></span>
+        <span class="cli">HP<span class="dot"></span></span>
+        <span class="cli">Alcatel-Lucent<span class="dot"></span></span>
+        <span class="cli">MSD<span class="dot"></span></span>
+        <span class="cli">Dow<span class="dot"></span></span>
+        <span class="cli">ISA<span class="dot"></span></span>
+        <span class="cli">Transelca<span class="dot"></span></span>
+        <span class="cli">Mexichem<span class="dot"></span></span>
+        <span class="cli">Bavaria<span class="dot"></span></span>
+        <span class="cli">Colpatria<span class="dot"></span></span>
+        <span class="cli">Electricaribe<span class="dot"></span></span>
+        <span class="cli">Pavco<span class="dot"></span></span>
+        <span class="cli">Éxito<span class="dot"></span></span>
+        <span class="cli">Yanbal<span class="dot"></span></span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="cli">Procaps<span class="dot"></span></span>
+        <span class="cli">Bancolombia<span class="dot"></span></span>
+        <span class="cli">Sura<span class="dot"></span></span>
+        <span class="cli">HP<span class="dot"></span></span>
+        <span class="cli">Alcatel-Lucent<span class="dot"></span></span>
+        <span class="cli">MSD<span class="dot"></span></span>
+        <span class="cli">Dow<span class="dot"></span></span>
+        <span class="cli">ISA<span class="dot"></span></span>
+        <span class="cli">Transelca<span class="dot"></span></span>
+        <span class="cli">Mexichem<span class="dot"></span></span>
+        <span class="cli">Bavaria<span class="dot"></span></span>
+        <span class="cli">Colpatria<span class="dot"></span></span>
+        <span class="cli">Electricaribe<span class="dot"></span></span>
+        <span class="cli">Pavco<span class="dot"></span></span>
+        <span class="cli">Éxito<span class="dot"></span></span>
+        <span class="cli">Yanbal<span class="dot"></span></span>
+      </div>
+    </div>
+
+    <div class="marquee reverse">
+      <div class="marquee-track">
+        <span class="cli">Prodeco<span class="dot"></span></span>
+        <span class="cli">Sacyr<span class="dot"></span></span>
+        <span class="cli">UCI Pharma<span class="dot"></span></span>
+        <span class="cli">Osteobiomed<span class="dot"></span></span>
+        <span class="cli">Sempertex<span class="dot"></span></span>
+        <span class="cli">Motorysa<span class="dot"></span></span>
+        <span class="cli">Rayovac<span class="dot"></span></span>
+        <span class="cli">Surtimax<span class="dot"></span></span>
+        <span class="cli">Triple A<span class="dot"></span></span>
+        <span class="cli">Muebles Jamar<span class="dot"></span></span>
+        <span class="cli">Metrotel<span class="dot"></span></span>
+        <span class="cli">Adecco<span class="dot"></span></span>
+        <span class="cli">Coomeva EPS<span class="dot"></span></span>
+        <span class="cli">Gulf<span class="dot"></span></span>
+        <span class="cli">Spectrum Brands<span class="dot"></span></span>
+        <span class="cli">Corona<span class="dot"></span></span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="cli">Prodeco<span class="dot"></span></span>
+        <span class="cli">Sacyr<span class="dot"></span></span>
+        <span class="cli">UCI Pharma<span class="dot"></span></span>
+        <span class="cli">Osteobiomed<span class="dot"></span></span>
+        <span class="cli">Sempertex<span class="dot"></span></span>
+        <span class="cli">Motorysa<span class="dot"></span></span>
+        <span class="cli">Rayovac<span class="dot"></span></span>
+        <span class="cli">Surtimax<span class="dot"></span></span>
+        <span class="cli">Triple A<span class="dot"></span></span>
+        <span class="cli">Muebles Jamar<span class="dot"></span></span>
+        <span class="cli">Metrotel<span class="dot"></span></span>
+        <span class="cli">Adecco<span class="dot"></span></span>
+        <span class="cli">Coomeva EPS<span class="dot"></span></span>
+        <span class="cli">Gulf<span class="dot"></span></span>
+        <span class="cli">Spectrum Brands<span class="dot"></span></span>
+        <span class="cli">Corona<span class="dot"></span></span>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="cli">Frontiercoal<span class="dot"></span></span>
+        <span class="cli">U. del Norte<span class="dot"></span></span>
+        <span class="cli">U. de La Sabana<span class="dot"></span></span>
+        <span class="cli">CCB Barranquilla<span class="dot"></span></span>
+        <span class="cli">Uniautónoma<span class="dot"></span></span>
+        <span class="cli">Esumer<span class="dot"></span></span>
+        <span class="cli">Finandina<span class="dot"></span></span>
+        <span class="cli">Gas Natural Fenosa<span class="dot"></span></span>
+        <span class="cli">CAT<span class="dot"></span></span>
+        <span class="cli">Logicem<span class="dot"></span></span>
+        <span class="cli">ZF Acontis<span class="dot"></span></span>
+        <span class="cli">Combarranquilla<span class="dot"></span></span>
+        <span class="cli">Totto<span class="dot"></span></span>
+        <span class="cli">Domotes<span class="dot"></span></span>
+        <span class="cli">Meico S.A.<span class="dot"></span></span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="cli">Frontiercoal<span class="dot"></span></span>
+        <span class="cli">U. del Norte<span class="dot"></span></span>
+        <span class="cli">U. de La Sabana<span class="dot"></span></span>
+        <span class="cli">CCB Barranquilla<span class="dot"></span></span>
+        <span class="cli">Uniautónoma<span class="dot"></span></span>
+        <span class="cli">Esumer<span class="dot"></span></span>
+        <span class="cli">Finandina<span class="dot"></span></span>
+        <span class="cli">Gas Natural Fenosa<span class="dot"></span></span>
+        <span class="cli">CAT<span class="dot"></span></span>
+        <span class="cli">Logicem<span class="dot"></span></span>
+        <span class="cli">ZF Acontis<span class="dot"></span></span>
+        <span class="cli">Combarranquilla<span class="dot"></span></span>
+        <span class="cli">Totto<span class="dot"></span></span>
+        <span class="cli">Domotes<span class="dot"></span></span>
+        <span class="cli">Meico S.A.<span class="dot"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <p class="tray-foot reveal">
+    Más que clientes — escenarios de despliegue donde se perfeccionó un sistema de
+    ingeniería sin precedentes en la región.
+  </p>
+</section>
+
+
+<!-- ══════════════════════════════════
+     08 · TEST DE ENTROPÍA™
+══════════════════════════════════ -->
+<section class="entropia" id="entropia" data-section="11 · TEST DE ENTROPÍA™">
+  <div class="ent-head reveal">
+    <div class="section-num">11 · Test de Entropía™</div>
+    <h2 class="eyebrow">Mida la <em>entropía</em> de su sistema<br>en <span class="g">tres minutos</span>.</h2>
+    <p class="lead" style="margin-top:24px">
+      Seis preguntas. Una lectura preliminar.<br>
+      <strong>Si en tres minutos detectamos dónde se drena su sistema, imagine lo que rediseñamos juntos en noventa días.</strong>
+    </p>
+  </div>
+
+  <div class="ent-shell reveal">
+    <div class="ent-form">
+      <div class="ent-q" data-q="q1">
+        <div class="ent-q-text"><span class="num">01</span> Los líderes resuelven lo que sus equipos deberían resolver solos.</div>
+        <div class="likert" data-q="q1">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+
+      <div class="ent-q" data-q="q2">
+        <div class="ent-q-text"><span class="num">02</span> La ejecución depende de esfuerzo heroíco — no de un sistema diseñado.</div>
+        <div class="likert" data-q="q2">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+
+      <div class="ent-q" data-q="q3">
+        <div class="ent-q-text"><span class="num">03</span> Las decisiones estratégicas no se traducen claramente en la operación.</div>
+        <div class="likert" data-q="q3">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+
+      <div class="ent-q" data-q="q4">
+        <div class="ent-q-text"><span class="num">04</span> Las intervenciones de cambio entusiasman pero no dejan huella estructural.</div>
+        <div class="likert" data-q="q4">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+
+      <div class="ent-q" data-q="q5">
+        <div class="ent-q-text"><span class="num">05</span> El burnout, la rotación y las decisiones de baja calidad bajo presión se han normalizado.</div>
+        <div class="likert" data-q="q5">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+
+      <div class="ent-q" data-q="q6">
+        <div class="ent-q-text"><span class="num">06</span> Operamos sin un diagnóstico objetivo del estado del sistema humano.</div>
+        <div class="likert" data-q="q6">
+          <button class="lk" data-v="0"><span class="lk-dot"></span><span class="lk-lbl">Nunca</span></button>
+          <button class="lk" data-v="1"><span class="lk-dot"></span><span class="lk-lbl">Rara vez</span></button>
+          <button class="lk" data-v="2"><span class="lk-dot"></span><span class="lk-lbl">A veces</span></button>
+          <button class="lk" data-v="3"><span class="lk-dot"></span><span class="lk-lbl">Frecuente</span></button>
+          <button class="lk" data-v="4"><span class="lk-dot"></span><span class="lk-lbl">Permanente</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ent-readout">
+      <div class="ent-readout-inner">
+        <div class="ent-meter-wrap">
+          <svg class="ent-meter" viewBox="0 0 220 220">
+            <circle class="ent-arc-bg" cx="110" cy="110" r="94"></circle>
+            <circle class="ent-arc-fill" id="ent-arc" cx="110" cy="110" r="94"
+                    stroke-dasharray="590" stroke-dashoffset="590" transform="rotate(-90 110 110)"></circle>
+            <text id="ent-ticks" class="ent-ticks"></text>
+          </svg>
+          <div class="ent-meter-center">
+            <div class="ent-meter-val" id="ent-val">—</div>
+            <div class="ent-meter-unit" id="ent-unit">EN ESPERA</div>
+            <div class="ent-meter-lbl">Índice de Entropía™ (IEE)</div>
+          </div>
+        </div>
+
+        <div class="ent-bands">
+          <div class="ent-band" data-band="a"><span class="b-range">00–25</span><span class="b-name">Sistema calibrado</span></div>
+          <div class="ent-band" data-band="b"><span class="b-range">26–50</span><span class="b-name">Fricción contenida</span></div>
+          <div class="ent-band" data-band="c"><span class="b-range">51–75</span><span class="b-name">Entropía operativa</span></div>
+          <div class="ent-band" data-band="d"><span class="b-range">76–100</span><span class="b-name">Caos estructural</span></div>
+        </div>
+
+        <div class="ent-result empty" id="ent-result">
+          <div class="reading" id="ent-reading">EN ESPERA</div>
+          <div class="recommendation" id="ent-reco">Complete las seis preguntas para obtener la lectura preliminar.</div>
+        </div>
+
+        <div class="ent-pitch" id="ent-pitch" hidden>
+          <span class="ent-pitch-lbl">Punto de inflexión</span>
+          <p>Tres minutos bastaron para medir su entropía. <strong>Imagine lo que rediseñamos juntos en noventa días.</strong></p>
+        </div>
+
+        <div class="ent-cta">
+          <a href="mailto:mentor@edwinromerom.com?subject=Solicito%20conversaci%C3%B3n%20de%20exploraci%C3%B3n" class="btn">Agendar conversación de exploración <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     CIERRE
+══════════════════════════════════ -->
+<footer class="cierre" data-section="00 · CIERRE">
+  <div class="cierre-grid">
+    <div>
+      <div class="brand-stamp">
+        Edwin Romero M<span class="bar">|</span><span class="inst">Institute</span>
+      </div>
+      <div class="role">
+        Ingeniero del Desempeño Humano™ · Estratega de Sistemas Complejos<br>
+        Fundador · Creador de la Alquimia del Potencial Humano™<br>
+        Creador de la Ingeniería del Ser™
+      </div>
+    </div>
+    <div>
+      <div class="col-head">Contacto</div>
+      <ul class="col-list">
+        <li><a href="mailto:mentor@edwinromerom.com">mentor@edwinromerom.com</a></li>
+        <li><a href="tel:+573182067128">+57 318 206 7128</a></li>
+        <li>Colombia · Latinoamérica</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-head">Canales</div>
+      <ul class="col-list">
+        <li><a href="https://edwinromerom.com">edwinromerom.com</a></li>
+        <li><a href="https://instagram.com/edwinromerom">@edwinromerom</a></li>
+        <li><a href="https://instagram.com/ERMInstitute">@ERMInstitute</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cierre-bottom">
+    <span>© 2026 Edwin Romero M | Institute · Todos los derechos reservados</span>
+    <span>alKimetría™ · Vectría™ · Alquimia del Potencial Humano™ · Ingeniería del Ser™</span>
+  </div>
+  <div class="cierre-sigla">ERM</div>
+</footer>
+
+<!-- ══════════════════════════════════
+     ASISTENTE DEL NAVEGANTE
+══════════════════════════════════ -->
+<div class="navigator" id="navigator">
+  <button class="nav-trigger" id="nav-trigger" aria-label="Asistente del navegante" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 3l2.5 6 6 .8-4.5 4.2 1.1 6.4L12 17l-5.1 3.4 1.1-6.4L3.5 9.8 9.5 9z"></path>
+    </svg>
+    <span class="nav-trigger-lbl">Asistente del navegante</span>
+  </button>
+
+  <div class="nav-panel" id="nav-panel" hidden>
+    <div class="nav-head">
+      <div>
+        <div class="nav-title">Asistente del Institute</div>
+        <div class="nav-sub">Pregúntele lo que necesite saber.</div>
+      </div>
+      <button class="nav-close" id="nav-close" aria-label="Cerrar">×</button>
+    </div>
+
+    <div class="nav-body" id="nav-body">
+      <div class="nav-msg system">
+        <div class="nav-msg-lbl">Asistente · alKimetría™ activa</div>
+        <p>Le acompaño en la lectura. Puede preguntarme qué es la alKimetría™, en qué eje está hoy o cómo solicitar una conversación de exploración.</p>
+      </div>
+      <div class="nav-suggestions" id="nav-suggestions">
+        <button class="nav-sug" data-prompt="¿Qué es la alKimetría™ y para qué sirve?">¿Qué es la alKimetría™?</button>
+        <button class="nav-sug" data-prompt="¿Cuál es la diferencia entre EXPONÉNCIATE™ y POTÉNCIATE™?">EXPONÉNCIATE™ vs POTÉNCIATE™</button>
+        <button class="nav-sug" data-prompt="¿En qué eje de intervención debería empezar mi organización?">¿En qué eje estoy hoy?</button>
+        <button class="nav-sug" data-prompt="¿En qué se diferencia este enfoque del coaching y la consultoría tradicional?">¿Por qué no es coaching ni consultoría?</button>
+        <button class="nav-sug" data-prompt="¿Cómo agendo una conversación de exploración con el Institute?">Cómo agendar una conversación</button>
+      </div>
+    </div>
+
+    <form class="nav-input-row" id="nav-form" autocomplete="off">
+      <input type="text" id="nav-input" placeholder="Pregunte al Institute…" maxlength="240">
+      <button id="nav-send" type="submit" aria-label="Enviar">→</button>
+    </form>
+    <div class="nav-foot">Respuestas generadas por IA en la voz del Institute · no reemplazan una conversación real.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
