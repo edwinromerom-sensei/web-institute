@@ -1172,6 +1172,18 @@ if(captureBtn) {
     }
     captureBtn.disabled = true;
     captureBtn.textContent = 'Procesando…';
+    // Enviar a Airtable
+    var iee = document.getElementById('ent-val') ? document.getElementById('ent-val').textContent : '';
+    var banda = document.getElementById('ent-reading') ? document.getElementById('ent-reading').textContent : '';
+    var empresa = captureComp ? captureComp.value.trim() : '';
+    fetch('/api/airtable', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        correo: email,
+        resultado: 'IEE: ' + iee + ' — ' + banda
+      })
+    }).catch(function(){}); // silencioso si falla
     setTimeout(function() {
       captureForm.style.display = 'none';
       captureSuccess.classList.add('show');
