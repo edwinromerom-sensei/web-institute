@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IVL&#8482; &#183; &#205;ndice de Vectores del Liderazgo &#183; Edwin Romero M | Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Barlow:wght@200;300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Barlow',sans-serif;font-weight:300;background:#0A0F1E;color:#fff}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;overflow:hidden}
+.screen.active{display:flex}
+.noise{position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:0}
+
+/* PORTADA */
+#s-portada{background:#0A0F1E;align-items:center;justify-content:center;text-align:center;padding:2rem}
+#s-portada::before{content:'';position:absolute;background:radial-gradient(ellipse at 75% 25%,rgba(94,138,180,.14) 0%,transparent 55%),radial-gradient(ellipse at 25% 75%,rgba(94,138,180,.08) 0%,transparent 50%);inset:0;pointer-events:none}
+.portada-bg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:200;font-size:28rem;line-height:1;color:rgba(255,255,255,.03);right:-1rem;bottom:-3rem;letter-spacing:-.05em;user-select:none;pointer-events:none}
+.portada-inner{position:relative;z-index:2;max-width:560px;width:100%}
+.portada-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem}
+.portada-logo{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:5rem;line-height:.88;color:#fff;letter-spacing:-.02em;margin-bottom:.35rem}
+.portada-logo em{font-style:italic;color:#5E8AB4}
+.portada-tag{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1.8rem}
+.portada-bar{height:1px;background:linear-gradient(90deg,transparent,#5E8AB4,transparent);width:200px;margin:0 auto 1.8rem}
+.portada-tagline{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.05rem;line-height:1.65;font-style:italic;color:rgba(255,255,255,.48);margin-bottom:.5rem}
+.portada-tiempo{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:2rem}
+.name-group{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.4rem}
+.ivl-input{width:100%;padding:.75rem 1.1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:300;border-radius:2px;outline:none;transition:border-color .2s;text-align:center}
+.ivl-input::placeholder{color:rgba(255,255,255,.25)}
+.ivl-input:focus{border-color:#5E8AB4}
+.btn-start{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:.9rem 2.8rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;cursor:pointer;border-radius:2px;transition:all .2s;opacity:.35;pointer-events:none}
+.btn-start.on{opacity:1;pointer-events:auto;border-color:rgba(94,138,180,.7)}
+.btn-start.on:hover{background:rgba(94,138,180,.1);border-color:#5E8AB4}
+.portada-footer{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.2);white-space:nowrap}
+
+/* INSTRUCCIONES */
+#s-instrucciones{background:#0A0F1E;overflow-y:auto}
+.instr-wrap{max-width:560px;margin:0 auto;padding:2.5rem 1.5rem;position:relative;z-index:2}
+.instr-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.2rem;text-align:center}
+.instr-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.2rem;line-height:1.1;color:#fff;text-align:center;margin-bottom:1.4rem}
+.instr-intro{font-family:'Barlow',sans-serif;font-weight:300;font-size:.95rem;line-height:1.72;color:rgba(255,255,255,.58);margin-bottom:1.8rem}
+.instr-rule{height:1px;background:rgba(255,255,255,.08);margin-bottom:1.6rem}
+.instr-vectores{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.8rem}
+.instr-vector{padding:.8rem 1rem;border:1px solid rgba(94,138,180,.2);border-radius:3px;background:rgba(94,138,180,.05)}
+.instr-vector-letra{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:200;color:#5E8AB4;line-height:1;margin-bottom:.2rem}
+.instr-vector-nombre{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:.2rem}
+.instr-vector-desc{font-family:'Barlow',sans-serif;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.55}
+.instr-nota{background:rgba(94,138,180,.07);border-left:2px solid #5E8AB4;padding:.8rem 1rem;margin-bottom:1.8rem;font-family:'Cormorant Garamond',serif;font-size:.98rem;font-style:italic;line-height:1.65;color:rgba(255,255,255,.58)}
+.btn-primary{display:block;width:100%;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:.9rem;background:#5E8AB4;color:#fff;border:none;cursor:pointer;border-radius:2px;transition:opacity .2s}
+.btn-primary:hover{opacity:.88}
+
+/* PREGUNTAS */
+#s-preguntas{background:#0D1220;flex-direction:column}
+.q-header{padding:.9rem 1.5rem .75rem;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-progress-track{height:2px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:.55rem;overflow:hidden}
+.q-progress-fill{height:100%;border-radius:2px;transition:width .4s ease;background:linear-gradient(90deg,#5E8AB4,#C9A84C)}
+.q-meta{display:flex;justify-content:space-between;align-items:center}
+.q-vector-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.q-counter{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,.3)}
+.q-body{flex:1;overflow-y:auto;padding:1.8rem 1.5rem .8rem;display:flex;flex-direction:column;justify-content:center}
+.q-pregunta{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.4rem;line-height:1.55;color:#fff;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.q-escala-mini{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.8rem}
+.likert-row{display:flex;gap:.6rem;justify-content:center;margin-bottom:.6rem}
+.lb{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:rgba(255,255,255,.4);cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center}
+.lb:hover{border-color:#5E8AB4;color:#5E8AB4}
+.lb.sel{background:#5E8AB4;border-color:#5E8AB4;color:#fff}
+.likert-labels{display:flex;justify-content:space-between;padding:0 .5rem}
+.likert-labels span{font-size:.68rem;color:rgba(255,255,255,.28)}
+.q-nav{display:flex;gap:.75rem;padding:.6rem 1.5rem 1rem;flex-shrink:0;border-top:1px solid rgba(255,255,255,.06)}
+.btn-prev{flex:1;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:transparent;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.1);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-prev:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)}
+.btn-next{flex:2;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:#fff;color:#0A0F1E;border:none;cursor:pointer;border-radius:2px;opacity:.2;pointer-events:none;transition:opacity .2s}
+.btn-next.on{opacity:1;pointer-events:auto}
+
+/* PROCESANDO */
+#s-procesando{background:#0A0F1E;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.proc-inner{position:relative;z-index:2;max-width:400px}
+.proc-logo{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:3.5rem;color:#5E8AB4;margin-bottom:1.5rem;letter-spacing:.05em}
+.proc-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.4rem;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:1.5rem}
+.proc-bar{height:2px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 auto;width:200px;overflow:hidden}
+.proc-fill{height:100%;background:linear-gradient(90deg,#5E8AB4,#C9A84C);width:0;border-radius:2px}
+
+/* RESULTADOS */
+#s-resultados{background:#0A0F1E;overflow-y:auto}
+.res-hero{padding:2.2rem 1.5rem 1.8rem;text-align:center;position:relative;overflow:hidden}
+.res-hero-bg{position:absolute;inset:0;font-family:'Cormorant Garamond',serif;font-weight:200;font-size:18rem;line-height:.8;display:flex;align-items:center;justify-content:center;user-select:none;pointer-events:none;opacity:.04;overflow:hidden}
+.res-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.8rem;position:relative;z-index:2}
+.res-nombre{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E8AB4;margin-bottom:.4rem;position:relative;z-index:2}
+.res-score{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:5rem;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:.3rem}
+.res-score span{font-size:2rem;color:rgba(255,255,255,.3)}
+.res-band{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:20px;margin-bottom:.8rem;position:relative;z-index:2}
+.res-divider{height:1.5px;width:100px;margin:.8rem auto;position:relative;z-index:2;background:linear-gradient(90deg,#5E8AB4,#C9A84C)}
+.res-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:440px;margin:0 auto;position:relative;z-index:2}
+
+/* RADAR */
+.radar-wrap{padding:1.2rem 1.5rem;display:flex;justify-content:center}
+.radar-legend{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);text-align:center;margin-top:.5rem}
+
+/* VECTORES DETALLE */
+.vectores-det{padding:0 1.5rem 1rem}
+.vector-row{padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.vector-row:last-child{border-bottom:none}
+.vector-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.vector-letra{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E8AB4}
+.vector-score-val{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:#5E8AB4}
+.vector-bar-track{height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.32rem;overflow:hidden}
+.vector-bar-fill{height:100%;border-radius:2px;background:#5E8AB4}
+.vector-frase{font-size:.83rem;color:rgba(255,255,255,.48);font-style:italic;line-height:1.6}
+
+/* EXPONÉNCIATE */
+.exp-box{margin:0 1.5rem 1.2rem;padding:1.1rem;border:1px solid rgba(94,138,180,.2);border-radius:3px;background:rgba(94,138,180,.04)}
+.exp-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#5E8AB4;margin-bottom:.55rem;display:block}
+.exp-text{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:.98rem;font-style:italic;line-height:1.65;color:rgba(255,255,255,.5);margin-bottom:.7rem}
+.exp-prioridad{font-family:'Barlow',sans-serif;font-weight:300;font-size:.85rem;line-height:1.65;color:rgba(255,255,255,.48)}
+.exp-prioridad strong{color:rgba(255,255,255,.8);font-weight:400}
+
+/* CÓDIGO */
+.codigo-box{margin:0 1.5rem 1.5rem;padding:1.4rem;text-align:center;border:2px solid rgba(94,138,180,.3);border-radius:3px;background:rgba(94,138,180,.04)}
+.codigo-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
+.codigo-val{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:.14em;color:#5E8AB4;margin-bottom:.5rem;word-break:break-all}
+.codigo-cuando{font-family:'Barlow',sans-serif;font-weight:300;font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.38);margin-bottom:.9rem}
+.btn-copy{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.5rem;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s;margin-right:.5rem}
+.btn-copy:hover{border-color:#5E8AB4;color:#5E8AB4}
+.btn-print{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.5rem;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-print:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+@media print{
+  @page{size:letter portrait;margin:.6in .7in}
+  html,body{overflow:auto !important;height:auto !important;background:#fff !important}
+  .screen{display:none !important}
+  #s-resultados{display:block !important;position:static !important;background:#fff !important;overflow:visible !important}
+  .res-hero{background:#fff;padding:1rem 0}
+  .res-hero-bg{display:none}
+  .res-nombre{color:#5E8AB4 !important}
+  .res-score{color:#111 !important}
+  .res-desc{color:#444 !important}
+  .vector-letra,.vector-score-val{color:#5E8AB4 !important}
+  .vector-frase{color:#555 !important}
+  .vector-row{border-bottom-color:#eee !important}
+  .exp-box,.codigo-box{border-color:#ddd !important;background:#f9f9f9 !important}
+  .exp-text,.exp-prioridad{color:#444 !important}
+  .btn-copy,.btn-print,#wm{display:none !important}
+}
+@media(min-width:600px){.q-pregunta{font-size:1.55rem}.lb{width:58px;height:58px}}</style>
+</head>
+<body>
+
+<div id="wm" style="position:fixed;inset:0;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;opacity:.03;transform:rotate(-35deg)">
+  <span id="wm-txt" style="font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap">IVL&#8482; &#183; Edwin Romero M | Institute</span>
+</div>
+
+<!-- S1 PORTADA -->
+<div class="screen active" id="s-portada">
+  <div class="noise"></div>
+  <span class="portada-bg">IVL</span>
+  <div class="portada-inner">
+    <p class="portada-eyebrow">Edwin Romero M | Institute &#183; 2026</p>
+    <h1 class="portada-logo">IVL<em>&#8482;</em></h1>
+    <p class="portada-tag">&#205;ndice de Vectores del Liderazgo</p>
+    <div class="portada-bar"></div>
+    <p class="portada-tagline">&#8220;No es suficiente saber qui&#233;n eres como l&#237;der.<br>Hay que saber c&#243;mo lo est&#225;s siendo hoy.&#8221;</p>
+    <p class="portada-tiempo">28 preguntas &#183; 4 vectores &#183; 12 minutos</p>
+    <div class="name-group">
+      <input class="ivl-input" id="inp-nom" type="text" placeholder="Nombre" autocomplete="off" oninput="checkName()">
+      <input class="ivl-input" id="inp-ape" type="text" placeholder="Apellido(s)" autocomplete="off" oninput="checkName()">
+    </div>
+    <button class="btn-start" id="btn-start" onclick="iniciarDiagnostico()">Iniciar diagn&#243;stico</button>
+  </div>
+  <span class="portada-footer">EXPON&#201;NCIATE&#8482; &#183; S1 &#183; Edwin Romero M | Institute</span>
+</div>
+
+<!-- S2 INSTRUCCIONES -->
+<div class="screen" id="s-instrucciones">
+  <div class="noise"></div>
+  <div class="instr-wrap">
+    <p class="instr-eyebrow">IVL&#8482; &#183; Instrucciones</p>
+    <h2 class="instr-title">C&#243;mo funciona<br>este diagn&#243;stico</h2>
+    <p class="instr-intro">El IVL&#8482; mide c&#243;mo est&#225;s ejerciendo tu liderazgo hoy en cuatro vectores. No es un test de personalidad &#8212; es una medici&#243;n del estado actual de tu liderazgo en los &#250;ltimos 30 d&#237;as. Complementa el Enneal&#8482; que ya completaste: Enneal&#8482; revela qui&#233;n eres como l&#237;der, el IVL&#8482; revela c&#243;mo lo est&#225;s siendo.</p>
+    <div class="instr-rule"></div>
+    <div class="instr-vectores">
+      <div class="instr-vector">
+        <div class="instr-vector-letra">E</div>
+        <div class="instr-vector-nombre">Energ&#237;a</div>
+        <div class="instr-vector-desc">Gobierno interno y gesti&#243;n de la energ&#237;a decisoria</div>
+      </div>
+      <div class="instr-vector">
+        <div class="instr-vector-letra">P</div>
+        <div class="instr-vector-nombre">Presencia</div>
+        <div class="instr-vector-desc">C&#243;mo apareces ante otros y qu&#233; genera tu presencia</div>
+      </div>
+      <div class="instr-vector">
+        <div class="instr-vector-letra">I</div>
+        <div class="instr-vector-nombre">Influencia</div>
+        <div class="instr-vector-desc">Efecto real sobre las personas y los equipos que lideras</div>
+      </div>
+      <div class="instr-vector">
+        <div class="instr-vector-letra">CO</div>
+        <div class="instr-vector-nombre">Coherencia</div>
+        <div class="instr-vector-desc">Correspondencia entre lo que declaras y c&#243;mo operas</div>
+      </div>
+    </div>
+    <div class="instr-nota">Responde pensando en c&#243;mo has operado realmente en los &#250;ltimos 30 d&#237;as &#8212; no en c&#243;mo aspiras a operar. Las dimensiones que mide cada pregunta est&#225;n deliberadamente ocultas para garantizar que tu respuesta refleje tu comportamiento real. La escala es: 1 = casi nunca &#183; 2 = pocas veces &#183; 3 = a veces &#183; 4 = con frecuencia &#183; 5 = casi siempre.</div>
+    <button class="btn-primary" onclick="renderQ(); goTo('s-preguntas')">Comenzar &#8212; 28 preguntas</button>
+  </div>
+</div>
+
+<!-- S3 PREGUNTAS -->
+<div class="screen" id="s-preguntas">
+  <div class="q-header">
+    <div class="q-progress-track"><div class="q-progress-fill" id="q-progress"></div></div>
+    <div class="q-meta">
+      <span class="q-vector-label" id="q-vector-label"></span>
+      <span class="q-counter" id="q-counter"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <p class="q-pregunta" id="q-pregunta"></p>
+    <p class="q-escala-mini">1 = casi nunca &#183; 3 = a veces &#183; 5 = casi siempre</p>
+    <div class="likert-row">
+      <button class="lb" onclick="selAns(1)">1</button>
+      <button class="lb" onclick="selAns(2)">2</button>
+      <button class="lb" onclick="selAns(3)">3</button>
+      <button class="lb" onclick="selAns(4)">4</button>
+      <button class="lb" onclick="selAns(5)">5</button>
+    </div>
+    <div class="likert-labels"><span>Casi nunca</span><span>Casi siempre</span></div>
+  </div>
+  <div class="q-nav">
+    <button class="btn-prev" onclick="prevQ()">&#8592; Anterior</button>
+    <button class="btn-next" id="btn-next" onclick="nextQ()">Siguiente &#8594;</button>
+  </div>
+</div>
+
+<!-- S4 PROCESANDO -->
+<div class="screen" id="s-procesando">
+  <div class="noise"></div>
+  <div class="proc-inner">
+    <div class="proc-logo">IVL&#8482;</div>
+    <p class="proc-title">Calculando tu &#205;ndice de Vectores<br>del Liderazgo&#8230;</p>
+    <div class="proc-bar"><div class="proc-fill" id="proc-fill"></div></div>
+  </div>
+</div>
+
+<!-- S5 RESULTADOS -->
+<div class="screen" id="s-resultados">
+  <div class="res-hero">
+    <div class="res-hero-bg" id="res-hero-bg"></div>
+    <p class="res-eyebrow">Tu IVL&#8482; &#183; &#205;ndice de Vectores del Liderazgo</p>
+    <p class="res-nombre" id="res-nombre"></p>
+    <div class="res-score" id="res-score"></div>
+    <div class="res-band" id="res-band"></div>
+    <div class="res-divider"></div>
+    <p class="res-desc" id="res-desc"></p>
+  </div>
+  <div class="radar-wrap">
+    <svg id="radar-svg" viewBox="0 0 300 300" width="280" height="280"></svg>
+  </div>
+  <p class="radar-legend">E = Energ&#237;a &#183; P = Presencia &#183; I = Influencia &#183; CO = Coherencia</p>
+  <div class="vectores-det" id="vectores-det"></div>
+  <div class="exp-box">
+    <span class="exp-label">Conexi&#243;n con tu proceso EXPON&#201;NCIATE&#8482;</span>
+    <p class="exp-text">&#8220;El IVL&#8482; revela c&#243;mo est&#225;s ejerciendo hoy la arquitectura que el Enneal&#8482; identific&#243;. Juntos definen la ruta precisa de intervenci&#243;n de tu proceso.&#8221;</p>
+    <p class="exp-prioridad" id="exp-prioridad"></p>
+  </div>
+  <div class="codigo-box">
+    <div class="codigo-label">Tu C&#243;digo IVL&#8482; &#8212; Cons&#233;rvalo</div>
+    <div class="codigo-val" id="codigo-val"></div>
+    <p class="codigo-cuando">Edwin solicitar&#225; este c&#243;digo al inicio de la Sesi&#243;n 1 de EXPON&#201;NCIATE&#8482; para cruzarlo con tu perfil Enneal&#8482; y dise&#241;ar tu ruta de proceso.</p>
+    <button class="btn-copy" id="btn-copy" onclick="copiarCodigo()">Copiar c&#243;digo</button>
+    <button class="btn-print" onclick="window.print()">Guardar PDF</button>
+  </div>
+  <div style="height:1.5rem"></div>
+</div>
+
+<script>// Security
+document.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+document.addEventListener("keydown", function(e){
+  if(e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].indexOf(e.key) > -1) || (e.ctrlKey && e.key === "U"))
+    e.preventDefault();
+});
+
+// ── DATA ──────────────────────────────────────────────────────────────────────
+var PREGUNTAS = [{"texto": "Cuando el sistema a mi alrededor se tensa, mantengo mi criterio sin dejarme arrastrar por la urgencia del entorno.", "vector": "E", "fase": "Vector I", "inv": false}, {"texto": "Gestiono deliberadamente mi nivel de energ\u00eda para que mis decisiones m\u00e1s importantes ocurran en mis mejores momentos.", "vector": "E", "fase": "Vector I", "inv": false}, {"texto": "Reconozco mis patrones de respuesta bajo presi\u00f3n y puedo intervenir en ellos antes de que afecten mis decisiones.", "vector": "E", "fase": "Vector I", "inv": false}, {"texto": "Tengo protocolos claros para decidir en contextos de alta incertidumbre \u2014 no improviso ni pospongo.", "vector": "E", "fase": "Vector I", "inv": false}, {"texto": "Mi capacidad de decisi\u00f3n se mantiene consistente tanto en las primeras horas del d\u00eda como bajo presi\u00f3n sostenida.", "vector": "E", "fase": "Vector I", "inv": false}, {"texto": "En los \u00faltimos 30 d\u00edas, tom\u00e9 decisiones importantes en un estado emocional que no era el \u00f3ptimo. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "E", "fase": "Vector I", "inv": true}, {"texto": "En los \u00faltimos 30 d\u00edas, termin\u00e9 semanas sintiendo que oper\u00e9 en deuda energ\u00e9tica \u2014 dando m\u00e1s de lo que ten\u00eda. (1 = siempre \u00b7 5 = casi nunca)", "vector": "E", "fase": "Vector I", "inv": true}, {"texto": "Mi manera de aparecer en una reuni\u00f3n o conversaci\u00f3n genera calma y direcci\u00f3n \u2014 no ansiedad o confusi\u00f3n.", "vector": "P", "fase": "Vector II", "inv": false}, {"texto": "Las personas que lidero saben con claridad lo que espero de ellas sin necesidad de repetirlo constantemente.", "vector": "P", "fase": "Vector II", "inv": false}, {"texto": "Mi lenguaje instala posibilidades y mueve a la acci\u00f3n \u2014 no genera defensividad ni pasividad en quien lo recibe.", "vector": "P", "fase": "Vector II", "inv": false}, {"texto": "Mi presencia f\u00edsica y energ\u00e9tica en una sala corresponde al estado interno que quiero proyectar como l\u00edder.", "vector": "P", "fase": "Vector II", "inv": false}, {"texto": "Cuando tengo conversaciones dif\u00edciles, las gestiono con oportunidad \u2014 no las evito ni las pospongo.", "vector": "P", "fase": "Vector II", "inv": false}, {"texto": "En los \u00faltimos 30 d\u00edas, evit\u00e9 conversaciones dif\u00edciles que sab\u00eda que deb\u00eda tener. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "P", "fase": "Vector II", "inv": true}, {"texto": "En los \u00faltimos 30 d\u00edas, not\u00e9 que mi presencia en alg\u00fan espacio gener\u00f3 tensi\u00f3n o desactiv\u00f3 la energ\u00eda del grupo. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "P", "fase": "Vector II", "inv": true}, {"texto": "Las decisiones de mi equipo generan compromiso real \u2014 no solo cumplimiento.", "vector": "I", "fase": "Vector III", "inv": false}, {"texto": "Tengo influencia real sobre las personas que lidero m\u00e1s all\u00e1 de la autoridad que me da el cargo.", "vector": "I", "fase": "Vector III", "inv": false}, {"texto": "Cuando el equipo pierde foco o energ\u00eda, tengo la capacidad de reactivarlo sin necesidad de presi\u00f3n o control.", "vector": "I", "fase": "Vector III", "inv": false}, {"texto": "Genero condiciones para que el talento de cada persona del equipo se exprese al m\u00e1ximo.", "vector": "I", "fase": "Vector III", "inv": false}, {"texto": "Mi equipo funciona bien cuando no estoy presente \u2014 no depende de mi presencia constante para coordinar y ejecutar.", "vector": "I", "fase": "Vector III", "inv": false}, {"texto": "En los \u00faltimos 30 d\u00edas, dej\u00e9 que fricciones dentro del equipo se extendieran m\u00e1s de lo que deber\u00eda haber permitido. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "I", "fase": "Vector III", "inv": true}, {"texto": "En los \u00faltimos 30 d\u00edas, resolv\u00ed situaciones que mi equipo deber\u00eda haber resuelto sin necesitar mi intervenci\u00f3n. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "I", "fase": "Vector III", "inv": true}, {"texto": "Lo que digo que valoro como l\u00edder corresponde con c\u00f3mo invierto mi tiempo y energ\u00eda en el d\u00eda a d\u00eda.", "vector": "CO", "fase": "Vector IV", "inv": false}, {"texto": "Mis decisiones estrat\u00e9gicas corresponden con los valores que declaro \u2014 no los sacrifico ante la presi\u00f3n del corto plazo.", "vector": "CO", "fase": "Vector IV", "inv": false}, {"texto": "El trato que doy a las personas es consistente independientemente de su cargo, su rendimiento o mi estado de \u00e1nimo.", "vector": "CO", "fase": "Vector IV", "inv": false}, {"texto": "Cuando cometo un error, lo reconozco sin rodeos y sin necesidad de que otros me lo se\u00f1alen repetidamente.", "vector": "CO", "fase": "Vector IV", "inv": false}, {"texto": "La cultura que existe en mi equipo corresponde con la cultura que declaro querer construir.", "vector": "CO", "fase": "Vector IV", "inv": false}, {"texto": "En los \u00faltimos 30 d\u00edas, tom\u00e9 decisiones que priorizaron resultados inmediatos a costa de mis valores declarados. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "CO", "fase": "Vector IV", "inv": true}, {"texto": "En los \u00faltimos 30 d\u00edas, actu\u00e9 de formas que despu\u00e9s no me representaban como l\u00edder. (1 = con frecuencia \u00b7 5 = casi nunca)", "vector": "CO", "fase": "Vector IV", "inv": true}];
+var VECTORES_META = {"E": {"nombre": "Energ\u00eda", "subtitulo": "Gobierno interno y gesti\u00f3n de la energ\u00eda decisoria"}, "P": {"nombre": "Presencia", "subtitulo": "C\u00f3mo aparezco ante otros y qu\u00e9 genera mi presencia"}, "I": {"nombre": "Influencia", "subtitulo": "Efecto real sobre las personas y los equipos que lidero"}, "CO": {"nombre": "Coherencia", "subtitulo": "Correspondencia entre lo que declaro y c\u00f3mo opero"}};
+var BANDAS = [{"min": 0, "max": 40, "nombre": "Sistema con brechas estructurales", "color": "#8B1A2A", "desc": "Hay dimensiones de tu liderazgo que est\u00e1n operando por debajo de lo que tu cargo y tu potencial requieren. El proceso intervendr\u00e1 estas brechas con precisi\u00f3n desde la primera sesi\u00f3n."}, {"min": 41, "max": 60, "nombre": "Sistema con fricciones activas", "color": "#B85C1F", "desc": "Hay capacidad real instalada, pero hay fricciones que est\u00e1n limitando el impacto de tu liderazgo. El proceso convertir\u00e1 esas fricciones en protocolos de alto rendimiento."}, {"min": 61, "max": 80, "nombre": "Sistema funcional con espacio de optimizaci\u00f3n", "color": "#C9A84C", "desc": "Tu liderazgo funciona y entrega resultados. El proceso trabajar\u00e1 la capa de optimizaci\u00f3n que lleva tu sistema del funcionamiento al alto impacto sostenible."}, {"min": 81, "max": 100, "nombre": "Sistema de alto rendimiento", "color": "#5E8AB4", "desc": "Tu sistema de liderazgo est\u00e1 bien instalado. El proceso trabajar\u00e1 la capa de legado, coherencia profunda y sostenibilidad a largo plazo."}];
+var FRASES = {"E": ["Tu gobierno interno est\u00e1 altamente comprometido \u2014 es la primera prioridad del proceso.", "Hay patrones de respuesta bajo presi\u00f3n que drenan tu efectividad de forma recurrente.", "Tu gobierno interno es funcional aunque inconsistente bajo presi\u00f3n sostenida.", "Tu energ\u00eda decisoria es una fortaleza \u2014 el proceso la har\u00e1 a\u00fan m\u00e1s sostenible."], "P": ["Tu presencia como instrumento de liderazgo necesita desarrollo estructural prioritario.", "Hay brechas en c\u00f3mo tu presencia impacta a las personas que lideras.", "Tienes presencia real aunque hay momentos clave donde se diluye sin que lo elijas.", "Tu presencia es un activo poderoso \u2014 el proceso la llevar\u00e1 al siguiente nivel."], "I": ["Tu influencia sobre el equipo est\u00e1 comprometida \u2014 requiere intervenci\u00f3n sist\u00e9mica.", "Hay fricciones que limitan el alcance real de tu influencia sobre el equipo.", "Tu influencia es real \u2014 hay espacio para llevarla a un nivel superior de impacto.", "Eres un catalizador efectivo \u2014 el proceso instalar\u00e1 protocolos que lo sostengan."], "CO": ["La brecha entre lo que declaras y c\u00f3mo operas es alta \u2014 es el vector m\u00e1s urgente a intervenir.", "Hay inconsistencias entre tus valores declarados y tus decisiones cotidianas.", "Tu coherencia es perceptible aunque hay momentos donde la brecha se hace visible.", "Tu coherencia es una fortaleza \u2014 el proceso la har\u00e1 m\u00e1s consistente bajo presi\u00f3n."]};
+var SESIONES_VECTOR = {"E": "S1 y S2 \u2014 el gobierno interno y la gesti\u00f3n de la energ\u00eda decisoria son el eje fundacional de este perfil.", "P": "S3 y S4 \u2014 la presencia ejecutiva y el lenguaje magn\u00e9tico son las intervenciones prioritarias.", "I": "S4 y S5 \u2014 la influencia consciente y la cat\u00e1lisis colectiva son las dimensiones a intervenir primero.", "CO": "S1 y S7 \u2014 la coherencia se trabaja desde el inicio del proceso y se consolida en los v\u00ednculos."};
+var VECTORES_ORDER = ["E","P","I","CO"];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+var userName = "";
+var answers = {};
+var currentQ = 0;
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function goTo(id) {
+  document.querySelectorAll(".screen").forEach(function(s){ s.classList.remove("active"); });
+  var el = document.getElementById(id);
+  el.classList.add("active");
+  try { el.scrollTop = 0; } catch(e){}
+}
+
+function checkName() {
+  var n = document.getElementById("inp-nom").value.trim();
+  var a = document.getElementById("inp-ape").value.trim();
+  document.getElementById("btn-start").classList.toggle("on", n.length > 0 && a.length > 0);
+}
+
+function iniciarDiagnostico() {
+  var n = document.getElementById("inp-nom").value.trim();
+  var a = document.getElementById("inp-ape").value.trim();
+  if(!n || !a) return;
+  userName = n + " " + a;
+  document.getElementById("wm-txt").textContent = "IVL\u2122 \u00b7 " + userName.toUpperCase();
+  answers = {};
+  currentQ = 0;
+  goTo("s-instrucciones");
+}
+
+// ── PREGUNTAS ─────────────────────────────────────────────────────────────────
+function renderQ() {
+  var q = PREGUNTAS[currentQ];
+  var total = PREGUNTAS.length;
+
+  document.getElementById("q-progress").style.width = ((currentQ / total) * 100) + "%";
+  document.getElementById("q-vector-label").textContent = q.fase + " \u00b7 " + (currentQ + 1) + " de " + total;
+  document.getElementById("q-counter").textContent = (currentQ + 1) + " / " + total;
+  document.getElementById("q-pregunta").textContent = q.texto;
+
+  var ans = answers[currentQ];
+  document.querySelectorAll(".lb").forEach(function(b, i) {
+    b.classList.toggle("sel", ans === i + 1);
+  });
+  document.getElementById("btn-next").classList.toggle("on", ans !== undefined);
+  var isLast = currentQ === PREGUNTAS.length - 1;
+  document.getElementById("btn-next").textContent = isLast ? "Ver mis resultados \u2192" : "Siguiente \u2192";
+}
+
+function selAns(v) {
+  answers[currentQ] = v;
+  document.querySelectorAll(".lb").forEach(function(b, i) {
+    b.classList.toggle("sel", i + 1 === v);
+  });
+  document.getElementById("btn-next").classList.add("on");
+}
+
+function nextQ() {
+  if(!document.getElementById("btn-next").classList.contains("on")) return;
+  if(currentQ === PREGUNTAS.length - 1) {
+    procesarResultados();
+    return;
+  }
+  currentQ++;
+  renderQ();
+}
+
+function prevQ() {
+  if(currentQ > 0) {
+    currentQ--;
+    renderQ();
+  } else {
+    goTo("s-instrucciones");
+  }
+}
+
+// ── SCORING ───────────────────────────────────────────────────────────────────
+function calcScores() {
+  var raw = {"E":0,"P":0,"I":0,"CO":0};
+  var counts = {"E":0,"P":0,"I":0,"CO":0};
+
+  PREGUNTAS.forEach(function(q, idx) {
+    var ans = answers[idx];
+    if(ans === undefined) return;
+    var val = q.inv ? (6 - ans) : ans;
+    raw[q.vector] += val;
+    counts[q.vector]++;
+  });
+
+  var scores = {};
+  VECTORES_ORDER.forEach(function(vk) {
+    var max = counts[vk] * 5;
+    scores[vk] = max > 0 ? Math.round((raw[vk] / max) * 100) : 0;
+  });
+
+  var global = Math.round(
+    VECTORES_ORDER.reduce(function(acc, vk){ return acc + scores[vk]; }, 0) / 4
+  );
+
+  return { scores: scores, global: global };
+}
+
+// ── PROCESANDO ────────────────────────────────────────────────────────────────
+function procesarResultados() {
+  goTo("s-procesando");
+  var fill = document.getElementById("proc-fill");
+  var start = null;
+  function anim(ts) {
+    if(!start) start = ts;
+    var p = Math.min((ts - start) / 2800, 1);
+    fill.style.width = (p * 100) + "%";
+    if(p < 1) requestAnimationFrame(anim);
+    else setTimeout(buildResults, 200);
+  }
+  requestAnimationFrame(anim);
+}
+
+// ── RESULTADOS ────────────────────────────────────────────────────────────────
+function buildResults() {
+  var result = calcScores();
+  var scores = result.scores;
+  var global = result.global;
+
+  var band = BANDAS.find(function(b){ return global >= b.min && global <= b.max; }) || BANDAS[BANDAS.length-1];
+
+  // Hero
+  document.getElementById("res-hero-bg").textContent = "IVL";
+  document.getElementById("res-nombre").textContent = userName;
+  document.getElementById("res-score").innerHTML = global + "<span>/100</span>";
+  var badge = document.getElementById("res-band");
+  badge.textContent = band.nombre;
+  badge.style.background = band.color + "28";
+  badge.style.color = band.color;
+  document.getElementById("res-desc").textContent = band.desc;
+
+  // Radar
+  buildRadar(scores);
+
+  // Vectores detalle
+  var det = document.getElementById("vectores-det");
+  det.innerHTML = "";
+  var sorted = VECTORES_ORDER.slice().sort(function(a,b){ return scores[a]-scores[b]; });
+  sorted.forEach(function(vk) {
+    var sc = scores[vk];
+    var meta = VECTORES_META[vk];
+    var fi = sc <= 40 ? 0 : sc <= 60 ? 1 : sc <= 80 ? 2 : 3;
+    var frase = FRASES[vk][fi];
+
+    var row = document.createElement("div");
+    row.className = "vector-row";
+    var hdr = document.createElement("div");
+    hdr.className = "vector-header";
+    var lbl = document.createElement("span");
+    lbl.className = "vector-letra";
+    lbl.textContent = vk + " \u00b7 " + meta.nombre;
+    var val = document.createElement("span");
+    val.className = "vector-score-val";
+    val.textContent = sc;
+    hdr.appendChild(lbl); hdr.appendChild(val);
+    var track = document.createElement("div");
+    track.className = "vector-bar-track";
+    var fill2 = document.createElement("div");
+    fill2.className = "vector-bar-fill";
+    fill2.style.width = sc + "%";
+    track.appendChild(fill2);
+    var fraseEl = document.createElement("p");
+    fraseEl.className = "vector-frase";
+    fraseEl.textContent = frase;
+    row.appendChild(hdr); row.appendChild(track); row.appendChild(fraseEl);
+    det.appendChild(row);
+  });
+
+  // Vector prioritario
+  var prioritario = sorted[0];
+  var sesion_text = SESIONES_VECTOR[prioritario];
+  document.getElementById("exp-prioridad").innerHTML = "<strong>Vector prioritario para tu proceso:</strong> " + prioritario + " \u00b7 " + VECTORES_META[prioritario].nombre + ". " + sesion_text;
+
+  // Código
+  var codigo = genCodigo(scores, global);
+  document.getElementById("codigo-val").textContent = codigo;
+
+  goTo("s-resultados");
+}
+
+// ── RADAR CUADRANGULAR ────────────────────────────────────────────────────────
+function buildRadar(scores) {
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("radar-svg");
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  var cx = 150, cy = 150, r = 110, n = 4;
+  var color = "#5E8AB4";
+  var labels = ["E", "P", "I", "CO"];
+  var vals = labels.map(function(k){ return (scores[k] || 0) / 100; });
+
+  function mkEl(tag, attrs) {
+    var el = document.createElementNS(NS, tag);
+    Object.keys(attrs).forEach(function(k){ el.setAttribute(k, attrs[k]); });
+    return el;
+  }
+
+  // Grid
+  [.25,.5,.75,1].forEach(function(f) {
+    var pts = labels.map(function(_, i) {
+      var a = (i / n) * 2 * Math.PI - Math.PI / 2;
+      return (cx + r * f * Math.cos(a)).toFixed(1) + "," + (cy + r * f * Math.sin(a)).toFixed(1);
+    }).join(" ");
+    svg.appendChild(mkEl("polygon",{points:pts,fill:"none",stroke:"rgba(255,255,255,.06)","stroke-width":"1"}));
+  });
+
+  // Axes
+  for(var i=0; i<n; i++) {
+    var a = (i/n)*2*Math.PI - Math.PI/2;
+    svg.appendChild(mkEl("line",{x1:cx,y1:cy,x2:(cx+r*Math.cos(a)).toFixed(1),y2:(cy+r*Math.sin(a)).toFixed(1),stroke:"rgba(255,255,255,.08)","stroke-width":"1"}));
+  }
+
+  // Data polygon
+  var pts2 = vals.map(function(v, i) {
+    var a = (i/n)*2*Math.PI - Math.PI/2;
+    return (cx+r*v*Math.cos(a)).toFixed(1) + "," + (cy+r*v*Math.sin(a)).toFixed(1);
+  }).join(" ");
+  svg.appendChild(mkEl("polygon",{points:pts2,fill:"rgba(94,138,180,.2)",stroke:color,"stroke-width":"2"}));
+
+  // Dots + labels
+  vals.forEach(function(v, i) {
+    var a = (i/n)*2*Math.PI - Math.PI/2;
+    var dx = (cx+r*v*Math.cos(a)).toFixed(1);
+    var dy = (cy+r*v*Math.sin(a)).toFixed(1);
+    svg.appendChild(mkEl("circle",{cx:dx,cy:dy,r:"5",fill:color,stroke:"#0A0F1E","stroke-width":"1.5"}));
+    var lx = (cx+(r+22)*Math.cos(a)).toFixed(1);
+    var ly = (cy+(r+22)*Math.sin(a)).toFixed(1);
+    var anchor = parseFloat(lx)<cx-5?"end":parseFloat(lx)>cx+5?"start":"middle";
+    var lt = mkEl("text",{x:lx,y:(parseFloat(ly)+4).toFixed(1),"text-anchor":anchor,"font-family":"Barlow Condensed,sans-serif","font-size":"10","font-weight":"700",fill:color,"letter-spacing":"0.5"});
+    lt.textContent = labels[i];
+    svg.appendChild(lt);
+    var lv = mkEl("text",{x:lx,y:(parseFloat(ly)+16).toFixed(1),"text-anchor":anchor,"font-family":"Cormorant Garamond,serif","font-size":"13",fill:"rgba(255,255,255,.55)"});
+    lv.textContent = scores[labels[i]];
+    svg.appendChild(lv);
+  });
+}
+
+// ── CÓDIGO ────────────────────────────────────────────────────────────────────
+function genCodigo(scores, global) {
+  var letters = ["E","P","I","CO"];
+  var codes = ["E","P","I","C"];
+  var str = "";
+  letters.forEach(function(k, i) {
+    str += codes[i] + String(scores[k]).padStart(2,"0");
+  });
+  var sum = VECTORES_ORDER.reduce(function(acc,k){ return acc + (scores[k]||0); }, 0);
+  var mod = sum % 97;
+  var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var chk = chars[Math.floor(mod/chars.length)%chars.length] + chars[mod%chars.length];
+  var now = new Date();
+  var d = now.getFullYear().toString() + String(now.getMonth()+1).padStart(2,"0") + String(now.getDate()).padStart(2,"0");
+  return "IVL-" + str + "-" + d + "-" + chk;
+}
+
+function copiarCodigo() {
+  var cod = document.getElementById("codigo-val").textContent;
+  var btn = document.getElementById("btn-copy");
+  navigator.clipboard.writeText(cod).then(function(){
+    btn.textContent = "\u2713 Copiado";
+    setTimeout(function(){ btn.textContent = "Copiar c\u00f3digo"; }, 2000);
+  }).catch(function(){
+    var t = document.createElement("textarea");
+    t.value = cod;
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand("copy");
+    document.body.removeChild(t);
+    btn.textContent = "\u2713 Copiado";
+    setTimeout(function(){ btn.textContent = "Copiar c\u00f3digo"; }, 2000);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function(){ checkName(); });</script>
+</body>
+</html>
