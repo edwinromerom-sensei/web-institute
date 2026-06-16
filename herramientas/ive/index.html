@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IVE™ · Índice de Vínculos Estratégicos · Edwin Romero M | Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Barlow:wght@200;300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{min-height:100%;overflow-x:hidden}
+body{font-family:'Barlow',sans-serif;font-weight:300;background:#0A0F1E;color:#fff}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;overflow:hidden}
+.screen.active{display:flex}
+.noise{position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:0}
+
+#s-portada{background:#0A0F1E;align-items:center;justify-content:center;text-align:center;padding:2rem}
+#s-portada::before{content:'';position:absolute;background:radial-gradient(ellipse at 70% 30%,rgba(201,168,76,.12) 0%,transparent 55%);inset:0;pointer-events:none}
+.portada-bg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:200;font-size:24rem;line-height:1;color:rgba(255,255,255,.025);right:-1rem;bottom:-2rem;letter-spacing:-.05em;user-select:none;pointer-events:none}
+.portada-inner{position:relative;z-index:2;max-width:560px;width:100%}
+.portada-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem}
+.portada-logo{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:5rem;line-height:.88;color:#fff;letter-spacing:-.02em;margin-bottom:.35rem}
+.portada-logo em{font-style:italic;color:#C9A84C}
+.portada-tag{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1.8rem}
+.portada-bar{height:1px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);width:200px;margin:0 auto 1.8rem}
+.portada-tagline{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.05rem;line-height:1.65;font-style:italic;color:rgba(255,255,255,.48);margin-bottom:.5rem}
+.portada-tiempo{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:2rem}
+.name-group{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.4rem}
+.ive-input{width:100%;padding:.75rem 1.1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:300;border-radius:2px;outline:none;transition:border-color .2s;text-align:center}
+.ive-input::placeholder{color:rgba(255,255,255,.25)}
+.ive-input:focus{border-color:#C9A84C}
+.btn-start{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:.9rem 2.8rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;cursor:pointer;border-radius:2px;transition:all .2s;opacity:.35;pointer-events:none}
+.btn-start.on{opacity:1;pointer-events:auto;border-color:rgba(201,168,76,.7)}
+.btn-start.on:hover{background:rgba(201,168,76,.1);border-color:#C9A84C}
+.portada-footer{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.2);white-space:nowrap}
+
+#s-instrucciones{background:#0A0F1E;overflow-y:auto}
+.instr-wrap{max-width:560px;margin:0 auto;padding:2.5rem 1.5rem;position:relative;z-index:2}
+.instr-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.2rem;text-align:center}
+.instr-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.2rem;line-height:1.1;color:#fff;text-align:center;margin-bottom:1.4rem}
+.instr-intro{font-family:'Barlow',sans-serif;font-weight:300;font-size:.95rem;line-height:1.72;color:rgba(255,255,255,.58);margin-bottom:1.8rem}
+.instr-rule{height:1px;background:rgba(255,255,255,.08);margin-bottom:1.6rem}
+.instr-parte{background:rgba(255,255,255,.03);border-radius:3px;padding:1rem 1.2rem;margin-bottom:1rem}
+.instr-parte-titulo{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:.4rem}
+.instr-parte-desc{font-family:'Barlow',sans-serif;font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+.instr-nota{background:rgba(201,168,76,.07);border-left:2px solid #C9A84C;padding:.8rem 1rem;margin:1.8rem 0;font-family:'Cormorant Garamond',serif;font-size:.98rem;font-style:italic;line-height:1.65;color:rgba(255,255,255,.58)}
+.btn-primary{display:block;width:100%;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:.9rem;background:#C9A84C;color:#0A0F1E;border:none;cursor:pointer;border-radius:2px;transition:opacity .2s}
+.btn-primary:hover{opacity:.88}
+
+#s-mapa{background:#0D1220;flex-direction:column}
+.mapa-header{padding:.9rem 1.5rem .75rem;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mapa-progress-track{height:2px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:.55rem;overflow:hidden}
+.mapa-progress-fill{height:100%;border-radius:2px;transition:width .4s ease;background:linear-gradient(90deg,#C9A84C,#5E8AB4)}
+.mapa-meta{display:flex;justify-content:space-between;align-items:center}
+.mapa-rel-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.mapa-counter{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,.3)}
+.mapa-body{flex:1;overflow-y:auto;padding:1.5rem 1.5rem .8rem}
+.rel-anillo-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:.2rem .7rem;border-radius:2px;margin-bottom:.6rem}
+.rel-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;font-style:italic;color:#fff;margin-bottom:.4rem}
+.rel-subtitle{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:1.2rem}
+.rel-input{width:100%;padding:.7rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:300;border-radius:2px;outline:none;transition:border-color .2s;margin-bottom:.8rem}
+.rel-input:focus{border-color:#C9A84C}
+.rel-input::placeholder{color:rgba(255,255,255,.22)}
+.dim-block{margin-bottom:1.4rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.dim-block:last-child{border-bottom:none}
+.dim-titulo{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5E8AB4;margin-bottom:.6rem}
+.escala-label{font-family:'Barlow',sans-serif;font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:.5rem;line-height:1.5}
+.escala-row{display:flex;gap:.45rem;margin-bottom:.3rem}
+.eb{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.4);cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center}
+.eb:hover{border-color:#C9A84C;color:#C9A84C}
+.eb.sel-importancia{background:#C9A84C;border-color:#C9A84C;color:#0A0F1E}
+.eb.sel-calidad{background:#5E8AB4;border-color:#5E8AB4;color:#fff}
+.eb.sel-inversion{background:#3D7A5A;border-color:#3D7A5A;color:#fff}
+.eb.sel-declarado{background:#C9A84C;border-color:#C9A84C;color:#0A0F1E}
+.eb.sel-real{background:#B85C1F;border-color:#B85C1F;color:#fff}
+.escala-labels{display:flex;justify-content:space-between;padding:0 .2rem;margin-bottom:1rem}
+.escala-labels span{font-size:.62rem;color:rgba(255,255,255,.22)}
+.situacion-box{background:rgba(255,255,255,.03);border-radius:3px;padding:1rem 1.1rem;margin-bottom:1rem}
+.situacion-texto{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#fff;line-height:1.5;margin-bottom:1rem}
+
+.mapa-nav{display:flex;gap:.75rem;padding:.6rem 1.5rem 1rem;flex-shrink:0;border-top:1px solid rgba(255,255,255,.06)}
+.btn-prev{flex:1;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:transparent;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.1);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-prev:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)}
+.btn-next{flex:2;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:#fff;color:#0A0F1E;border:none;cursor:pointer;border-radius:2px;opacity:.2;pointer-events:none;transition:opacity .2s}
+.btn-next.on{opacity:1;pointer-events:auto}
+
+#s-procesando{background:#0A0F1E;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.proc-inner{position:relative;z-index:2;max-width:400px}
+.proc-logo{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:3.5rem;color:#C9A84C;margin-bottom:1.5rem}
+.proc-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.4rem;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:1.5rem}
+.proc-bar{height:2px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 auto;width:200px;overflow:hidden}
+.proc-fill{height:100%;background:linear-gradient(90deg,#C9A84C,#5E8AB4);width:0;border-radius:2px}
+
+#s-resultados{background:#0A0F1E;overflow-y:auto}
+.res-hero{padding:2rem 1.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.res-hero-bg{position:absolute;inset:0;font-family:'Cormorant Garamond',serif;font-weight:200;font-size:16rem;line-height:.8;display:flex;align-items:center;justify-content:center;user-select:none;pointer-events:none;opacity:.04;overflow:hidden}
+.res-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.8rem;position:relative;z-index:2}
+.res-nombre{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:.4rem;position:relative;z-index:2}
+.res-divider{height:1.5px;width:100px;margin:.8rem auto;position:relative;z-index:2;background:linear-gradient(90deg,#C9A84C,#5E8AB4)}
+.res-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:440px;margin:0 auto;position:relative;z-index:2}
+.res-section-title{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;padding:0 1.5rem;margin:1.5rem 0 .8rem}
+.rels-lista{padding:0 1.5rem 1rem}
+.rel-card{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.rel-card:last-child{border-bottom:none}
+.rel-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.rel-card-nombre{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.rel-card-rol{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.rel-card-gap{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300}
+.dim-result{display:flex;justify-content:space-between;align-items:center;padding:.35rem 0;font-family:'Barlow',sans-serif;font-size:.82rem}
+.dim-result-label{color:rgba(255,255,255,.5)}
+.dim-result-vals{display:flex;gap:.6rem;align-items:center}
+.dim-tag{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:600;padding:.15rem .5rem;border-radius:2px}
+.situacion-result{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.situacion-result:last-child{border-bottom:none}
+.situacion-result-texto{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:.5rem}
+.prioridades-box{margin:0 1.5rem 1.2rem;padding:1.1rem;border:1px solid rgba(201,168,76,.2);border-radius:3px;background:rgba(201,168,76,.04)}
+.prioridades-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:.55rem;display:block}
+.prioridad-item{font-family:'Barlow',sans-serif;font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:.3rem}
+.prioridad-item:last-child{margin-bottom:0}
+.codigo-box{margin:0 1.5rem 1.5rem;padding:1.4rem;text-align:center;border:2px solid rgba(201,168,76,.3);border-radius:3px;background:rgba(201,168,76,.04)}
+.codigo-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
+.codigo-val{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.12em;color:#C9A84C;margin-bottom:.5rem;word-break:break-all}
+.codigo-cuando{font-family:'Barlow',sans-serif;font-weight:300;font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.38);margin-bottom:.9rem}
+.btn-copy{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.5rem;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s;margin-right:.5rem}
+.btn-copy:hover{border-color:#C9A84C;color:#C9A84C}
+.btn-print{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.5rem;background:transparent;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-print:hover{border-color:rgba(255,255,255,.5);color:#fff}
+@media print{
+  @page{size:letter portrait;margin:.6in .7in}
+  html,body{overflow:auto !important;height:auto !important;background:#fff !important}
+  .screen{display:none !important}
+  #s-resultados{display:block !important;position:static !important;background:#fff !important;overflow:visible !important}
+  .res-hero{background:#fff;padding:1rem 0}
+  .res-hero-bg{display:none}
+  .res-nombre{color:#C9A84C !important}
+  .rel-card-nombre,.situacion-result-texto{color:#111 !important}
+  .rel-card,.situacion-result{border-bottom-color:#eee !important}
+  .btn-copy,.btn-print,#wm{display:none !important}
+}
+@media(min-width:600px){.eb{width:46px;height:46px}}</style>
+</head>
+<body>
+
+<div id="wm" style="position:fixed;inset:0;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;opacity:.03;transform:rotate(-35deg)">
+  <span id="wm-txt" style="font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap">IVE™ · Edwin Romero M | Institute</span>
+</div>
+
+<div class="screen active" id="s-portada">
+  <div class="noise"></div>
+  <span class="portada-bg">IVE</span>
+  <div class="portada-inner">
+    <p class="portada-eyebrow">Edwin Romero M | Institute · 2026</p>
+    <h1 class="portada-logo">IVE<em>™</em></h1>
+    <p class="portada-tag">Índice de Vínculos Estratégicos</p>
+    <div class="portada-bar"></div>
+    <p class="portada-tagline">“La confianza no se declara. Se construye con actos de coherencia, especialmente bajo presión.”</p>
+    <p class="portada-tiempo">5 vínculos + 4 situaciones · 15 minutos</p>
+    <div class="name-group">
+      <input class="ive-input" id="inp-nom" type="text" placeholder="Nombre" autocomplete="off" oninput="checkName()">
+      <input class="ive-input" id="inp-ape" type="text" placeholder="Apellido(s)" autocomplete="off" oninput="checkName()">
+    </div>
+    <button class="btn-start" id="btn-start" onclick="iniciarMapa()">Iniciar IVE™</button>
+  </div>
+  <span class="portada-footer">EXPONÉNCIATE™ · S6→S7 · Edwin Romero M | Institute</span>
+</div>
+
+<div class="screen" id="s-instrucciones">
+  <div class="noise"></div>
+  <div class="instr-wrap">
+    <p class="instr-eyebrow">IVE™ · Instrucciones</p>
+    <h2 class="instr-title">Vínculos<br>y coherencia</h2>
+    <p class="instr-intro">El IVE™ tiene dos partes. Juntas revelan dónde tus relaciones estratégicas son frágiles — y cómo tu coherencia bajo presión afecta la confianza que esas relaciones pueden sostener.</p>
+    <div class="instr-parte">
+      <p class="instr-parte-titulo">Parte A — Inventario de vínculos (5 relaciones)</p>
+      <p class="instr-parte-desc">Para cada relación estratégica: importancia para tus resultados, calidad real del vínculo hoy, e inversión deliberada en el último mes.</p>
+    </div>
+    <div class="instr-parte">
+      <p class="instr-parte-titulo">Parte B — Mapa de Coherencia bajo Presión (4 situaciones)</p>
+      <p class="instr-parte-desc">Para 4 situaciones típicas de liderazgo, comparas cómo dices que reaccionas vs. cómo reaccionaste realmente la última vez.</p>
+    </div>
+    <div class="instr-nota">La Parte B es la más expositiva del proceso. No hay respuestas correctas — la brecha entre lo declarado y lo real es exactamente lo que Edwin trabajará contigo.</div>
+    <button class="btn-primary" onclick="renderStep(); goTo('s-mapa')">Comenzar</button>
+  </div>
+</div>
+
+<div class="screen" id="s-mapa">
+  <div class="mapa-header">
+    <div class="mapa-progress-track"><div class="mapa-progress-fill" id="rel-progress"></div></div>
+    <div class="mapa-meta">
+      <span class="mapa-rel-label" id="rel-label"></span>
+      <span class="mapa-counter" id="rel-counter"></span>
+    </div>
+  </div>
+  <div class="mapa-body" id="mapa-body"></div>
+  <div class="mapa-nav">
+    <button class="btn-prev" onclick="prevStep()">← Anterior</button>
+    <button class="btn-next" id="btn-next-rel" onclick="nextStep()">Siguiente →</button>
+  </div>
+</div>
+
+<div class="screen" id="s-procesando">
+  <div class="noise"></div>
+  <div class="proc-inner">
+    <div class="proc-logo">IVE™</div>
+    <p class="proc-title">Calculando tu Índice de<br>Vínculos Estratégicos…</p>
+    <div class="proc-bar"><div class="proc-fill" id="proc-fill"></div></div>
+  </div>
+</div>
+
+<div class="screen" id="s-resultados">
+  <div class="res-hero">
+    <div class="res-hero-bg" id="res-hero-bg"></div>
+    <p class="res-eyebrow">Tu IVE™ · Índice de Vínculos Estratégicos</p>
+    <p class="res-nombre" id="res-nombre"></p>
+    <div class="res-divider"></div>
+    <p class="res-desc">F = fragilidad del vínculo (alto impacto + baja calidad/inversión). Δ = brecha entre coherencia declarada y real bajo presión.</p>
+  </div>
+  <p class="res-section-title">Parte A · Inventario de vínculos</p>
+  <div class="rels-lista" id="rels-lista"></div>
+  <p class="res-section-title" id="res-section-title-coherencia" style="display:none">Parte B · Coherencia bajo presión</p>
+  <div class="rels-lista" id="situaciones-lista"></div>
+  <div class="prioridades-box">
+    <span class="prioridades-label">Prioridades para la Sesión 7</span>
+    <div id="prioridades-content"></div>
+  </div>
+  <div class="codigo-box">
+    <div class="codigo-label">Tu Código IVE™ — Consérvalo</div>
+    <div class="codigo-val" id="codigo-val"></div>
+    <p class="codigo-cuando">Edwin solicitará este código al inicio de la Sesión 7 para trabajar contigo los vínculos más frágiles y la brecha de coherencia bajo presión.</p>
+    <button class="btn-copy" id="btn-copy" onclick="copiarCodigo()">Copiar código</button>
+    <button class="btn-print" onclick="window.print()">Guardar PDF</button>
+  </div>
+  <div style="height:1.5rem"></div>
+</div>
+
+<script>document.addEventListener("contextmenu",function(e){e.preventDefault();});
+document.addEventListener("keydown",function(e){
+  if(e.key==="F12"||(e.ctrlKey&&e.shiftKey&&["I","J","C"].indexOf(e.key)>-1)||(e.ctrlKey&&e.key==="U"))e.preventDefault();
+});
+
+var DIMENSIONES_VINCULO=[{"key": "importancia", "label": "Importancia estrat\u00e9gica", "cls": "sel-importancia", "preg": "\u00bfCu\u00e1nto impactan tus resultados las decisiones de esta persona?"}, {"key": "calidad", "label": "Calidad del v\u00ednculo", "cls": "sel-calidad", "preg": "\u00bfQu\u00e9 tan fuerte es la confianza real en esta relaci\u00f3n HOY?"}, {"key": "inversion", "label": "Inversi\u00f3n reciente", "cls": "sel-inversion", "preg": "\u00bfCu\u00e1nto has invertido deliberadamente en esta relaci\u00f3n en el \u00faltimo mes?"}];
+var RELACIONES_META=[{"num": 1, "label": "Primer v\u00ednculo estrat\u00e9gico", "hint": "la relaci\u00f3n con mayor impacto en tus resultados"}, {"num": 2, "label": "Segundo v\u00ednculo estrat\u00e9gico", "hint": ""}, {"num": 3, "label": "Tercer v\u00ednculo estrat\u00e9gico", "hint": ""}, {"num": 4, "label": "Cuarto v\u00ednculo estrat\u00e9gico", "hint": ""}, {"num": 5, "label": "Quinto v\u00ednculo estrat\u00e9gico", "hint": ""}];
+var SITUACIONES=["Cuando alguien de tu equipo comete un error grande que tiene consecuencias visibles.", "Cuando tienes que comunicar una decisi\u00f3n dif\u00edcil o una noticia que nadie quiere escuchar.", "Cuando tu opini\u00f3n es minoritaria frente a tus superiores en una reuni\u00f3n importante.", "Cuando est\u00e1s bajo presi\u00f3n de tiempo y alguien de tu equipo necesita tu atenci\u00f3n para algo que considera urgente."];
+
+var userName="";
+var relaciones=[];
+var situaciones=[];
+var currentStep=0; // 0-4: relaciones, 5-8: situaciones
+var TOTAL_STEPS=9;
+
+function goTo(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});document.getElementById(id).classList.add("active");try{document.getElementById(id).scrollTop=0;}catch(e){}}
+
+function checkName(){
+  var n=document.getElementById("inp-nom").value.trim();
+  var a=document.getElementById("inp-ape").value.trim();
+  document.getElementById("btn-start").classList.toggle("on",n.length>0&&a.length>0);
+}
+
+function iniciarMapa(){
+  var n=document.getElementById("inp-nom").value.trim();
+  var a=document.getElementById("inp-ape").value.trim();
+  if(!n||!a)return;
+  userName=n+" "+a;
+  document.getElementById("wm-txt").textContent="IVE\u2122 \u00b7 "+userName.toUpperCase();
+  relaciones=RELACIONES_META.map(function(){return {nombre:"",rol:"",dims:{importancia:0,calidad:0,inversion:0}};});
+  situaciones=SITUACIONES.map(function(){return {declarado:0,real:0};});
+  currentStep=0;
+  renderStep();
+  goTo("s-mapa");
+}
+
+function renderStep(){
+  var body=document.getElementById("mapa-body");
+  document.getElementById("rel-progress").style.width=((currentStep/TOTAL_STEPS)*100)+"%";
+  document.getElementById("rel-counter").textContent=(currentStep+1)+" / "+TOTAL_STEPS;
+
+  if(currentStep<5){
+    var meta=RELACIONES_META[currentStep];
+    var r=relaciones[currentStep];
+    document.getElementById("rel-label").textContent="Parte A \u00b7 "+meta.label;
+    var dimHtml=DIMENSIONES_VINCULO.map(function(d){
+      var btns="";
+      for(var i=1;i<=5;i++){btns+='<button class="eb eb-'+d.key+'" onclick="selVinculo(\''+d.key+'\',\''+d.cls+'\','+i+')">'+i+'</button>';}
+      return '<div class="dim-block"><p class="dim-titulo">'+d.label+'</p><p class="escala-label">'+d.preg+'</p><div class="escala-row">'+btns+'</div><div class="escala-labels"><span>M\u00ednima</span><span>M\u00e1xima</span></div></div>';
+    }).join("");
+    body.innerHTML=
+      '<p class="rel-title">'+meta.label+'</p>'+
+      '<p class="rel-subtitle">'+(meta.hint||"")+'</p>'+
+      '<input class="rel-input" id="inp-nombre-rel" type="text" placeholder="Nombre de la persona" autocomplete="off" oninput="saveRel();checkStepComplete()">'+
+      '<input class="rel-input" id="inp-rol-rel" type="text" placeholder="Rol o relaci\u00f3n (ej. socio, jefe, cliente clave)" autocomplete="off" oninput="saveRel();checkStepComplete()">'+
+      dimHtml;
+    document.getElementById("inp-nombre-rel").value=r.nombre||"";
+    document.getElementById("inp-rol-rel").value=r.rol||"";
+    setTimeout(function(){
+      DIMENSIONES_VINCULO.forEach(function(d){
+        document.querySelectorAll(".eb-"+d.key).forEach(function(b,i){b.classList.toggle(d.cls,r.dims[d.key]===i+1);});
+      });
+    },10);
+  }else{
+    var idx=currentStep-5;
+    var s=situaciones[idx];
+    var btnsDecl="",btnsReal="";
+    for(var i=1;i<=5;i++){
+      btnsDecl+='<button class="eb eb-declarado" onclick="selSituacion(\'declarado\','+i+')">'+i+'</button>';
+      btnsReal+='<button class="eb eb-real" onclick="selSituacion(\'real\','+i+')">'+i+'</button>';
+    }
+    document.getElementById("rel-label").textContent="Parte B \u00b7 Coherencia bajo presi\u00f3n \u00b7 Situaci\u00f3n "+(idx+1)+" de 4";
+    body.innerHTML=
+      '<p class="rel-title">Mapa de Coherencia bajo Presi\u00f3n</p>'+
+      '<p class="rel-subtitle">Situaci\u00f3n '+(idx+1)+' de 4</p>'+
+      '<div class="situacion-box"><p class="situacion-texto">'+SITUACIONES[idx]+'</p></div>'+
+      '<div class="dim-block"><p class="dim-titulo">C\u00f3mo dices que reaccionas</p><p class="escala-label">Si describieras tu reacci\u00f3n ideal o habitual a esta situaci\u00f3n \u2014 \u00bfqu\u00e9 tan coherente con tus valores ser\u00eda?</p><div class="escala-row">'+btnsDecl+'</div><div class="escala-labels"><span>Reactivo</span><span>Coherente</span></div></div>'+
+      '<div class="dim-block"><p class="dim-titulo">C\u00f3mo reaccionaste REALMENTE la \u00faltima vez</p><p class="escala-label">Piensa en la \u00faltima vez que esto ocurri\u00f3 \u2014 \u00bfqu\u00e9 tan coherente con tus valores fue tu reacci\u00f3n real?</p><div class="escala-row">'+btnsReal+'</div><div class="escala-labels"><span>Reactivo</span><span>Coherente</span></div></div>';
+    setTimeout(function(){
+      document.querySelectorAll(".eb-declarado").forEach(function(b,i){b.classList.toggle("sel-declarado",s.declarado===i+1);});
+      document.querySelectorAll(".eb-real").forEach(function(b,i){b.classList.toggle("sel-real",s.real===i+1);});
+    },10);
+  }
+  checkStepComplete();
+}
+
+function checkStepComplete(){
+  var ok=false;
+  if(currentStep<5){
+    var r=relaciones[currentStep];
+    var n=document.getElementById("inp-nombre-rel")?document.getElementById("inp-nombre-rel").value.trim():"";
+    ok=n.length>0 && DIMENSIONES_VINCULO.every(function(d){return r.dims[d.key]>0;});
+  }else{
+    var s=situaciones[currentStep-5];
+    ok=s.declarado>0&&s.real>0;
+  }
+  document.getElementById("btn-next-rel").classList.toggle("on",ok);
+  var isLast=currentStep===TOTAL_STEPS-1;
+  document.getElementById("btn-next-rel").textContent=isLast?"Ver mi IVE\u2122 \u2192":"Siguiente \u2192";
+}
+
+function saveRel(){
+  if(currentStep<5){
+    relaciones[currentStep].nombre=document.getElementById("inp-nombre-rel").value.trim();
+    relaciones[currentStep].rol=document.getElementById("inp-rol-rel").value.trim();
+  }
+}
+
+function selVinculo(dimKey,cls,v){
+  saveRel();
+  relaciones[currentStep].dims[dimKey]=v;
+  document.querySelectorAll(".eb-"+dimKey).forEach(function(b,i){b.classList.toggle(cls,i+1===v);});
+  checkStepComplete();
+}
+
+function selSituacion(tipo,v){
+  var idx=currentStep-5;
+  situaciones[idx][tipo]=v;
+  var cls=tipo==="declarado"?"sel-declarado":"sel-real";
+  document.querySelectorAll(".eb-"+tipo).forEach(function(b,i){b.classList.toggle(cls,i+1===v);});
+  checkStepComplete();
+}
+
+function nextStep(){
+  if(!document.getElementById("btn-next-rel").classList.contains("on"))return;
+  saveRel();
+  if(currentStep===TOTAL_STEPS-1){procesarMapa();return;}
+  currentStep++;renderStep();
+}
+function prevStep(){
+  saveRel();
+  if(currentStep>0){currentStep--;renderStep();}
+  else{goTo("s-instrucciones");}
+}
+
+function procesarMapa(){
+  goTo("s-procesando");
+  var fill=document.getElementById("proc-fill");
+  var start=null;
+  function anim(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/2200,1);
+    fill.style.width=(p*100)+"%";
+    if(p<1)requestAnimationFrame(anim);
+    else setTimeout(buildResultados,200);
+  }
+  requestAnimationFrame(anim);
+}
+
+function getFragColor(f){return f>=3?"#B85C1F":f===2?"#C9A84C":"#3D7A5A";}
+function getFragLabel(f){return f>=3?"V\u00ednculo fr\u00e1gil y de alto impacto":f===2?"Atenci\u00f3n moderada":"V\u00ednculo sano";}
+function getCohColor(g){return g>=3?"#B85C1F":g===2?"#C9A84C":"#5E8AB4";}
+function getCohLabel(g){return g>=3?"Brecha de coherencia significativa":g===2?"Brecha moderada":"Coherente bajo presi\u00f3n";}
+
+function buildResultados(){
+  document.getElementById("res-hero-bg").textContent="IVE";
+  document.getElementById("res-nombre").textContent=userName;
+
+  var lista=document.getElementById("rels-lista");
+  lista.innerHTML="";
+  var fragilidades=[];
+
+  relaciones.forEach(function(r){
+    // Fragilidad: alta importancia + (baja calidad o baja inversión)
+    var debilidad=Math.min(r.dims.calidad,r.dims.inversion);
+    var frag=Math.max(0,r.dims.importancia-debilidad);
+    // normalize to 0-4
+    frag=Math.min(4,frag);
+    fragilidades.push(frag);
+    var color=getFragColor(frag);
+
+    var card=document.createElement("div");card.className="rel-card";
+    var dimRows=DIMENSIONES_VINCULO.map(function(d){
+      return '<div class="dim-result"><span class="dim-result-label">'+d.label+'</span><div class="dim-result-vals"><span class="dim-tag" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.6)">'+r.dims[d.key]+' / 5</span></div></div>';
+    }).join("");
+    card.innerHTML=
+      '<div class="rel-card-header"><div><span class="rel-card-rol">'+(r.rol||"V\u00ednculo")+'</span><br><span class="rel-card-nombre">'+(r.nombre||"Sin nombre")+'</span></div><span class="rel-card-gap" style="color:'+color+'">F '+frag+'</span></div>'+
+      dimRows+
+      '<p style="font-family:\'Barlow\',sans-serif;font-size:.78rem;color:'+color+';font-style:italic;margin-top:.4rem">'+getFragLabel(frag)+'</p>';
+    lista.appendChild(card);
+  });
+
+  // Situaciones de coherencia
+  document.getElementById("res-section-title-coherencia").style.display="block";
+  var sitLista=document.getElementById("situaciones-lista");
+  sitLista.innerHTML="";
+  var coherenciaGaps=[];
+  situaciones.forEach(function(s,i){
+    var gap=Math.abs(s.declarado-s.real);
+    coherenciaGaps.push(gap);
+    var color=getCohColor(gap);
+    var div=document.createElement("div");div.className="situacion-result";
+    div.innerHTML=
+      '<p class="situacion-result-texto">"'+SITUACIONES[i]+'"</p>'+
+      '<div class="dim-result"><span class="dim-result-label">Declarado vs. real</span><div class="dim-result-vals">'+
+      '<span class="dim-tag" style="background:rgba(201,168,76,.12);color:#C9A84C">Declarado: '+s.declarado+'</span>'+
+      '<span class="dim-tag" style="background:rgba(184,92,31,.12);color:#B85C1F">Real: '+s.real+'</span>'+
+      '<span class="dim-tag" style="background:'+color+'22;color:'+color+'">\u0394 '+gap+'</span>'+
+      '</div></div>'+
+      '<p style="font-family:\'Barlow\',sans-serif;font-size:.78rem;color:'+color+';font-style:italic;margin-top:.3rem">'+getCohLabel(gap)+'</p>';
+    sitLista.appendChild(div);
+  });
+
+  // Prioridades — relaciones más frágiles
+  var indexed=fragilidades.map(function(f,i){return{f:f,i:i};}).sort(function(a,b){return b.f-a.f;});
+  var top=indexed.filter(function(item){return item.f>=2;}).slice(0,2);
+  var pbox=document.getElementById("prioridades-content");
+  pbox.innerHTML="";
+  if(top.length===0){
+    var p=document.createElement("p");p.className="prioridad-item";
+    p.textContent="Tus v\u00ednculos estrat\u00e9gicos est\u00e1n en buen estado \u2014 el trabajo de S7 ser\u00e1 profundizar la coherencia bajo presi\u00f3n.";
+    pbox.appendChild(p);
+  }else{
+    top.forEach(function(item,idx){
+      var r=relaciones[item.i];
+      var p=document.createElement("p");p.className="prioridad-item";
+      p.textContent=(idx+1)+".  "+(r.nombre||"V\u00ednculo "+(item.i+1))+(r.rol?" ("+r.rol+")":"")+". Fragilidad: "+item.f+". Alto impacto en tus resultados con baja inversi\u00f3n o calidad reciente.";
+      pbox.appendChild(p);
+    });
+  }
+  var maxCoh=Math.max.apply(null,coherenciaGaps);
+  if(maxCoh>=2){
+    var pc=document.createElement("p");pc.className="prioridad-item";
+    pc.style.marginTop=".6rem";
+    pc.textContent="Coherencia: tu mayor brecha entre lo declarado y lo real ocurre bajo presi\u00f3n (\u0394 "+maxCoh+"). Esta ser\u00e1 el segundo foco de S7.";
+    pbox.appendChild(pc);
+  }
+
+  var codigo=genCodigo(fragilidades,coherenciaGaps);
+  document.getElementById("codigo-val").textContent=codigo;
+  goTo("s-resultados");
+}
+
+function genCodigo(fragilidades,coherenciaGaps){
+  var sum=relaciones.reduce(function(acc,r){
+    return acc+r.dims.importancia*3+r.dims.calidad*2+r.dims.inversion*2;
+  },0)+situaciones.reduce(function(acc,s){return acc+s.declarado+s.real;},0);
+  var mod=sum%97;
+  var chars="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var chk=chars[Math.floor(mod/chars.length)%chars.length]+chars[mod%chars.length];
+  var now=new Date();
+  var d=now.getFullYear().toString()+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  return "IVE-V"+fragilidades.join("")+"C"+coherenciaGaps.join("")+"-"+d+"-"+chk;
+}
+
+function copiarCodigo(){
+  var cod=document.getElementById("codigo-val").textContent;
+  var btn=document.getElementById("btn-copy");
+  navigator.clipboard.writeText(cod).then(function(){btn.textContent="\u2713 Copiado";setTimeout(function(){btn.textContent="Copiar c\u00f3digo";},2000);}).catch(function(){var t=document.createElement("textarea");t.value=cod;document.body.appendChild(t);t.select();document.execCommand("copy");document.body.removeChild(t);btn.textContent="\u2713 Copiado";setTimeout(function(){btn.textContent="Copiar c\u00f3digo";},2000);});
+}
+
+document.addEventListener("DOMContentLoaded",function(){checkName();});</script>
+</body>
+</html>
