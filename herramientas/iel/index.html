@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IEL™ · Índice de Entropía del Liderazgo · Edwin Romero M | Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ab:#0A0F1E;--gr:#EEEDE0;--wh:#FFFFFF;--do:#C9A84C;--az:#5E8AB4;--ex:#B85C1F;--rd:#8B1A2A;--TX:#333333;--TX2:#444444;--TX3:#666666;--GRADE:linear-gradient(135deg,#B85C1F,#C9A84C)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;font-family:'Barlow',sans-serif;font-weight:300;background:var(--ab);color:#fff;overflow:hidden}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;overflow:hidden}
+.screen.active{display:flex}
+/* PORTADA */
+#s-p{background:var(--ab);align-items:center;justify-content:center;text-align:center;padding:2rem}
+#s-p::before{content:'';position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:0}
+.ht{position:absolute;top:-15%;right:-10%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(184,92,31,.1) 0%,transparent 65%);pointer-events:none}
+.hb{position:absolute;bottom:-15%;left:-10%;width:40vw;height:40vw;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none}
+.pi{position:relative;z-index:2;max-width:520px;width:100%}
+.pe{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.8rem}
+.pl{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;line-height:1;color:#fff;margin-bottom:.4rem}
+.pl span{color:var(--do)}
+.pt{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ex);margin-bottom:1.4rem;display:block}
+.gb{height:2px;background:var(--GRADE);width:100px;margin:.4rem auto 1.8rem}
+.ptag{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:2rem}
+/* Name fields */
+.name-group{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.4rem}
+.name-input{width:100%;padding:.7rem 1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:300;border-radius:2px;outline:none;transition:border-color .2s}
+.name-input::placeholder{color:rgba(255,255,255,.3)}
+.name-input:focus{border-color:var(--ex)}
+.pnote{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1.8rem;line-height:1.6}
+.pnote strong{color:rgba(255,255,255,.65);font-weight:400}
+.btn-p{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem 2.5rem;background:var(--GRADE);color:#fff;border:none;cursor:pointer;border-radius:2px;transition:opacity .2s;opacity:.4;pointer-events:none}
+.btn-p.on{opacity:1;pointer-events:auto}
+.btn-p.on:hover{opacity:.88}
+.p-inst{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
+/* MODO selector */
+#s-modo{background:var(--ab);align-items:center;justify-content:center;text-align:center;padding:2rem}
+.modo-inner{position:relative;z-index:2;max-width:540px;width:100%}
+.modo-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:.5rem}
+.modo-sub{font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:2rem;line-height:1.6}
+.modo-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.modo-card{padding:1.4rem 1.2rem;border:1px solid rgba(255,255,255,.12);border-radius:4px;cursor:pointer;transition:all .2s;text-align:left}
+.modo-card:hover{border-color:var(--ex);background:rgba(184,92,31,.08)}
+.modo-card-icon{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ex);display:block;margin-bottom:.5rem}
+.modo-card-title{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:.4rem}
+.modo-card-desc{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5}
+/* Código input */
+.codigo-group{display:flex;flex-direction:column;gap:.75rem}
+.codigo-input{width:100%;padding:.75rem 1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:.12em;font-weight:600;border-radius:2px;outline:none;text-transform:uppercase;transition:border-color .2s}
+.codigo-input:focus{border-color:var(--az)}
+.codigo-error{font-size:.8rem;color:#E05555;display:none;margin-top:.25rem}
+.btn-s{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem;background:var(--az);color:#fff;border:none;cursor:pointer;border-radius:2px;width:100%;transition:opacity .2s}
+.btn-s:hover{opacity:.88}
+/* INSTRUCCIONES */
+#s-i{background:var(--gr);color:var(--TX)}
+.i-hdr{background:var(--ab);padding:1.4rem 1.8rem;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#B85C1F,#C9A84C) 1;flex-shrink:0}
+.i-hdr h2{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:#fff}
+.i-hdr p{font-size:.75rem;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
+.i-body{flex:1;overflow-y:auto;padding:1.6rem 1.8rem}
+.sec-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ex);margin-bottom:.8rem}
+.i-note{background:rgba(184,92,31,.08);border-left:3px solid var(--ex);padding:.7rem 1rem;margin:1.2rem 0;font-size:.88rem;color:var(--TX2);line-height:1.65}
+.i-note.az{background:rgba(94,138,180,.08);border-color:var(--az)}
+.scale-row{display:flex;gap:.5rem;margin-bottom:1.4rem}
+.sc-item{flex:1;text-align:center;background:#fff;border-radius:2px;padding:.45rem .2rem;border:.5px solid rgba(30,30,40,.08)}
+.sc-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;display:block;line-height:1}
+.sc-l{font-size:.68rem;color:var(--TX3);display:block;margin-top:2px;line-height:1.3}
+.btn-go{display:block;width:100%;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem;background:var(--ab);color:#fff;border:none;cursor:pointer;border-radius:2px;margin-top:1rem;transition:opacity .2s}
+.btn-go:hover{opacity:.85}
+/* PREGUNTAS */
+#s-q{background:var(--gr);color:var(--TX)}
+.q-hdr{background:var(--ab);padding:.9rem 1.5rem;flex-shrink:0;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#B85C1F,#C9A84C) 1}
+.q-pb{height:3px;background:rgba(255,255,255,.1);margin-bottom:.65rem;border-radius:2px;overflow:hidden}
+.q-pf{height:100%;background:var(--GRADE);border-radius:2px;transition:width .4s ease}
+.q-meta{display:flex;justify-content:space-between;align-items:center}
+.q-fase-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.q-cnt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.45)}
+.q-body{flex:1;overflow-y:auto;padding:2rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.q-txt{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--ab);line-height:1.55;margin-bottom:2rem}
+.likert{display:flex;gap:.6rem;justify-content:center;margin-bottom:.8rem}
+.lb{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(30,30,40,.18);background:#fff;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--TX2);cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center}
+.lb:hover{border-color:var(--ex);color:var(--ex)}
+.lb.sel{background:var(--ab);border-color:var(--ab);color:#fff}
+.lik-lbls{display:flex;justify-content:space-between;padding:0 .2rem;margin-bottom:1.5rem}
+.lik-lbls span{font-size:.7rem;color:var(--TX3);line-height:1.3;max-width:80px}
+.lik-lbls span:last-child{text-align:right}
+.q-nav{display:flex;gap:.75rem;padding:0 1.5rem 1.5rem;flex-shrink:0}
+.btn-bk{flex:1;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:transparent;color:var(--TX3);border:1px solid rgba(30,30,40,.18);cursor:pointer;border-radius:2px}
+.btn-nx{flex:2;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:var(--ab);color:#fff;border:none;cursor:pointer;border-radius:2px;opacity:.35;pointer-events:none;transition:opacity .2s}
+.btn-nx.on{opacity:1;pointer-events:auto}
+/* PROCESANDO */
+#s-proc{background:var(--ab);align-items:center;justify-content:center;text-align:center}
+.proc-ico{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--do);margin-bottom:1.2rem;display:block;letter-spacing:.1em}
+.proc-txt{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:2rem}
+.proc-bar{height:2px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 auto;width:200px;overflow:hidden}
+.proc-fill{height:100%;background:var(--GRADE);width:0;border-radius:2px}
+/* RESULTADOS */
+#s-r{background:var(--ab);overflow-y:auto}
+.r-hero{padding:2rem 1.5rem 1.5rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
+.r-ey{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.8rem}
+.r-nom{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:.4rem}
+.r-band{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:20px;margin-bottom:.8rem}
+.r-sc{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;line-height:1;margin-bottom:.4rem}
+.r-sc span{font-size:2rem;color:rgba(255,255,255,.35)}
+.r-desc{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:440px;margin:0 auto 1.2rem}
+.gb-c{height:1.5px;background:var(--GRADE);width:80px;margin:0 auto 1.2rem}
+/* Radar */
+.radar-wrap{padding:1.4rem;display:flex;justify-content:center}
+/* Delta banner */
+.delta-banner{margin:0 1.5rem 1rem;padding:1rem 1.2rem;border-radius:4px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.delta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center}
+.delta-item-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:3px}
+.delta-item-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;line-height:1}
+/* Ejes detalle */
+.ejes-det{padding:0 1.5rem 1rem}
+/* Sesiones mapa */
+.ses-mapa{padding:1rem 1.5rem}
+.ses-mapa h3{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.8rem}
+.sr{display:grid;grid-template-columns:.35rem 2rem 1fr auto;gap:.55rem;align-items:center;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sr:last-child{border-bottom:none}
+.sr-pri{height:2rem;border-radius:2px}
+.sr-n{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:rgba(255,255,255,.35)}
+.sr-nb{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.35}
+.sr-ej{font-size:.68rem;color:rgba(255,255,255,.3);font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.sr-int{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:20px}
+.int-a{background:rgba(184,92,31,.25);color:#E88050}
+.int-m{background:rgba(201,168,76,.2);color:#C9A84C}
+.int-b{background:rgba(255,255,255,.07);color:rgba(255,255,255,.35)}
+/* Código */
+.codigo-res{margin:1rem 1.5rem;padding:1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:4px;text-align:center}
+.cod-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+.cod-val{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.14em;color:var(--do);margin-bottom:.7rem;word-break:break-all}
+.btn-copy{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.4rem;background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-copy:hover{border-color:var(--do);color:var(--do)}
+.cod-note{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:.6rem;line-height:1.5}
+/* Cierre */
+.r-cierre{padding:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.07)}
+.r-cierre p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1.2rem}
+.btn-print{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.78rem 1.8rem;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;border-radius:2px;transition:all .2s}
+.btn-print:hover{border-color:var(--do);color:var(--do)}
+.r-inst{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:1.5rem}
+/* PRINT */
+@media print{
+  @page{size:letter portrait;margin:.6in .7in}
+  html,body{overflow:auto !important;height:auto !important;background:#fff !important;color:var(--TX) !important}
+  .screen{position:static !important;display:none !important;height:auto !important;overflow:visible !important}
+  #s-r{display:block !important;background:#fff !important;overflow:visible !important}
+  .r-hero{background:#fff;color:var(--TX);border-bottom:2px solid #eee;padding:1rem 0}
+  .r-ey,.r-nom{color:var(--TX3) !important}
+  .r-sc{color:var(--TX) !important}
+  .r-desc{color:var(--TX2) !important}
+  .r-band{border:1px solid currentColor}
+  .gb-c{background:var(--GRADE)}
+  .radar-wrap{padding:.5rem;page-break-inside:avoid}
+  .radar-wrap svg{width:280px !important;height:280px !important;display:block;margin:0 auto}
+  .ejes-det{page-break-inside:avoid}
+  .eje-detalle-row{border-bottom:1px solid #eee;page-break-inside:avoid}
+  .eje-d-nombre{color:var(--TX) !important}
+  .eje-d-frase{color:var(--TX2) !important}
+  .eje-d-bar{background:#eee !important}
+  .ses-mapa{page-break-inside:avoid}
+  .sr-nb{color:var(--TX) !important}
+  .sr-ej{color:var(--TX3) !important}
+  .delta-banner{border:1px solid #eee;background:#f9f9f9 !important;page-break-inside:avoid}
+  .delta-item-lbl{color:var(--TX3) !important}
+  .codigo-res{border:1px solid #eee;background:#f9f9f9 !important;page-break-inside:avoid}
+  .cod-lbl{color:var(--TX3) !important}
+  .cod-note{color:var(--TX3) !important}
+  .r-cierre,.btn-copy,.btn-print,.p-inst,.watermark{display:none !important}
+  .print-header{display:block !important}
+  .section-label{color:var(--TX3) !important}
+}
+.print-header{display:none;padding:.5rem 0 1rem;border-bottom:2px solid #eee;margin-bottom:1rem}
+.print-header h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--ab);margin-bottom:.2rem}
+.print-header p{font-size:.8rem;color:var(--TX3)}
+.watermark{position:fixed;inset:0;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;opacity:.04;transform:rotate(-35deg)}
+@media screen{.watermark span{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap}}
+@media(min-width:600px){.q-txt{font-size:1.5rem}.lb{width:60px;height:60px;font-size:1.5rem}.name-group{gap:1rem}}
+</style>
+</head>
+<body>
+<script>document.addEventListener('contextmenu',function(e){e.preventDefault()});document.addEventListener('keydown',function(e){if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&e.key==='U'))e.preventDefault()});</script>
+<div class="watermark"><span id="wm-txt">IEL™ · EDWIN ROMERO M | INSTITUTE</span></div>
+
+<!-- PORTADA -->
+<div class="screen active" id="s-p">
+  <div class="ht"></div><div class="hb"></div>
+  <div class="pi">
+    <p class="pe">Edwin Romero M | Institute · 2026</p>
+    <h1 class="pl">IEL<span>™</span></h1>
+    <span class="pt">Índice de Entropía del Liderazgo</span>
+    <div class="gb"></div>
+    <p class="ptag">“Antes de intervenir cualquier sistema de liderazgo,<br>hay que leer su estado real.”</p>
+    <div class="name-group">
+      <input class="name-input" id="inp-nom" type="text" placeholder="Nombre" autocomplete="off" oninput="checkName()">
+      <input class="name-input" id="inp-ape" type="text" placeholder="Apellido(s)" autocomplete="off" oninput="checkName()">
+    </div>
+    <p class="pnote"><strong>30 preguntas · 6 dimensiones · 15 minutos</strong><br>Diagnóstico de entrada al proceso EXPONÉNCIATE™</p>
+    <button class="btn-p" id="btn-start" onclick="startFlow()">Iniciar diagnóstico</button>
+  </div>
+  <span class="p-inst">EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1</span>
+</div>
+
+<!-- SELECTOR DE MODO -->
+<div class="screen" id="s-modo">
+  <div class="ht"></div><div class="hb"></div>
+  <div class="modo-inner" style="position:relative;z-index:2">
+    <p class="pe" style="text-align:center;margin-bottom:1rem">IEL™ · Selección de modo</p>
+    <h2 class="modo-title">¿Es tu primer diagnóstico<br>o estás cerrando la mentoría?</h2>
+    <p class="modo-sub">El IEL™ tiene dos momentos. Elige el que corresponde.</p>
+    <div class="modo-cards">
+      <div class="modo-card" onclick="setModo('entrada')">
+        <span class="modo-card-icon">S2</span>
+        <div class="modo-card-title">Diagnóstico de Entrada</div>
+        <div class="modo-card-desc">Primera vez que completo el IEL™. Inicio del proceso EXPONÉNCIATE™.</div>
+      </div>
+      <div class="modo-card" onclick="setModo('cierre')">
+        <span class="modo-card-icon" style="color:var(--az)">S8</span>
+        <div class="modo-card-title">Diagnóstico de Cierre</div>
+        <div class="modo-card-desc">Completé las 8 sesiones. Tengo mi código IEL™ de entrada.</div>
+      </div>
+    </div>
+    <div id="codigo-group" style="display:none">
+      <input class="codigo-input" id="inp-cod" type="text" placeholder="INGRESA TU CÓDIGO IEL™" oninput="validateCodigo()">
+      <p class="codigo-error" id="cod-err">Código inválido. Verifica que lo hayas copiado correctamente.</p>
+      <br>
+      <button class="btn-s" id="btn-cierre" onclick="startCierre()" style="opacity:.4;pointer-events:none">Continuar con diagnóstico de cierre</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSTRUCCIONES -->
+<div class="screen" id="s-i">
+  <div class="i-hdr"><h2>Cómo funciona este diagnóstico</h2><p>IEL™ · 30 preguntas · 6 dimensiones</p></div>
+  <div class="i-body">
+    <p class="sec-lbl">Antes de comenzar</p>
+    <div class="i-note">Responde con honestidad — no con el líder que quieres ser, sino con el líder que eres hoy. Piensa en tu comportamiento <strong>en los últimos 30 días</strong>. No hay respuestas correctas o incorrectas. El diagnóstico solo es útil si es preciso.</div>
+    <div class="i-note az">Las preguntas aparecen sin indicar a qué dimensión pertenecen. Esto elimina sesgos y garantiza que tus respuestas reflejen tu realidad, no tu imagen ideal.</div>
+    <p class="sec-lbl" style="margin-top:1.2rem">La escala de respuesta</p>
+    <div class="scale-row">
+      <div class="sc-item"><span class="sc-n" style="color:#8B1A2A">1</span><span class="sc-l">Casi nunca</span></div>
+      <div class="sc-item"><span class="sc-n" style="color:#B85C1F">2</span><span class="sc-l">Pocas veces</span></div>
+      <div class="sc-item"><span class="sc-n" style="color:#C9A84C">3</span><span class="sc-l">A veces</span></div>
+      <div class="sc-item"><span class="sc-n" style="color:#5E8AB4">4</span><span class="sc-l">Con frecuencia</span></div>
+      <div class="sc-item"><span class="sc-n" style="color:#2E6B4F">5</span><span class="sc-l">Casi siempre</span></div>
+    </div>
+    <button class="btn-go" onclick="goTo('s-q');renderQ()">Comenzar — 30 preguntas</button>
+  </div>
+</div>
+
+<!-- PREGUNTAS -->
+<div class="screen" id="s-q">
+  <div class="q-hdr">
+    <div class="q-pb"><div class="q-pf" id="q-pf"></div></div>
+    <div class="q-meta"><span class="q-fase-lbl" id="q-fase-lbl"></span><span class="q-cnt" id="q-cnt"></span></div>
+  </div>
+  <div class="q-body">
+    <p class="q-txt" id="q-txt"></p>
+    <div class="likert" id="likert">
+      <button class="lb" onclick="selAns(1)">1</button>
+      <button class="lb" onclick="selAns(2)">2</button>
+      <button class="lb" onclick="selAns(3)">3</button>
+      <button class="lb" onclick="selAns(4)">4</button>
+      <button class="lb" onclick="selAns(5)">5</button>
+    </div>
+    <div class="lik-lbls"><span>Casi nunca</span><span>Casi siempre</span></div>
+  </div>
+  <div class="q-nav">
+    <button class="btn-bk" onclick="prevQ()">← Anterior</button>
+    <button class="btn-nx" id="btn-nx" onclick="nextQ()">Siguiente →</button>
+  </div>
+</div>
+
+<!-- PROCESANDO -->
+<div class="screen" id="s-proc">
+  <div class="ht"></div><div class="hb"></div>
+  <div style="position:relative;z-index:2;text-align:center;padding:2rem">
+    <span class="proc-ico">IEL™</span>
+    <p class="proc-txt" id="proc-txt">Calculando tu Índice de Entropía del Liderazgo…</p>
+    <div class="proc-bar"><div class="proc-fill" id="proc-fill"></div></div>
+  </div>
+</div>
+
+<!-- RESULTADOS -->
+<div class="screen" id="s-r">
+  <div class="print-header" id="print-hdr">
+    <h2>IEL™ · Índice de Entropía del Liderazgo</h2>
+    <p id="print-meta"></p>
+  </div>
+  <div class="r-hero">
+    <p class="r-ey" id="r-modo-lbl"></p>
+    <p class="r-nom" id="r-nom"></p>
+    <div class="r-band" id="r-band"></div><br>
+    <div class="r-sc" id="r-sc"></div>
+    <div class="gb-c"></div>
+    <p class="r-desc" id="r-desc"></p>
+  </div>
+  <div id="delta-banner-wrap"></div>
+  <div class="radar-wrap"><svg id="radar-svg" viewBox="0 0 320 320" width="320" height="320"></svg></div>
+  <div class="ejes-det" id="ejes-det"></div>
+  <div class="ses-mapa"><h3 id="ses-map-title"></h3><div id="ses-map"></div></div>
+  <div class="codigo-res" id="cod-res"></div>
+  <div class="r-cierre">
+    <p id="r-cierre-txt"></p>
+    <button class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+    <p class="r-inst">Edwin Romero M | Institute · EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1</p>
+  </div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const EJES = [
+  {id:"EL-01",nombre:"Soberanía del Mando",color:"#B85C1F",foco:"Cómo el líder se gobierna a sí mismo bajo presión",fase:"Fase I · El ser",
+   preguntas:["Cuando el sistema a mi alrededor se tensiona, mantengo mi criterio sin dejarme arrastrar por la urgencia del entorno.","Tomo decisiones difíciles con claridad, incluso cuando no tengo toda la información que quisiera tener.","Reconozco mis patrones de respuesta bajo presión y puedo intervenir en ellos antes de que afecten mis decisiones.","En los últimos 30 días, hubo momentos en que reaccioné de formas que después no me representaban. (1 = con frecuencia · 5 = casi nunca ocurrió)","En los últimos 30 días, tomé decisiones importantes en un estado emocional que no era el óptimo. (1 = con frecuencia · 5 = casi nunca ocurrió)"],
+   invertidas:[3,4]},
+  {id:"EL-02",nombre:"Gestión de la Energía Decisoria",color:"#B85C1F",foco:"Calidad y consistencia de decisiones en alta exigencia",fase:"Fase I · El ser",
+   preguntas:["Gestiono deliberadamente mi nivel de energía para que mis decisiones más importantes ocurran en mis mejores momentos.","Tengo protocolos claros para decidir en contextos de alta incertidumbre — no improviso ni pospongo.","Mi capacidad de decisión se mantiene consistente tanto en las primeras horas del día como bajo presión sostenida.","En los últimos 30 días, terminé semanas sintiendo que operé en deuda energética — dando más de lo que tenía. (1 = siempre · 5 = casi nunca)","En los últimos 30 días, postergué decisiones importantes porque no tenía la energía o claridad para tomarlas. (1 = con frecuencia · 5 = casi nunca)"],
+   invertidas:[3,4]},
+  {id:"EL-03",nombre:"Presencia e Influencia Consciente",color:"#C9A84C",foco:"Efecto de su presencia y lenguaje sobre otros",fase:"Fase II · Fluencia · Influencia · Confluencia",
+   preguntas:["Las personas que lidero saben con claridad lo que espero de ellas — sin necesidad de repetirlo constantemente.","Mi manera de aparecer en una reunión o conversación genera calma y dirección, no ansiedad o confusión.","Mi lenguaje instala posibilidades y mueve a la acción — no genera defensividad ni pasividad en quien lo recibe.","En los últimos 30 días, evité conversaciones difíciles que sabía que debía tener con personas de mi equipo. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, noté que mi presencia en algún espacio generó tensión o desactivó la energía del grupo. (1 = con frecuencia · 5 = casi nunca)"],
+   invertidas:[3,4]},
+  {id:"EL-04",nombre:"Catálisis Colectiva",color:"#C9A84C",foco:"Capacidad de activar y movilizar la energía del equipo",fase:"Fase II · Fluencia · Influencia · Confluencia",
+   preguntas:["Mi equipo opera con un propósito compartido que va más allá de cumplir metas — hay una energía colectiva que lo sostiene.","Cuando el equipo pierde foco, tengo la capacidad de reactivarlo sin necesidad de presión o control.","Genero condiciones para que el talento de cada persona se exprese al máximo — no gestiono desde la uniformidad.","En los últimos 30 días, dejé que fricciones dentro del equipo se extendieran más de lo que debería haber permitido. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, mi equipo tuvo dificultades para coordinar o ejecutar sin mi presencia constante. (1 = con frecuencia · 5 = casi nunca)"],
+   invertidas:[3,4]},
+  {id:"EL-05",nombre:"Arquitectura de Sistemas",color:"#5E8AB4",foco:"Diseño de equipos autónomos y de alto rendimiento",fase:"Fase III · El sistema",
+   preguntas:["He diseñado deliberadamente la estructura de mi equipo — roles, responsabilidades y protocolos de decisión son claros para todos.","Las decisiones que deberían tomar otros, las toman otros — no soy el cuello de botella de mi propio sistema.","Tengo mecanismos instalados para detectar entropía en el sistema antes de que se manifieste como crisis.","En los últimos 30 días, resolví situaciones que mi equipo debería haber resuelto sin necesitar mi intervención. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, el sistema mostró señales de fragilidad que yo no había anticipado ni diseñado para prevenir. (1 = con frecuencia · 5 = casi nunca)"],
+   invertidas:[3,4]},
+  {id:"EL-06",nombre:"Legado e Impacto Estratégico",color:"#5E8AB4",foco:"Huella que deja más allá del cargo y del corto plazo",fase:"Fase III · El sistema",
+   preguntas:["Tengo claridad sobre el tipo de líder que quiero haber sido — y esa claridad guía mis decisiones cotidianas.","Desarrollo líderes dentro de mi equipo — no solo personas que ejecutan bien, sino personas que piensan y deciden.","Mis decisiones estratégicas tienen visión de largo plazo — no sacrifico el sistema futuro por resultados inmediatos.","En los últimos 30 días, tomé decisiones que priorizaron resultados inmediatos a costa del desarrollo de mi equipo. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, operé más desde lo urgente que desde lo que realmente importa para el impacto de largo plazo. (1 = con frecuencia · 5 = casi nunca)"],
+   invertidas:[3,4]}
+];
+const BANDS = [
+  {min:0,max:40,nombre:"Sistema en entropía crítica",color:"#8B1A2A",desc:"Tu sistema de liderazgo está operando por debajo de lo que tu cargo y tu potencial requieren. Las brechas son estructurales y requieren intervención prioritaria. Este proceso está diseñado exactamente para este punto de partida."},
+  {min:41,max:60,nombre:"Sistema con fricciones activas",color:"#B85C1F",desc:"Hay capacidad real instalada, pero hay fricciones que están drenando energía y limitando tu impacto. El proceso intervendrá esas fricciones con precisión y las convertirá en protocolos."},
+  {min:61,max:80,nombre:"Sistema funcional con brechas estratégicas",color:"#C9A84C",desc:"Tu liderazgo funciona y entrega resultados. Las brechas que existen no son de base — son de optimización. El proceso te llevará del liderazgo funcional al liderazgo de alto impacto sostenible."},
+  {min:81,max:100,nombre:"Sistema de alto rendimiento",color:"#5E8AB4",desc:"Tu sistema de liderazgo está bien instalado. El proceso trabajará la capa de legado, impacto organizacional y la sostenibilidad del sistema que construiste."}
+];
+const FRASES = {
+  "EL-01":["Tu capacidad de gobierno interno está altamente comprometida — es la primera prioridad del proceso.","Hay patrones de respuesta bajo presión que drenan tu efectividad de forma recurrente.","Tu gobierno interno es funcional aunque inconsistente bajo presión sostenida.","Tienes sólido gobierno interno — el proceso lo llevará al siguiente nivel."],
+  "EL-02":["Tu energía decisoria está en deuda crónica — requiere intervención estructural urgente.","Tus decisiones bajo presión sostenida pierden calidad y consistencia de forma notable.","Gestionas bien tu energía en condiciones normales — el reto es la sostenibilidad bajo alta exigencia.","Tu energía decisoria es una fortaleza — el proceso la hará aún más sostenible."],
+  "EL-03":["Tu presencia e influencia consciente necesitan desarrollo estructural prioritario.","Hay brechas en cómo tu presencia y lenguaje impactan a las personas que lideras.","Tienes influencia real, aunque hay momentos clave donde se diluye sin que lo elijas.","Tu presencia es un activo poderoso — el proceso la convertirá en instrumento de alto impacto."],
+  "EL-04":["La energía colectiva de tu equipo está comprometida — requiere intervención sistémica.","Hay fricciones que limitan la potencia colectiva de tu sistema de forma activa.","Activas bien la energía colectiva — hay espacio para llevarlo a un nivel superior.","Eres un catalizador colectivo efectivo — el proceso instalará protocolos que lo sostengan."],
+  "EL-05":["La arquitectura de tu sistema tiene brechas estructurales que generan dependencia y fricciones.","Tu sistema funciona pero tiene puntos de fragilidad que el proceso intervendrá con precisión.","Tienes buena arquitectura sistémica — el proceso la hará más robusta y autónoma.","Tu arquitectura sistémica es una fortaleza — el proceso la llevará a nivel de legado."],
+  "EL-06":["El impacto estratégico de tu liderazgo aún no está instalado como sistema consciente.","Tu impacto existe pero no ha sido diseñado — ocurre, no se instala deliberadamente.","Tu impacto es claro — el proceso lo conectará con una visión de legado sostenible.","Tu impacto estratégico es real — el proceso lo hará replicable y duradero en el tiempo."]
+};
+const SESIONES = [
+  {n:1,nombre:"Despierta el líder que ya eres",ejes:["EL-01","EL-02"]},
+  {n:2,nombre:"Gobierna tu energía, gobierna tu liderazgo",ejes:["EL-01","EL-02"]},
+  {n:3,nombre:"Apropia el lenguaje de un líder magnético",ejes:["EL-03"]},
+  {n:4,nombre:"Tu presencia como instrumento de influencia",ejes:["EL-03","EL-04"]},
+  {n:5,nombre:"Activa la energía colectiva",ejes:["EL-04"]},
+  {n:6,nombre:"Exponencia el poder de tu equipo",ejes:["EL-05"]},
+  {n:7,nombre:"Vínculos que sostienen sistemas",ejes:["EL-05","EL-06"]},
+  {n:8,nombre:"Tu siguiente nivel — con evidencia",ejes:["EL-06"]}
+];
+const FASES = ["Fase I","Fase I","Fase II","Fase II","Fase III","Fase III"];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+var userName = '';
+var modo = 'entrada';
+var ejeOrder = [0,1,2,3,4,5];
+var qFlat = [];
+var answers = {};
+var scoresEntrada = null;
+var currentQIdx = 0;
+var diagTimestamp = '';
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  var el = document.getElementById(id);
+  el.classList.add('active');
+  try { el.scrollTop = 0; } catch(e){}
+}
+
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length-1; i > 0; i--) {
+    var j = Math.floor(Math.random()*(i+1));
+    var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+
+function checkName() {
+  var n = document.getElementById('inp-nom').value.trim();
+  var a = document.getElementById('inp-ape').value.trim();
+  var btn = document.getElementById('btn-start');
+  if (n.length > 0 && a.length > 0) {
+    btn.classList.add('on');
+  } else {
+    btn.classList.remove('on');
+  }
+}
+
+function startFlow() {
+  var n = document.getElementById('inp-nom').value.trim();
+  var a = document.getElementById('inp-ape').value.trim();
+  if (!n || !a) return;
+  userName = n + ' ' + a;
+  document.getElementById('wm-txt').textContent = 'IEL™ · ' + userName.toUpperCase();
+  goTo('s-modo');
+}
+
+function setModo(m) {
+  modo = m;
+  document.querySelectorAll('.modo-card').forEach(function(c){ c.style.borderColor = ''; c.style.background = ''; });
+  var cards = document.querySelectorAll('.modo-card');
+  var idx = m === 'entrada' ? 0 : 1;
+  cards[idx].style.borderColor = m === 'entrada' ? 'var(--ex)' : 'var(--az)';
+  cards[idx].style.background = m === 'entrada' ? 'rgba(184,92,31,.1)' : 'rgba(94,138,180,.1)';
+  var cg = document.getElementById('codigo-group');
+  if (m === 'cierre') {
+    cg.style.display = 'block';
+  } else {
+    cg.style.display = 'none';
+    buildQFlat();
+    goTo('s-i');
+  }
+}
+
+function validateCodigo() {
+  var cod = document.getElementById('inp-cod').value.trim().toUpperCase();
+  var btn = document.getElementById('btn-cierre');
+  var err = document.getElementById('cod-err');
+  var valid = parseCodigo(cod);
+  if (valid) {
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+    err.style.display = 'none';
+  } else {
+    btn.style.opacity = '.4';
+    btn.style.pointerEvents = 'none';
+    if (cod.length > 5) err.style.display = 'block';
+  }
+}
+
+function parseCodigo(cod) {
+  // Format: IEL-A72B48C61D55E43F80-YYYYMMDD-HH
+  var re = /^IEL-([A-F]\d{2}){6}-\d{8}-[0-9A-Z]{2}$/;
+  if (!re.test(cod)) return null;
+  var parts = cod.split('-');
+  var scoreStr = parts[1];
+  var scores = {};
+  var ids = ['EL-01','EL-02','EL-03','EL-04','EL-05','EL-06'];
+  var letters = ['A','B','C','D','E','F'];
+  var sum = 0;
+  for (var i = 0; i < 6; i++) {
+    var val = parseInt(scoreStr.substr(i*3+1,2));
+    scores[ids[i]] = val;
+    sum += val;
+  }
+  // Verify checksum
+  var chk = genChecksum(scores);
+  if (chk !== parts[3]) return null;
+  return {scores: scores, fecha: parts[2]};
+}
+
+function genChecksum(sc) {
+  var ids = ['EL-01','EL-02','EL-03','EL-04','EL-05','EL-06'];
+  var sum = 0;
+  ids.forEach(function(id){ sum += sc[id] || 0; });
+  var mod = sum % 97;
+  var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return chars[Math.floor(mod/chars.length)%chars.length] + chars[mod%chars.length];
+}
+
+function genCodigo(sc) {
+  var ids = ['EL-01','EL-02','EL-03','EL-04','EL-05','EL-06'];
+  var letters = ['A','B','C','D','E','F'];
+  var str = '';
+  ids.forEach(function(id,i){ str += letters[i] + String(sc[id]).padStart(2,'0'); });
+  var now = new Date();
+  var d = now.getFullYear().toString() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0');
+  var chk = genChecksum(sc);
+  return 'IEL-' + str + '-' + d + '-' + chk;
+}
+
+function startCierre() {
+  var cod = document.getElementById('inp-cod').value.trim().toUpperCase();
+  var parsed = parseCodigo(cod);
+  if (!parsed) return;
+  scoresEntrada = parsed.scores;
+  buildQFlat();
+  goTo('s-i');
+}
+
+// ── QUESTIONS ─────────────────────────────────────────────────────────────────
+function buildQFlat() {
+  ejeOrder = shuffle([0,1,2,3,4,5]);
+  qFlat = [];
+  ejeOrder.forEach(function(ei){
+    var e = EJES[ei];
+    e.preguntas.forEach(function(q, qi){
+      qFlat.push({ejeIdx:ei,qIdx:qi,texto:q,fase:FASES[ei]});
+    });
+  });
+  currentQIdx = 0;
+  answers = {};
+  diagTimestamp = new Date().toLocaleString('es-CO', {dateStyle:'long',timeStyle:'short'});
+}
+
+function renderQ() {
+  var q = qFlat[currentQIdx];
+  var total = qFlat.length;
+  document.getElementById('q-pf').style.width = (currentQIdx/total*100)+'%';
+  document.getElementById('q-fase-lbl').textContent = q.fase;
+  document.getElementById('q-cnt').textContent = (currentQIdx+1)+' / '+total;
+  document.getElementById('q-txt').textContent = q.texto;
+  var ans = answers[currentQIdx];
+  document.querySelectorAll('.lb').forEach(function(b,i){
+    b.classList.toggle('sel', ans === i+1);
+  });
+  document.getElementById('btn-nx').classList.toggle('on', ans !== undefined);
+  document.getElementById('btn-nx').textContent = currentQIdx === total-1 ? 'Ver resultados →' : 'Siguiente →';
+}
+
+function selAns(v) {
+  answers[currentQIdx] = v;
+  document.querySelectorAll('.lb').forEach(function(b,i){ b.classList.toggle('sel',i+1===v); });
+  document.getElementById('btn-nx').classList.add('on');
+}
+
+function nextQ() {
+  if (!document.getElementById('btn-nx').classList.contains('on')) return;
+  if (currentQIdx < qFlat.length-1) { currentQIdx++; renderQ(); }
+  else { processResults(); }
+}
+
+function prevQ() {
+  if (currentQIdx > 0) { currentQIdx--; renderQ(); }
+  else { goTo('s-i'); }
+}
+
+// ── RESULTS ───────────────────────────────────────────────────────────────────
+function processResults() {
+  goTo('s-proc');
+  var fill = document.getElementById('proc-fill');
+  var start = null;
+  function anim(ts) {
+    if (!start) start = ts;
+    var p = Math.min((ts-start)/2500, 1);
+    fill.style.width = (p*100)+'%';
+    if (p < 1) requestAnimationFrame(anim);
+    else setTimeout(buildResults, 150);
+  }
+  requestAnimationFrame(anim);
+}
+
+function calcScores() {
+  var sc = {};
+  EJES.forEach(function(e){ sc[e.id] = 0; });
+  qFlat.forEach(function(q, idx){
+    var e = EJES[q.ejeIdx];
+    var raw = answers[idx] || 3;
+    var isInv = e.invertidas.indexOf(q.qIdx) !== -1;
+    sc[e.id] += isInv ? (6-raw) : raw;
+  });
+  var result = {};
+  EJES.forEach(function(e){
+    result[e.id] = Math.round((sc[e.id]/25)*100);
+  });
+  return result;
+}
+
+function buildResults() {
+  var scores = calcScores();
+  var globalScore = Math.round(Object.values(scores).reduce(function(a,b){return a+b;},0)/6);
+  var band = BANDS.find(function(b){ return globalScore>=b.min && globalScore<=b.max; }) || BANDS[BANDS.length-1];
+
+  // Header
+  document.getElementById('r-modo-lbl').textContent = modo === 'entrada' ? 'Diagnóstico IEL™ · Sesión 1 · Entrada' : 'Diagnóstico IEL™ · Sesión 8 · Cierre';
+  document.getElementById('r-nom').textContent = userName;
+  var badge = document.getElementById('r-band');
+  badge.textContent = band.nombre;
+  badge.style.background = band.color+'30';
+  badge.style.color = band.color;
+  document.getElementById('r-sc').innerHTML = globalScore+'<span>/100</span>';
+  document.getElementById('r-sc').style.color = band.color;
+  document.getElementById('r-desc').textContent = band.desc;
+  document.getElementById('print-hdr').querySelector('h2').textContent = 'IEL™ · ' + (modo==='entrada'?'Diagnóstico de Entrada':'Diagnóstico de Cierre');
+  document.getElementById('print-meta').textContent = userName + ' · ' + diagTimestamp + ' · Edwin Romero M | Institute';
+
+  // Delta banner (only cierre)
+  buildDeltaBanner(scores, globalScore);
+
+  // Radar
+  buildRadar(scores, globalScore);
+
+  // Ejes detalle
+  buildEjesDetalle(scores);
+
+  // Sesiones mapa
+  buildSesionesMapa(scores);
+
+  // Código
+  buildCodigo(scores);
+
+  // Cierre text
+  document.getElementById('r-cierre-txt').textContent = modo === 'entrada'
+    ? 'Este diagnóstico es el punto de partida de tu proceso EXPONÉNCIATE™. En la Sesión 1 revisaremos cada dimensión en profundidad y diseñaremos la ruta de intervención específica para tu sistema de liderazgo. Conserva tu Código IEL™ — lo necesitarás en la Sesión 8.'
+    : 'Este es el cierre de tu proceso EXPONÉNCIATE™. El Informe ROI alKimétrico™ documenta la transformación real de tu sistema de liderazgo en 8 semanas. No en percepciones — en números.';
+
+  goTo('s-r');
+}
+
+function buildDeltaBanner(scores, globalScore) {
+  var wrap = document.getElementById('delta-banner-wrap');
+  wrap.innerHTML = '';
+  if (modo !== 'cierre' || !scoresEntrada) return;
+  var globalEntrada = Math.round(Object.values(scoresEntrada).reduce(function(a,b){return a+b;},0)/6);
+  var delta = globalScore - globalEntrada;
+  var deltaColor = delta > 0 ? '#2E6B4F' : delta < 0 ? '#8B1A2A' : 'rgba(255,255,255,.4)';
+  var deltaSign = delta > 0 ? '+' : '';
+
+  var banner = document.createElement('div');
+  banner.className = 'delta-banner';
+
+  var title = document.createElement('p');
+  title.className = 'sec-lbl';
+  title.style.marginBottom = '.75rem';
+  title.textContent = 'ROI alKimétrico™ · Transformación verificada';
+  banner.appendChild(title);
+
+  var grid = document.createElement('div');
+  grid.className = 'delta-grid';
+
+  var items = [
+    {lbl:'Entrada S2', val:globalEntrada, color:'var(--az)'},
+    {lbl:'Cierre S8', val:globalScore, color:'var(--ex)'},
+    {lbl:'Delta Δ', val:deltaSign+delta, color:deltaColor}
+  ];
+
+  items.forEach(function(item){
+    var div = document.createElement('div');
+    var lbl = document.createElement('span');
+    lbl.className = 'delta-item-lbl';
+    lbl.textContent = item.lbl;
+    var val = document.createElement('div');
+    val.className = 'delta-item-val';
+    val.style.color = item.color;
+    val.textContent = item.val;
+    div.appendChild(lbl);
+    div.appendChild(val);
+    grid.appendChild(div);
+  });
+
+  banner.appendChild(grid);
+  wrap.appendChild(banner);
+}
+
+function buildRadar(scores, globalScore) {
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('radar-svg');
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  var cx=160,cy=160,r=110,n=6;
+  var labels = EJES.map(function(e){ return e.nombre.split(' ').slice(0,2).join(' ').toUpperCase(); });
+  var colors = EJES.map(function(e){ return e.color; });
+  var vals = EJES.map(function(e){ return (scores[e.id]||0)/100; });
+
+  function mkEl(tag,attrs){
+    var el = document.createElementNS(NS,tag);
+    Object.keys(attrs).forEach(function(k){ el.setAttribute(k,attrs[k]); });
+    return el;
+  }
+  function pts(f){
+    return Array.from({length:n},function(_,i){
+      var a=(i/n)*2*Math.PI-Math.PI/2;
+      return (cx+r*f*Math.cos(a)).toFixed(1)+','+(cy+r*f*Math.sin(a)).toFixed(1);
+    }).join(' ');
+  }
+
+  // Grid
+  [.25,.5,.75,1].forEach(function(f){
+    svg.appendChild(mkEl('polygon',{points:pts(f),fill:'none',stroke:'rgba(255,255,255,.07)','stroke-width':'1'}));
+  });
+  for (var i=0;i<n;i++){
+    var a=(i/n)*2*Math.PI-Math.PI/2;
+    svg.appendChild(mkEl('line',{x1:cx,y1:cy,x2:(cx+r*Math.cos(a)).toFixed(1),y2:(cy+r*Math.sin(a)).toFixed(1),stroke:'rgba(255,255,255,.08)','stroke-width':'1'}));
+  }
+
+  // Entrada polygon (cierre mode only)
+  if (modo === 'cierre' && scoresEntrada) {
+    var valsE = EJES.map(function(e){ return (scoresEntrada[e.id]||0)/100; });
+    var ptsE = Array.from({length:n},function(_,i){
+      var a=(i/n)*2*Math.PI-Math.PI/2;
+      return (cx+r*valsE[i]*Math.cos(a)).toFixed(1)+','+(cy+r*valsE[i]*Math.sin(a)).toFixed(1);
+    }).join(' ');
+    svg.appendChild(mkEl('polygon',{points:ptsE,fill:'rgba(94,138,180,.12)',stroke:'var(--az)','stroke-width':'1.5','stroke-dasharray':'4 3'}));
+  }
+
+  // Current polygon
+  var ptsC = Array.from({length:n},function(_,i){
+    var a=(i/n)*2*Math.PI-Math.PI/2;
+    return (cx+r*vals[i]*Math.cos(a)).toFixed(1)+','+(cy+r*vals[i]*Math.sin(a)).toFixed(1);
+  }).join(' ');
+  svg.appendChild(mkEl('polygon',{points:ptsC,fill:'rgba(184,92,31,.22)',stroke:'var(--ex)','stroke-width':'2'}));
+
+  // Dots
+  vals.forEach(function(v,i){
+    var a=(i/n)*2*Math.PI-Math.PI/2;
+    var dx=(cx+r*v*Math.cos(a)).toFixed(1),dy=(cy+r*v*Math.sin(a)).toFixed(1);
+    svg.appendChild(mkEl('circle',{cx:dx,cy:dy,r:'5',fill:colors[i],stroke:'var(--ab)','stroke-width':'1.5'}));
+  });
+
+  // Labels
+  for (var j=0;j<n;j++){
+    var aj=(j/n)*2*Math.PI-Math.PI/2;
+    var lx=(cx+(r+24)*Math.cos(aj)).toFixed(1),ly=(cy+(r+24)*Math.sin(aj)).toFixed(1);
+    var anchor=parseFloat(lx)<cx-5?'end':parseFloat(lx)>cx+5?'start':'middle';
+    var t1=mkEl('text',{x:lx,y:(parseFloat(ly)+4).toFixed(1),'text-anchor':anchor,'font-family':'Barlow Condensed,sans-serif','font-size':'8','font-weight':'700',fill:'rgba(255,255,255,.5)','letter-spacing':'0.5'});
+    t1.textContent=labels[j];
+    svg.appendChild(t1);
+    var t2=mkEl('text',{x:lx,y:(parseFloat(ly)+16).toFixed(1),'text-anchor':anchor,'font-family':'Cormorant Garamond,serif','font-size':'13',fill:colors[j]});
+    t2.textContent=scores[EJES[j].id];
+    svg.appendChild(t2);
+  }
+
+  // Leyenda cierre
+  if (modo === 'cierre' && scoresEntrada) {
+    var lgY = 315;
+    var l1 = mkEl('line',{x1:'40',y1:lgY,x2:'65',y2:lgY,stroke:'var(--az)','stroke-width':'1.5','stroke-dasharray':'4 3'});
+    var lt1 = mkEl('text',{x:'70',y:(lgY+4),'font-family':'Barlow Condensed,sans-serif','font-size':'9',fill:'rgba(255,255,255,.5)'});
+    lt1.textContent='Entrada S2';
+    var l2 = mkEl('line',{x1:'155',y1:lgY,x2:'180',y2:lgY,stroke:'var(--ex)','stroke-width':'2'});
+    var lt2 = mkEl('text',{x:'185',y:(lgY+4),'font-family':'Barlow Condensed,sans-serif','font-size':'9',fill:'rgba(255,255,255,.5)'});
+    lt2.textContent='Cierre S8';
+    svg.appendChild(l1);svg.appendChild(lt1);svg.appendChild(l2);svg.appendChild(lt2);
+  }
+}
+
+function buildEjesDetalle(scores) {
+  var container = document.getElementById('ejes-det');
+  container.innerHTML = '';
+  var h3 = document.createElement('h3');
+  h3.style.fontFamily = 'Barlow Condensed,sans-serif'; h3.style.fontSize = '.72rem'; h3.style.fontWeight = '700'; h3.style.letterSpacing = '.2em'; h3.style.textTransform = 'uppercase'; h3.style.color = 'rgba(255,255,255,.4)'; h3.style.marginBottom = '.8rem';
+  h3.textContent = 'Las 6 dimensiones — de mayor a menor entropía';
+  container.appendChild(h3);
+
+  var sorted = EJES.slice().sort(function(a,b){ return scores[a.id]-scores[b.id]; });
+  sorted.forEach(function(e){
+    var sc = scores[e.id];
+    var fi = sc<=40?0:sc<=60?1:sc<=80?2:3;
+    var row = document.createElement('div');
+    row.className = 'eje-detalle-row';
+    row.style.cssText = 'border-bottom:1px solid rgba(255,255,255,.07);padding:.8rem 0';
+
+    var hdr = document.createElement('div');
+    hdr.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem';
+
+    var nm = document.createElement('span');
+    nm.style.fontFamily = 'Barlow Condensed,sans-serif'; nm.style.fontSize = '.78rem'; nm.style.fontWeight = '700'; nm.style.letterSpacing = '.1em'; nm.style.textTransform = 'uppercase'; nm.style.color = e.color;
+    nm.textContent = e.nombre;
+
+    var scEl = document.createElement('span');
+    scEl.style.fontFamily = 'Cormorant Garamond,serif'; scEl.style.fontSize = '1.4rem'; scEl.style.fontWeight = '300'; scEl.style.color = e.color;
+    scEl.textContent = sc;
+
+    // Delta per eje (cierre only)
+    if (modo === 'cierre' && scoresEntrada) {
+      var dv = sc - scoresEntrada[e.id];
+      var dEl = document.createElement('span');
+      dEl.style.fontFamily = 'Barlow Condensed,sans-serif'; dEl.style.fontSize = '.72rem'; dEl.style.fontWeight = '700'; dEl.style.letterSpacing = '.08em'; dEl.style.color = dv>0?'#2E6B4F':dv<0?'#8B1A2A':'rgba(255,255,255,.3)';
+      dEl.textContent = (dv>0?'+':'')+dv;
+      hdr.appendChild(nm);
+      hdr.appendChild(dEl);
+      hdr.appendChild(scEl);
+    } else {
+      hdr.appendChild(nm);
+      hdr.appendChild(scEl);
+    }
+
+    var bar = document.createElement('div');
+    bar.style.cssText = 'height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.35rem;overflow:hidden';
+    var fill = document.createElement('div');
+    fill.style.cssText = 'height:100%;border-radius:2px;background:'+e.color+';width:'+sc+'%';
+    bar.appendChild(fill);
+
+    var frase = document.createElement('p');
+    frase.style.cssText = 'font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.55;font-style:italic';
+    frase.textContent = FRASES[e.id][fi];
+
+    row.appendChild(hdr);
+    row.appendChild(bar);
+    row.appendChild(frase);
+    container.appendChild(row);
+  });
+}
+
+function buildSesionesMapa(scores) {
+  var title = document.getElementById('ses-map-title');
+  title.textContent = modo === 'entrada'
+    ? 'Tu mapa de proceso — 8 sesiones calibradas a tu IEL™'
+    : 'Las 8 sesiones — cómo las abordaste';
+  var container = document.getElementById('ses-map');
+  container.innerHTML = '';
+  SESIONES.forEach(function(s){
+    var ejScores = s.ejes.map(function(eid){ return scores[eid]||50; });
+    var avg = ejScores.reduce(function(a,b){return a+b;},0)/ejScores.length;
+    var intens = avg<=50?'a':avg<=70?'m':'b';
+    var intensLbl = avg<=50?'Prioritaria':avg<=70?'Refuerzo':'Base';
+    var priColor = intens==='a'?'#B85C1F':intens==='m'?'#C9A84C':'rgba(255,255,255,.15)';
+
+    var row = document.createElement('div');
+    row.className = 'sr';
+    var pri = document.createElement('div');
+    pri.className = 'sr-pri';
+    pri.style.background = priColor;
+    var num = document.createElement('span');
+    num.className = 'sr-n';
+    num.textContent = s.n;
+    var info = document.createElement('div');
+    var nb = document.createElement('div');
+    nb.className = 'sr-nb';
+    nb.textContent = s.nombre;
+    var ej = document.createElement('div');
+    ej.className = 'sr-ej';
+    ej.textContent = s.ejes.join(' · ');
+    info.appendChild(nb);
+    info.appendChild(ej);
+    var badge = document.createElement('span');
+    badge.className = 'sr-int int-'+intens;
+    badge.textContent = intensLbl;
+    row.appendChild(pri);
+    row.appendChild(num);
+    row.appendChild(info);
+    row.appendChild(badge);
+    container.appendChild(row);
+  });
+}
+
+function buildCodigo(scores) {
+  var cod = document.getElementById('cod-res');
+  cod.innerHTML = '';
+  if (modo === 'cierre') {
+    cod.style.display = 'none';
+    return;
+  }
+  var codigo = genCodigo(scores);
+  var lbl = document.createElement('p');
+  lbl.className = 'cod-lbl';
+  lbl.textContent = 'Tu Código IEL™ — Consérvalo para la Sesión 8';
+  var val = document.createElement('p');
+  val.className = 'cod-val';
+  val.id = 'cod-val-txt';
+  val.textContent = codigo;
+  var btn = document.createElement('button');
+  btn.className = 'btn-copy';
+  btn.textContent = 'Copiar código';
+  btn.onclick = function() {
+    navigator.clipboard.writeText(codigo).then(function(){
+      btn.textContent = '✓ Copiado';
+      setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2000);
+    }).catch(function(){
+      var t = document.createElement('textarea');
+      t.value = codigo;
+      document.body.appendChild(t);
+      t.select();
+      document.execCommand('copy');
+      document.body.removeChild(t);
+      btn.textContent = '✓ Copiado';
+      setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2000);
+    });
+  };
+  var note = document.createElement('p');
+  note.className = 'cod-note';
+  note.textContent = 'Este código contiene tus resultados de entrada. Lo necesitarás al completar el IEL™ en la Sesión 8 para ver tu transformación verificada.';
+  cod.appendChild(lbl);
+  cod.appendChild(val);
+  cod.appendChild(btn);
+  cod.appendChild(note);
+}
+
+document.addEventListener('DOMContentLoaded', function(){ checkName(); });
+</script>
+</body>
+</html>
