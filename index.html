@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Edwin Romero | Institute · Ingeniería del Desempeño Humano™</title>
 <meta name="description" content="Activar el cambio en un líder o en un equipo es fácil; sostenerlo es lo difícil. Ingeniería del Desempeño Humano™ para organizaciones en Colombia - Latinoamérica.">
@@ -26,10 +27,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.edwinromerom.com/#org","name":"Edwin Romero | Institute","url":"https://www.edwinromerom.com/","logo":"https://www.edwinromerom.com/assets/icon-512.png","slogan":"Ingeniería del Desempeño Humano","areaServed":"Colombia - Latinoamérica","founder":{"@id":"https://www.edwinromerom.com/#edwin"},"sameAs":["https://www.linkedin.com/in/edwinromerom","https://www.instagram.com/edwinromerom"]},{"@type":"Person","@id":"https://www.edwinromerom.com/#edwin","name":"Edwin Romero M.","jobTitle":"Ingeniero del Desempeño Humano","url":"https://www.edwinromerom.com/","worksFor":{"@id":"https://www.edwinromerom.com/#org"}},{"@type":"WebSite","@id":"https://www.edwinromerom.com/#web","url":"https://www.edwinromerom.com/","name":"Edwin Romero | Institute","inLanguage":"es-CO","publisher":{"@id":"https://www.edwinromerom.com/#org"}}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.edwinromerom.com/#org","name":"Edwin Romero | Institute","url":"https://www.edwinromerom.com/","logo":"https://www.edwinromerom.com/assets/icon-512.png","slogan":"Ingeniería del Desempeño Humano","areaServed":[{"@type":"Country","name":"Colombia"},{"@type":"Place","name":"Latinoamérica"}],"address":{"@type":"PostalAddress","addressCountry":"CO"},"contactPoint":{"@type":"ContactPoint","telephone":"+57-318-206-7128","contactType":"sales","availableLanguage":"es"},"founder":{"@id":"https://www.edwinromerom.com/#edwin"}},{"@type":"Person","@id":"https://www.edwinromerom.com/#edwin","name":"Edwin Romero M.","jobTitle":["Ingeniero del Desempeño Humano","Estratega de Sistemas Complejos"],"image":"https://www.edwinromerom.com/img/edwin-estudio.jpg","sameAs":["https://www.linkedin.com/in/edwinromerom","https://www.instagram.com/edwinromerom","https://www.tiktok.com/@edwinromerom"],"url":"https://www.edwinromerom.com/","worksFor":{"@id":"https://www.edwinromerom.com/#org"}},{"@type":"WebSite","@id":"https://www.edwinromerom.com/#web","url":"https://www.edwinromerom.com/","name":"Edwin Romero | Institute","inLanguage":"es-CO","publisher":{"@id":"https://www.edwinromerom.com/#org"}}]}</script>
+<link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/space-grotesk-latin-wght-normal.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url(assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:100 900;font-display:swap;src:url(assets/fonts/fraunces-latin-wght-italic.woff2) format('woff2')}
 :root{--obs:#0A0F1E;--az:#1F2A47;--az2:#141B2E;--tit:#C6CCD4;--tit1:#E6E9ED;--tit2:#E6E9ED;--rub:#8B1A2A;--bro:#B46A2A;--mar:#F4EFE8;--dor:#D9C08A;--dor2:#8A6A2C;
 --disp:'Space Grotesk','Plus Jakarta Sans',system-ui,sans-serif;--txt:'Plus Jakarta Sans',system-ui,sans-serif;--ser:'Fraunces',Georgia,serif;
 --ease:cubic-bezier(.2,.8,.2,1);--gut:clamp(20px,5vw,88px)}
@@ -57,8 +61,8 @@ section{position:relative}.sec{padding-block:clamp(80px,12vw,170px)}
 @media(max-width:1000px){#hd nav{display:none}}
 @media(max-width:560px){.pill .x{display:none}.brand .i,.brand i{display:none}.brand{font-size:14px;gap:8px}.brand img{width:24px;height:24px}.pill{padding:9px 13px;font-size:11px}}
 /* reveal */
-.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
+html.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
 /* botones y puentes */
 .btn{display:inline-flex;align-items:center;gap:12px;font:600 13px/1.2 var(--disp);letter-spacing:.13em;text-transform:uppercase;padding:19px 28px;border-radius:99px;background:var(--rub);color:var(--mar);position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;text-align:left}
 .btn::after{content:"→";transition:transform .3s;flex:0 0 auto}.btn:hover::after{transform:translateX(5px)}.btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(139,26,42,.5)}
@@ -76,13 +80,13 @@ section{position:relative}.sec{padding-block:clamp(80px,12vw,170px)}
 .hero .w{position:relative;z-index:3;padding-bottom:clamp(26px,4.5vh,52px)}
 .eye{color:var(--dor);margin-bottom:clamp(16px,3vh,30px);opacity:0;animation:fade 1s .1s forwards}
 @keyframes fade{to{opacity:1}}@keyframes up{to{transform:none}}
-.hero h1{font-size:clamp(36px,5.5vw,92px);max-width:15ch;line-height:1}
+.hero h1{font-size:clamp(30px,3.9vw,62px);max-width:22ch;line-height:1.08;letter-spacing:-.02em}
 .hero h1 .l{display:block;overflow:hidden;padding-bottom:.08em}.hero h1 .l>span{display:block;transform:translateY(105%);animation:up 1.1s var(--ease) forwards}
 .hero h1 .l:nth-child(2)>span{animation-delay:.18s}.hero h1 .l:nth-child(2){margin-top:.04em}
-.hero h1 em{color:var(--dor);font-weight:300}
+.hero h1 em{color:var(--dor);font-weight:300;font-size:.9em}
 .sub{display:grid;grid-template-columns:minmax(0,480px) minmax(0,420px);gap:clamp(22px,4vw,64px);align-items:end;margin-top:clamp(22px,3.5vh,40px);opacity:0;animation:fade 1s .9s forwards}
 .sub p{font-size:clamp(17px,1.4vw,21px);color:rgba(244,239,232,.86);line-height:1.5}.sub p strong{font-weight:600;color:var(--mar)}
-.cta-col{display:grid;gap:14px;justify-items:start;text-shadow:0 1px 12px rgba(10,15,30,.9)}.micro{font-size:13px;opacity:.7;max-width:34ch;line-height:1.45}
+.cta-col{display:grid;gap:14px;justify-items:start;text-shadow:0 1px 12px rgba(10,15,30,.9)}.micro{font-size:13px;opacity:.7;max-width:34ch;line-height:1.45}.sub .cta-col .micro{font-size:15px;opacity:.78;color:rgba(244,239,232,.86)}
 .stats{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(24px,6vw,96px);justify-content:start;margin-top:clamp(30px,5vh,56px);padding-top:24px;border-top:1px solid rgba(244,239,232,.2);opacity:0;animation:fade 1s 1.2s forwards}
 .stats b,.nums b{display:block;font:300 clamp(40px,5vw,74px)/1 var(--disp);letter-spacing:-.04em}.stats b sup,.nums b sup{font-size:.5em;color:var(--dor);vertical-align:.35em;margin-right:2px}
 .stats>div>span{display:block;font-size:13px;opacity:.7;margin-top:8px;max-width:20ch;line-height:1.4}
@@ -320,7 +324,7 @@ h1,h2{font-weight:400}.h2{letter-spacing:-.045em}
 .scar{border-color:rgba(217,192,138,.55)}
 .tbl{border-color:rgba(138,106,44,.45);box-shadow:0 30px 70px rgba(10,15,30,.12)}
 .cards{border-color:rgba(217,192,138,.35);background:rgba(217,192,138,.28)}
-.dc{background:#141B2E}.dc::before{background:radial-gradient(420px 320px at 50% 0,rgba(217,192,138,.24),transparent 70%),#1F2A47}
+.dc{background:#141B2E}.dc::before{background:radial-gradient(460px 340px at 50% 0,rgba(184,45,67,.30),transparent 72%),radial-gradient(520px 360px at 50% 100%,rgba(184,45,67,.10),transparent 70%),#1F2A47}
 .q{border-left-color:var(--dor)}
 .ph .fr::before{border-color:var(--dor);inset:22px -22px -22px 22px}
 .ph .tag{background:linear-gradient(135deg,#1F2A47,#141B2E);color:var(--dor);box-shadow:inset 0 0 0 1px rgba(217,192,138,.7)}
@@ -504,19 +508,19 @@ footer{background:linear-gradient(180deg,#0A0F1E,#0A0F1E);border-top:1px solid r
 @media(max-width:899px){.lg{grid-template-columns:1fr}.bk{margin-inline:auto;width:min(66vw,300px)}.lt{justify-items:start}.lc,.lr{grid-template-columns:1fr}.lr figure{width:min(86vw,380px);margin-inline:auto}.bn{grid-template-columns:repeat(4,1fr);gap:10px}.lc summary::after{content:"+";grid-column:3;grid-row:1;font:300 28px/1 var(--disp);color:var(--dor)}.lc details[open] summary::after{content:"–"}.lc summary{grid-template-columns:auto 1fr auto}}
 
 /* BOTONES DE ACCIÓN · Rubedo carmesí */
-.btn,.btn.g,.btn.k,.light .btn,.dark .btn,.hoja .btn,.cv .btn{background:linear-gradient(135deg,#B82D43 0%,#8B1A2A 100%);color:#F4EFE8;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 12px 32px rgba(139,26,42,.38)}
-.btn:hover,.btn.g:hover,.btn.k:hover,.light .btn:hover,.dark .btn:hover{background:linear-gradient(135deg,#B82D43 0%,#8B1A2A 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 18px 50px rgba(184,45,67,.5)}
+.btn,.btn.g,.btn.k,.light .btn,.dark .btn,.hoja .btn,.cv .btn{background:linear-gradient(135deg,#8B1A2A 0%,#6A1624 100%);color:#F4EFE8;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 10px 26px rgba(106,22,36,.3)}
+.btn:hover,.btn.g:hover,.btn.k:hover,.light .btn:hover,.dark .btn:hover{background:linear-gradient(135deg,#8B1A2A 0%,#6A1624 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 14px 36px rgba(139,26,42,.38)}
 .btn:focus-visible{outline:2px solid #F4EFE8;outline-offset:3px}
 .btn::before{background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
 
 /* BOTONES · bitono dorado-carmesí (cuerpo carmesí, filo dorado, flecha en medallón dorado) */
-.btn,.btn.g,.btn.k,.light .btn,.dark .btn,.hoja .btn,.cv .btn{border:1.5px solid transparent;background:linear-gradient(135deg,#B82D43 0%,#8B1A2A 100%) padding-box,linear-gradient(135deg,#E3C98F 0%,#D9C08A 38%,#B89A5C 68%,#E3C98F 100%) border-box;color:#F4EFE8;padding:10px 12px 10px 28px;gap:18px;box-shadow:0 12px 32px rgba(139,26,42,.4),0 0 0 0 rgba(217,192,138,0)}
-.btn:hover,.btn.g:hover,.btn.k:hover,.light .btn:hover,.dark .btn:hover{background:linear-gradient(135deg,#B82D43 0%,#8B1A2A 100%) padding-box,linear-gradient(135deg,#E3C98F 0%,#D9C08A 38%,#B89A5C 68%,#E3C98F 100%) border-box;box-shadow:0 18px 50px rgba(184,45,67,.5),0 0 22px rgba(217,192,138,.28)}
+.btn,.btn.g,.btn.k,.light .btn,.dark .btn,.hoja .btn,.cv .btn{border:1.5px solid transparent;background:linear-gradient(135deg,#8B1A2A 0%,#6A1624 100%) padding-box,linear-gradient(135deg,#E3C98F 0%,#D9C08A 38%,#B89A5C 68%,#E3C98F 100%) border-box;color:#F4EFE8;padding:10px 12px 10px 28px;gap:18px;box-shadow:0 10px 26px rgba(106,22,36,.32),0 0 0 0 rgba(217,192,138,0)}
+.btn:hover,.btn.g:hover,.btn.k:hover,.light .btn:hover,.dark .btn:hover{background:linear-gradient(135deg,#8B1A2A 0%,#6A1624 100%) padding-box,linear-gradient(135deg,#E3C98F 0%,#D9C08A 38%,#B89A5C 68%,#E3C98F 100%) border-box;box-shadow:0 14px 36px rgba(139,26,42,.4),0 0 20px rgba(217,192,138,.24)}
 .btn::after{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:16px;line-height:1;background:linear-gradient(135deg,#E3C98F,#D9C08A 55%,#B89A5C);color:#0A0F1E;box-shadow:inset 0 1px 0 rgba(255,255,255,.55)}
 .btn.dn::after{content:"↓"}
 @media(max-width:560px){.btn{padding:9px 10px 9px 22px}}
 /* cifra de impacto en carmesí */
-.cost .num{background:linear-gradient(135deg,#D1596D 0%,#D1596D 45%,#B82D43 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 30px rgba(209,89,109,.4))}
+.cost .num{background:linear-gradient(100deg,#F4EFE8 0%,#D9C08A 38%,#B46A2A 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 28px rgba(217,192,138,.28))}
 .cost .num small{-webkit-text-fill-color:#F4EFE8;color:#F4EFE8}
 
 /* IRREVERSIBLE · el libro y dos caminos */
@@ -607,8 +611,52 @@ footer{background:linear-gradient(180deg,#0A0F1E,#0A0F1E);border-top:1px solid r
 footer a{padding-block:9px;margin-block:-9px}
 .tg button,.tabs button,[role=switch],.sw button{min-height:36px}
 :focus-visible{outline:2px solid var(--dor);outline-offset:3px}
+
+/* ===== AJUSTES DEL PANEL ===== */
+.hero.off .orb{animation-play-state:paused}
+.cta-col .micro{opacity:1;color:rgba(244,239,232,.78)}
+.alt{position:relative}.alt::before{content:"";position:absolute;inset:-12px -4px}
+#stp{background:rgba(10,15,30,.96)}
+@media(min-width:901px){
+ .stats{gap:clamp(24px,4vw,64px)}.stats b{font-size:clamp(40px,4.4vw,68px)}
+ .sub{grid-template-columns:minmax(0,480px) minmax(0,360px)}
+}
+@media(min-width:901px) and (max-height:800px){
+ .hero{padding-top:92px}.hero h1{font-size:clamp(34px,4.6vw,76px)}
+ .stats{margin-top:22px;padding-top:16px}
+}
+@media(max-width:700px){
+ .hero-photo{height:clamp(220px,34svh,300px)}
+ .hero .w{margin-top:-40px}
+ .sub{display:flex;flex-direction:column}.sub .cta-col{order:-1}
+ body{padding-bottom:76px}
+}
+
+/* ===== RONDA 2 ===== */
+.offer{margin-top:clamp(18px,2.6vh,28px);max-width:34ch;padding-left:16px;border-left:2px solid var(--dor);font:500 clamp(16px,1.35vw,20px)/1.45 var(--txt);color:var(--tit,#C6CCD4);opacity:0;animation:fade 1s .75s forwards}
+.light :focus-visible,.sec.light :focus-visible{outline:2px solid #0A0F1E;outline-offset:3px}
+.light .btn:focus-visible{outline-color:#0A0F1E}
+html{scroll-padding-bottom:96px}
+@media(max-height:420px){#stp{display:none}}
+.ph img{height:auto}
+@media(max-width:900px),(hover:none){.hero h1 em{animation:none}}
+.hero.off h1 em{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.offer{opacity:1!important}}
+@media(min-width:1500px){#hd{padding-inline:calc((100vw - 1400px)/2 + var(--gut))}}
+.hero .w h1{font-size:clamp(30px,3.7vw,60px)}.hero .stats b{font-size:clamp(30px,3.3vw,50px)}.hero .stats{margin-top:clamp(44px,8vh,92px);gap:clamp(32px,7vw,112px)}.hero .sub{margin-top:clamp(28px,4.5vh,52px)}.hero .offer{margin-top:clamp(18px,3vh,30px)}.hero .stats>div>span{margin-top:10px}
 </style>
-</head>
+<style>@media(hover:none){.orb{animation:none}}
+/* ===== RONDA 3 ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sec.light .inst :focus-visible{outline-color:#D9C08A}
+#stp.hide{opacity:0!important;pointer-events:none!important}#stp.last .ar{display:none}
+body{padding-bottom:84px}
+.rbd .fn{opacity:1;color:rgba(244,239,232,.64)}.rbd .fn .alt{opacity:1}
+.agi .src{opacity:1;color:rgba(244,239,232,.64)}
+.hero{min-height:min(100svh,1080px)}
+@media(min-height:1600px){html.js .rv{opacity:1;transform:none;transition:none}}
+@media(max-width:700px){.hero-photo{height:clamp(180px,26svh,240px)}.hero .offer{margin-top:12px;max-width:none;font-size:15px}.hero .sub{margin-top:18px}.hero .stats{margin-top:32px;gap:24px}.hero h1{max-width:none}}
+</style></head>
 <body>
 <div id="prog"></div>
 <a class="skip" href="#top">Saltar al contenido</a>
@@ -620,16 +668,17 @@ footer a{padding-block:9px;margin-block:-9px}
 
 <main id="top">
 <!-- HERO -->
-<section data-step="0" data-nm="Comencemos" class="hero noise dark" data-wa="llegué por el encabezado principal">
+<section data-step="0" data-nm="Comencemos" class="hero noise dark" data-wa="vi la página de inicio">
   <canvas id="field" aria-hidden="true"></canvas>
   <svg class="orb" viewBox="-300 -300 600 600" aria-hidden="true"><g fill="none" stroke="#D9C08A"><circle r="290" stroke-opacity=".18"/><circle r="230" stroke-opacity=".28" stroke-dasharray="2 9"/><circle r="170" stroke-opacity=".35"/><circle r="110" stroke-opacity=".22" stroke-dasharray="1 6"/><path d="M-290 0H290M0-290V290" stroke-opacity=".12"/></g><g fill="#D9C08A"><circle cx="0" cy="-170" r="4"/><circle cx="170" cy="0" r="3"/><circle cx="-230" cy="0" r="3"/><circle cx="0" cy="230" r="4"/></g></svg>
-  <div class="hero-photo" id="hp"><img src="img/x1.png" width="1536" height="1024" alt="Edwin Romero, Ingeniero del Desempeño Humano™" fetchpriority="high"></div>
+  <div class="hero-photo" id="hp"><img src="img/hero-edwin2.jpg" width="1800" height="1200" alt="Edwin Romero, Ingeniero del Desempeño Humano™" fetchpriority="high"></div>
   <div class="w">
     <p class="lab eye in">Para quien decide invertir en las personas</p>
     <h1><span class="l"><span>Activar el cambio en un líder o en un equipo es fácil.</span></span><span class="l"><span><em>Lo difícil es evitar que la inercia del sistema los devuelva a su estado anterior.</em></span></span></h1>
+    <p class="offer">Diagnóstico y diseño de sistemas de liderazgo y equipos que sostienen el resultado en el tiempo.</p>
     <div class="sub">
-      <p><strong>Usted ya invirtió en su gente, y es probable que lo haya visto:</strong> el entusiasmo llegó y, a las pocas semanas, todo volvió a su lugar. No faltaron talento ni voluntad; faltó un sistema diseñado para que el cambio se quede. Permítanos mostrarle, paso a paso, dónde se pierde el resultado y cómo se instala para que permanezca.</p>
-      <div class="cta-col"><a class="btn dn" href="#problema">Comencemos: ¿qué le ocurre a su organización?</a><p class="micro">Un recorrido breve y sin registrarse. <a class="alt" href="#conversacion" data-cta="hero">Prefiero conversar 20 minutos de una vez</a></p></div>
+      <p><strong>Usted ya invirtió en su gente.</strong> El entusiasmo llegó y, a las pocas semanas, todo volvió a su lugar: faltó un sistema que haga permanecer el cambio.</p>
+      <div class="cta-col"><a class="btn dn" href="#problema">Comencemos: ¿qué le ocurre a su organización?</a><p class="micro">Recorrido guiado de diez pasos, sin registro. <a class="alt" href="#conversacion" data-cta="hero">Prefiero conversar 20 minutos</a></p></div>
     </div>
     <div class="stats">
       <div><b><sup>+</sup><span class="cn" data-t="20">20</span></b><span>años de validación en campo</span></div>
@@ -662,7 +711,7 @@ footer a{padding-block:9px;margin-block:-9px}
     <p class="lab rv">Paso 2 de 10 · Dimensionar lo que cuesta</p>
     <div class="top">
       <h2 class="h2 rv" style="--d:.1s">Cuando nadie diseña la tercera pregunta, <em>la pérdida empieza en quien lidera.</em></h2>
-      <p class="lead rv" style="--d:.2s">La fricción sistémica se paga en cada decisión que tarda, en cada líder que se agota y en cada cambio que no sobrevive al taller. La investigación publicada lo sigue en tres tramos, y conviene recorrerlos en orden.</p>
+      <p class="lead rv" style="--d:.2s">La Fricción Sistémica™ se paga en cada decisión que tarda, en cada líder que se agota y en cada cambio que no sobrevive al taller. La investigación publicada lo sigue en tres tramos, y conviene recorrerlos en orden.</p>
     </div>
     <div class="tram">
       <article class="tr rv"><small>Primero · el origen</small><div class="big"><span class="cn" data-t="82">82</span><sup>%</sup></div><h3>Empieza en quien lidera.</h3><div class="bar" style="--w:82%"><i></i></div><p>El 82 % de las veces las organizaciones fallan al elegir a la persona con el talento natural adecuado para liderar, y al menos el 70 % de la variación en el compromiso entre unidades se explica por quien las dirige.</p><p class="src">Gallup, State of the American Manager, 2015 · 27 millones de empleados y más de 2,5 millones de equipos de trabajo en dos décadas.</p></article>
@@ -672,7 +721,7 @@ footer a{padding-block:9px;margin-block:-9px}
     <p class="punch rv">Lo que nadie diseñó, <em>el azar lo diseña por usted.</em></p>
     <div class="cost rv">
       <div class="num"><span class="cn" data-t="10">10</span> billones<small>de dólares: el 9 % del PIB mundial perdido en 2024 por falta de compromiso laboral.</small></div>
-      <div><p>El compromiso de los gerentes, el eslabón que más lo mueve, cayó del 27 % al 22 % en 2025.</p><p>En su organización ese costo no tiene línea en el balance, pero existe y crece: se llama Deuda Humana™. Aparece como la rotación que ya duele y como las decisiones que tardan más de lo debido.</p><p class="fin">La Deuda Humana™ no avisa cuando se contrae. Solo se nota cuando ya cuesta demasiado corregirla.</p><p class="src">Gallup, State of the Global Workplace 2026 · más de 160 países y territorios, 263.810 encuestados.</p></div>
+      <div><p>El compromiso de los gerentes, el eslabón que más lo mueve, cayó del 27 % al 22 % en 2025.</p><p>En su organización ese costo no tiene línea en el balance, pero existe y crece: se llama Deuda Humana™, la Fricción Sistémica™ acumulada que hoy no se ve y mañana se cobra. Aparece como la rotación que ya duele y como las decisiones que tardan más de lo debido.</p><p class="fin">La Deuda Humana™ no avisa cuando se contrae. Solo se nota cuando ya cuesta demasiado saldarla.</p><p class="src">Gallup, State of the Global Workplace 2026 · más de 160 países y territorios, 263.810 encuestados.</p></div>
     </div>
     <div class="bridge rv"><p>Ya sabe qué ocurre y cuánto pesa. <em>Ahora una pregunta justa: ¿qué de lo que ya hizo sirve?</em></p><div class="acts"><a class="btn g dn" href="#construyo">Siguiente paso: lo que ya construyó</a><a class="alt" href="#conversacion" data-cta="evidencia">Prefiero hablar de lo que esto me cuesta</a></div></div>
   </div>
@@ -686,18 +735,18 @@ footer a{padding-block:9px;margin-block:-9px}
       <h2 class="h2 rv" style="--d:.1s">Todo lo que contrató sirve. <em style="color:var(--dor2)">Es la base sobre la que se construye.</em></h2>
       <p class="lead rv" style="--d:.2s">Cada formato aportó algo real. El paso siguiente es que lo logrado se mida, se demuestre y se sostenga aunque el proveedor ya no esté.</p>
     </div>
-    <p class="tbl-hint rv">Toque cada formato para ver qué aporta y qué suma la Ingeniería del Desempeño Humano™.</p>
+    <p class="tbl-hint rv">Seleccione cada formato para ver qué aporta y qué suma la Ingeniería del Desempeño Humano™.</p>
     <div class="tbl rv">
       <div class="tr3 h"><div>Lo que ya hizo</div><div>Lo que aporta</div><div>Dónde puede evolucionar</div><div>Lo que suma la ingeniería</div></div>
       <div class="tr3"><div>Formación</div><div>Transmite conocimiento a escala.</div><div>Rara vez mide si cambió una conducta.</div><div class="plus">Una medición previa con la alKimetría™ y una verificación posterior de la conducta.</div></div>
       <div class="tr3"><div>Coaching</div><div>Acompaña a la persona con cercanía.</div><div>Trabaja sobre la percepción que el líder tiene de sí mismo, que es donde el punto ciego se esconde.</div><div class="plus">Instrumentos que miden al líder desde fuera de su propia mirada.</div></div>
-      <div class="tr3"><div>Facilitación</div><div>Dinamiza y conecta al equipo.</div><div>La energía de la sesión se disipa como fricción cuando la sesión termina.</div><div class="plus">Una arquitectura que queda instalada en su operación, para que la energía de la sesión no se disipe en Fricción Sistémica™.</div></div>
-      <div class="tr3"><div>Mentoría</div><div>Aporta experiencia y confianza.</div><div>Sin medición, su impacto queda a la interpretación.</div><div class="plus">Medición de entrada y de cierre sobre la misma escala, con un Informe de cierre alKimétrico™ listo para la junta directiva.</div></div>
+      <div class="tr3"><div>Facilitación</div><div>Dinamiza y conecta al equipo.</div><div>La energía de la sesión se disipa como fricción en cuanto termina.</div><div class="plus">Una arquitectura que queda instalada en su operación, para que la energía de la sesión no se disipe en Fricción Sistémica™.</div></div>
+      <div class="tr3"><div>Mentoría</div><div>Aporta experiencia y confianza.</div><div>Sin medición, su impacto queda sujeto a interpretación.</div><div class="plus">Medición de entrada y de cierre sobre la misma escala, con un Informe de cierre alKimétrico™ listo para la junta directiva.</div></div>
       <div class="tr3"><div>Modelos de liderazgo</div><div>Dan un lenguaje común.</div><div>Muchos describen al líder ideal. El paso siguiente es medir en qué estado está hoy y qué le cuesta al sistema.</div><div class="plus">El modelo LEM (Liderazgo Energético Magnético) de <em>El Sistema Eres Tú</em> lee el estado del líder (potencia, regeneración, combustión o entropía) y lo hace medible.</div></div>
-      <div class="tr3"><div>Modelos de equipo y alto rendimiento</div><div>Dan método y un lenguaje común para trabajar en equipo.</div><div>Muchos describen cómo funciona un equipo ideal. El paso siguiente es leer en qué estado está el suyo y lograr que la mejora dure.</div><div class="plus">El Arco de Transmutación (Dispersión, Sinergia, Corresponsabilidad y Potencia Máxima Sostenida) lee en qué punto está el equipo, medido con el IEE™.</div></div>
+      <div class="tr3"><div>Modelos de equipo y alto rendimiento</div><div>Dan método y un lenguaje común para trabajar en equipo.</div><div>Muchos describen cómo funciona un equipo ideal. El paso siguiente es leer en qué estado está el suyo y lograr que la mejora dure.</div><div class="plus">El Arco de Transmutación (Dispersión, Sinergia, Corresponsabilidad y Potencia Máxima Sostenida) lee en qué punto está el equipo, medido con el IEE™ (Índice de Entropía de Equipos).</div></div>
     </div>
     <p class="note rv">La Ingeniería del Desempeño Humano™ no reemplaza ninguno de ellos. <em>Los potencia</em> con lo que necesitan para sostenerse: una arquitectura y una medición.</p>
-    <div class="bridge rv"><p>Con esa base reconocida, queda lo esencial: <em>cómo se construye lo que sí permanece.</em></p><div class="acts"><a class="btn k dn" href="#metodo">Siguiente paso: conocer el método</a></div></div>
+    <div class="bridge rv"><p>Con esa base reconocida, queda lo esencial: <em>qué hace que el cambio permanezca.</em></p><div class="acts"><a class="btn k dn" href="#metodo">Siguiente paso: conocer el método</a></div></div>
   </div>
 </section>
 
@@ -706,8 +755,8 @@ footer a{padding-block:9px;margin-block:-9px}
   <div class="w">
     <p class="lab rv">Paso 4 de 10 · Conocer el método</p>
     <div class="top">
-      <h2 class="h2 rv" style="--d:.1s">Lo que se mide, evoluciona. <em style="color:var(--dor)">Lo que se diseña, se sostiene.</em></h2>
-      <p class="lead rv" style="--d:.2s">Edwin Romero es ingeniero electrónico y por eso parte de una convicción simple: nada se corrige si no se mide, nada se sostiene si no se modela y nada se da por resuelto si no se verifica. Medir es lo que permite que lo humano se sostenga.</p>
+      <h2 class="h2 rv" style="--d:.1s">Lo que se mide evoluciona. <em style="color:var(--dor)">Lo que se diseña, se sostiene.</em></h2>
+      <p class="lead rv" style="--d:.2s">Edwin Romero es ingeniero electrónico y por eso parte de una convicción simple: nada se corrige si no se mide, nada cambia si no se modela, nada permanece si no se instala y nada se da por resuelto si no se verifica. Medir es lo que convierte lo humano en algo que se puede gestionar.</p>
     </div>
     <div class="grid">
       <div class="ring rv" id="ring" aria-hidden="true">
@@ -737,7 +786,7 @@ footer a{padding-block:9px;margin-block:-9px}
       <h2 class="h2 rv" style="--d:.1s">Su organización ya mide mucho. <em style="color:var(--dor2)">Falta medir lo que sostiene el resultado.</em></h2>
       <p class="lead rv" style="--d:.2s">Mire el ejemplo con calma. El clima mide percepción y el 360° mide conducta observada, pero ninguno mide si el sistema que respalda esa conducta fue diseñado deliberadamente o simplemente ocurrió. Esa es la pregunta que responde la alKimetría™, y si no se mide, se adivina.</p>
     </div>
-    <p class="how rv">Elija qué desea ver. Dentro de cada tablero, el interruptor Entrada / Cierre le muestra el antes y el después.</p>
+    <p class="how rv">Elija qué desea ver. En los tableros del líder y del equipo, el interruptor Entrada / Cierre le muestra el antes y el después.</p>
     <div class="tabs rv" role="tablist" aria-label="Escala del diagnóstico">
       <button class="tab" role="tab" aria-selected="true" data-p="p1">El líder · IEL™</button>
       <button class="tab" role="tab" aria-selected="false" data-p="p2">El equipo · IEE™</button>
@@ -764,11 +813,11 @@ footer a{padding-block:9px;margin-block:-9px}
             <text class="ax" x="150" y="8" text-anchor="middle" dy="-2"></text>
           </svg>
         </div>
-        <p class="cap">Ilustración con datos simulados. Izquierda: estado de las cuatro dimensiones del liderazgo. Derecha: estado de energía del líder según su magnitud y su signo (catabólico a la izquierda, anabólico a la derecha).</p>
+        <p class="cap">Ilustración con datos simulados. Radar: estado de las cuatro dimensiones del liderazgo. Cuadrante: estado de energía del líder según su magnitud y su signo (catabólico a la izquierda, anabólico a la derecha).</p>
       </div>
       <div class="side">
-        <div class="sc"><h4>Lo que responde</h4><ul><li>¿En qué estado está hoy la energía de quien lidera?</li><li>¿En qué dimensión se pierde: personal, interpersonal, de equipos u organizacional?</li><li>¿Qué punto ciego no aparece en ninguna encuesta?</li></ul></div>
-        <div class="sc rep"><h4>Informe de cierre alKimétrico™</h4><div class="delta" id="delta">Línea base</div><p>La misma medida al inicio y al cierre, lista para la junta directiva.</p></div>
+        <div class="sc"><h4 role="heading" aria-level="3">Lo que responde</h4><ul><li>¿En qué estado está hoy la energía de quien lidera?</li><li>¿En qué dimensión se pierde: personal, interpersonal, de equipos u organizacional?</li><li>¿Qué punto ciego no aparece en ninguna encuesta?</li></ul></div>
+        <div class="sc rep"><h4 role="heading" aria-level="3">Informe de cierre alKimétrico™</h4><div class="delta" id="delta">Línea base</div><p>En la Mentoría, la misma medida al inicio y al cierre, lista para la junta directiva.</p></div>
         <a class="btn" href="#conversacion" data-cta="dx-lider">Quiero medir mi liderazgo</a>
       </div>
     </div>
@@ -778,13 +827,13 @@ footer a{padding-block:9px;margin-block:-9px}
       <div class="inst">
         <div class="hd"><b>Índice de Entropía de Equipos · lectura de ejemplo</b><div class="tog" data-t="equipo"><button class="on" data-v="0">Entrada</button><button data-v="1">Cierre</button></div></div>
         <div class="arco" id="arco"><div class="fill" id="afill"></div>
-          <div class="ak" data-i="0"><i></i>Dispersión</div><div class="ak" data-i="1"><i></i>Sinergia</div><div class="ak" data-i="2"><i></i>Correspon&shy;sabilidad</div><div class="ak" data-i="3"><i></i>Potencia máxima sostenida</div></div>
+          <div class="ak" data-i="0"><i></i>Dispersión</div><div class="ak" data-i="1"><i></i>Sinergia</div><div class="ak" data-i="2"><i></i>Correspon&shy;sabilidad</div><div class="ak" data-i="3"><i></i>Potencia Máxima Sostenida</div></div>
         <div class="trk" id="trk"></div><p class="trkc" id="trkc">Dispersión entre equipos: alta</p>
-        <p class="cap">Ilustración con datos simulados. Cada punto es un equipo sobre el Arco de Transmutación; el IEE™ mide cuánto se dispersan entre sí. El cuarto estado no se cruza: se habita.</p>
+        <p class="cap">Ilustración con datos simulados. Cada punto es un equipo sobre el Arco de Transmutación; el IEE™ ubica a cada equipo y la lectura multiequipo muestra cuánto se dispersan entre sí. El cuarto estado no se cruza: se habita.</p>
       </div>
       <div class="side">
-        <div class="sc"><h4>Lo que responde</h4><ul><li>¿En qué punto del arco está hoy el equipo?</li><li>¿Dónde se disuelve la coordinación cuando el líder sale de la sala?</li><li>¿Cuánto se movió el equipo entre la entrada y el cierre?</li></ul></div>
-        <div class="sc rep"><h4>Informe de cierre alKimétrico™</h4><div class="delta" id="delta2">Línea base</div><p>La misma medida al inicio y al cierre, para ver si el equipo se sostiene sin depender del Ingeniero.</p></div>
+        <div class="sc"><h4 role="heading" aria-level="3">Lo que responde</h4><ul><li>¿En qué punto del arco está hoy el equipo?</li><li>¿Dónde se disuelve la coordinación cuando el líder sale de la sala?</li><li>¿Cuánto se movió el equipo entre la entrada y el cierre?</li></ul></div>
+        <div class="sc rep"><h4 role="heading" aria-level="3">Informe de cierre alKimétrico™</h4><div class="delta" id="delta2">Línea base</div><p>En la Mentoría POTÉNCIATE™, la misma medida al inicio y al cierre, para ver si el equipo se sostiene sin depender del Ingeniero.</p></div>
         <a class="btn" href="#conversacion" data-cta="dx-equipo">Quiero medir a mi equipo</a>
       </div>
     </div>
@@ -800,8 +849,8 @@ footer a{padding-block:9px;margin-block:-9px}
         <p class="cap">Ilustración con datos simulados, a nivel de área, vicepresidencia u organización.</p>
       </div>
       <div class="side">
-        <div class="sc"><h4>Lo que responde</h4><ul><li>¿Existe un modelo de liderazgo compartido o cada líder improvisa su estilo?</li><li>¿En qué áreas se concentra la entropía?</li><li>¿Qué cambió desde la última medición, sobre la misma escala?</li></ul></div>
-        <div class="sc"><h4>Una misma métrica, varias escalas</h4><p>El mismo instrumento se aplica a un líder, a un equipo o a toda la organización, sin perder comparabilidad entre niveles.</p></div>
+        <div class="sc"><h4 role="heading" aria-level="3">Lo que responde</h4><ul><li>¿Existe un modelo de liderazgo compartido o cada líder improvisa su estilo?</li><li>¿En qué áreas se concentra la entropía?</li><li>¿Qué cambió desde la última medición, sobre la misma escala?</li></ul></div>
+        <div class="sc"><h4 role="heading" aria-level="3">Una misma métrica, varias escalas</h4><p>La misma métrica se aplica a un líder, a un equipo o a toda la organización, sin perder comparabilidad entre niveles.</p></div>
         <a class="btn" href="#conversacion" data-cta="dx-org">Quiero medir mi organización</a>
       </div>
     </div>
@@ -819,20 +868,20 @@ footer a{padding-block:9px;margin-block:-9px}
     </div>
     <div class="cards">
       <div class="dc rv"><span class="no">01</span><div><h3>Mide el estado, no solo la conducta</h3><p>Lee si el líder está en potencia, regeneración, combustión o entropía, y lo hace medible.</p></div></div>
-      <div class="dc rv" style="--d:.08s"><span class="no">02</span><div><h3>Cierra el punto ciego</h3><p>Acompaña al líder desde no ver hasta la maestría, con instrumentos que no dependen de su propia percepción.</p></div></div>
+      <div class="dc rv" style="--d:.08s"><span class="no">02</span><div><h3>Cierra el punto ciego</h3><p>Acompaña al líder desde el punto ciego hasta la maestría, con instrumentos que no dependen de su propia percepción.</p></div></div>
       <div class="dc rv" style="--d:.16s"><span class="no">03</span><div><h3>Termina cuando ya no es necesario</h3><p>El criterio de cierre es la Soberanía Operativa™: el líder o el equipo sostienen el resultado sin depender del Ingeniero, y la Deuda Humana™ deja de crecer.</p></div></div>
-      <div class="dc rv"><span class="no">04</span><div><h3>Entrega una prueba para la junta</h3><p>Un informe de cierre alKimétrico™ que compara el punto de partida y el de llegada con la misma medida.</p></div></div>
-      <div class="dc rv" style="--d:.08s"><span class="no">05</span><div><h3>Un solo sistema, dos ejes</h3><p>Un líder que cambia solo se estrella contra el techo de su equipo. Líder y equipo comparten una misma arquitectura.</p></div></div>
-      <div class="dc rv" style="--d:.16s"><span class="no">06</span><div><h3>Sostenido en un modelo propio y escrito</h3><p>Todo producto del Institute se apoya en el modelo de Liderazgo Energético Magnético (LEM) de <em>El Sistema Eres Tú</em>: un lenguaje común que se puede leer, medir y enseñar.</p></div></div>
+      <div class="dc rv"><span class="no">04</span><div><h3>Entrega una prueba para la junta</h3><p>En la Mentoría, un Informe de cierre alKimétrico™ compara el punto de partida y el de llegada con la misma medida.</p></div></div>
+      <div class="dc rv" style="--d:.08s"><span class="no">05</span><div><h3>Un solo sistema, dos ejes</h3><p>Un líder que cambia por su cuenta choca contra el techo de su equipo. Líder y equipo comparten una misma arquitectura.</p></div></div>
+      <div class="dc rv" style="--d:.16s"><span class="no">06</span><div><h3>Sostenido en un modelo propio y escrito</h3><p>Todo producto del Institute se apoya en el modelo de Liderazgo Energético Magnético (LEM) de <em>El Sistema Eres Tú</em>: un marco que se puede leer, medir y enseñar.</p></div></div>
     </div>
     <div class="secret rv"><b>¿Y el cómo?</b><p>Se diseña con cada organización: lo que sostiene a una no necesariamente sostiene a otra.</p></div>
     <div class="hoja rv" id="hoja">
-      <figure class="doc"><button type="button" class="dv" id="hjv" aria-label="Ampliar la primera página de la hoja ejecutiva"><img class="on" data-k="h1" src="img/hoja-institucional.jpg" alt="Primera página de la hoja ejecutiva Institucional" width="1105" height="1430"><img data-k="h2" src="img/hoja-exponenciate.jpg" alt="Primera página de la hoja ejecutiva de EXPONÉNCIATE" width="1105" height="1430" loading="lazy"><img data-k="h3" src="img/hoja-potenciate.jpg" alt="Primera página de la hoja ejecutiva de POTÉNCIATE" width="1105" height="1430" loading="lazy"></button><figcaption><b id="hjc">Hoja ejecutiva Institucional</b><span>Primera de 2 páginas · toque para ampliar</span></figcaption></figure>
+      <figure class="doc"><button type="button" class="dv" id="hjv" aria-label="Ampliar la primera página de la hoja ejecutiva"><img class="on" data-k="h1" src="img/hoja-institucional.jpg" alt="Primera página de la hoja ejecutiva Institucional" width="1105" height="1430" loading="lazy" decoding="async"><img data-k="h2" src="img/hoja-exponenciate.jpg" alt="Primera página de la hoja ejecutiva de EXPONÉNCIATE" width="1105" height="1430" loading="lazy"><img data-k="h3" src="img/hoja-potenciate.jpg" alt="Primera página de la hoja ejecutiva de POTÉNCIATE" width="1105" height="1430" loading="lazy"></button><figcaption><b id="hjc">Hoja ejecutiva Institucional</b><span>Primera de dos páginas · pulse para ampliar</span></figcaption></figure>
       <div class="hb">
         <p class="lab" style="color:var(--dor)">Para leerlo con calma</p>
         <h3>Llévese lo esencial en dos páginas.</h3>
         <p>La hoja ejecutiva reúne el problema, el método y lo que le corresponde a su organización. Se la enviamos nosotros por WhatsApp, sin compromiso y sin llenar formularios. Elija cuál desea.</p>
-        <div class="chips" id="hj">
+        <div class="chips" id="hj" role="radiogroup" aria-label="Hoja ejecutiva que desea recibir">
           <input type="radio" name="h" id="h1" value="institucional" data-n="Hoja ejecutiva Institucional" checked><label for="h1">Institucional · visión completa</label>
           <input type="radio" name="h" id="h2" value="de EXPONÉNCIATE™ (liderazgo)" data-n="Hoja ejecutiva EXPONÉNCIATE™"><label for="h2">EXPONÉNCIATE™ · el líder</label>
           <input type="radio" name="h" id="h3" value="de POTÉNCIATE™ (equipos)" data-n="Hoja ejecutiva POTÉNCIATE™"><label for="h3">POTÉNCIATE™ · el equipo</label>
@@ -851,7 +900,7 @@ footer a{padding-block:9px;margin-block:-9px}
     <p class="lab rv">Paso 7 de 10 · Elegir por dónde empezar</p>
     <div class="top">
       <h2 class="h2 rv" style="--d:.1s">Hay dos puertas de entrada. <em style="color:var(--dor2)">Elija la que responde a su pregunta.</em></h2>
-      <p class="lead rv" style="--d:.2s">Si su pregunta es <em>cómo lidera quien decide</em>, la puerta es <b class="ex">EXPONÉNCIATE™</b>. Si es <em>cómo rinde el equipo que ejecuta</em>, es <b class="po">POTÉNCIATE™</b>. Elija la que elija, el recorrido es el mismo: cinco niveles, una sola arquitectura y un único criterio de cierre.</p>
+      <p class="lead rv" style="--d:.2s">Si su pregunta es <em>cómo lidera quien decide</em>, la puerta es <b class="ex">EXPONÉNCIATE™</b>. Si es <em>cómo rinde el equipo que ejecuta</em>, es <b class="po">POTÉNCIATE™</b>. Sea cual sea la puerta, el recorrido es el mismo: cinco niveles, una sola arquitectura y un único criterio de cierre.</p>
     </div>
     <p class="how rv">Seleccione un eje y despliegue cada nivel para ver qué contiene.</p>
     <div class="axes rv" role="tablist" aria-label="Ejes">
@@ -866,7 +915,7 @@ footer a{padding-block:9px;margin-block:-9px}
 <!-- INGENIERO -->
 <section data-step="8" data-nm="Conocer a quien lo acompaña" class="ing sec dark" id="ingeniero" data-wa="leí quién es el Ingeniero">
   <div class="w"><div class="grid">
-    <figure class="ph rv"><div class="fr"><img src="img/x3.jpg" width="900" height="1150" alt="Edwin Romero, Ingeniero del Desempeño Humano™"><span class="tag">Ingeniero del Desempeño Humano™</span></div></figure>
+    <figure class="ph rv"><div class="fr"><img src="img/edwin-estudio.jpg" width="900" height="1126" alt="Edwin Romero, Ingeniero del Desempeño Humano™" loading="lazy" decoding="async"><span class="tag">Ingeniero del Desempeño Humano™</span></div></figure>
     <div>
       <p class="lab rv">Paso 8 de 10 · Conocer a quien lo acompaña</p>
       <h2 class="rv" style="--d:.1s">Edwin <em>Romero M.</em></h2>
@@ -876,16 +925,17 @@ footer a{padding-block:9px;margin-block:-9px}
       <blockquote class="q rv">Las organizaciones rara vez fallan por lo que saben. Fallan porque nadie ingenió el sistema que convierte lo que saben en resultado.</blockquote>
       <p class="scar rv"><b>Con usted estará Edwin Romero, no un equipo anónimo.</b> El Ingeniero diseña y acompaña personalmente cada proceso y no delega el diagnóstico ni la mentoría; por eso su agenda admite un número limitado de acompañamientos por trimestre.</p>
       <p class="lab rv" style="margin-bottom:12px;color:var(--dor)">Sectores de alta exigencia</p>
-      <div class="sect rv"><span>Energía, gas y servicios públicos</span><span>Farma y salud</span><span>Servicios financieros</span><span>Telecomunicaciones</span><span>Construcción e infraestructura</span><span>Manufactura</span><span>Retail y consumo masivo</span><span>Tecnología</span></div>
+      <div class="sect rv"><span>Energía, gas y servicios públicos</span><span>Farma y salud</span><span>Servicios financieros</span><span>Telecomunicaciones</span><span>Construcción e infraestructura</span><span>Manufactura</span><span>Comercio y consumo masivo</span><span>Tecnología</span></div>
       <p class="src rv" style="margin-top:18px">Como en las firmas de consultoría de alto nivel, el Institute mantiene reserva sobre sus clientes: no publica nombres ni testimonios atribuibles. La confianza se construye en la conversación previa, no en un catálogo de referencias.</p>
     </div>
   </div></div>
-  <div class="strip" id="strip">
-    <figure class="card wide"><img src="img/x2.jpg" width="1400" height="787" alt="Edwin Romero M. en conferencia" draggable="false"><figcaption><small>En escena</small>Edwin Romero M. en conferencia</figcaption></figure>
-    <figure class="card wide"><img src="img/foto-02.jpg" width="1600" height="900" alt="Participantes con camisetas amarillas escuchando al facilitador con micrófono en un salón" draggable="false"><figcaption><small>En sala</small>Conversación abierta con los participantes</figcaption></figure>
-    <figure class="card"><img src="img/foto-01.jpg" width="1122" height="1402" alt="Equipo trabajando alrededor de una mesa con notas adhesivas y un papelógrafo" draggable="false"><figcaption><small>En sala</small>Trabajo por equipos, mesa por mesa</figcaption></figure>
-    <figure class="card"><img src="img/foto-03.jpg" width="1122" height="1402" alt="Participantes de pie con los brazos en alto en un salón" draggable="false"><figcaption><small>En sala</small>Un salón completo en movimiento</figcaption></figure>
-    <figure class="card wide"><img src="img/x4.jpg" width="1400" height="933" alt="Edwin Romero M. ante un auditorio lleno" draggable="false"><figcaption><small>En escena</small>Edwin Romero M. ante un auditorio</figcaption></figure>
+  <div class="strip" id="strip" role="region" aria-label="Fotos en escena" tabindex="0">
+    <figure class="card wide"><img src="img/x2.jpg" width="1400" height="787" alt="Edwin Romero M. en conferencia" draggable="false" loading="lazy" decoding="async"><figcaption><small>En escena</small>Edwin Romero M. en conferencia</figcaption></figure>
+    <figure class="card wide"><img src="img/foto-09.jpg" width="1565" height="1005" style="object-position:50% 50%" alt="El facilitador dialogando con un grupo en una cocina interactiva" draggable="false" loading="lazy" decoding="async"><figcaption><small>Cocina interactiva</small>Un equipo que aprende haciendo</figcaption></figure>
+    <figure class="card wide"><img src="img/foto-08.jpg" width="1446" height="1088" style="object-position:50% 40%" alt="El facilitador entregando el micrófono a una participante durante el trabajo en mesas, con el grupo en camisetas amarillas" draggable="false" loading="lazy" decoding="async"><figcaption><small>Taller de equipos</small>Mesa por mesa, cada voz cuenta</figcaption></figure>
+    <figure class="card wide"><img src="img/foto-06.jpg" width="1600" height="897" alt="El facilitador conversando con un grupo de participantes en una terraza al aire libre" draggable="false" loading="lazy" decoding="async"><figcaption><small>Al aire libre</small>Una conversación abierta, a cielo abierto</figcaption></figure>
+    <figure class="card wide"><img src="img/foto-07.jpg" style="object-position:50% 40%" width="1122" height="1401" alt="El facilitador presentando sobre liderazgo y estrés ante un grupo sentado, con una pantalla led de fondo" draggable="false" loading="lazy" decoding="async"><figcaption><small>Conferencia</small>Liderazgo y estrés, explicados en vivo</figcaption></figure>
+    <figure class="card wide"><img src="img/x4.jpg" width="1400" height="933" alt="Edwin Romero M. ante un auditorio lleno" draggable="false" loading="lazy" decoding="async"><figcaption><small>En escena</small>Edwin Romero M. ante un auditorio</figcaption></figure>
   </div>
   <div class="w"><div class="bridge rv"><p><em>Lo que ha visto hasta aquí tiene un origen, y está escrito.</em></p><div class="acts"><a class="btn g dn" href="#libro">Siguiente paso: conocer la base de todo</a><a class="alt" href="#conversacion" data-cta="ing">Prefiero dar el primer paso</a></div></div></div>
 </section>
@@ -895,13 +945,13 @@ footer a{padding-block:9px;margin-block:-9px}
   <div class="w">
     <div class="lg">
       <figure class="bk rv">
-        <button type="button" class="cov" data-zoom="img/libro-portada.jpg" aria-label="Ampliar la portada de El Sistema eres tú"><img src="img/libro-portada.jpg" alt="Portada del libro El Sistema eres tú, Ingeniería del Liderazgo Energético Magnético, de Edwin Romero M." width="1105" height="1430"></button>
+        <button type="button" class="cov" data-zoom="img/libro-portada.jpg" aria-label="Ampliar la portada de El Sistema Eres Tú"><img src="img/libro-portada.jpg" alt="Portada del libro El Sistema Eres Tú, Ingeniería del Liderazgo Energético Magnético, de Edwin Romero M." width="1105" height="1430" loading="lazy" decoding="async"></button>
         <figcaption>Portada de la edición 2026</figcaption>
       </figure>
       <div class="lt">
         <p class="lab rv">Paso 9 de 10 · La base de todo</p>
         <h2 class="rv" style="--d:.1s">Todo lo que hacemos con organizaciones nace en este libro. <em>Por eso no se vende suelto.</em></h2>
-        <p class="ld rv"><b><i>El Sistema eres tú</i></b> es el modelo de Liderazgo Energético Magnético (LEM) del que parten la mentoría, la escuela de liderazgo, las experiencias y los catalizadores. Se entrega junto a su autor, para que lo que usted lee deje de ser una idea y se vuelva conducta.</p>
+        <p class="ld rv"><b><i>El Sistema Eres Tú</i></b> es el modelo de Liderazgo Energético Magnético (LEM) del que parten la mentoría, la escuela de liderazgo, las experiencias y los catalizadores. Se entrega junto a su autor, para que lo que usted lee deje de ser una idea y se vuelva conducta.</p>
         <div class="bn rv">
           <div><b>374</b><span>páginas de método</span></div>
           <div><b>3</b><span>secciones</span></div>
@@ -909,7 +959,7 @@ footer a{padding-block:9px;margin-block:-9px}
           <div><b>33</b><span>diagramas</span></div>
         </div>
         <div class="acts rv"><a class="btn g" href="https://wa.me/573182067128?text=Hola%2C%20vi%20El%20Sistema%20Eres%20T%C3%BA%20y%20quiero%20saber%20por%20qu%C3%A9%20proceso%20empezar." target="_blank" rel="noopener">Quiero saber por dónde empezar</a><a class="alt" href="#conversacion">Prefiero conversar primero</a></div>
-        <p class="fn rv">Le respondemos por WhatsApp con el proceso que se ajusta a su caso.</p>
+        <p class="fn rv">Le respondemos por WhatsApp con el proceso que se ajusta a su caso. Consulte la <a class="alt" href="politica-de-datos.html">política de tratamiento de datos</a>.</p>
       </div>
     </div>
 
@@ -942,12 +992,12 @@ footer a{padding-block:9px;margin-block:-9px}
       <p class="lab rv">Paso 10 de 10 · Dar el primer paso</p>
       <h2 class="rv" style="--d:.1s">Si lo que necesita no es lo que ofrecemos, <em>también se lo decimos.</em></h2>
       <p class="lead lead2 rv">Dentro de doce meses habrá invertido otra vez en su gente. La única pregunta es si esta vez el sistema permitirá que el cambio se quede, y cuánta Deuda Humana™ habrá acumulado entretanto.</p>
-      <p class="lead rv">Lo que sigue es una conversación de veinte minutos. Para llegar a ella con contexto, responda tres preguntas breves; el diagnóstico se hace después, con instrumentos.</p>
-      <ul class="promise rv"><li>Ubicamos dónde vive la entropía de su organización.</li><li>Le indicamos por qué puerta y en qué nivel le conviene empezar.</li><li>Su respuesta llega por WhatsApp directamente a Edwin Romero M.; usted decide qué escribe antes de enviarla.</li></ul>
+      <p class="lead rv">Lo que sigue es una conversación de 20 minutos. Para llegar a ella con contexto, responda tres preguntas breves; el diagnóstico se hace después, con instrumentos.</p>
+      <ul class="promise rv"><li>Identificamos qué conviene medir primero y con qué instrumento: el IEL™ para quien lidera o el IEE™ para el equipo.</li><li>Le indicamos por qué puerta y en qué nivel le conviene empezar.</li><li>Su respuesta llega por WhatsApp directamente a Edwin Romero M.; usted decide qué escribe antes de enviarla.</li></ul>
     </div>
     <form class="cv rv" id="f" onsubmit="return false">
-      <fieldset><legend>1 · ¿Quién consulta?</legend><div class="chips">
-        <input type="radio" name="a" id="a1" value="soy un líder que quiere intervenir su propio sistema"><label for="a1">Un líder</label>
+      <fieldset><legend>1 · ¿Para quién es?</legend><div class="chips">
+        <input type="radio" name="a" id="a1" value="consulto por un líder"><label for="a1">Un líder</label>
         <input type="radio" name="a" id="a2" value="consulto por un equipo"><label for="a2">Un equipo</label>
         <input type="radio" name="a" id="a3" value="consulto por una organización"><label for="a3">Una organización</label></div></fieldset>
       <fieldset><legend>2 · ¿Qué se repite?</legend><div class="chips">
@@ -956,9 +1006,9 @@ footer a{padding-block:9px;margin-block:-9px}
         <input type="radio" name="b" id="b3" value="los cambios no se sostienen"><label for="b3">Cambios que no se sostienen</label>
         <input type="radio" name="b" id="b4" value="el equipo gasta energía en fricción"><label for="b4">Fricción en el equipo</label></div></fieldset>
       <fieldset><legend>3 · ¿Cuándo debe resolverse?</legend><div class="chips">
-        <input type="radio" name="c" id="c1" value="este trimestre"><label for="c1">Este trimestre</label>
-        <input type="radio" name="c" id="c2" value="este año"><label for="c2">Este año</label>
-        <input type="radio" name="c" id="c3" value="aún estoy explorando"><label for="c3">Estoy explorando</label></div></fieldset>
+        <input type="radio" name="c" id="c1" value="Necesito resolverlo este trimestre"><label for="c1">Este trimestre</label>
+        <input type="radio" name="c" id="c2" value="Necesito resolverlo este año"><label for="c2">Este año</label>
+        <input type="radio" name="c" id="c3" value="Por ahora estoy explorando"><label for="c3">Estoy explorando</label></div></fieldset>
       <a class="btn g" id="go" href="https://wa.me/573182067128" target="_blank" rel="noopener" style="justify-self:start">Enviar por WhatsApp</a>
       <p class="fn">Al continuar se abre WhatsApp con un mensaje prellenado que usted decide si envía. Consulte la <a class="alt" href="politica-de-datos.html">política de tratamiento de datos</a>. ¿Aún no está listo para conversar? <a class="alt" href="#hoja">Reciba primero la hoja ejecutiva</a>.</p>
     </form>
@@ -968,10 +1018,10 @@ footer a{padding-block:9px;margin-block:-9px}
 <!-- IRREVERSIBLE -->
 <section data-step="p" data-nm="Opción personal" class="irr2 sec dark" id="irreversible" data-wa="quiero conocer IRREVERSIBLE™">
   <div class="w">
-    <p class="irr-t rv">Si la transformación que busca es la suya y no la de una organización, <em>hay otra puerta.</em></p>
+    <p class="irr-t rv">Si la transformación que buscas es la tuya y no la de una organización, <em>hay otra puerta.</em></p>
     <div class="ig">
       <figure class="ib rv">
-        <div class="icov" data-zoom="img/irreversible-portada.jpg" style="cursor:zoom-in"><div class="iplate" aria-hidden="true"><span>Edwin Romero M.</span><b>IRREVERSIBLE<sup>™</sup></b><i></i></div><img src="img/irreversible-portada.jpg" alt="Portada del libro IRREVERSIBLE, de Edwin Romero M." width="1000" height="1500" onerror="this.remove()"></div>
+        <div class="icov" data-zoom="img/irreversible-portada.jpg" role="button" tabindex="0" aria-label="Ampliar la portada de IRREVERSIBLE" style="cursor:zoom-in"><div class="iplate" aria-hidden="true"><span>Edwin Romero M.</span><b>IRREVERSIBLE<sup>™</sup></b><i></i></div><img src="img/irreversible-portada.jpg" alt="Portada del libro IRREVERSIBLE, de Edwin Romero M." width="1000" height="1500" onerror="this.remove()" loading="lazy" decoding="async"></div>
       </figure>
       <div class="it">
         <p class="lab rv">IRREVERSIBLE™ · para ti</p>
@@ -991,9 +1041,9 @@ footer a{padding-block:9px;margin-block:-9px}
     <div class="lin irrs rv">
       <p class="lab">Una muestra del libro · páginas reales</p>
       <div class="lr">
-        <figure><button type="button" data-zoom="img/irr-cafe-hd.jpg" aria-label="Ampliar la página Tiempo de un café"><img src="img/irr-cafe.jpg" alt="Página del libro IRREVERSIBLE: Tiempo de un café, una meta sin recursos asignados es solo un deseo con fecha" loading="lazy" width="800" height="1103"></button><figcaption>Tiempo de un café · una pausa para decidir</figcaption></figure>
-        <figure><button type="button" data-zoom="img/irr-ejercicio-hd.jpg" aria-label="Ampliar el ejercicio guiado Constructor de Límites"><img src="img/irr-ejercicio.jpg" alt="Página del libro IRREVERSIBLE con el ejercicio guiado Constructor de Límites, en tres pasos" loading="lazy" width="800" height="1103"></button><figcaption>Ejercicio guiado · Constructor de Límites</figcaption></figure>
-        <figure><button type="button" data-zoom="img/irr-herramienta-hd.jpg" aria-label="Ampliar la herramienta Autoevaluación de magnetismo"><img src="img/irr-herramienta.jpg" alt="Página del libro IRREVERSIBLE con la herramienta Autoevaluación de magnetismo: seis ejes calificados de 1 a 10" loading="lazy" width="800" height="1103"></button><figcaption>Herramienta · autoevaluación de magnetismo</figcaption></figure>
+        <figure><button type="button" data-zoom="img/irr-nigredo-hd.jpg" aria-label="Ampliar la página de apertura de la primera fase, Nigredo"><img src="img/irr-nigredo.jpg" alt="Página del libro IRREVERSIBLE que abre la primera fase, Nigredo, con la cita «La putrefacción es la madre de la transmutación»" loading="lazy" width="800" height="1136"></button><figcaption>Primera fase · Nigredo</figcaption></figure>
+        <figure><button type="button" data-zoom="img/irr-tiempo-hd.jpg" aria-label="Ampliar la página Tiempo de un café"><img src="img/irr-tiempo.jpg" alt="Página del libro IRREVERSIBLE: Tiempo de un café, una decisión traducida en hechos cambia tu perspectiva de forma irreversible" loading="lazy" width="800" height="1136"></button><figcaption>Tiempo de un café · una pausa para decidir</figcaption></figure>
+        <figure><button type="button" data-zoom="img/irr-radar-hd.jpg" aria-label="Ampliar la herramienta Radar de Entropía"><img src="img/irr-radar.jpg" alt="Página del libro IRREVERSIBLE con la herramienta Radar de Entropía: seis áreas calificadas de 1 a 10" loading="lazy" width="800" height="1136"></button><figcaption>Herramienta · Radar de Entropía™</figcaption></figure>
       </div>
     </div>
     <p class="lab rv" style="margin:clamp(48px,7vw,90px) 0 22px">Dos caminos, un mismo libro</p>
@@ -1014,22 +1064,23 @@ footer a{padding-block:9px;margin-block:-9px}
       </article>
     </div>
     <p class="fn rv" style="margin-top:26px;text-align:center">¿Dudas entre los dos? Escríbenos y te indicamos cuál te conviene. <a class="alt" href="https://wa.me/573182067128?text=Hola%2C%20quiero%20que%20me%20ayuden%20a%20elegir%20mi%20camino%20en%20IRREVERSIBLE%E2%84%A2." target="_blank" rel="noopener">Ayúdame a elegir</a></p>
+    <p class="fn rv" style="margin-top:10px;text-align:center">Al escribirnos, tu número de WhatsApp llega a Edwin Romero M. Consulta la <a class="alt" href="politica-de-datos.html">política de tratamiento de datos</a>.</p>
   </div>
 </section>
 
 </main>
 
-<button id="stp" type="button" aria-label="Paso actual del recorrido; pulse para ir al siguiente"><span class="dots" id="stpd"></span><span class="t"><b id="stpn">Inicio</b><span id="stpt">Comencemos</span></span><span class="ar">↓</span></button>
+<button id="stp" type="button"><span class="dots" id="stpd"></span><span class="t"><b id="stpn">Inicio</b><span id="stpt">Comencemos</span></span><span class="ar" aria-hidden="true">↓</span><span class="sr">, ir al siguiente paso</span></button>
 <footer>
   <div class="w">
-    <div class="fl"><img src="assets/lockup-blanco.png" alt="Edwin Romero | Institute — Ingeniería del Desempeño Humano" width="1100" height="178"></div>
+    <div class="fl"><img src="assets/lockup-blanco.png" alt="Edwin Romero | Institute — Ingeniería del Desempeño Humano™" width="1100" height="178" loading="lazy" decoding="async"></div>
     <i class="frule" aria-hidden="true"></i>
     <div class="fg">
       <div class="fp"><h4>Edwin Romero M.</h4><p class="fby">Ingeniero del Desempeño Humano™<br>Estratega de Sistemas Complejos</p><p class="fz">Colombia - Latinoamérica</p></div>
       <div class="fx"><h4>Conversemos</h4><ul>
-        <li><a href="https://instagram.com/edwinromerom" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@edwinromerom</span></a></li>
+        <li><a href="https://www.instagram.com/edwinromerom" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@edwinromerom</span></a></li>
         <li><a href="https://wa.me/573182067128" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.6c.2 2.9 2.7 5.6 5.9 6.3l1.3-1.3-2.2-1.1-.9.7c-1-.4-1.9-1.3-2.3-2.2l.7-.9L10.4 8z"/></svg><span>+57 318 206 7128</span></a></li>
-        <li><a href="https://www.linkedin.com/in/edwinromerom/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.7 1-2.6 2.3-2.6 1.4 0 2.2.9 2.2 2.6V16"/></svg><span>/in/edwinromerom</span></a></li>
+        <li><a href="https://www.linkedin.com/in/edwinromerom" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.7 1-2.6 2.3-2.6 1.4 0 2.2.9 2.2 2.6V16"/></svg><span>/in/edwinromerom</span></a></li>
         <li><a href="mailto:mentor@edwinromerom.com"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4.5 7.5l7.5 5.5 7.5-5.5"/></svg><span>mentor@edwinromerom.com</span></a></li>
       </ul><a class="fu" href="#top">www.edwinromerom.com</a></div>
     </div>
@@ -1070,8 +1121,8 @@ var fdot=document.getElementById('fdot'),delta=document.getElementById('delta'),
 function setState(w,v){cur[w]=v;
  if(w==='lider'){if(RM){rnow=R[v].slice();draw()}else tween(R[v]);fdot.style.transform=v?'translate(140px,-22px)':'translate(0,0)';delta.textContent=v?'Mejora en 3 de 4 dimensiones':'Línea base'}
  else{$('#arco .ak').forEach(function(a,i){a.classList.toggle('on',i<=(v?2:0));a.classList.toggle('cur',i===(v?2:0))});document.getElementById('afill').style.width=(v?50:0)+'%';TD.forEach(function(d,i){d.style.left=(12.5+TP[v][i]*25)+'%'});document.getElementById('trkc').textContent=v?'Dispersión entre equipos: contenida':'Dispersión entre equipos: alta';delta2.textContent=v?'Dispersión contenida':'Línea base'}
- $('.tog[data-t='+w+'] button').forEach(function(b){b.classList.toggle('on',+b.dataset.v===v)})}
-$('.tog').forEach(function(g){$('button',g).forEach(function(b){b.addEventListener('click',function(){setState(g.dataset.t,+b.dataset.v)})})});
+ $('.tog[data-t='+w+'] button').forEach(function(b){b.classList.toggle('on',+b.dataset.v===v);b.setAttribute('aria-pressed',+b.dataset.v===v)})}
+$('.tog').forEach(function(g){$('button',g).forEach(function(b){b.setAttribute('aria-pressed',b.classList.contains('on'));b.addEventListener('click',function(){setState(g.dataset.t,+b.dataset.v)})})});
 var TK=document.getElementById('trk'),TP=[[.3,.6,1.1,.5,1.7,.9],[1.9,2.2,2.0,2.4,1.8,2.1]],TD=TP[0].map(function(){var d=document.createElement('i');TK.appendChild(d);return d});
 setState('equipo',0);
 /* mapa de calor */
@@ -1084,18 +1135,19 @@ var LV={e:[
  ['Nivel 0','Diagnóstico','con el IEL™','Para empezar sabiendo, no suponiendo.','Dónde vive hoy la entropía de su sistema de liderazgo, antes de diseñar nada.',['Diagnóstico del líder (IEL™)','Diagnóstico del sistema de liderazgo de un área, vicepresidencia u organización']],
  ['Nivel 1','Catalizadores Alquímicos™','Conferencias de 30 a 90 minutos','Para el momento que define a una organización.','Un lanzamiento, un cierre de ciclo, una convención, un retiro directivo. Es el único nivel que no requiere diagnóstico previo, aunque con uno su impacto se multiplica.',['Catalizadores para quien decide']],
  ['Nivel 2','Experiencias Alquímicas™','Jornadas de 4 a 12 horas','Para resolver un problema concreto de liderazgo.','Una jornada colectiva conducida por el Ingeniero, sobre el caso real de su organización.',['Workshop Liderazgo Magnético™','Protocolo Liderazgo Soberano™','Bootcamp Liderazgo Exponencial™']],
- ['Nivel 3','Escuela y Mentoría','El nivel de mayor profundidad','Para instalar un liderazgo que no depende de usted.','El proceso más profundo del eje: acompañamiento cercano y medición de entrada y de cierre sobre la misma escala.',['Escuela LEM™|s','Mentoría EXPONÉNCIATE™|s']],
+ ['Nivel 3','Escuela y Mentoría','El nivel de mayor profundidad','Para instalar un liderazgo que no dependa de una sola persona.','El proceso más profundo del eje: acompañamiento cercano y medición de entrada y de cierre sobre la misma escala.',['Escuela LEM™|s','Mentoría EXPONÉNCIATE™|s']],
  ['Nivel 4','Soberanía Operativa™','El punto de llegada','Para que el sistema se mantenga solo.','El líder mantiene el resultado sin depender del Ingeniero, y puede demostrarlo con datos.',['Informe de cierre alKimétrico™']]],
 p:[
  ['Nivel 0','Diagnóstico','con el IEE™','Para empezar sabiendo, no suponiendo.','En qué punto del arco está hoy el equipo y dónde se disuelve la coordinación.',['Diagnóstico del equipo (IEE™)','Diagnóstico multiequipo, por área, vicepresidencia u organización']],
  ['Nivel 1','Catalizadores Alquímicos™','Conferencias de 30 a 90 minutos','Para el momento que define a un equipo.','Un arranque de año, una convención comercial, un hito crítico. Es el único nivel que no requiere diagnóstico previo, aunque con uno su impacto se multiplica.',['Catalizadores para el equipo que ejecuta']],
  ['Nivel 2','Experiencias Alquímicas™','Jornadas de 4 a 12 horas','Para resolver un problema concreto de equipo.','Una jornada colectiva conducida por el Ingeniero, sobre el caso real de su equipo.',['Workshop Equipos Productivos™','Protocolo Equipos Fluidos™','Bootcamp Equipos de Alta Potencia™']],
- ['Nivel 3','Mentoría y Alineación','El nivel de mayor profundidad','Para que el equipo llegue a alto rendimiento.','Un proceso presencial sobre un equipo, o sobre la interfaz entre varios equipos y áreas que deben coordinar, cotizado a la medida.',['Mentoría POTÉNCIATE™|s','Alineación Inter-Equipos']],
+ ['Nivel 3','Mentoría y Alineación','El nivel de mayor profundidad','Para que el equipo llegue a alto rendimiento.','Un proceso presencial sobre un equipo, o sobre la interfaz entre varios equipos y áreas que deben coordinarse, cotizado a la medida.',['Mentoría POTÉNCIATE™|s','Alineación Inter-Equipos']],
  ['Nivel 4','Soberanía Operativa™','El punto de llegada','Para que el equipo se mantenga solo.','El equipo mantiene su rendimiento sin depender del Ingeniero, y puede demostrarlo con datos.',['Informe de cierre alKimétrico™']]]};
 var lv=document.getElementById('lv'),axis='e';
 function esc(s){return s.replace(/&/g,'&amp;')}
 function renderLv(){lv.dataset.ax=axis;lv.innerHTML=LV[axis].map(function(l,i){return '<div class="lvr'+(i===0?' open':'')+'"><button aria-expanded="'+(i===0)+'"><span class="n">'+l[0]+'</span><h3>'+l[1]+'<small>'+l[2]+'</small></h3><span class="pl">+</span></button><div class="lvb"><div><div class="lvc"><span></span><div><p class="wh">'+l[3]+'</p><p>'+l[4]+'</p></div><div><ul>'+l[5].map(function(x){var p=x.split('|');return '<li'+(p[1]?' class="s"':'')+'>'+p[0]+'</li>'}).join('')+'</ul><p style="margin-top:18px"><a class="btn" href="#conversacion" data-cta="'+l[0]+'" data-msg="Hola, me interesa el '+l[0]+' ('+l[1]+') del eje '+(axis==='e'?'EXPONÉNCIATE™':'POTÉNCIATE™')+'">Hablemos de este nivel</a></p></div></div></div></div></div>'}).join('');
- $('.lvr>button',lv).forEach(function(b){b.addEventListener('click',function(){var r=b.parentNode,o=r.classList.contains('open');$('.lvr',lv).forEach(function(x){x.classList.remove('open')});if(!o)r.classList.add('open')})});bind()}
+ function sy(){$('.lvr',lv).forEach(function(x){var o=x.classList.contains('open');x.querySelector('.lvb').inert=!o;x.querySelector('button').setAttribute('aria-expanded',o)})}
+ $('.lvr>button',lv).forEach(function(b){b.addEventListener('click',function(){var r=b.parentNode,o=r.classList.contains('open');$('.lvr',lv).forEach(function(x){x.classList.remove('open')});if(!o)r.classList.add('open');sy()})});sy();bind()}
 $('.ax').forEach(function(a){a.addEventListener('click',function(){axis=a.dataset.a;$('.ax').forEach(function(x){x.setAttribute('aria-selected',x===a)});renderLv()})});
 /* CTAs: cada botón abre WhatsApp con el contexto de la sección donde estaba el lector */
 function bind(){$('[data-cta]').forEach(function(a){if(a._b)return;a._b=1;a.addEventListener('click',function(e){var href=a.getAttribute('href');if(href&&href.charAt(0)==='#'&&href!=='#'){return}
@@ -1106,16 +1158,16 @@ var hj=document.getElementById('hj'),hjgo=document.getElementById('hjgo');
 function updHj(){var c=hj.querySelector('input:checked'),v=(c||{}).value||'institucional';hjgo.href=WA+encodeURIComponent('Hola, quiero recibir la hoja ejecutiva '+v+'.');
  $('.doc img').forEach(function(m){m.classList.toggle('on',!!c&&m.dataset.k===c.id)});var hc=document.getElementById('hjc');if(c&&hc)hc.textContent=c.dataset.n}
 hj.addEventListener('change',updHj);updHj();
-var lb=document.createElement('div');lb.id='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-label','Primera página ampliada');lb.hidden=true;lb.innerHTML='<img alt=""><button type="button" aria-label="Cerrar">×</button><span class="lbh">Toque la página para leerla en tamaño real</span>';document.body.appendChild(lb);
-function lbc(){lb.hidden=true;lb.classList.remove('full');lb.scrollTop=0;document.body.style.overflow=''}
-document.getElementById('hjv').addEventListener('click',function(){var a=document.querySelector('.doc img.on');lb.querySelector('img').src=a.src;lb.querySelector('img').alt=a.alt;lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('button').focus()});
-lb.addEventListener('click',lbc);lb.querySelector('img').addEventListener('click',function(e){if(innerWidth<900||this.naturalHeight<this.naturalWidth*1.2)return;e.stopPropagation();lb.classList.toggle('full');lb.scrollTop=0});addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)lbc()});
-$('[data-zoom]').forEach(function(b){b.addEventListener('click',function(){var m=b.querySelector('img');lb.querySelector('img').src=b.dataset.zoom;lb.querySelector('img').alt=m.alt;lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('button').focus()})});
+var lb=document.createElement('div');lb.id='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-label','Primera página ampliada');lb.setAttribute('aria-modal','true');lb.hidden=true;lb.innerHTML='<img alt="" loading="lazy" decoding="async"><button type="button" aria-label="Cerrar">×</button><span class="lbh">Pulse la página para leerla en tamaño real</span>';document.body.appendChild(lb);
+var lbo=null;function lbc(){lb.hidden=true;lb.classList.remove('full');lb.scrollTop=0;document.body.style.overflow='';if(lbo&&lbo.focus)lbo.focus();lbo=null}
+document.getElementById('hjv').addEventListener('click',function(){lbo=this;var a=document.querySelector('.doc img.on');lb.querySelector('img').src=a.src;lb.querySelector('img').alt=a.alt;lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('button').focus()});
+lb.addEventListener('click',lbc);lb.querySelector('img').addEventListener('click',function(e){if(innerWidth<900||this.naturalHeight<this.naturalWidth*1.2)return;e.stopPropagation();lb.classList.toggle('full');lb.scrollTop=0});addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lbc();else if(e.key==='Tab'){e.preventDefault();lb.querySelector('button').focus()}});
+$('[data-zoom]').forEach(function(b){if(b.tagName!=='BUTTON')b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();b.click()}});b.addEventListener('click',function(){lbo=b;var m=b.querySelector('img');lb.querySelector('img').src=b.dataset.zoom;lb.querySelector('img').alt=m.alt;lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('button').focus()})});
 
 /* indicador de paso: acompaña y lleva al siguiente */
-var stp=document.getElementById('stp'),stpd=document.getElementById('stpd'),stpn=document.getElementById('stpn'),stpt=document.getElementById('stpt'),SEC=$('section[data-step]'),cs=0;
+var stp=document.getElementById('stp'),stpd=document.getElementById('stpd'),stpn=document.getElementById('stpn'),stpt=document.getElementById('stpt'),SEC=$('section[data-step]'),cs=0;(function(){var ft=document.querySelector('footer');if(ft&&window.IntersectionObserver)new IntersectionObserver(function(es){stp.classList.toggle('hide',es[0].isIntersecting)}).observe(ft)})();
 for(var di=0;di<10;di++){stpd.appendChild(document.createElement('i'))}
-function setStep(sec){var n=sec.dataset.step;cs=SEC.indexOf(sec);stpn.textContent=n==='0'?'Inicio':n==='p'?'Opcional':'Paso '+n+' de 10';stpt.textContent=sec.dataset.nm;var k=n==='p'?10:+n;$('i',stpd).forEach(function(d,j){d.className=j<k-1?'d':(j===k-1?'c':'')});stp.classList.toggle('on',n!=='0')}
+function setStep(sec){var n=sec.dataset.step;stp.classList.toggle('last',n==='p');cs=SEC.indexOf(sec);stpn.textContent=n==='0'?'Inicio':n==='p'?'Opcional':'Paso '+n+' de 10';stpt.textContent=sec.dataset.nm;var k=n==='p'?10:+n;$('i',stpd).forEach(function(d,j){d.className=j<k-1?'d':(j===k-1?'c':'')});stp.classList.toggle('on',n!=='0')}
 if(io){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setStep(e.target)})},{rootMargin:'-45% 0px -50% 0px'});SEC.forEach(function(e){so.observe(e)})}
 stp.addEventListener('click',function(){var nx=SEC[Math.min(cs+1,SEC.length-1)];if(nx)nx.scrollIntoView({behavior:RM?'auto':'smooth'})});
 renderLv();
@@ -1123,27 +1175,36 @@ renderLv();
 var strip=document.getElementById('strip'),dn=false,sx=0,sl=0;
 strip.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=strip.scrollLeft;strip.classList.add('drag')});addEventListener('pointerup',function(){dn=false;strip.classList.remove('drag')});addEventListener('pointermove',function(e){if(dn)strip.scrollLeft=sl-(e.clientX-sx)});
 /* conversación -> WhatsApp prellenado, con la sección de origen */
-var f=document.getElementById('f'),go=document.getElementById('go'),origin='';
+var f=document.getElementById('f'),go=document.getElementById('go'),origin='',level='';
 $$=null;
-$('[data-cta]').forEach(function(a){a.addEventListener('click',function(){var s=a.closest('section[data-wa]');origin=s?s.getAttribute('data-wa'):'';upd()})});
-function upd(){var v=function(n){return (f.querySelector('input[name='+n+']:checked')||{}).value};
- var t='Hola, quiero agendar una conversación de exploración.',a=v('a'),b=v('b'),c=v('c');
- if(a||b||c){t+=' ';if(a)t+='Contexto: '+a+'.';if(b)t+=' Lo que se repite: '+b+'.';if(c)t+=' Necesito resolverlo '+c+'.'}
- if(origin)t+=' (Escribo porque '+origin+'.)';go.href=WA+encodeURIComponent(t)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a||a.dataset.cta==='irr')return;
+ var s=a.closest('section[data-wa]');origin=s?s.getAttribute('data-wa'):'';
+ if(a.dataset.msg){level=a.dataset.msg.replace(/^Hola, me interesa /,'');var r0=document.getElementById(/POTÉNCIATE/.test(a.dataset.msg)?'a2':'a1');if(r0)r0.checked=true}
+ var mp={'dx-lider':'a1','dx-equipo':'a2','dx-org':'a3'};if(mp[a.dataset.cta]){var rd=document.getElementById(mp[a.dataset.cta]);if(rd)rd.checked=true}
+ upd()});
+function upd(){var v=function(n){return (f.querySelector('input[name='+n+']:checked')||{}).value},a=v('a'),b=v('b'),c=v('c'),p=['Hola, quiero agendar una conversación de exploración.'];
+ if(a)p.push('Contexto: '+a+'.');if(b)p.push('Lo que se repite: '+b+'.');if(c)p.push(c+'.');if(level)p.push('Me interesa '+level+'.');if(origin)p.push('(Escribo porque '+origin+'.)');
+ go.href=WA+encodeURIComponent(p.join(' '))}
 f.addEventListener('change',upd);upd();
 /* campo de partículas: del desorden al orden */
 var hero=document.querySelector('.hero'),cv=document.getElementById('field');
-if(hero&&cv&&!RM){var cx=cv.getContext('2d'),W,Hh,P=[],mx=-999,my=-999,t0=performance.now(),dpr=Math.min(devicePixelRatio||1,2),vis=true;
+if(hero&&cv&&!RM){var cx=cv.getContext('2d'),W,Hh,P=[],mx=-999,my=-999,t0=performance.now(),dpr=(matchMedia('(hover:none)').matches?1:Math.min(devicePixelRatio||1,2)),vis=true;
  function size(){W=hero.clientWidth;Hh=hero.clientHeight;cv.width=W*dpr;cv.height=Hh*dpr;cx.setTransform(dpr,0,0,dpr,0,0);var gap=W<700?44:56,cols=Math.ceil(W/gap)+1,rows=Math.ceil(Hh/gap)+1;P=[];for(var r=0;r<rows;r++)for(var c=0;c<cols;c++)P.push({gx:c*gap+gap/2,gy:r*gap+gap/2,x:Math.random()*W,y:Math.random()*Hh,vx:(Math.random()-.5)*1.4,vy:(Math.random()-.5)*1.4,g:Math.random()<.1})}
- size();addEventListener('resize',size);hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});hero.addEventListener('pointerleave',function(){mx=my=-999});
- new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(hero);
- (function tick(now){requestAnimationFrame(tick);if(!vis)return;var t=(now-t0)/1000,o=Math.min(Math.max((t-.8)/3.4,0),1),kk=o*o*(3-2*o);cx.clearRect(0,0,W,Hh);
-  for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx*(1-kk);p.y+=p.vy*(1-kk);if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>Hh)p.vy*=-1;
+ var calmT=0,inView=true,run=true;function kick(){calmT=0;if(!run){run=true;requestAnimationFrame(tick)}}size();addEventListener('resize',function(){size();kick()});hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;kick()});hero.addEventListener('pointerleave',function(){mx=my=-999;kick()});document.addEventListener('visibilitychange',function(){vis=inView&&!document.hidden;kick()});
+ new IntersectionObserver(function(es){inView=es[0].isIntersecting;vis=inView&&!document.hidden;hero.classList.toggle('off',!inView);kick()}).observe(hero);
+ function tick(now){if(!vis){run=false;return}var t=(now-t0)/1000,o=Math.min(Math.max((t-.8)/3.4,0),1),kk=o*o*(3-2*o);
+  if(o>=1&&mx===-999){if(!calmT)calmT=now;if(now-calmT>1500){run=false;return}}else{calmT=0}requestAnimationFrame(tick);
+  cx.clearRect(0,0,W,Hh);var n=P.length,i,p;
+  for(i=0;i<n;i++){p=P[i];p.x+=p.vx*(1-kk);p.y+=p.vy*(1-kk);if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>Hh)p.vy*=-1;
    if(kk>0){p.x+=(p.gx-p.x)*kk*.06;p.y+=(p.gy-p.y)*kk*.06}
    var dx=p.x-mx,dy=p.y-my,dd=dx*dx+dy*dy,ox=0,oy=0;if(dd<15000){var f=1-dd/15000,s=Math.sqrt(dd)||1;ox=dx/s*f*28;oy=dy/s*f*28}
-   var x=p.x+ox,y=p.y+oy,a=(.16+.3*kk)*(p.g?1.8:1);cx.fillStyle=p.g?'rgba(217,192,138,'+Math.min(a*1.6,.6)+')':'rgba(198,204,212,'+a+')';cx.beginPath();cx.arc(x,y,p.g?2.2:1.4,0,6.283);cx.fill();p.rx=x;p.ry=y}
-  if(kk>.55){var step=Math.ceil(W/(W<700?44:56))+1;cx.lineWidth=.6;for(var j=0;j<P.length;j++){var q=P[j],rt=P[j+1],dn2=P[j+step];if(rt&&Math.abs(rt.gy-q.gy)<1){cx.strokeStyle='rgba(217,192,138,'+(.12*(kk-.55)/.45)+')';cx.beginPath();cx.moveTo(q.rx,q.ry);cx.lineTo(rt.rx,rt.ry);cx.stroke()}if(dn2){cx.strokeStyle='rgba(217,192,138,'+(.09*(kk-.55)/.45)+')';cx.beginPath();cx.moveTo(q.rx,q.ry);cx.lineTo(dn2.rx,dn2.ry);cx.stroke()}}}
- })(performance.now())}
+   p.rx=p.x+ox;p.ry=p.y+oy}
+  var aN=.16+.3*kk,g,r;
+  for(g=0;g<2;g++){cx.fillStyle=g?'rgba(217,192,138,'+Math.min(aN*1.8*1.6,.6)+')':'rgba(198,204,212,'+aN+')';r=g?2.2:1.4;cx.beginPath();for(i=0;i<n;i++){p=P[i];if((p.g?1:0)===g){cx.moveTo(p.rx+r,p.ry);cx.arc(p.rx,p.ry,r,0,6.283)}}cx.fill()}
+  if(kk>.55){var step=Math.ceil(W/(W<700?44:56))+1,q,rt,dn2,u=(kk-.55)/.45;cx.lineWidth=.6;
+   cx.strokeStyle='rgba(217,192,138,'+(.12*u)+')';cx.beginPath();for(i=0;i<n;i++){q=P[i];rt=P[i+1];if(rt&&Math.abs(rt.gy-q.gy)<1){cx.moveTo(q.rx,q.ry);cx.lineTo(rt.rx,rt.ry)}}cx.stroke();
+   cx.strokeStyle='rgba(217,192,138,'+(.09*u)+')';cx.beginPath();for(i=0;i<n;i++){q=P[i];dn2=P[i+step];if(dn2){cx.moveTo(q.rx,q.ry);cx.lineTo(dn2.rx,dn2.ry)}}cx.stroke()}
+ }tick(performance.now())}
 /* enlaces con mensaje propio (IRREVERSIBLE) */
 $('[data-msg]').forEach(function(a){if(a.dataset.cta==='irr')a.href=WA+encodeURIComponent(a.dataset.msg),a.target='_blank',a.rel='noopener',a.removeAttribute('data-cta')});
 bind();
@@ -1173,10 +1234,32 @@ bind();
 })();
 </script>
 <script>
-/* Analítica (inactiva): pegue su identificador entre las comillas para activarla. Registra solo los clics en llamados a la acción; no guarda datos personales. */
+/* Analítica (inactiva). ANTES de activarla: actualizar la sección 2 de la política de datos y añadir un aviso de cookies, porque GA4 instala cookies e identificadores. */
 (function(){var GA_ID='';
 if(GA_ID){var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true})}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(a&&window.gtag){gtag('event','cta_click',{cta:a.getAttribute('data-cta')})}},true)})();
+</script>
+
+<script>
+/* pestañas accesibles: flechas, Inicio/Fin, foco itinerante y relación con su panel */
+(function(){
+ var lists=document.querySelectorAll('[role=tablist]');
+ [].forEach.call(lists,function(L,li){
+  var tabs=[].slice.call(L.querySelectorAll('[role=tab]'));
+  tabs.forEach(function(t,i){
+   t.id=t.id||('tab-'+li+'-'+i);
+   var pid=t.dataset.p||(t.dataset.a?'lv':null);
+   if(pid){t.setAttribute('aria-controls',pid);var p=document.getElementById(pid);if(p&&!p.getAttribute('role')){p.setAttribute('role','tabpanel')}}
+  });
+  function sync(){var sel=tabs.filter(function(t){return t.getAttribute('aria-selected')==='true'})[0]||tabs[0];
+   tabs.forEach(function(t){t.tabIndex=(t===sel)?0:-1});
+   tabs.forEach(function(t){var p=document.getElementById(t.getAttribute('aria-controls')||'');if(p&&t===sel){p.setAttribute('aria-labelledby',t.id)}})}
+  sync();new MutationObserver(sync).observe(L,{attributes:true,subtree:true,attributeFilter:['aria-selected']});
+  L.addEventListener('keydown',function(e){var k=e.key,i=tabs.indexOf(document.activeElement);if(i<0)return;
+   var n=k==='ArrowRight'||k==='ArrowDown'?(i+1)%tabs.length:k==='ArrowLeft'||k==='ArrowUp'?(i+tabs.length-1)%tabs.length:k==='Home'?0:k==='End'?tabs.length-1:-1;
+   if(n<0)return;e.preventDefault();tabs[n].focus();tabs[n].click()});
+ });
+})();
 </script>
 </body>
 </html>

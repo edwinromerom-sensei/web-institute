@@ -1,0 +1,23 @@
+# Lista blanca: solo se publica lo enumerado. Nada se borra del repositorio.
+/*
+!/index.html
+!/politica-de-datos.html
+!/404.html
+!/robots.txt
+!/sitemap.xml
+!/vercel.json
+!/assets/
+!/img/
+!/herramientas/
+# Dentro de img/: archivos que el sitio no usa y que no deben quedar públicos
+/img/eco_*
+/img/libro-p7.jpg
+/img/libro-p34.jpg
+/img/carousel_*
+/img/eco_intervencion.jpg
+/img/engineer_photo.jpg
+/img/hero_bg.jpg
+/img/intervencion_bg.jpg
+/img/trayectoria_bg.jpg
+/img/placeholder.txt
+.DS_Store
