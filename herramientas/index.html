@@ -11,7 +11,7 @@
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-wght-normal.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url(/assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2')}
 @font-face{font-family:'Fraunces';font-style:italic;font-weight:100 900;font-display:swap;src:url(/assets/fonts/fraunces-latin-wght-italic.woff2) format('woff2')}
-:root{--obs:#0A0F1E;--az:#1F2A47;--az2:#141B2E;--tit1:#E6E9ED;--tit:#C6CCD4;--dor:#D9C08A;--rub:#8B1A2A;--pol:#B82D43}
+:root{--obs:#0A0F1E;--az:#1F2A47;--az2:#141B2E;--tit1:#E6E9ED;--tit:#C6CCD4;--dor:#D9C08A;--rub:#8B1A2A;--pol:#8B1A2A}
 *{box-sizing:border-box;margin:0}
 html{background:var(--obs)}
 body{min-height:100vh;background:radial-gradient(1200px 600px at 80% -10%,#1b2750 0%,transparent 60%),var(--obs);color:var(--tit);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.6;padding:clamp(28px,6vw,72px) clamp(16px,5vw,64px)}
@@ -24,7 +24,7 @@ h1{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--tit1);font
 .lead{font-family:'Fraunces',serif;font-style:italic;color:var(--dor);font-size:clamp(18px,2vw,24px);max-width:62ch;text-wrap:balance}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:clamp(36px,6vw,64px)}
 .c{position:relative;display:flex;flex-direction:column;gap:10px;padding:26px 24px 24px;border:1px solid rgba(198,204,212,.16);border-radius:14px;background:linear-gradient(180deg,rgba(31,42,71,.55),rgba(20,27,46,.55));color:inherit;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
-.c::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,#5E8AB4,var(--pol));opacity:0;transition:opacity .25s}
+.c::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,#B89A5C,#D9C08A,#AEB6C1);opacity:0;transition:opacity .25s}
 .c:hover,.c:focus-visible{border-color:rgba(94,138,180,.7);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35);outline:none}
 .c:hover::before,.c:focus-visible::before{opacity:1}
 .s{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;color:var(--tit1);letter-spacing:.02em}
