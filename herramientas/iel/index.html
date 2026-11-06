@@ -3,374 +3,411 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>IEL™ · Índice de Entropía del Liderazgo · Edwin Romero | Institute</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<title>IEL™ · Índice de Entropía del Líder · Edwin Romero | Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ab:#0A0F1E;--gr:#EEEDE0;--wh:#FFFFFF;--do:#C9A84C;--az:#5E8AB4;--ex:#B85C1F;--rd:#8B1A2A;--TX:#333333;--TX2:#444444;--TX3:#666666;--GRADE:linear-gradient(135deg,#B85C1F,#C9A84C)}
+:root{--ob:#0A0F1E;--an:#141B2E;--an2:#1F2A47;--ti:#C6CCD4;--mu:#98A2B3;--ma:#F4EFE8;
+--b1:#5A2D10;--b2:#8E4F1B;--b3:#B46A2A;--b4:#DE9A5C;--b5:#F0DCC6;
+--fg:#C6CCD4;--ln:rgba(198,204,212,.14);--surf:rgba(198,204,212,.05);--ok:#86C3A0;--ko:#E06C5C;
+--hd:'Space Grotesk',system-ui,sans-serif;--tx:'Plus Jakarta Sans',system-ui,sans-serif;--qt:'Fraunces',Georgia,serif;
+--GR:linear-gradient(135deg,#8E4F1B,#DE9A5C)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;font-family:'Barlow',sans-serif;font-weight:300;background:var(--ab);color:#fff;overflow:hidden}
+html,body{height:100%;font-family:var(--tx);font-weight:400;background:var(--ob);color:var(--ti);overflow:hidden;-webkit-text-size-adjust:100%}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--b4);outline-offset:3px}
+.light :focus-visible{outline-color:var(--b2)}
 .screen{position:fixed;inset:0;display:none;flex-direction:column;overflow:hidden}
 .screen.active{display:flex}
-/* PORTADA */
-#s-p{background:var(--ab);align-items:center;justify-content:center;text-align:center;padding:2rem}
-#s-p::before{content:'';position:absolute;inset:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:0}
-.ht{position:absolute;top:-15%;right:-10%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(184,92,31,.1) 0%,transparent 65%);pointer-events:none}
-.hb{position:absolute;bottom:-15%;left:-10%;width:40vw;height:40vw;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none}
-.pi{position:relative;z-index:2;max-width:520px;width:100%}
-.pe{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.8rem}
-.pl{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;line-height:1;color:#fff;margin-bottom:.4rem}
-.pl span{color:var(--do)}
-.pt{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ex);margin-bottom:1.4rem;display:block}
-.gb{height:2px;background:var(--GRADE);width:100px;margin:.4rem auto 1.8rem}
-.ptag{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:2rem}
-/* Name fields */
-.name-group{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.4rem}
-.name-input{width:100%;padding:.7rem 1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:300;border-radius:2px;outline:none;transition:border-color .2s}
-.name-input::placeholder{color:rgba(255,255,255,.3)}
-.name-input:focus{border-color:var(--ex)}
-.pnote{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1.8rem;line-height:1.6}
-.pnote strong{color:rgba(255,255,255,.65);font-weight:400}
-.btn-p{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem 2.5rem;background:var(--GRADE);color:#fff;border:none;cursor:pointer;border-radius:2px;transition:opacity .2s;opacity:.4;pointer-events:none}
-.btn-p.on{opacity:1;pointer-events:auto}
-.btn-p.on:hover{opacity:.88}
-.p-inst{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
-/* MODO selector */
-#s-modo{background:var(--ab);align-items:center;justify-content:center;text-align:center;padding:2rem}
-.modo-inner{position:relative;z-index:2;max-width:540px;width:100%}
-.modo-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:.5rem}
-.modo-sub{font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:2rem;line-height:1.6}
-.modo-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
-.modo-card{padding:1.4rem 1.2rem;border:1px solid rgba(255,255,255,.12);border-radius:4px;cursor:pointer;transition:all .2s;text-align:left}
-.modo-card:hover{border-color:var(--ex);background:rgba(184,92,31,.08)}
-.modo-card-icon{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ex);display:block;margin-bottom:.5rem}
-.modo-card-title{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:.4rem}
-.modo-card-desc{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5}
-/* Código input */
-.codigo-group{display:flex;flex-direction:column;gap:.75rem}
-.codigo-input{width:100%;padding:.75rem 1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:.12em;font-weight:600;border-radius:2px;outline:none;text-transform:uppercase;transition:border-color .2s}
-.codigo-input:focus{border-color:var(--az)}
-.codigo-error{font-size:.8rem;color:#E05555;display:none;margin-top:.25rem}
-.btn-s{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem;background:var(--az);color:#fff;border:none;cursor:pointer;border-radius:2px;width:100%;transition:opacity .2s}
-.btn-s:hover{opacity:.88}
-/* INSTRUCCIONES */
-#s-i{background:var(--gr);color:var(--TX)}
-.i-hdr{background:var(--ab);padding:1.4rem 1.8rem;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#B85C1F,#C9A84C) 1;flex-shrink:0}
-.i-hdr h2{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:#fff}
-.i-hdr p{font-size:.75rem;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
-.i-body{flex:1;overflow-y:auto;padding:1.6rem 1.8rem}
-.sec-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ex);margin-bottom:.8rem}
-.i-note{background:rgba(184,92,31,.08);border-left:3px solid var(--ex);padding:.7rem 1rem;margin:1.2rem 0;font-size:.88rem;color:var(--TX2);line-height:1.65}
-.i-note.az{background:rgba(94,138,180,.08);border-color:var(--az)}
-.scale-row{display:flex;gap:.5rem;margin-bottom:1.4rem}
-.sc-item{flex:1;text-align:center;background:#fff;border-radius:2px;padding:.45rem .2rem;border:.5px solid rgba(30,30,40,.08)}
-.sc-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;display:block;line-height:1}
-.sc-l{font-size:.68rem;color:var(--TX3);display:block;margin-top:2px;line-height:1.3}
-.btn-go{display:block;width:100%;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.85rem;background:var(--ab);color:#fff;border:none;cursor:pointer;border-radius:2px;margin-top:1rem;transition:opacity .2s}
-.btn-go:hover{opacity:.85}
-/* PREGUNTAS */
-#s-q{background:var(--gr);color:var(--TX)}
-.q-hdr{background:var(--ab);padding:.9rem 1.5rem;flex-shrink:0;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#B85C1F,#C9A84C) 1}
-.q-pb{height:3px;background:rgba(255,255,255,.1);margin-bottom:.65rem;border-radius:2px;overflow:hidden}
-.q-pf{height:100%;background:var(--GRADE);border-radius:2px;transition:width .4s ease}
-.q-meta{display:flex;justify-content:space-between;align-items:center}
-.q-fase-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.q-cnt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.45)}
-.q-body{flex:1;overflow-y:auto;padding:2rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
-.q-txt{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--ab);line-height:1.55;margin-bottom:2rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.dark-c{background:var(--ob);align-items:center;overflow-y:auto;padding:1.6rem 1.2rem}
+.dark-c>.pi,.dark-c>.modo-inner,.dark-c>.proc-in{margin:auto 0}
+/* marca */
+.brand{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:1.6rem}
+.brand img{width:30px;height:30px;display:block}
+.brand span{font-family:var(--hd);font-size:.78rem;font-weight:500;letter-spacing:.16em;color:var(--ti)}
+/* portada */
+.pi{position:relative;z-index:2;max-width:520px;width:100%;text-align:center}
+.glow{position:absolute;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(180,106,42,.16) 0%,transparent 65%)}
+.g1{top:-15%;right:-10%;width:50vw;height:50vw}.g2{bottom:-15%;left:-10%;width:40vw;height:40vw}
+.pe{font-family:var(--hd);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mu);margin-bottom:1.4rem}
+.pl{font-family:var(--hd);font-size:3.8rem;font-weight:300;line-height:1;color:var(--ma);margin-bottom:.5rem}
+.pl span{color:var(--b4)}
+.pt{font-family:var(--hd);font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--b4);margin-bottom:1.2rem;display:block}
+.gb{height:2px;background:var(--GR);width:100px;margin:.4rem auto 1.6rem}
+.ptag{font-family:var(--qt);font-size:1.12rem;font-weight:300;font-style:italic;color:var(--ti);line-height:1.6;margin-bottom:1.8rem}
+.name-group{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.3rem}
+.inp{width:100%;padding:.75rem 1rem;background:var(--an);border:1px solid rgba(198,204,212,.28);color:var(--ma);font-size:.95rem;border-radius:3px;transition:border-color .2s}
+.inp::placeholder{color:var(--mu)}
+.inp:focus{border-color:var(--b4)}
+.pnote{font-size:.82rem;color:var(--mu);margin-bottom:1.6rem;line-height:1.65}
+.pnote strong{color:var(--ti);font-weight:600}
+.btn{display:inline-block;font-family:var(--hd);font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.9rem 2.2rem;border:none;cursor:pointer;border-radius:3px;transition:opacity .2s,background .2s}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-p{background:var(--b4);color:var(--ob)}
+.btn-p:not(:disabled):hover{background:var(--b5)}
+.p-inst{margin-top:2rem;font-family:var(--hd);font-size:.66rem;font-weight:500;letter-spacing:.14em;color:var(--mu);line-height:1.8}
+/* modo */
+.modo-inner{position:relative;z-index:2;max-width:540px;width:100%;text-align:center}
+.modo-title{font-family:var(--hd);font-size:1.6rem;font-weight:400;color:var(--ma);margin-bottom:.6rem;line-height:1.3}
+.modo-sub{font-size:.9rem;color:var(--mu);margin-bottom:1.6rem;line-height:1.6}
+.modo-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.3rem}
+.modo-card{padding:1.2rem 1rem;border:1px solid rgba(198,204,212,.22);background:var(--an);border-radius:6px;cursor:pointer;transition:all .2s;text-align:left;display:block;width:100%}
+.modo-card:hover{border-color:var(--b4)}
+.modo-card[aria-pressed=true]{border-color:var(--b4);background:var(--an2)}
+.mc-ico{font-family:var(--hd);font-size:1.9rem;font-weight:300;color:var(--b4);display:block;margin-bottom:.4rem}
+.mc-t{font-family:var(--hd);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ma);margin-bottom:.4rem;display:block}
+.mc-d{font-size:.8rem;color:var(--mu);line-height:1.5;display:block}
+.cod-grp{display:none;flex-direction:column;gap:.7rem;text-align:left}
+.cod-grp.show{display:flex}
+.cod-grp label{font-size:.8rem;color:var(--ti)}
+.codigo-input{font-family:var(--hd);font-size:1rem;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
+.cod-msg{font-size:.82rem;min-height:1.3rem;line-height:1.4}
+.cod-msg.err{color:var(--ko)}.cod-msg.ok{color:var(--ok)}
+.btn-s{background:var(--b4);color:var(--ob);width:100%;padding:.9rem}
+.btn-s:not(:disabled):hover{background:var(--b5)}
+/* pantallas claras */
+.light{background:var(--ma);color:#1a2033}
+.hdr{background:var(--ob);padding:1.2rem 1.4rem;flex-shrink:0;border-bottom:2px solid var(--b3)}
+.hdr h2{font-family:var(--hd);font-size:1.3rem;font-weight:400;color:var(--ma)}
+.hdr p{font-size:.74rem;color:var(--mu);font-family:var(--hd);letter-spacing:.1em;text-transform:uppercase;margin-top:.25rem}
+.body-sc{flex:1;overflow-y:auto;padding:1.5rem 1.4rem}
+.wrap{max-width:720px;margin:0 auto;width:100%}
+.sec-lbl{font-family:var(--hd);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--b2);margin-bottom:.8rem}
+.i-note{background:rgba(180,106,42,.1);border-left:3px solid var(--b3);padding:.8rem 1rem;margin:1rem 0;font-size:.9rem;color:#2a3147;line-height:1.7}
+.scale-row{display:flex;gap:.45rem;margin-bottom:1.4rem}
+.sc-item{flex:1;text-align:center;background:#fff;border-radius:3px;padding:.5rem .15rem .4rem;border:1px solid rgba(10,15,30,.1)}
+.sc-n{font-family:var(--hd);font-size:1.4rem;font-weight:400;display:block;line-height:1;color:var(--ob)}
+.sc-bar{display:block;height:3px;margin:.35rem .5rem}
+.sc-l{font-size:.68rem;color:#3d465c;display:block;line-height:1.3}
+.btn-go{display:block;width:100%;background:var(--ob);color:var(--ma);margin-top:1rem}
+.btn-go:hover{background:var(--an2)}
+/* preguntas */
+.q-hdr{background:var(--ob);padding:.9rem 1.4rem;flex-shrink:0;border-bottom:2px solid var(--b3)}
+.q-pb{height:3px;background:rgba(198,204,212,.18);margin-bottom:.65rem;border-radius:2px;overflow:hidden}
+.q-pf{height:100%;background:var(--GR);transition:width .4s ease;width:0}
+.q-meta{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem}
+.q-fase-lbl{font-family:var(--hd);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+.q-cnt{font-family:var(--hd);font-size:.95rem;color:var(--ti);white-space:nowrap}
+.q-body{flex:1;overflow-y:auto;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:center}
+.q-in{max-width:720px;margin:0 auto;width:100%}
+.q-txt{font-family:var(--tx);font-size:1.18rem;font-weight:500;color:var(--ob);line-height:1.6;margin-bottom:1.8rem}
 .likert{display:flex;gap:.6rem;justify-content:center;margin-bottom:.8rem}
-.lb{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(30,30,40,.18);background:#fff;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--TX2);cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center}
-.lb:hover{border-color:var(--ex);color:var(--ex)}
-.lb.sel{background:var(--ab);border-color:var(--ab);color:#fff}
-.lik-lbls{display:flex;justify-content:space-between;padding:0 .2rem;margin-bottom:1.5rem}
-.lik-lbls span{font-size:.7rem;color:var(--TX3);line-height:1.3;max-width:80px}
+.lb{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(10,15,30,.35);background:#fff;font-family:var(--hd);font-size:1.25rem;font-weight:500;color:#1a2033;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center}
+.lb:hover{border-color:var(--b2);color:var(--b2)}
+.lb[aria-pressed=true]{background:var(--ob);border-color:var(--ob);color:var(--ma)}
+.lik-lbls{display:flex;justify-content:space-between;padding:0 .2rem;margin-bottom:1rem}
+.lik-lbls span{font-size:.74rem;color:#3d465c;line-height:1.3;max-width:90px}
 .lik-lbls span:last-child{text-align:right}
-.q-nav{display:flex;gap:.75rem;padding:0 1.5rem 1.5rem;flex-shrink:0}
-.btn-bk{flex:1;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:transparent;color:var(--TX3);border:1px solid rgba(30,30,40,.18);cursor:pointer;border-radius:2px}
-.btn-nx{flex:2;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.78rem;background:var(--ab);color:#fff;border:none;cursor:pointer;border-radius:2px;opacity:.35;pointer-events:none;transition:opacity .2s}
-.btn-nx.on{opacity:1;pointer-events:auto}
-/* PROCESANDO */
-#s-proc{background:var(--ab);align-items:center;justify-content:center;text-align:center}
-.proc-ico{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--do);margin-bottom:1.2rem;display:block;letter-spacing:.1em}
-.proc-txt{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:2rem}
-.proc-bar{height:2px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 auto;width:200px;overflow:hidden}
-.proc-fill{height:100%;background:var(--GRADE);width:0;border-radius:2px}
-/* RESULTADOS */
-#s-r{background:var(--ab);overflow-y:auto}
-.r-hero{padding:2rem 1.5rem 1.5rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
-.r-ey{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.8rem}
-.r-nom{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:.4rem}
-.r-band{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:20px;margin-bottom:.8rem}
-.r-sc{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;line-height:1;margin-bottom:.4rem}
-.r-sc span{font-size:2rem;color:rgba(255,255,255,.35)}
-.r-desc{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:440px;margin:0 auto 1.2rem}
-.gb-c{height:1.5px;background:var(--GRADE);width:80px;margin:0 auto 1.2rem}
-/* Radar */
-.radar-wrap{padding:1.4rem;display:flex;justify-content:center}
-/* Delta banner */
-.delta-banner{margin:0 1.5rem 1rem;padding:1rem 1.2rem;border-radius:4px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
-.delta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center}
-.delta-item-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:3px}
-.delta-item-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;line-height:1}
-/* Ejes detalle */
-.ejes-det{padding:0 1.5rem 1rem}
-/* Sesiones mapa */
-.ses-mapa{padding:1rem 1.5rem}
-.ses-mapa h3{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.8rem}
-.sr{display:grid;grid-template-columns:.35rem 2rem 1fr auto;gap:.55rem;align-items:center;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.q-nav{display:flex;gap:.75rem;padding:0 1.4rem 1.4rem;flex-shrink:0;max-width:720px;width:100%;margin:0 auto}
+.btn-bk{flex:1;font-family:var(--hd);font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.8rem;background:transparent;color:#2a3147;border:1px solid rgba(10,15,30,.35);cursor:pointer;border-radius:3px}
+.btn-bk:hover{border-color:var(--b2)}
+.btn-nx{flex:2;font-family:var(--hd);font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.8rem;background:var(--ob);color:var(--ma);border:none;cursor:pointer;border-radius:3px}
+.btn-nx:disabled{opacity:.35;cursor:not-allowed}
+/* procesando */
+.proc-in{position:relative;z-index:2;text-align:center;padding:2rem}
+.proc-ico{font-family:var(--hd);font-size:3.2rem;font-weight:300;color:var(--b4);margin-bottom:1.2rem;display:block;letter-spacing:.08em}
+.proc-txt{font-size:1rem;color:var(--ti);line-height:1.7;margin-bottom:2rem}
+.proc-bar{height:2px;background:rgba(198,204,212,.18);margin:0 auto;width:200px;overflow:hidden}
+.proc-fill{height:100%;background:var(--GR);width:0}
+/* resultados */
+#s-r{background:var(--ob);overflow-y:auto}
+.r-hero{padding:2rem 1.2rem 1.4rem;text-align:center;border-bottom:1px solid var(--ln)}
+.r-ey{font-family:var(--hd);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);margin-bottom:.8rem}
+.r-nom{font-family:var(--hd);font-size:1.25rem;font-weight:400;color:var(--ma);margin-bottom:.6rem}
+.r-band{display:inline-block;font-family:var(--hd);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:20px;margin-bottom:.8rem}
+.r-sc{font-family:var(--hd);font-size:4.6rem;font-weight:300;line-height:1;margin-bottom:.5rem}
+.r-sc span{font-size:1.8rem;color:var(--mu)}
+.r-desc{font-size:.95rem;color:var(--ti);line-height:1.7;max-width:460px;margin:0 auto 1.1rem}
+.gb-c{height:1.5px;background:var(--GR);width:80px;margin:0 auto 1.1rem}
+.radar-wrap{padding:1rem .6rem;display:flex;justify-content:center}
+.radar-wrap svg{width:100%;max-width:440px;height:auto}
+.rd-grid{fill:none;stroke:rgba(198,204,212,.14);stroke-width:1}
+.rd-lbl{fill:var(--mu);font-family:var(--hd);font-size:9px;font-weight:600;letter-spacing:.4px}
+.rd-val{font-family:var(--hd);font-size:13px;font-weight:500}
+.rd-leg{fill:var(--mu);font-family:var(--hd);font-size:10px}
+.delta-banner{margin:0 1.2rem 1rem;padding:1rem 1.1rem;border-radius:6px;border:1px solid var(--ln);background:var(--an)}
+.banner-t{font-family:var(--hd);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--b4);margin-bottom:.8rem}
+.delta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center;margin-bottom:1rem}
+.d-lbl{font-family:var(--hd);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:3px}
+.d-val{font-family:var(--hd);font-size:1.8rem;font-weight:300;line-height:1}
+.dt{width:100%;border-collapse:collapse;font-size:.82rem}
+.dt th{font-family:var(--hd);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);text-align:right;padding:.35rem .3rem;border-bottom:1px solid var(--ln)}
+.dt th:first-child,.dt td:first-child{text-align:left}
+.dt td{padding:.45rem .3rem;border-bottom:1px solid var(--ln);text-align:right;color:var(--ti);font-variant-numeric:tabular-nums}
+.dt tr:last-child td{border-bottom:none}
+.dt td.dd{font-weight:600}
+.ejes-det,.ses-mapa,.codigo-res,.r-cierre,.delta-wrap{max-width:720px;margin-left:auto;margin-right:auto}
+.ejes-det{padding:0 1.2rem 1rem}
+.h3s{font-family:var(--hd);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);margin-bottom:.8rem}
+.ed-row{border-bottom:1px solid var(--ln);padding:.8rem 0;break-inside:avoid}
+.ed-hdr{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.4rem}
+.ed-nm{font-family:var(--hd);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ct);flex:1}
+.ed-d{font-family:var(--hd);font-size:.74rem;font-weight:600}
+.ed-sc{font-family:var(--hd);font-size:1.4rem;font-weight:400;color:var(--ct)}
+.ed-bar{height:3px;background:rgba(198,204,212,.18);border-radius:2px;margin-bottom:.4rem;overflow:hidden}
+.ed-fill{height:100%;border-radius:2px;background:var(--c)}
+.ed-fr{font-size:.84rem;color:var(--ti);line-height:1.6}
+.ses-mapa{padding:1rem 1.2rem}
+.sr{display:grid;grid-template-columns:.35rem 1.6rem 1fr auto;gap:.6rem;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--ln);break-inside:avoid}
 .sr:last-child{border-bottom:none}
-.sr-pri{height:2rem;border-radius:2px}
-.sr-n{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:rgba(255,255,255,.35)}
-.sr-nb{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.35}
-.sr-ej{font-size:.68rem;color:rgba(255,255,255,.3);font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase}
-.sr-int{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border-radius:20px}
-.int-a{background:rgba(184,92,31,.25);color:#E88050}
-.int-m{background:rgba(201,168,76,.2);color:#C9A84C}
-.int-b{background:rgba(255,255,255,.07);color:rgba(255,255,255,.35)}
-/* Código */
-.codigo-res{margin:1rem 1.5rem;padding:1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:4px;text-align:center}
-.cod-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
-.cod-val{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.14em;color:var(--do);margin-bottom:.7rem;word-break:break-all}
-.btn-copy{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1.4rem;background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:2px;transition:all .2s}
-.btn-copy:hover{border-color:var(--do);color:var(--do)}
-.cod-note{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:.6rem;line-height:1.5}
-/* Cierre */
-.r-cierre{padding:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.07)}
-.r-cierre p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1.2rem}
-.btn-print{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.78rem 1.8rem;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;border-radius:2px;transition:all .2s}
-.btn-print:hover{border-color:var(--do);color:var(--do)}
-.r-inst{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:1.5rem}
-/* PRINT */
+.sr-pri{height:2.2rem;border-radius:2px}
+.sr-n{font-family:var(--hd);font-size:1.1rem;color:var(--mu)}
+.sr-nb{font-size:.84rem;color:var(--ti);line-height:1.35}
+.sr-ej{font-size:.68rem;color:var(--mu);font-family:var(--hd);letter-spacing:.08em;text-transform:uppercase}
+.sr-int{font-family:var(--hd);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:20px;white-space:nowrap}
+.int-a{background:rgba(222,154,92,.22);color:var(--b4)}
+.int-m{background:rgba(240,220,198,.14);color:var(--b5)}
+.int-b{background:rgba(198,204,212,.1);color:var(--mu)}
+.codigo-res{margin-top:1rem;margin-bottom:1rem;padding:1.2rem;background:var(--an);border:1px solid var(--ln);border-radius:6px;text-align:center;width:calc(100% - 2.4rem)}
+.cod-lbl{font-family:var(--hd);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--b4);margin-bottom:.4rem}
+.cod-ins{font-size:.92rem;color:var(--ma);line-height:1.6;margin-bottom:.8rem}
+.cod-val{font-family:var(--hd);font-size:1.05rem;font-weight:600;letter-spacing:.1em;color:var(--b5);margin-bottom:.8rem;word-break:break-all;user-select:all;display:block}
+.btn-copy,.btn-print{font-family:var(--hd);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.6rem 1.4rem;background:transparent;color:var(--ti);border:1px solid rgba(198,204,212,.4);cursor:pointer;border-radius:3px;transition:all .2s}
+.btn-copy:hover,.btn-print:hover{border-color:var(--b4);color:var(--b4)}
+.cod-note{font-size:.78rem;color:var(--mu);margin-top:.8rem;line-height:1.55}
+.cod-prev{font-size:.78rem;color:var(--mu);margin-bottom:.5rem}
+.r-cierre{padding:1.4rem 1.2rem 2rem;text-align:center;border-top:1px solid var(--ln)}
+.r-cierre p.rc{font-size:.9rem;color:var(--ti);line-height:1.7;margin-bottom:1.2rem}
+.r-inst{font-family:var(--hd);font-size:.66rem;font-weight:500;letter-spacing:.12em;color:var(--mu);margin-top:1.4rem;line-height:1.8}
+.print-header{display:none}
+.watermark{position:fixed;inset:0;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center;opacity:.035;transform:rotate(-30deg)}
+.watermark span{font-family:var(--hd);font-size:2.6rem;font-weight:700;letter-spacing:.18em;color:var(--ti);white-space:nowrap}
+@media(min-width:600px){.q-txt{font-size:1.4rem}.lb{width:60px;height:60px}.name-group{gap:1rem}.modo-title{font-size:1.9rem}}
+@media(max-width:380px){.pl{font-size:3.2rem}.lb{width:48px;height:48px}.likert{gap:.45rem}.modo-cards{grid-template-columns:1fr}.sr{grid-template-columns:.3rem 1.4rem 1fr}.sr-int{grid-column:3;justify-self:start}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{
   @page{size:letter portrait;margin:.6in .7in}
-  html,body{overflow:auto !important;height:auto !important;background:#fff !important;color:var(--TX) !important}
-  .screen{position:static !important;display:none !important;height:auto !important;overflow:visible !important}
-  #s-r{display:block !important;background:#fff !important;overflow:visible !important}
-  .r-hero{background:#fff;color:var(--TX);border-bottom:2px solid #eee;padding:1rem 0}
-  .r-ey,.r-nom{color:var(--TX3) !important}
-  .r-sc{color:var(--TX) !important}
-  .r-desc{color:var(--TX2) !important}
-  .r-band{border:1px solid currentColor}
-  .gb-c{background:var(--GRADE)}
-  .radar-wrap{padding:.5rem;page-break-inside:avoid}
-  .radar-wrap svg{width:280px !important;height:280px !important;display:block;margin:0 auto}
-  .ejes-det{page-break-inside:avoid}
-  .eje-detalle-row{border-bottom:1px solid #eee;page-break-inside:avoid}
-  .eje-d-nombre{color:var(--TX) !important}
-  .eje-d-frase{color:var(--TX2) !important}
-  .eje-d-bar{background:#eee !important}
-  .ses-mapa{page-break-inside:avoid}
-  .sr-nb{color:var(--TX) !important}
-  .sr-ej{color:var(--TX3) !important}
-  .delta-banner{border:1px solid #eee;background:#f9f9f9 !important;page-break-inside:avoid}
-  .delta-item-lbl{color:var(--TX3) !important}
-  .codigo-res{border:1px solid #eee;background:#f9f9f9 !important;page-break-inside:avoid}
-  .cod-lbl{color:var(--TX3) !important}
-  .cod-note{color:var(--TX3) !important}
-  .r-cierre,.btn-copy,.btn-print,.p-inst,.watermark{display:none !important}
-  .print-header{display:block !important}
-  .section-label{color:var(--TX3) !important}
+  :root{--fg:#1b2233;--ti:#1b2233;--mu:#4a5366;--ma:#0A0F1E;--ln:#d9d4cb;--an:#f4efe8;--an2:#f4efe8;--b4:#8E4F1B;--b5:#5A2D10;--ok:#1d6b45;--ko:#a8281b}
+  html,body{overflow:visible!important;height:auto!important;background:#fff!important}
+  .screen{position:static!important;display:none!important;overflow:visible!important;height:auto!important}
+  #s-r{display:block!important;background:#fff!important}
+  .watermark,.btn-copy,.btn-print,.r-hero .gb-c{display:none!important}
+  .print-header{display:flex;align-items:center;gap:.7rem;padding:0 0 .8rem;border-bottom:2px solid var(--b3);margin-bottom:.6rem}
+  .print-header img{width:30px;height:30px}
+  .print-header h2{font-family:var(--hd);font-size:1.2rem;font-weight:500;color:#0A0F1E}
+  .print-header p{font-size:.78rem;color:#4a5366}
+  .r-band{border:1px solid #1b2233;background:none!important;color:#1b2233!important}
+  .r-sc{color:#0A0F1E!important}
+  .ed-nm,.ed-sc{color:#1b2233!important}
+  .radar-wrap{break-inside:avoid}.radar-wrap svg{max-width:340px}
+  .delta-banner,.codigo-res{break-inside:avoid;border:1px solid #d9d4cb}
+  .ses-mapa,.ejes-det{break-inside:auto}
+  .r-cierre{border-top:1px solid #d9d4cb}
+  .int-a,.int-m,.int-b{background:none;border:1px solid #8E4F1B;color:#1b2233}
+  .rd-val{fill:#1b2233!important}#radar-svg circle{fill:#8E4F1B!important}.ed-fill{background:#8E4F1B!important}
+  .rd-lbl{fill:#4a5366}.rd-leg{fill:#4a5366}.rd-grid{stroke:#cfc9bf}
 }
-.print-header{display:none;padding:.5rem 0 1rem;border-bottom:2px solid #eee;margin-bottom:1rem}
-.print-header h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--ab);margin-bottom:.2rem}
-.print-header p{font-size:.8rem;color:var(--TX3)}
-.watermark{position:fixed;inset:0;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;opacity:.04;transform:rotate(-35deg)}
-@media screen{.watermark span{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap}}
-@media(min-width:600px){.q-txt{font-size:1.5rem}.lb{width:60px;height:60px;font-size:1.5rem}.name-group{gap:1rem}}
+
+/* ── Lockup oficial Edwin Romero | Institute (Manual de identidad visual 2026) ── */
+.erl{display:inline-flex;align-items:center;gap:.78em;line-height:1;text-transform:none;letter-spacing:normal;color:#F4EFE8}
+.erl .sg{width:1.5em;height:1.5em;display:block;flex:none;color:#fff}
+.erl-tx{display:flex;flex-direction:column;align-items:center}
+.erl-wm{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.01em;line-height:1.05;white-space:nowrap;text-transform:none;font-size:1em}
+.erl-wm .sep{margin:0 .16em;font-weight:300;color:var(--erl-acc,#B46A2A)}
+.erl-wm .inst{font-weight:400}
+.erl-tag{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.4em;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-top:.62em;white-space:nowrap;text-align:center}
+.erl.on-light{color:#0A0F1E}.erl.on-light .sg{color:#000}
+.erl-w{display:flex;justify-content:center;margin-bottom:1.6rem}
+@media print{.erl.flip{color:#0A0F1E}.erl.flip .sg{color:#000}}
 </style>
 </head>
 <body>
-<script>document.addEventListener('contextmenu',function(e){e.preventDefault()});document.addEventListener('keydown',function(e){if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&e.key==='U'))e.preventDefault()});</script>
-<div class="watermark"><span id="wm-txt">IEL™ · EDWIN ROMERO | INSTITUTE</span></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="sgc"><circle cx="89.5" cy="89.5" r="88.2"/></clipPath><symbol id="sg" viewBox="0 0 178 178"><g clip-path="url(#sgc)"><path fill="currentColor" d="M59.71,78.70C59.40,78.72 58.34,79.95 57.68,80.80C57.01,81.65 56.31,82.80 55.73,83.80C55.14,84.80 54.64,85.80 54.16,86.80C53.69,87.80 53.27,88.80 52.86,89.80C52.45,90.80 52.05,91.80 51.70,92.80C51.34,93.80 51.00,94.80 50.72,95.80C50.44,96.80 50.21,97.80 50.00,98.80C49.79,99.80 49.62,100.80 49.46,101.80C49.30,102.80 49.16,103.80 49.06,104.80C48.95,105.80 48.86,106.80 48.80,107.80C48.74,108.80 48.71,109.80 48.71,110.80C48.71,111.80 48.76,112.80 48.80,113.80C48.84,114.80 48.86,115.80 48.95,116.80C49.03,117.80 49.16,118.80 49.30,119.80C49.45,120.80 49.63,121.80 49.81,122.80C49.99,123.80 50.18,124.80 50.40,125.80C50.63,126.80 50.87,127.80 51.17,128.80C51.46,129.80 51.80,130.80 52.15,131.80C52.51,132.80 52.89,133.80 53.31,134.80C53.72,135.80 54.16,136.80 54.64,137.80C55.11,138.80 55.66,139.80 56.17,140.80C56.68,141.80 57.17,142.80 57.72,143.80C58.27,144.80 58.84,145.80 59.49,146.80C60.13,147.80 60.87,148.80 61.61,149.80C62.34,150.80 63.09,151.80 63.90,152.80C64.71,153.80 65.56,154.81 66.46,155.80C67.36,156.78 68.34,157.77 69.31,158.71C70.29,159.65 71.30,160.57 72.30,161.42C73.30,162.27 74.30,163.07 75.30,163.82C76.30,164.58 77.30,165.28 78.30,165.93C79.30,166.58 80.30,167.16 81.30,167.72C82.30,168.29 83.30,168.84 84.30,169.33C85.30,169.82 86.30,170.26 87.30,170.65C88.30,171.05 89.30,171.37 90.30,171.69C91.30,172.00 92.30,172.28 93.30,172.54C94.30,172.80 95.30,173.03 96.30,173.24C97.30,173.44 98.30,173.63 99.30,173.76C100.30,173.90 101.30,173.97 102.30,174.02C103.30,174.08 104.30,174.10 105.30,174.10C106.30,174.09 107.30,174.05 108.30,173.98C109.30,173.90 110.30,173.78 111.30,173.65C112.30,173.51 113.30,173.34 114.30,173.16C115.30,172.99 116.30,172.81 117.30,172.59C118.30,172.38 119.30,172.12 120.30,171.85C121.30,171.58 122.30,171.30 123.30,170.96C124.30,170.63 125.30,170.22 126.30,169.84C127.30,169.46 128.30,169.09 129.30,168.68C130.30,168.26 131.30,167.81 132.30,167.34C133.30,166.86 134.30,166.37 135.30,165.84C136.30,165.31 137.30,164.77 138.30,164.17C139.30,163.58 140.30,162.95 141.30,162.29C142.30,161.63 143.30,160.93 144.30,160.22C145.30,159.51 146.30,158.79 147.30,158.03C148.30,157.27 149.30,156.51 150.30,155.66C151.30,154.80 152.30,153.86 153.30,152.91C154.30,151.97 155.33,150.97 156.30,150.00C157.26,149.03 158.22,148.06 159.10,147.08C159.97,146.09 160.78,145.10 161.56,144.10C162.35,143.10 163.06,142.10 163.81,141.10C164.55,140.10 165.32,139.10 166.02,138.10C166.72,137.10 167.40,136.10 168.00,135.10C168.60,134.10 169.10,133.10 169.61,132.10C170.12,131.10 170.59,130.10 171.09,129.10C171.58,128.10 172.13,127.10 172.58,126.10C173.02,125.10 173.47,123.99 173.76,123.10C174.04,122.21 174.46,120.81 174.26,120.76C174.07,120.71 173.20,121.96 172.58,122.80C171.96,123.64 171.24,124.80 170.54,125.80C169.84,126.80 169.18,127.80 168.38,128.80C167.58,129.80 166.66,130.80 165.75,131.80C164.83,132.80 163.84,133.83 162.87,134.79C161.89,135.75 160.89,136.72 159.90,137.58C158.91,138.43 157.90,139.17 156.90,139.91C155.90,140.64 154.90,141.31 153.90,142.00C152.90,142.70 151.90,143.45 150.90,144.09C149.90,144.73 148.90,145.31 147.90,145.84C146.90,146.37 145.90,146.83 144.90,147.27C143.90,147.70 142.90,148.08 141.90,148.45C140.90,148.82 139.90,149.16 138.90,149.49C137.90,149.81 136.90,150.09 135.90,150.38C134.90,150.67 133.90,150.98 132.90,151.22C131.90,151.46 130.90,151.67 129.90,151.83C128.90,151.99 127.90,152.07 126.90,152.18C125.90,152.29 124.90,152.40 123.90,152.47C122.90,152.54 121.90,152.59 120.90,152.60C119.90,152.61 118.90,152.58 117.90,152.54C116.90,152.50 115.90,152.43 114.90,152.36C113.90,152.28 112.90,152.19 111.90,152.08C110.90,151.96 109.90,151.85 108.90,151.67C107.90,151.50 106.90,151.27 105.90,151.05C104.90,150.82 103.90,150.57 102.90,150.31C101.90,150.04 100.90,149.78 99.90,149.46C98.90,149.13 97.90,148.75 96.90,148.36C95.90,147.96 94.90,147.54 93.90,147.08C92.90,146.63 91.90,146.15 90.90,145.62C89.90,145.09 88.90,144.55 87.90,143.92C86.90,143.30 85.90,142.57 84.90,141.88C83.90,141.18 82.90,140.50 81.90,139.76C80.90,139.02 79.90,138.29 78.90,137.45C77.90,136.61 76.88,135.65 75.90,134.69C74.93,133.73 73.96,132.70 73.04,131.70C72.12,130.70 71.20,129.70 70.40,128.70C69.60,127.70 68.91,126.70 68.24,125.70C67.57,124.70 66.99,123.70 66.38,122.70C65.77,121.70 65.15,120.70 64.57,119.70C64.00,118.70 63.40,117.70 62.92,116.70C62.44,115.70 62.09,114.70 61.69,113.70C61.30,112.70 60.88,111.70 60.53,110.70C60.19,109.70 59.90,108.70 59.63,107.70C59.35,106.70 59.11,105.70 58.89,104.70C58.67,103.70 58.46,102.70 58.30,101.70C58.14,100.70 58.02,99.70 57.92,98.70C57.82,97.70 57.76,96.70 57.73,95.70C57.69,94.70 57.69,93.70 57.71,92.70C57.73,91.70 57.79,90.70 57.86,89.70C57.94,88.70 58.02,87.70 58.16,86.70C58.30,85.70 58.46,84.70 58.70,83.70C58.94,82.70 59.41,81.54 59.58,80.70C59.74,79.87 60.03,78.68 59.71,78.70Z M72.60,55.55C71.77,55.60 70.60,55.67 69.60,55.78C68.60,55.88 67.60,56.01 66.60,56.18C65.60,56.36 64.60,56.59 63.60,56.84C62.60,57.09 61.60,57.36 60.60,57.67C59.60,57.97 58.60,58.32 57.60,58.68C56.60,59.03 55.60,59.40 54.60,59.81C53.60,60.22 52.60,60.66 51.60,61.16C50.60,61.67 49.60,62.27 48.60,62.85C47.60,63.42 46.60,63.99 45.60,64.63C44.60,65.26 43.60,65.93 42.60,66.65C41.60,67.37 40.60,68.16 39.60,68.95C38.60,69.75 37.60,70.58 36.60,71.43C35.60,72.27 34.57,73.11 33.60,74.02C32.64,74.94 31.68,75.92 30.81,76.90C29.94,77.88 29.18,78.90 28.39,79.90C27.60,80.90 26.79,81.90 26.06,82.90C25.32,83.90 24.63,84.90 23.99,85.90C23.34,86.90 22.76,87.90 22.20,88.90C21.64,89.90 21.13,90.90 20.62,91.90C20.11,92.90 19.59,93.90 19.13,94.90C18.67,95.90 18.26,96.90 17.87,97.90C17.49,98.90 17.15,99.90 16.83,100.90C16.50,101.90 16.21,102.90 15.94,103.90C15.67,104.90 15.41,105.90 15.20,106.90C14.98,107.90 14.83,108.90 14.67,109.90C14.52,110.90 14.36,111.90 14.25,112.90C14.14,113.90 14.06,114.90 14.01,115.90C13.96,116.90 13.97,117.90 13.97,118.90C13.97,119.90 13.98,120.90 14.03,121.90C14.09,122.90 14.18,123.90 14.31,124.90C14.44,125.90 14.61,126.90 14.83,127.90C15.04,128.90 15.34,129.90 15.62,130.90C15.91,131.90 16.20,132.90 16.54,133.90C16.87,134.90 17.21,135.90 17.64,136.90C18.07,137.90 18.61,138.90 19.14,139.90C19.67,140.90 20.21,141.90 20.80,142.90C21.40,143.90 22.01,144.90 22.71,145.90C23.42,146.90 24.22,147.90 25.04,148.90C25.85,149.90 26.72,150.90 27.62,151.90C28.51,152.90 29.45,153.94 30.41,154.89C31.38,155.85 32.40,156.77 33.40,157.64C34.40,158.51 35.40,159.32 36.40,160.11C37.40,160.90 38.40,161.66 39.40,162.40C40.40,163.13 41.40,163.87 42.40,164.53C43.40,165.19 44.40,165.78 45.40,166.35C46.40,166.91 47.40,167.39 48.40,167.90C49.40,168.40 50.40,168.89 51.40,169.38C52.40,169.86 53.40,170.38 54.40,170.83C55.40,171.28 56.40,171.67 57.40,172.08C58.40,172.48 59.40,172.90 60.40,173.27C61.40,173.64 62.40,173.98 63.40,174.29C64.40,174.60 65.40,174.89 66.40,175.14C67.40,175.38 68.40,175.57 69.40,175.78C70.40,175.99 71.40,176.22 72.40,176.40C73.40,176.58 74.40,176.72 75.40,176.85C76.40,176.99 77.40,177.03 78.40,177.18C79.40,177.33 80.40,177.64 81.40,177.76C82.40,177.88 83.61,177.95 84.40,177.90C85.19,177.85 86.27,177.72 86.14,177.48C86.00,177.24 84.52,176.79 83.60,176.47C82.68,176.16 81.60,175.91 80.60,175.60C79.60,175.30 78.60,174.98 77.60,174.65C76.60,174.31 75.60,173.95 74.60,173.57C73.60,173.19 72.60,172.80 71.60,172.35C70.60,171.89 69.60,171.39 68.60,170.84C67.60,170.29 66.60,169.66 65.60,169.06C64.60,168.46 63.60,167.89 62.60,167.22C61.60,166.56 60.60,165.86 59.60,165.07C58.60,164.27 57.58,163.36 56.61,162.43C55.64,161.51 54.69,160.49 53.78,159.50C52.87,158.51 51.93,157.50 51.15,156.50C50.36,155.50 49.71,154.50 49.08,153.50C48.44,152.50 47.93,151.50 47.34,150.50C46.76,149.50 46.08,148.50 45.55,147.50C45.02,146.50 44.57,145.50 44.15,144.50C43.73,143.50 43.39,142.50 43.01,141.50C42.63,140.50 42.19,139.50 41.85,138.50C41.51,137.50 41.22,136.50 40.97,135.50C40.71,134.50 40.51,133.50 40.31,132.50C40.12,131.50 39.97,130.50 39.82,129.50C39.67,128.50 39.54,127.50 39.43,126.50C39.32,125.50 39.23,124.50 39.16,123.50C39.09,122.50 39.04,121.50 39.01,120.50C38.99,119.50 38.99,118.50 39.01,117.50C39.03,116.50 39.07,115.50 39.14,114.50C39.20,113.50 39.30,112.50 39.41,111.50C39.53,110.50 39.65,109.50 39.82,108.50C39.98,107.50 40.20,106.50 40.41,105.50C40.63,104.50 40.85,103.50 41.09,102.50C41.34,101.50 41.60,100.50 41.90,99.50C42.19,98.50 42.54,97.50 42.87,96.50C43.21,95.50 43.53,94.50 43.91,93.50C44.30,92.50 44.71,91.50 45.19,90.50C45.67,89.50 46.23,88.50 46.79,87.50C47.35,86.50 47.93,85.50 48.54,84.50C49.15,83.50 49.77,82.50 50.45,81.50C51.14,80.50 51.87,79.50 52.63,78.50C53.39,77.50 54.14,76.50 55.01,75.50C55.89,74.50 56.92,73.48 57.90,72.50C58.88,71.52 59.90,70.51 60.90,69.65C61.90,68.78 62.90,68.05 63.90,67.32C64.90,66.59 65.90,65.91 66.90,65.25C67.90,64.59 68.90,63.94 69.90,63.38C70.90,62.82 71.90,62.32 72.90,61.87C73.90,61.42 74.90,61.03 75.90,60.68C76.90,60.32 77.90,60.01 78.90,59.74C79.90,59.47 80.90,59.23 81.90,59.05C82.90,58.87 83.94,58.79 84.90,58.67C85.86,58.55 87.40,58.59 87.68,58.32C87.96,58.05 87.27,57.38 86.59,57.05C85.91,56.71 84.60,56.49 83.60,56.30C82.60,56.11 81.60,56.02 80.60,55.90C79.60,55.78 78.60,55.65 77.60,55.58C76.60,55.52 75.43,55.51 74.60,55.50C73.77,55.50 73.43,55.51 72.60,55.55Z M56.50,30.66C55.78,30.71 54.50,30.80 53.50,30.90C52.50,31.00 51.50,31.09 50.50,31.24C49.50,31.39 48.50,31.60 47.50,31.78C46.50,31.96 45.50,32.11 44.50,32.32C43.50,32.52 42.50,32.73 41.50,33.01C40.50,33.30 39.50,33.69 38.50,34.02C37.50,34.36 36.50,34.67 35.50,35.05C34.50,35.42 33.50,35.80 32.50,36.28C31.50,36.75 30.50,37.32 29.50,37.90C28.50,38.48 27.50,39.09 26.50,39.75C25.50,40.41 24.50,41.10 23.50,41.87C22.50,42.64 21.50,43.49 20.50,44.36C19.50,45.24 18.47,46.16 17.51,47.11C16.55,48.07 15.60,49.10 14.74,50.10C13.89,51.10 13.16,52.10 12.37,53.10C11.59,54.10 10.75,55.10 10.05,56.10C9.35,57.10 8.75,58.10 8.18,59.10C7.61,60.10 7.13,61.10 6.61,62.10C6.09,63.10 5.52,64.10 5.06,65.10C4.61,66.10 4.24,67.10 3.90,68.10C3.57,69.10 3.32,70.10 3.04,71.10C2.76,72.10 2.48,73.10 2.24,74.10C1.99,75.10 1.77,76.10 1.57,77.10C1.38,78.10 1.23,79.10 1.07,80.10C0.91,81.10 0.77,82.11 0.60,83.10C0.43,84.08 0.13,85.02 0.03,86.01C-0.07,86.99 0.00,88.00 0.00,89.00C-0.00,90.00 -0.02,91.00 0.00,92.00C0.02,93.00 -0.01,94.00 0.11,95.00C0.23,96.00 0.53,97.00 0.70,98.00C0.87,99.00 0.96,100.00 1.12,101.00C1.29,102.00 1.50,103.00 1.69,104.00C1.89,105.00 2.06,106.00 2.28,107.00C2.49,108.00 2.73,109.00 2.98,110.00C3.24,111.00 3.47,112.03 3.81,113.00C4.16,113.97 4.74,115.50 5.06,115.83C5.39,116.16 5.75,115.62 5.79,114.98C5.82,114.34 5.44,113.00 5.29,112.00C5.14,111.00 4.97,110.00 4.88,109.00C4.78,108.00 4.74,107.00 4.71,106.00C4.68,105.00 4.68,104.00 4.70,103.00C4.72,102.00 4.74,101.00 4.81,100.00C4.88,99.00 4.96,98.00 5.11,97.00C5.25,96.00 5.44,95.00 5.68,94.00C5.92,93.00 6.22,92.00 6.55,91.00C6.87,90.00 7.22,89.00 7.63,88.00C8.04,87.00 8.49,86.00 9.00,85.00C9.50,84.00 10.09,83.00 10.66,82.00C11.24,81.00 11.79,80.00 12.47,79.00C13.14,78.00 13.89,77.00 14.71,76.00C15.52,75.00 16.44,73.99 17.38,73.00C18.31,72.01 19.31,70.99 20.30,70.03C21.29,69.07 22.30,68.11 23.30,67.25C24.30,66.40 25.30,65.64 26.30,64.92C27.30,64.20 28.30,63.59 29.30,62.94C30.30,62.28 31.30,61.59 32.30,60.98C33.30,60.38 34.30,59.83 35.30,59.31C36.30,58.80 37.30,58.36 38.30,57.89C39.30,57.43 40.30,56.95 41.30,56.52C42.30,56.09 43.30,55.68 44.30,55.31C45.30,54.93 46.30,54.58 47.30,54.25C48.30,53.92 49.30,53.62 50.30,53.34C51.30,53.06 52.30,52.80 53.30,52.56C54.30,52.31 55.30,52.09 56.30,51.90C57.30,51.70 58.30,51.54 59.30,51.39C60.30,51.23 61.30,51.07 62.30,50.94C63.30,50.82 64.30,50.71 65.30,50.63C66.30,50.56 67.30,50.52 68.30,50.50C69.30,50.48 70.30,50.48 71.30,50.50C72.30,50.53 73.30,50.57 74.30,50.64C75.30,50.71 76.30,50.83 77.30,50.95C78.30,51.07 79.30,51.22 80.30,51.38C81.30,51.54 82.30,51.69 83.30,51.89C84.30,52.10 85.30,52.33 86.30,52.61C87.30,52.89 88.30,53.24 89.30,53.58C90.30,53.92 91.30,54.25 92.30,54.64C93.30,55.03 94.30,55.44 95.30,55.91C96.30,56.37 97.30,56.90 98.30,57.44C99.30,57.98 100.30,58.51 101.30,59.15C102.30,59.80 103.30,60.53 104.30,61.31C105.30,62.10 106.31,62.95 107.30,63.85C108.29,64.74 109.33,65.73 110.22,66.70C111.11,67.68 111.91,68.70 112.66,69.70C113.40,70.70 114.09,71.70 114.70,72.70C115.32,73.70 115.84,74.70 116.32,75.70C116.81,76.70 117.23,77.70 117.61,78.70C117.99,79.70 118.30,80.71 118.61,81.70C118.91,82.69 119.14,84.17 119.44,84.62C119.74,85.06 120.21,84.89 120.40,84.36C120.60,83.82 120.58,82.39 120.60,81.40C120.61,80.41 120.57,79.40 120.50,78.40C120.44,77.40 120.33,76.40 120.19,75.40C120.06,74.40 119.90,73.40 119.69,72.40C119.47,71.40 119.20,70.40 118.90,69.40C118.60,68.40 118.27,67.40 117.87,66.40C117.47,65.40 117.00,64.40 116.52,63.40C116.05,62.40 115.56,61.40 115.02,60.40C114.47,59.40 113.91,58.40 113.25,57.40C112.60,56.40 111.88,55.40 111.10,54.40C110.32,53.40 109.45,52.40 108.56,51.40C107.68,50.40 106.75,49.35 105.79,48.42C104.83,47.49 103.80,46.61 102.80,45.80C101.80,44.98 100.80,44.27 99.80,43.53C98.80,42.78 97.80,42.02 96.80,41.34C95.80,40.66 94.80,40.04 93.80,39.45C92.80,38.86 91.80,38.32 90.80,37.80C89.80,37.28 88.80,36.80 87.80,36.34C86.80,35.89 85.80,35.44 84.80,35.05C83.80,34.67 82.80,34.35 81.80,34.02C80.80,33.68 79.80,33.35 78.80,33.06C77.80,32.78 76.80,32.53 75.80,32.30C74.80,32.07 73.80,31.86 72.80,31.68C71.80,31.49 70.80,31.31 69.80,31.18C68.80,31.05 67.80,30.99 66.80,30.91C65.80,30.83 64.80,30.76 63.80,30.71C62.80,30.66 61.80,30.62 60.80,30.60C59.80,30.59 58.52,30.60 57.80,30.61C57.08,30.62 57.22,30.61 56.50,30.66Z M143.94,18.86C144.00,19.16 145.01,20.39 145.77,21.30C146.54,22.21 147.68,23.30 148.53,24.30C149.38,25.30 150.13,26.30 150.88,27.30C151.62,28.30 152.33,29.30 152.99,30.30C153.65,31.30 154.26,32.30 154.83,33.30C155.40,34.30 155.92,35.30 156.42,36.30C156.91,37.30 157.36,38.30 157.79,39.30C158.22,40.30 158.61,41.30 158.98,42.30C159.36,43.30 159.70,44.30 160.02,45.30C160.34,46.30 160.66,47.30 160.91,48.30C161.17,49.30 161.37,50.30 161.55,51.30C161.73,52.30 161.88,53.30 162.01,54.30C162.14,55.30 162.25,56.30 162.33,57.30C162.41,58.30 162.47,59.30 162.50,60.30C162.53,61.30 162.52,62.30 162.52,63.30C162.51,64.30 162.52,65.30 162.47,66.30C162.41,67.30 162.32,68.30 162.21,69.30C162.10,70.30 161.99,71.30 161.81,72.30C161.63,73.30 161.37,74.30 161.13,75.30C160.89,76.30 160.65,77.30 160.37,78.30C160.08,79.30 159.77,80.30 159.40,81.30C159.03,82.30 158.58,83.30 158.14,84.30C157.71,85.30 157.24,86.30 156.77,87.30C156.29,88.30 155.85,89.30 155.31,90.30C154.76,91.30 154.11,92.30 153.49,93.30C152.86,94.30 152.26,95.30 151.55,96.30C150.85,97.30 150.13,98.30 149.27,99.30C148.41,100.30 147.38,101.30 146.40,102.28C145.42,103.26 144.40,104.25 143.40,105.18C142.40,106.10 141.40,107.01 140.40,107.83C139.40,108.65 138.40,109.40 137.40,110.11C136.40,110.82 135.40,111.43 134.40,112.09C133.40,112.74 132.40,113.43 131.40,114.04C130.40,114.66 129.40,115.23 128.40,115.76C127.40,116.29 126.40,116.73 125.40,117.22C124.40,117.70 123.40,118.24 122.40,118.66C121.40,119.07 120.40,119.39 119.40,119.71C118.40,120.03 117.40,120.31 116.40,120.59C115.40,120.87 114.40,121.15 113.40,121.40C112.40,121.65 111.40,121.88 110.40,122.08C109.40,122.29 108.40,122.45 107.40,122.62C106.40,122.79 105.40,122.97 104.40,123.08C103.40,123.19 102.40,123.25 101.40,123.28C100.40,123.32 99.40,123.31 98.40,123.30C97.40,123.29 96.40,123.27 95.40,123.21C94.40,123.14 93.40,123.06 92.40,122.92C91.40,122.78 90.40,122.58 89.40,122.34C88.40,122.11 87.40,121.82 86.40,121.50C85.40,121.18 84.40,120.80 83.40,120.42C82.40,120.04 81.40,119.70 80.40,119.20C79.40,118.71 78.40,118.10 77.40,117.45C76.40,116.80 75.40,116.11 74.40,115.31C73.40,114.51 72.37,113.58 71.40,112.65C70.43,111.71 69.40,110.58 68.58,109.70C67.76,108.82 66.80,107.43 66.46,107.38C66.12,107.33 66.32,108.56 66.54,109.40C66.76,110.24 67.33,111.40 67.77,112.40C68.21,113.40 68.62,114.40 69.18,115.40C69.75,116.40 70.43,117.40 71.16,118.40C71.89,119.40 72.67,120.40 73.54,121.40C74.42,122.40 75.42,123.43 76.40,124.40C77.38,125.36 78.40,126.32 79.40,127.17C80.40,128.01 81.40,128.76 82.40,129.46C83.40,130.16 84.40,130.76 85.40,131.37C86.40,131.97 87.40,132.54 88.40,133.08C89.40,133.61 90.40,134.10 91.40,134.57C92.40,135.04 93.40,135.53 94.40,135.90C95.40,136.27 96.40,136.50 97.40,136.80C98.40,137.10 99.40,137.42 100.40,137.69C101.40,137.95 102.40,138.18 103.40,138.39C104.40,138.60 105.40,138.77 106.40,138.92C107.40,139.08 108.40,139.21 109.40,139.32C110.40,139.43 111.40,139.53 112.40,139.59C113.40,139.65 114.40,139.67 115.40,139.69C116.40,139.71 117.40,139.71 118.40,139.69C119.40,139.67 120.40,139.63 121.40,139.57C122.40,139.51 123.40,139.44 124.40,139.34C125.40,139.25 126.40,139.14 127.40,139.01C128.40,138.87 129.40,138.74 130.40,138.56C131.40,138.37 132.40,138.14 133.40,137.90C134.40,137.66 135.40,137.39 136.40,137.12C137.40,136.85 138.40,136.60 139.40,136.29C140.40,135.97 141.40,135.60 142.40,135.22C143.40,134.83 144.40,134.41 145.40,133.99C146.40,133.57 147.40,133.17 148.40,132.69C149.40,132.21 150.40,131.68 151.40,131.12C152.40,130.56 153.40,129.94 154.40,129.33C155.40,128.72 156.40,128.13 157.40,127.45C158.40,126.77 159.40,126.04 160.40,125.25C161.40,124.46 162.40,123.62 163.40,122.71C164.40,121.80 165.44,120.79 166.40,119.80C167.36,118.81 168.33,117.80 169.16,116.80C169.99,115.80 170.67,114.80 171.37,113.80C172.07,112.80 172.76,111.80 173.38,110.80C174.00,109.80 174.57,108.80 175.08,107.80C175.58,106.80 175.97,105.78 176.40,104.80C176.83,103.82 177.41,102.89 177.66,101.92C177.91,100.96 177.86,99.99 177.90,99.00C177.94,98.01 177.90,97.00 177.90,96.00C177.90,95.00 177.90,94.00 177.90,93.00C177.90,92.00 177.90,91.00 177.90,90.00C177.90,89.00 177.90,88.00 177.90,87.00C177.90,86.00 177.90,85.00 177.90,84.00C177.90,83.00 177.90,82.00 177.90,81.00C177.90,80.00 177.90,79.00 177.90,78.00C177.90,77.00 177.90,76.00 177.90,75.00C177.90,74.00 177.90,73.00 177.90,72.00C177.90,71.00 177.96,69.99 177.90,69.00C177.84,68.01 177.79,67.04 177.56,66.06C177.34,65.07 176.88,64.09 176.55,63.10C176.22,62.11 175.94,61.10 175.61,60.10C175.28,59.10 174.96,58.10 174.57,57.10C174.19,56.10 173.73,55.10 173.29,54.10C172.84,53.10 172.37,52.10 171.90,51.10C171.42,50.10 170.96,49.10 170.44,48.10C169.91,47.10 169.35,46.10 168.74,45.10C168.13,44.10 167.44,43.10 166.78,42.10C166.12,41.10 165.51,40.10 164.80,39.10C164.09,38.10 163.31,37.10 162.52,36.10C161.73,35.10 160.93,34.10 160.06,33.10C159.20,32.10 158.27,31.09 157.33,30.10C156.39,29.11 155.39,28.11 154.40,27.17C153.41,26.22 152.40,25.32 151.40,24.42C150.40,23.53 149.40,22.62 148.40,21.80C147.40,20.98 146.15,19.99 145.41,19.50C144.67,19.01 143.88,18.56 143.94,18.86Z M88.90,1.25C87.95,1.29 86.90,1.34 85.90,1.42C84.90,1.49 83.90,1.58 82.90,1.69C81.90,1.80 80.90,1.91 79.90,2.07C78.90,2.24 77.90,2.48 76.90,2.69C75.90,2.91 74.90,3.13 73.90,3.36C72.90,3.59 71.90,3.83 70.90,4.10C69.90,4.36 68.90,4.64 67.90,4.95C66.90,5.26 65.90,5.59 64.90,5.95C63.90,6.30 62.90,6.68 61.90,7.07C60.90,7.47 59.90,7.87 58.90,8.31C57.90,8.75 56.90,9.24 55.90,9.73C54.90,10.22 53.90,10.73 52.90,11.26C51.90,11.79 50.90,12.33 49.90,12.91C48.90,13.48 47.90,14.10 46.90,14.72C45.90,15.33 44.90,15.95 43.90,16.61C42.90,17.26 41.90,17.95 40.90,18.65C39.90,19.35 38.90,20.05 37.90,20.80C36.90,21.55 35.89,22.31 34.90,23.15C33.91,23.99 32.72,25.00 31.94,25.84C31.17,26.67 30.13,27.97 30.26,28.14C30.39,28.31 31.79,27.39 32.70,26.86C33.61,26.33 34.70,25.55 35.70,24.95C36.70,24.34 37.70,23.78 38.70,23.23C39.70,22.67 40.70,22.13 41.70,21.63C42.70,21.13 43.70,20.67 44.70,20.23C45.70,19.78 46.70,19.35 47.70,18.97C48.70,18.58 49.70,18.25 50.70,17.92C51.70,17.59 52.70,17.26 53.70,16.99C54.70,16.71 55.70,16.49 56.70,16.27C57.70,16.06 58.70,15.88 59.70,15.70C60.70,15.53 61.70,15.35 62.70,15.21C63.70,15.07 64.70,14.95 65.70,14.86C66.70,14.78 67.70,14.75 68.70,14.73C69.70,14.70 70.70,14.69 71.70,14.71C72.70,14.73 73.70,14.77 74.70,14.84C75.70,14.90 76.70,14.97 77.70,15.08C78.70,15.19 79.70,15.33 80.70,15.50C81.70,15.67 82.70,15.87 83.70,16.11C84.70,16.34 85.70,16.63 86.70,16.93C87.70,17.22 88.70,17.55 89.70,17.89C90.70,18.24 91.70,18.58 92.70,19.00C93.70,19.42 94.70,19.89 95.70,20.39C96.70,20.89 97.70,21.39 98.70,22.00C99.70,22.61 100.70,23.33 101.70,24.05C102.70,24.76 103.70,25.50 104.70,26.29C105.70,27.08 106.71,27.88 107.70,28.79C108.69,29.69 109.74,30.71 110.67,31.70C111.60,32.69 112.46,33.70 113.29,34.70C114.12,35.70 114.91,36.70 115.64,37.70C116.37,38.70 117.03,39.70 117.67,40.70C118.30,41.70 118.92,42.70 119.46,43.70C120.00,44.70 120.46,45.70 120.92,46.70C121.38,47.70 121.80,48.70 122.22,49.70C122.63,50.70 123.04,51.70 123.41,52.70C123.77,53.70 124.10,54.70 124.39,55.70C124.68,56.70 124.92,57.70 125.15,58.70C125.38,59.70 125.58,60.70 125.77,61.70C125.96,62.70 126.13,63.70 126.29,64.70C126.45,65.70 126.60,66.70 126.72,67.70C126.83,68.70 126.91,69.70 126.97,70.70C127.03,71.70 127.08,72.70 127.09,73.70C127.09,74.70 127.05,75.70 127.01,76.70C126.97,77.70 126.95,78.70 126.85,79.70C126.76,80.70 126.60,81.70 126.44,82.70C126.27,83.70 126.08,84.70 125.87,85.70C125.65,86.70 125.42,87.70 125.15,88.70C124.88,89.70 124.57,90.70 124.23,91.70C123.90,92.70 123.56,93.70 123.16,94.70C122.76,95.70 122.35,96.70 121.86,97.70C121.37,98.70 120.84,99.70 120.23,100.70C119.62,101.70 118.92,102.70 118.21,103.70C117.51,104.70 116.83,105.71 116.02,106.70C115.22,107.69 114.32,108.72 113.38,109.64C112.44,110.55 111.40,111.38 110.40,112.18C109.40,112.99 108.40,113.79 107.40,114.46C106.40,115.13 105.13,115.67 104.41,116.20C103.69,116.73 102.86,117.46 103.09,117.67C103.32,117.87 104.85,117.60 105.80,117.43C106.75,117.26 107.80,116.94 108.80,116.63C109.80,116.33 110.80,115.99 111.80,115.60C112.80,115.22 113.80,114.80 114.80,114.32C115.80,113.85 116.80,113.32 117.80,112.76C118.80,112.20 119.80,111.61 120.80,110.96C121.80,110.30 122.80,109.63 123.80,108.85C124.80,108.07 125.80,107.18 126.80,106.28C127.80,105.37 128.82,104.40 129.80,103.43C130.78,102.47 131.81,101.49 132.71,100.50C133.60,99.51 134.38,98.50 135.16,97.50C135.93,96.50 136.66,95.50 137.35,94.50C138.04,93.50 138.67,92.50 139.29,91.50C139.91,90.50 140.51,89.50 141.07,88.50C141.62,87.50 142.13,86.50 142.60,85.50C143.07,84.50 143.47,83.50 143.87,82.50C144.28,81.50 144.66,80.50 145.03,79.50C145.40,78.50 145.77,77.50 146.10,76.50C146.43,75.50 146.72,74.50 147.00,73.50C147.29,72.50 147.58,71.50 147.79,70.50C148.01,69.50 148.13,68.50 148.28,67.50C148.43,66.50 148.58,65.50 148.70,64.50C148.82,63.50 148.92,62.50 148.99,61.50C149.06,60.50 149.08,59.50 149.10,58.50C149.11,57.50 149.09,56.50 149.07,55.50C149.05,54.50 149.01,53.50 148.97,52.50C148.92,51.50 148.89,50.50 148.80,49.50C148.70,48.50 148.57,47.50 148.40,46.50C148.23,45.50 148.01,44.50 147.78,43.50C147.55,42.50 147.29,41.50 147.01,40.50C146.73,39.50 146.46,38.50 146.12,37.50C145.78,36.50 145.38,35.50 144.99,34.50C144.61,33.50 144.24,32.50 143.80,31.50C143.37,30.50 142.92,29.50 142.40,28.50C141.87,27.50 141.29,26.50 140.67,25.50C140.05,24.50 139.39,23.50 138.69,22.50C137.98,21.50 137.29,20.50 136.44,19.50C135.59,18.50 134.57,17.47 133.60,16.50C132.63,15.53 131.60,14.55 130.60,13.70C129.60,12.85 128.60,12.11 127.60,11.40C126.60,10.69 125.60,10.03 124.60,9.44C123.60,8.84 122.60,8.30 121.60,7.81C120.60,7.32 119.60,6.90 118.60,6.47C117.60,6.05 116.60,5.64 115.60,5.26C114.60,4.88 113.60,4.52 112.60,4.19C111.60,3.86 110.60,3.54 109.60,3.28C108.60,3.01 107.60,2.80 106.60,2.60C105.60,2.40 104.60,2.22 103.60,2.07C102.60,1.93 101.60,1.82 100.60,1.72C99.60,1.61 98.60,1.51 97.60,1.43C96.60,1.35 95.60,1.27 94.60,1.24C93.60,1.20 92.55,1.20 91.60,1.20C90.65,1.20 89.85,1.22 88.90,1.25Z"/></g></symbol></defs></svg>
+<div class="watermark" aria-hidden="true"><span id="wm-txt">IEL™ · Edwin Romero | Institute</span></div>
 
 <!-- PORTADA -->
-<div class="screen active" id="s-p">
-  <div class="ht"></div><div class="hb"></div>
+<main class="screen dark-c active" id="s-p">
+  <div class="glow g1"></div><div class="glow g2"></div>
   <div class="pi">
-    <p class="pe">Edwin Romero | Institute · 2026</p>
-    <h1 class="pl">IEL<span>™</span></h1>
-    <span class="pt">Índice de Entropía del Liderazgo</span>
+    <div class="erl-w"><span class="erl on-dark" style="font-size:26px" role="img" aria-label="Edwin Romero | Institute"><svg class="sg" viewBox="0 0 178 178" aria-hidden="true"><use href="#sg"/></svg><span class="erl-tx"><span class="erl-wm">Edwin Romero<span class="sep">|</span><span class="inst">Institute</span></span><span class="erl-tag">Ingeniería del Desempeño Humano</span></span></span></div>
+    <p class="pe">Diagnóstico alKimétrico™ · 2026</p>
+    <h1 class="pl" tabindex="-1" data-focus>IEL<span>™</span></h1>
+    <span class="pt">Índice de Entropía del Líder</span>
     <div class="gb"></div>
     <p class="ptag">“Antes de intervenir cualquier sistema de liderazgo,<br>hay que leer su estado real.”</p>
     <div class="name-group">
-      <input class="name-input" id="inp-nom" type="text" placeholder="Nombre" autocomplete="off" oninput="checkName()">
-      <input class="name-input" id="inp-ape" type="text" placeholder="Apellido(s)" autocomplete="off" oninput="checkName()">
+      <input class="inp" id="inp-nom" type="text" placeholder="Nombre" aria-label="Nombre" autocomplete="off" oninput="checkName()">
+      <input class="inp" id="inp-ape" type="text" placeholder="Apellido(s)" aria-label="Apellidos" autocomplete="off" oninput="checkName()">
     </div>
     <p class="pnote"><strong>30 preguntas · 6 dimensiones · 15 minutos</strong><br>Diagnóstico de entrada al proceso EXPONÉNCIATE™</p>
-    <button class="btn-p" id="btn-start" onclick="startFlow()">Iniciar diagnóstico</button>
+    <button class="btn btn-p" id="btn-start" onclick="startFlow()" disabled>Iniciar diagnóstico</button>
+    <p class="p-inst">EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1<br>Ingeniero del Desempeño Humano™ · Estratega de Sistemas Complejos</p>
   </div>
-  <span class="p-inst">EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1</span>
-</div>
+</main>
 
 <!-- SELECTOR DE MODO -->
-<div class="screen" id="s-modo">
-  <div class="ht"></div><div class="hb"></div>
-  <div class="modo-inner" style="position:relative;z-index:2">
-    <p class="pe" style="text-align:center;margin-bottom:1rem">IEL™ · Selección de modo</p>
-    <h2 class="modo-title">¿Es tu primer diagnóstico<br>o estás cerrando la mentoría?</h2>
+<main class="screen dark-c" id="s-modo">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="modo-inner">
+    <p class="pe">IEL™ · Selección de modo</p>
+    <h2 class="modo-title" tabindex="-1" data-focus>¿Es tu primer diagnóstico o estás cerrando la mentoría?</h2>
     <p class="modo-sub">El IEL™ tiene dos momentos. Elige el que corresponde.</p>
     <div class="modo-cards">
-      <div class="modo-card" onclick="setModo('entrada')">
-        <span class="modo-card-icon">S2</span>
-        <div class="modo-card-title">Diagnóstico de Entrada</div>
-        <div class="modo-card-desc">Primera vez que completo el IEL™. Inicio del proceso EXPONÉNCIATE™.</div>
-      </div>
-      <div class="modo-card" onclick="setModo('cierre')">
-        <span class="modo-card-icon" style="color:var(--az)">S8</span>
-        <div class="modo-card-title">Diagnóstico de Cierre</div>
-        <div class="modo-card-desc">Completé las 8 sesiones. Tengo mi código IEL™ de entrada.</div>
-      </div>
+      <button type="button" class="modo-card" id="mc-entrada" aria-pressed="false" onclick="setModo('entrada')">
+        <span class="mc-ico">S2</span>
+        <span class="mc-t">Diagnóstico de entrada</span>
+        <span class="mc-d">Es la primera vez que completo el IEL™. Inicio del proceso EXPONÉNCIATE™.</span>
+      </button>
+      <button type="button" class="modo-card" id="mc-cierre" aria-pressed="false" onclick="setModo('cierre')">
+        <span class="mc-ico">S8</span>
+        <span class="mc-t">Diagnóstico de cierre</span>
+        <span class="mc-d">Completé las 8 sesiones y tengo mi código IEL™ de entrada.</span>
+      </button>
     </div>
-    <div id="codigo-group" style="display:none">
-      <input class="codigo-input" id="inp-cod" type="text" placeholder="INGRESA TU CÓDIGO IEL™" oninput="validateCodigo()">
-      <p class="codigo-error" id="cod-err">Código inválido. Verifica que lo hayas copiado correctamente.</p>
-      <br>
-      <button class="btn-s" id="btn-cierre" onclick="startCierre()" style="opacity:.4;pointer-events:none">Continuar con diagnóstico de cierre</button>
+    <div class="cod-grp" id="codigo-group">
+      <label for="inp-cod">Código IEL™ de entrada</label>
+      <input class="inp codigo-input" id="inp-cod" type="text" placeholder="Pega aquí tu código IEL™" autocomplete="off" autocapitalize="characters" spellcheck="false" oninput="validateCodigo()">
+      <p class="cod-msg" id="cod-msg" role="status" aria-live="polite"></p>
+      <button class="btn btn-s" id="btn-cierre" onclick="startCierre()" disabled>Continuar con el diagnóstico de cierre</button>
     </div>
   </div>
-</div>
+</main>
 
 <!-- INSTRUCCIONES -->
-<div class="screen" id="s-i">
-  <div class="i-hdr"><h2>Cómo funciona este diagnóstico</h2><p>IEL™ · 30 preguntas · 6 dimensiones</p></div>
-  <div class="i-body">
+<main class="screen light" id="s-i">
+  <div class="hdr"><h2 tabindex="-1" data-focus>Cómo funciona este diagnóstico</h2><p>IEL™ · 30 preguntas · 6 dimensiones</p></div>
+  <div class="body-sc"><div class="wrap">
     <p class="sec-lbl">Antes de comenzar</p>
-    <div class="i-note">Responde con honestidad — no con el líder que quieres ser, sino con el líder que eres hoy. Piensa en tu comportamiento <strong>en los últimos 30 días</strong>. No hay respuestas correctas o incorrectas. El diagnóstico solo es útil si es preciso.</div>
-    <div class="i-note az">Las preguntas aparecen sin indicar a qué dimensión pertenecen. Esto elimina sesgos y garantiza que tus respuestas reflejen tu realidad, no tu imagen ideal.</div>
+    <div class="i-note">Responde con honestidad desde el líder que eres hoy y deja a un lado el líder que aspiras a ser. Piensa en tu comportamiento <strong>en los últimos 30 días</strong>. Las respuestas correctas o incorrectas no existen, y el diagnóstico solo es útil si es preciso.</div>
+    <div class="i-note">Las preguntas aparecen sin nombrar la dimensión a la que pertenecen. Así se reducen los sesgos y tus respuestas reflejan tu realidad actual, sin filtro de imagen ideal.</div>
     <p class="sec-lbl" style="margin-top:1.2rem">La escala de respuesta</p>
     <div class="scale-row">
-      <div class="sc-item"><span class="sc-n" style="color:#8B1A2A">1</span><span class="sc-l">Casi nunca</span></div>
-      <div class="sc-item"><span class="sc-n" style="color:#B85C1F">2</span><span class="sc-l">Pocas veces</span></div>
-      <div class="sc-item"><span class="sc-n" style="color:#C9A84C">3</span><span class="sc-l">A veces</span></div>
-      <div class="sc-item"><span class="sc-n" style="color:#5E8AB4">4</span><span class="sc-l">Con frecuencia</span></div>
-      <div class="sc-item"><span class="sc-n" style="color:#2E6B4F">5</span><span class="sc-l">Casi siempre</span></div>
+      <div class="sc-item"><span class="sc-n">1</span><span class="sc-bar" style="background:#F0DCC6"></span><span class="sc-l">Casi nunca</span></div>
+      <div class="sc-item"><span class="sc-n">2</span><span class="sc-bar" style="background:#DE9A5C"></span><span class="sc-l">Pocas veces</span></div>
+      <div class="sc-item"><span class="sc-n">3</span><span class="sc-bar" style="background:#B46A2A"></span><span class="sc-l">A veces</span></div>
+      <div class="sc-item"><span class="sc-n">4</span><span class="sc-bar" style="background:#8E4F1B"></span><span class="sc-l">Con frecuencia</span></div>
+      <div class="sc-item"><span class="sc-n">5</span><span class="sc-bar" style="background:#5A2D10"></span><span class="sc-l">Casi siempre</span></div>
     </div>
-    <button class="btn-go" onclick="goTo('s-q');renderQ()">Comenzar — 30 preguntas</button>
-  </div>
-</div>
+    <button class="btn btn-go" id="btn-go" onclick="goTo('s-q');renderQ()">Comenzar · 30 preguntas</button>
+  </div></div>
+</main>
 
 <!-- PREGUNTAS -->
-<div class="screen" id="s-q">
+<main class="screen light" id="s-q">
   <div class="q-hdr">
-    <div class="q-pb"><div class="q-pf" id="q-pf"></div></div>
+    <div class="q-pb" role="progressbar" aria-label="Avance" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="q-pbar"><div class="q-pf" id="q-pf"></div></div>
     <div class="q-meta"><span class="q-fase-lbl" id="q-fase-lbl"></span><span class="q-cnt" id="q-cnt"></span></div>
   </div>
-  <div class="q-body">
-    <p class="q-txt" id="q-txt"></p>
-    <div class="likert" id="likert">
-      <button class="lb" onclick="selAns(1)">1</button>
-      <button class="lb" onclick="selAns(2)">2</button>
-      <button class="lb" onclick="selAns(3)">3</button>
-      <button class="lb" onclick="selAns(4)">4</button>
-      <button class="lb" onclick="selAns(5)">5</button>
+  <div class="q-body"><div class="q-in">
+    <p class="q-txt" id="q-txt" aria-live="polite"></p>
+    <div class="likert" id="likert" role="group" aria-label="Escala de 1 a 5">
+      <button type="button" class="lb" aria-pressed="false" aria-label="1, casi nunca" onclick="selAns(1)">1</button>
+      <button type="button" class="lb" aria-pressed="false" aria-label="2, pocas veces" onclick="selAns(2)">2</button>
+      <button type="button" class="lb" aria-pressed="false" aria-label="3, a veces" onclick="selAns(3)">3</button>
+      <button type="button" class="lb" aria-pressed="false" aria-label="4, con frecuencia" onclick="selAns(4)">4</button>
+      <button type="button" class="lb" aria-pressed="false" aria-label="5, casi siempre" onclick="selAns(5)">5</button>
     </div>
-    <div class="lik-lbls"><span>Casi nunca</span><span>Casi siempre</span></div>
-  </div>
+    <div class="lik-lbls" aria-hidden="true"><span>Casi nunca</span><span>Casi siempre</span></div>
+  </div></div>
   <div class="q-nav">
     <button class="btn-bk" onclick="prevQ()">← Anterior</button>
-    <button class="btn-nx" id="btn-nx" onclick="nextQ()">Siguiente →</button>
+    <button class="btn-nx" id="btn-nx" onclick="nextQ()" disabled>Siguiente →</button>
   </div>
-</div>
+</main>
 
 <!-- PROCESANDO -->
-<div class="screen" id="s-proc">
-  <div class="ht"></div><div class="hb"></div>
-  <div style="position:relative;z-index:2;text-align:center;padding:2rem">
-    <span class="proc-ico">IEL™</span>
-    <p class="proc-txt" id="proc-txt">Calculando tu Índice de Entropía del Liderazgo…</p>
+<main class="screen dark-c" id="s-proc">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="proc-in">
+    <span class="proc-ico" tabindex="-1" data-focus>IEL™</span>
+    <p class="proc-txt" id="proc-txt" role="status">Calculando tu Índice de Entropía del Líder…</p>
     <div class="proc-bar"><div class="proc-fill" id="proc-fill"></div></div>
   </div>
-</div>
+</main>
 
 <!-- RESULTADOS -->
-<div class="screen" id="s-r">
+<main class="screen" id="s-r">
   <div class="print-header" id="print-hdr">
-    <h2>IEL™ · Índice de Entropía del Liderazgo</h2>
-    <p id="print-meta"></p>
+    <span class="erl on-light" style="font-size:20px" role="img" aria-label="Edwin Romero | Institute"><svg class="sg" viewBox="0 0 178 178" aria-hidden="true"><use href="#sg"/></svg><span class="erl-tx"><span class="erl-wm">Edwin Romero<span class="sep">|</span><span class="inst">Institute</span></span></span></span>
+    <div><h2>IEL™ · Índice de Entropía del Líder</h2><p id="print-meta"></p></div>
   </div>
   <div class="r-hero">
-    <p class="r-ey" id="r-modo-lbl"></p>
+    <p class="r-ey" id="r-modo-lbl" tabindex="-1" data-focus></p>
     <p class="r-nom" id="r-nom"></p>
     <div class="r-band" id="r-band"></div><br>
     <div class="r-sc" id="r-sc"></div>
     <div class="gb-c"></div>
     <p class="r-desc" id="r-desc"></p>
   </div>
-  <div id="delta-banner-wrap"></div>
-  <div class="radar-wrap"><svg id="radar-svg" viewBox="0 0 320 320" width="320" height="320"></svg></div>
+  <div id="delta-banner-wrap" class="delta-wrap"></div>
+  <div class="radar-wrap"><svg id="radar-svg" viewBox="0 0 400 350" role="img" aria-label="Radar de las seis dimensiones del IEL"></svg></div>
   <div class="ejes-det" id="ejes-det"></div>
-  <div class="ses-mapa"><h3 id="ses-map-title"></h3><div id="ses-map"></div></div>
+  <div class="ses-mapa"><h3 class="h3s" id="ses-map-title"></h3><div id="ses-map"></div></div>
   <div class="codigo-res" id="cod-res"></div>
   <div class="r-cierre">
-    <p id="r-cierre-txt"></p>
+    <p class="rc" id="r-cierre-txt"></p>
     <button class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
-    <p class="r-inst">Edwin Romero | Institute · EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1</p>
+    <p class="r-inst">Edwin Romero | Institute · EXPONÉNCIATE™ · Mentoría Ejecutiva 1:1<br>Ingeniero del Desempeño Humano™ · Estratega de Sistemas Complejos</p>
   </div>
-</div>
+</main>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────────
+// \u2500\u2500 DATOS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 const EJES = [
-  {id:"EL-01",nombre:"Soberanía del Mando",color:"#B85C1F",foco:"Cómo el líder se gobierna a sí mismo bajo presión",fase:"Fase I · El ser",
-   preguntas:["Cuando el sistema a mi alrededor se tensiona, mantengo mi criterio sin dejarme arrastrar por la urgencia del entorno.","Tomo decisiones difíciles con claridad, incluso cuando no tengo toda la información que quisiera tener.","Reconozco mis patrones de respuesta bajo presión y puedo intervenir en ellos antes de que afecten mis decisiones.","En los últimos 30 días, hubo momentos en que reaccioné de formas que después no me representaban. (1 = con frecuencia · 5 = casi nunca ocurrió)","En los últimos 30 días, tomé decisiones importantes en un estado emocional que no era el óptimo. (1 = con frecuencia · 5 = casi nunca ocurrió)"],
+  {id:"EL-01",nombre:"Soberan\u00eda del Mando",corto:["SOBERAN\u00cdA","DEL MANDO"],color:"#DE9A5C",foco:"C\u00f3mo el l\u00edder se gobierna a s\u00ed mismo bajo presi\u00f3n",bloque:"Bloque 1 \u00b7 El ser",
+   preguntas:["Cuando el sistema a mi alrededor se tensiona, mantengo mi criterio sin dejarme arrastrar por la urgencia del entorno.","Tomo decisiones dif\u00edciles con claridad, incluso cuando no tengo toda la informaci\u00f3n que quisiera tener.","Reconozco mis patrones de respuesta bajo presi\u00f3n y puedo intervenir en ellos antes de que afecten mis decisiones.","En los \u00faltimos 30 d\u00edas, hubo momentos en que reaccion\u00e9 de formas que despu\u00e9s no me representaban. (1 = con frecuencia \u00b7 5 = casi nunca ocurri\u00f3)","En los \u00faltimos 30 d\u00edas, tom\u00e9 decisiones importantes en un estado emocional que no era el \u00f3ptimo. (1 = con frecuencia \u00b7 5 = casi nunca ocurri\u00f3)"],
    invertidas:[3,4]},
-  {id:"EL-02",nombre:"Gestión de la Energía Decisoria",color:"#B85C1F",foco:"Calidad y consistencia de decisiones en alta exigencia",fase:"Fase I · El ser",
-   preguntas:["Gestiono deliberadamente mi nivel de energía para que mis decisiones más importantes ocurran en mis mejores momentos.","Tengo protocolos claros para decidir en contextos de alta incertidumbre — no improviso ni pospongo.","Mi capacidad de decisión se mantiene consistente tanto en las primeras horas del día como bajo presión sostenida.","En los últimos 30 días, terminé semanas sintiendo que operé en deuda energética — dando más de lo que tenía. (1 = siempre · 5 = casi nunca)","En los últimos 30 días, postergué decisiones importantes porque no tenía la energía o claridad para tomarlas. (1 = con frecuencia · 5 = casi nunca)"],
+  {id:"EL-02",nombre:"Gesti\u00f3n de la Energ\u00eda Decisoria",corto:["ENERG\u00cdA","DECISORIA"],color:"#DE9A5C",foco:"Calidad y consistencia de decisiones en alta exigencia",bloque:"Bloque 1 \u00b7 El ser",
+   preguntas:["Gestiono deliberadamente mi nivel de energ\u00eda para que mis decisiones m\u00e1s importantes ocurran en mis mejores momentos.","Tengo protocolos claros para decidir en contextos de alta incertidumbre, sin improvisar ni posponer.","Mi capacidad de decisi\u00f3n se mantiene consistente tanto en las primeras horas del d\u00eda como bajo presi\u00f3n sostenida.","En los \u00faltimos 30 d\u00edas, termin\u00e9 semanas sintiendo que oper\u00e9 en deuda energ\u00e9tica, dando m\u00e1s de lo que ten\u00eda. (1 = siempre \u00b7 5 = casi nunca)","En los \u00faltimos 30 d\u00edas, postergu\u00e9 decisiones importantes porque no ten\u00eda la energ\u00eda o claridad para tomarlas. (1 = con frecuencia \u00b7 5 = casi nunca)"],
    invertidas:[3,4]},
-  {id:"EL-03",nombre:"Presencia e Influencia Consciente",color:"#C9A84C",foco:"Efecto de su presencia y lenguaje sobre otros",fase:"Fase II · Fluencia · Influencia · Confluencia",
-   preguntas:["Las personas que lidero saben con claridad lo que espero de ellas — sin necesidad de repetirlo constantemente.","Mi manera de aparecer en una reunión o conversación genera calma y dirección, no ansiedad o confusión.","Mi lenguaje instala posibilidades y mueve a la acción — no genera defensividad ni pasividad en quien lo recibe.","En los últimos 30 días, evité conversaciones difíciles que sabía que debía tener con personas de mi equipo. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, noté que mi presencia en algún espacio generó tensión o desactivó la energía del grupo. (1 = con frecuencia · 5 = casi nunca)"],
+  {id:"EL-03",nombre:"Presencia e Influencia Consciente",corto:["PRESENCIA E","INFLUENCIA"],color:"#F0DCC6",foco:"Efecto de su presencia y lenguaje sobre otros",bloque:"Bloque 2 \u00b7 Fluencia, influencia y confluencia",
+   preguntas:["Las personas que lidero saben con claridad lo que espero de ellas, sin necesidad de repetirlo constantemente.","Mi manera de aparecer en una reuni\u00f3n o conversaci\u00f3n genera calma y direcci\u00f3n en quienes me rodean.","Mi lenguaje instala posibilidades y mueve a la acci\u00f3n en quien lo recibe, sin generar defensividad ni pasividad.","En los \u00faltimos 30 d\u00edas, evit\u00e9 conversaciones dif\u00edciles que sab\u00eda que deb\u00eda tener con personas de mi equipo. (1 = con frecuencia \u00b7 5 = casi nunca)","En los \u00faltimos 30 d\u00edas, not\u00e9 que mi presencia en alg\u00fan espacio gener\u00f3 tensi\u00f3n o desactiv\u00f3 la energ\u00eda del grupo. (1 = con frecuencia \u00b7 5 = casi nunca)"],
    invertidas:[3,4]},
-  {id:"EL-04",nombre:"Catálisis Colectiva",color:"#C9A84C",foco:"Capacidad de activar y movilizar la energía del equipo",fase:"Fase II · Fluencia · Influencia · Confluencia",
-   preguntas:["Mi equipo opera con un propósito compartido que va más allá de cumplir metas — hay una energía colectiva que lo sostiene.","Cuando el equipo pierde foco, tengo la capacidad de reactivarlo sin necesidad de presión o control.","Genero condiciones para que el talento de cada persona se exprese al máximo — no gestiono desde la uniformidad.","En los últimos 30 días, dejé que fricciones dentro del equipo se extendieran más de lo que debería haber permitido. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, mi equipo tuvo dificultades para coordinar o ejecutar sin mi presencia constante. (1 = con frecuencia · 5 = casi nunca)"],
+  {id:"EL-04",nombre:"Cat\u00e1lisis Colectiva",corto:["CAT\u00c1LISIS","COLECTIVA"],color:"#F0DCC6",foco:"Capacidad de activar y movilizar la energ\u00eda del equipo",bloque:"Bloque 2 \u00b7 Fluencia, influencia y confluencia",
+   preguntas:["Mi equipo opera con un prop\u00f3sito compartido que va m\u00e1s all\u00e1 de cumplir metas: hay una energ\u00eda colectiva que lo sostiene.","Cuando el equipo pierde foco, tengo la capacidad de reactivarlo sin necesidad de presi\u00f3n o control.","Genero condiciones para que el talento de cada persona se exprese al m\u00e1ximo, sin gestionar desde la uniformidad.","En los \u00faltimos 30 d\u00edas, dej\u00e9 que fricciones dentro del equipo se extendieran m\u00e1s de lo que deber\u00eda haber permitido. (1 = con frecuencia \u00b7 5 = casi nunca)","En los \u00faltimos 30 d\u00edas, mi equipo tuvo dificultades para coordinar o ejecutar sin mi presencia constante. (1 = con frecuencia \u00b7 5 = casi nunca)"],
    invertidas:[3,4]},
-  {id:"EL-05",nombre:"Arquitectura de Sistemas",color:"#5E8AB4",foco:"Diseño de equipos autónomos y de alto rendimiento",fase:"Fase III · El sistema",
-   preguntas:["He diseñado deliberadamente la estructura de mi equipo — roles, responsabilidades y protocolos de decisión son claros para todos.","Las decisiones que deberían tomar otros, las toman otros — no soy el cuello de botella de mi propio sistema.","Tengo mecanismos instalados para detectar entropía en el sistema antes de que se manifieste como crisis.","En los últimos 30 días, resolví situaciones que mi equipo debería haber resuelto sin necesitar mi intervención. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, el sistema mostró señales de fragilidad que yo no había anticipado ni diseñado para prevenir. (1 = con frecuencia · 5 = casi nunca)"],
+  {id:"EL-05",nombre:"Arquitectura de Sistemas",corto:["ARQUITECTURA","DE SISTEMAS"],color:"#B46A2A",txt:"#DE9A5C",foco:"Dise\u00f1o de equipos aut\u00f3nomos y de alto rendimiento",bloque:"Bloque 3 \u00b7 El sistema",
+   preguntas:["He dise\u00f1ado deliberadamente la estructura de mi equipo: roles, responsabilidades y protocolos de decisi\u00f3n son claros para todos.","Las decisiones que deber\u00edan tomar otros las toman otros, y no soy el cuello de botella de mi propio sistema.","Tengo mecanismos instalados para detectar entrop\u00eda en el sistema antes de que se manifieste como crisis.","En los \u00faltimos 30 d\u00edas, resolv\u00ed situaciones que mi equipo deber\u00eda haber resuelto sin necesitar mi intervenci\u00f3n. (1 = con frecuencia \u00b7 5 = casi nunca)","En los \u00faltimos 30 d\u00edas, el sistema mostr\u00f3 se\u00f1ales de fragilidad que yo no hab\u00eda anticipado ni dise\u00f1ado para prevenir. (1 = con frecuencia \u00b7 5 = casi nunca)"],
    invertidas:[3,4]},
-  {id:"EL-06",nombre:"Legado e Impacto Estratégico",color:"#5E8AB4",foco:"Huella que deja más allá del cargo y del corto plazo",fase:"Fase III · El sistema",
-   preguntas:["Tengo claridad sobre el tipo de líder que quiero haber sido — y esa claridad guía mis decisiones cotidianas.","Desarrollo líderes dentro de mi equipo — no solo personas que ejecutan bien, sino personas que piensan y deciden.","Mis decisiones estratégicas tienen visión de largo plazo — no sacrifico el sistema futuro por resultados inmediatos.","En los últimos 30 días, tomé decisiones que priorizaron resultados inmediatos a costa del desarrollo de mi equipo. (1 = con frecuencia · 5 = casi nunca)","En los últimos 30 días, operé más desde lo urgente que desde lo que realmente importa para el impacto de largo plazo. (1 = con frecuencia · 5 = casi nunca)"],
+  {id:"EL-06",nombre:"Legado e Impacto Estrat\u00e9gico",corto:["LEGADO E","IMPACTO"],color:"#B46A2A",txt:"#DE9A5C",foco:"Huella que deja m\u00e1s all\u00e1 del cargo y del corto plazo",bloque:"Bloque 3 \u00b7 El sistema",
+   preguntas:["Tengo claridad sobre el tipo de l\u00edder que quiero haber sido, y esa claridad gu\u00eda mis decisiones cotidianas.","Desarrollo l\u00edderes dentro de mi equipo: personas que ejecutan bien y que, adem\u00e1s, piensan y deciden.","Mis decisiones estrat\u00e9gicas tienen visi\u00f3n de largo plazo, sin sacrificar el sistema futuro por resultados inmediatos.","En los \u00faltimos 30 d\u00edas, tom\u00e9 decisiones que priorizaron resultados inmediatos a costa del desarrollo de mi equipo. (1 = con frecuencia \u00b7 5 = casi nunca)","En los \u00faltimos 30 d\u00edas, oper\u00e9 m\u00e1s desde lo urgente que desde lo que realmente importa para el impacto de largo plazo. (1 = con frecuencia \u00b7 5 = casi nunca)"],
    invertidas:[3,4]}
 ];
 const BANDS = [
-  {min:0,max:40,nombre:"Sistema en entropía crítica",color:"#8B1A2A",desc:"Tu sistema de liderazgo está operando por debajo de lo que tu cargo y tu potencial requieren. Las brechas son estructurales y requieren intervención prioritaria. Este proceso está diseñado exactamente para este punto de partida."},
-  {min:41,max:60,nombre:"Sistema con fricciones activas",color:"#B85C1F",desc:"Hay capacidad real instalada, pero hay fricciones que están drenando energía y limitando tu impacto. El proceso intervendrá esas fricciones con precisión y las convertirá en protocolos."},
-  {min:61,max:80,nombre:"Sistema funcional con brechas estratégicas",color:"#C9A84C",desc:"Tu liderazgo funciona y entrega resultados. Las brechas que existen no son de base — son de optimización. El proceso te llevará del liderazgo funcional al liderazgo de alto impacto sostenible."},
-  {min:81,max:100,nombre:"Sistema de alto rendimiento",color:"#5E8AB4",desc:"Tu sistema de liderazgo está bien instalado. El proceso trabajará la capa de legado, impacto organizacional y la sostenibilidad del sistema que construiste."}
+  {min:0,max:40,nombre:"Sistema en entrop\u00eda cr\u00edtica",color:"#E06C5C",desc:"Tu sistema de liderazgo est\u00e1 operando por debajo de lo que tu cargo y tu potencial requieren. Las brechas son estructurales y requieren intervenci\u00f3n prioritaria. Este proceso est\u00e1 dise\u00f1ado para este punto de partida."},
+  {min:41,max:60,nombre:"Sistema con fricciones activas",color:"#DE9A5C",desc:"Hay capacidad real instalada, y hay fricciones que drenan energ\u00eda y limitan tu impacto. El proceso intervendr\u00e1 esas fricciones con precisi\u00f3n y las convertir\u00e1 en protocolos."},
+  {min:61,max:80,nombre:"Sistema funcional con brechas estrat\u00e9gicas",color:"#F0DCC6",desc:"Tu liderazgo funciona y entrega resultados. Las brechas que existen son de optimizaci\u00f3n y dejan intacta la base. El proceso te llevar\u00e1 del liderazgo funcional al liderazgo de alto impacto sostenible."},
+  {min:81,max:100,nombre:"Sistema de alto rendimiento",color:"#86C3A0",desc:"Tu sistema de liderazgo est\u00e1 bien instalado. El proceso trabajar\u00e1 la capa de legado, el impacto organizacional y la sostenibilidad del sistema que construiste."}
 ];
 const FRASES = {
-  "EL-01":["Tu capacidad de gobierno interno está altamente comprometida — es la primera prioridad del proceso.","Hay patrones de respuesta bajo presión que drenan tu efectividad de forma recurrente.","Tu gobierno interno es funcional aunque inconsistente bajo presión sostenida.","Tienes sólido gobierno interno — el proceso lo llevará al siguiente nivel."],
-  "EL-02":["Tu energía decisoria está en deuda crónica — requiere intervención estructural urgente.","Tus decisiones bajo presión sostenida pierden calidad y consistencia de forma notable.","Gestionas bien tu energía en condiciones normales — el reto es la sostenibilidad bajo alta exigencia.","Tu energía decisoria es una fortaleza — el proceso la hará aún más sostenible."],
-  "EL-03":["Tu presencia e influencia consciente necesitan desarrollo estructural prioritario.","Hay brechas en cómo tu presencia y lenguaje impactan a las personas que lideras.","Tienes influencia real, aunque hay momentos clave donde se diluye sin que lo elijas.","Tu presencia es un activo poderoso — el proceso la convertirá en instrumento de alto impacto."],
-  "EL-04":["La energía colectiva de tu equipo está comprometida — requiere intervención sistémica.","Hay fricciones que limitan la potencia colectiva de tu sistema de forma activa.","Activas bien la energía colectiva — hay espacio para llevarlo a un nivel superior.","Eres un catalizador colectivo efectivo — el proceso instalará protocolos que lo sostengan."],
-  "EL-05":["La arquitectura de tu sistema tiene brechas estructurales que generan dependencia y fricciones.","Tu sistema funciona pero tiene puntos de fragilidad que el proceso intervendrá con precisión.","Tienes buena arquitectura sistémica — el proceso la hará más robusta y autónoma.","Tu arquitectura sistémica es una fortaleza — el proceso la llevará a nivel de legado."],
-  "EL-06":["El impacto estratégico de tu liderazgo aún no está instalado como sistema consciente.","Tu impacto existe pero no ha sido diseñado — ocurre, no se instala deliberadamente.","Tu impacto es claro — el proceso lo conectará con una visión de legado sostenible.","Tu impacto estratégico es real — el proceso lo hará replicable y duradero en el tiempo."]
+  "EL-01":["Tu capacidad de gobierno interno est\u00e1 altamente comprometida y es la primera prioridad del proceso.","Hay patrones de respuesta bajo presi\u00f3n que drenan tu efectividad de forma recurrente.","Tu gobierno interno es funcional aunque inconsistente bajo presi\u00f3n sostenida.","Tienes un gobierno interno s\u00f3lido; el proceso lo llevar\u00e1 al siguiente nivel."],
+  "EL-02":["Tu energ\u00eda decisoria est\u00e1 en deuda cr\u00f3nica y requiere intervenci\u00f3n estructural urgente.","Tus decisiones bajo presi\u00f3n sostenida pierden calidad y consistencia de forma notable.","Gestionas bien tu energ\u00eda en condiciones normales; el reto es la sostenibilidad bajo alta exigencia.","Tu energ\u00eda decisoria es una fortaleza; el proceso la har\u00e1 a\u00fan m\u00e1s sostenible."],
+  "EL-03":["Tu presencia e influencia consciente necesitan desarrollo estructural prioritario.","Hay brechas en c\u00f3mo tu presencia y tu lenguaje impactan a las personas que lideras.","Tienes influencia real, aunque hay momentos clave donde se diluye sin que lo elijas.","Tu presencia es un activo poderoso; el proceso la convertir\u00e1 en instrumento de alto impacto."],
+  "EL-04":["La energ\u00eda colectiva de tu equipo est\u00e1 comprometida y requiere intervenci\u00f3n sist\u00e9mica.","Hay fricciones que limitan de forma activa la potencia colectiva de tu sistema.","Activas bien la energ\u00eda colectiva y hay espacio para llevarla a un nivel superior.","Eres un catalizador colectivo efectivo; el proceso instalar\u00e1 protocolos que lo sostengan."],
+  "EL-05":["La arquitectura de tu sistema tiene brechas estructurales que generan dependencia y fricciones.","Tu sistema funciona y tiene puntos de fragilidad que el proceso intervendr\u00e1 con precisi\u00f3n.","Tienes buena arquitectura sist\u00e9mica; el proceso la har\u00e1 m\u00e1s robusta y aut\u00f3noma.","Tu arquitectura sist\u00e9mica es una fortaleza; el proceso la llevar\u00e1 a nivel de legado."],
+  "EL-06":["El impacto estrat\u00e9gico de tu liderazgo a\u00fan no est\u00e1 instalado como sistema consciente.","Tu impacto existe y ocurre de forma espont\u00e1nea; falta instalarlo con dise\u00f1o deliberado.","Tu impacto es claro; el proceso lo conectar\u00e1 con una visi\u00f3n de legado sostenible.","Tu impacto estrat\u00e9gico es real; el proceso lo har\u00e1 replicable y duradero en el tiempo."]
 };
 const SESIONES = [
-  {n:1,nombre:"Despierta el líder que ya eres",ejes:["EL-01","EL-02"]},
-  {n:2,nombre:"Gobierna tu energía, gobierna tu liderazgo",ejes:["EL-01","EL-02"]},
-  {n:3,nombre:"Apropia el lenguaje de un líder magnético",ejes:["EL-03"]},
-  {n:4,nombre:"Tu presencia como instrumento de influencia",ejes:["EL-03","EL-04"]},
-  {n:5,nombre:"Activa la energía colectiva",ejes:["EL-04"]},
+  {n:1,nombre:"Despierta tu poder interior",ejes:["EL-01","EL-02"]},
+  {n:2,nombre:"Eleva tu esencia como l\u00edder consciente",ejes:["EL-01","EL-02"]},
+  {n:3,nombre:"Proyecta tu presencia magn\u00e9tica",ejes:["EL-03"]},
+  {n:4,nombre:"Multiplica tu impacto estrat\u00e9gico",ejes:["EL-03","EL-04"]},
+  {n:5,nombre:"Activa la energ\u00eda del cambio colectivo",ejes:["EL-04"]},
   {n:6,nombre:"Exponencia el poder de tu equipo",ejes:["EL-05"]},
-  {n:7,nombre:"Vínculos que sostienen sistemas",ejes:["EL-05","EL-06"]},
-  {n:8,nombre:"Tu siguiente nivel — con evidencia",ejes:["EL-06"]}
+  {n:7,nombre:"Construye v\u00ednculos inquebrantables",ejes:["EL-05","EL-06"]},
+  {n:8,nombre:"Trasciende hacia tu siguiente nivel",ejes:["EL-06"]}
 ];
-const FASES = ["Fase I","Fase I","Fase II","Fase II","Fase III","Fase III"];
 
-// ── STATE ─────────────────────────────────────────────────────────────────────
+// \u2500\u2500 ESTADO \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 var userName = '';
 var modo = 'entrada';
 var ejeOrder = [0,1,2,3,4,5];
 var qFlat = [];
 var answers = {};
 var scoresEntrada = null;
+var fechaEntrada = '';
 var currentQIdx = 0;
 var diagTimestamp = '';
 
-// ── UTILS ─────────────────────────────────────────────────────────────────────
+// \u2500\u2500 UTILIDADES \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function goTo(id) {
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   var el = document.getElementById(id);
   el.classList.add('active');
   try { el.scrollTop = 0; } catch(e){}
+  var f = el.querySelector('[data-focus]');
+  if (f) { try { f.focus({preventScroll:true}); } catch(e){} }
 }
 
 function shuffle(arr) {
@@ -385,12 +422,7 @@ function shuffle(arr) {
 function checkName() {
   var n = document.getElementById('inp-nom').value.trim();
   var a = document.getElementById('inp-ape').value.trim();
-  var btn = document.getElementById('btn-start');
-  if (n.length > 0 && a.length > 0) {
-    btn.classList.add('on');
-  } else {
-    btn.classList.remove('on');
-  }
+  document.getElementById('btn-start').disabled = !(n.length > 0 && a.length > 0);
 }
 
 function startFlow() {
@@ -398,62 +430,81 @@ function startFlow() {
   var a = document.getElementById('inp-ape').value.trim();
   if (!n || !a) return;
   userName = n + ' ' + a;
-  document.getElementById('wm-txt').textContent = 'IEL™ · ' + userName.toUpperCase();
+  document.getElementById('wm-txt').textContent = 'IEL\u2122 \u00b7 ' + userName.toUpperCase();
   goTo('s-modo');
 }
 
 function setModo(m) {
   modo = m;
-  document.querySelectorAll('.modo-card').forEach(function(c){ c.style.borderColor = ''; c.style.background = ''; });
-  var cards = document.querySelectorAll('.modo-card');
-  var idx = m === 'entrada' ? 0 : 1;
-  cards[idx].style.borderColor = m === 'entrada' ? 'var(--ex)' : 'var(--az)';
-  cards[idx].style.background = m === 'entrada' ? 'rgba(184,92,31,.1)' : 'rgba(94,138,180,.1)';
+  document.getElementById('mc-entrada').setAttribute('aria-pressed', m === 'entrada' ? 'true' : 'false');
+  document.getElementById('mc-cierre').setAttribute('aria-pressed', m === 'cierre' ? 'true' : 'false');
   var cg = document.getElementById('codigo-group');
   if (m === 'cierre') {
-    cg.style.display = 'block';
+    cg.classList.add('show');
+    scoresEntrada = null;
+    validateCodigo();
+    document.getElementById('inp-cod').focus();
   } else {
-    cg.style.display = 'none';
+    cg.classList.remove('show');
+    scoresEntrada = null;
     buildQFlat();
     goTo('s-i');
   }
 }
 
+// Texto del c\u00f3digo tal como lo pega la persona: sin espacios y con guiones normales.
+function limpiarCodigo(raw) {
+  return String(raw || '').replace(/[\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, '').toUpperCase();
+}
+
 function validateCodigo() {
-  var cod = document.getElementById('inp-cod').value.trim().toUpperCase();
+  var cod = limpiarCodigo(document.getElementById('inp-cod').value);
   var btn = document.getElementById('btn-cierre');
-  var err = document.getElementById('cod-err');
-  var valid = parseCodigo(cod);
+  var msg = document.getElementById('cod-msg');
+  var valid = cod ? parseCodigo(cod) : null;
   if (valid) {
-    btn.style.opacity = '1';
-    btn.style.pointerEvents = 'auto';
-    err.style.display = 'none';
+    btn.disabled = false;
+    msg.className = 'cod-msg ok';
+    msg.textContent = 'C\u00f3digo verificado. Diagn\u00f3stico de entrada del ' + fechaLegible(valid.fecha) + '.';
   } else {
-    btn.style.opacity = '.4';
-    btn.style.pointerEvents = 'none';
-    if (cod.length > 5) err.style.display = 'block';
+    btn.disabled = true;
+    if (cod.length > 5) {
+      msg.className = 'cod-msg err';
+      msg.textContent = 'C\u00f3digo inv\u00e1lido. Verifica que lo hayas copiado completo y sin cambios.';
+    } else {
+      msg.className = 'cod-msg';
+      msg.textContent = '';
+    }
   }
 }
 
+function fechaLegible(f) {
+  var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  return parseInt(f.substr(6,2),10) + ' de ' + meses[parseInt(f.substr(4,2),10)-1] + ' de ' + f.substr(0,4);
+}
+
+// Formato: IEL-A##B##C##D##E##F##-AAAAMMDD-CC
+// Cada puntaje ocupa 2 d\u00edgitos (00 a 99). El valor 100 ocupa 3 d\u00edgitos ("100"), tal como
+// ya lo escrib\u00eda genCodigo. El parser original exig\u00eda exactamente 2 d\u00edgitos y rechazaba
+// todo c\u00f3digo que contuviera un 100. Los c\u00f3digos de 2 d\u00edgitos se leen igual que antes.
 function parseCodigo(cod) {
-  // Format: IEL-A72B48C61D55E43F80-YYYYMMDD-HH
-  var re = /^IEL-([A-F]\d{2}){6}-\d{8}-[0-9A-Z]{2}$/;
-  if (!re.test(cod)) return null;
-  var parts = cod.split('-');
-  var scoreStr = parts[1];
-  var scores = {};
+  var re = /^IEL-A(\d{2,3})B(\d{2,3})C(\d{2,3})D(\d{2,3})E(\d{2,3})F(\d{2,3})-(\d{4})(\d{2})(\d{2})-([0-9A-Z]{2})$/;
+  var m = re.exec(cod);
+  if (!m) return null;
   var ids = ['EL-01','EL-02','EL-03','EL-04','EL-05','EL-06'];
-  var letters = ['A','B','C','D','E','F'];
-  var sum = 0;
+  var scores = {};
   for (var i = 0; i < 6; i++) {
-    var val = parseInt(scoreStr.substr(i*3+1,2));
+    var s = m[i+1];
+    var val = parseInt(s, 10);
+    if (s.length === 3 && s !== '100') return null; // 3 d\u00edgitos solo para 100
+    if (val < 0 || val > 100) return null;
     scores[ids[i]] = val;
-    sum += val;
   }
-  // Verify checksum
+  var mes = parseInt(m[8], 10), dia = parseInt(m[9], 10);
+  if (mes < 1 || mes > 12 || dia < 1 || dia > 31) return null;
   var chk = genChecksum(scores);
-  if (chk !== parts[3]) return null;
-  return {scores: scores, fecha: parts[2]};
+  if (chk !== m[10]) return null;
+  return {scores: scores, fecha: m[7] + m[8] + m[9]};
 }
 
 function genChecksum(sc) {
@@ -477,22 +528,23 @@ function genCodigo(sc) {
 }
 
 function startCierre() {
-  var cod = document.getElementById('inp-cod').value.trim().toUpperCase();
+  var cod = limpiarCodigo(document.getElementById('inp-cod').value);
   var parsed = parseCodigo(cod);
   if (!parsed) return;
   scoresEntrada = parsed.scores;
+  fechaEntrada = parsed.fecha;
   buildQFlat();
   goTo('s-i');
 }
 
-// ── QUESTIONS ─────────────────────────────────────────────────────────────────
+// \u2500\u2500 PREGUNTAS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function buildQFlat() {
   ejeOrder = shuffle([0,1,2,3,4,5]);
   qFlat = [];
   ejeOrder.forEach(function(ei){
     var e = EJES[ei];
     e.preguntas.forEach(function(q, qi){
-      qFlat.push({ejeIdx:ei,qIdx:qi,texto:q,fase:FASES[ei]});
+      qFlat.push({ejeIdx:ei,qIdx:qi,texto:q,fase:e.bloque});
     });
   });
   currentQIdx = 0;
@@ -503,26 +555,29 @@ function buildQFlat() {
 function renderQ() {
   var q = qFlat[currentQIdx];
   var total = qFlat.length;
-  document.getElementById('q-pf').style.width = (currentQIdx/total*100)+'%';
+  var pct = Math.round(currentQIdx/total*100);
+  document.getElementById('q-pf').style.width = pct+'%';
+  document.getElementById('q-pbar').setAttribute('aria-valuenow', String(pct));
   document.getElementById('q-fase-lbl').textContent = q.fase;
   document.getElementById('q-cnt').textContent = (currentQIdx+1)+' / '+total;
   document.getElementById('q-txt').textContent = q.texto;
   var ans = answers[currentQIdx];
   document.querySelectorAll('.lb').forEach(function(b,i){
-    b.classList.toggle('sel', ans === i+1);
+    b.setAttribute('aria-pressed', ans === i+1 ? 'true' : 'false');
   });
-  document.getElementById('btn-nx').classList.toggle('on', ans !== undefined);
-  document.getElementById('btn-nx').textContent = currentQIdx === total-1 ? 'Ver resultados →' : 'Siguiente →';
+  var nx = document.getElementById('btn-nx');
+  nx.disabled = (ans === undefined);
+  nx.textContent = currentQIdx === total-1 ? 'Ver resultados \u2192' : 'Siguiente \u2192';
 }
 
 function selAns(v) {
   answers[currentQIdx] = v;
-  document.querySelectorAll('.lb').forEach(function(b,i){ b.classList.toggle('sel',i+1===v); });
-  document.getElementById('btn-nx').classList.add('on');
+  document.querySelectorAll('.lb').forEach(function(b,i){ b.setAttribute('aria-pressed', i+1===v ? 'true' : 'false'); });
+  document.getElementById('btn-nx').disabled = false;
 }
 
 function nextQ() {
-  if (!document.getElementById('btn-nx').classList.contains('on')) return;
+  if (answers[currentQIdx] === undefined) return;
   if (currentQIdx < qFlat.length-1) { currentQIdx++; renderQ(); }
   else { processResults(); }
 }
@@ -532,7 +587,13 @@ function prevQ() {
   else { goTo('s-i'); }
 }
 
-// ── RESULTS ───────────────────────────────────────────────────────────────────
+document.addEventListener('keydown', function(e){
+  if (!document.getElementById('s-q').classList.contains('active')) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.key >= '1' && e.key <= '5') { selAns(parseInt(e.key,10)); }
+});
+
+// \u2500\u2500 RESULTADOS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function processResults() {
   goTo('s-proc');
   var fill = document.getElementById('proc-fill');
@@ -563,13 +624,17 @@ function calcScores() {
   return result;
 }
 
+function promedio(sc) {
+  return Math.round(Object.keys(sc).reduce(function(a,k){return a+sc[k];},0)/6);
+}
+
 function buildResults() {
   var scores = calcScores();
-  var globalScore = Math.round(Object.values(scores).reduce(function(a,b){return a+b;},0)/6);
+  var globalScore = promedio(scores);
   var band = BANDS.find(function(b){ return globalScore>=b.min && globalScore<=b.max; }) || BANDS[BANDS.length-1];
+  var esEntrada = modo === 'entrada';
 
-  // Header
-  document.getElementById('r-modo-lbl').textContent = modo === 'entrada' ? 'Diagnóstico IEL™ · Sesión 1 · Entrada' : 'Diagnóstico IEL™ · Sesión 8 · Cierre';
+  document.getElementById('r-modo-lbl').textContent = esEntrada ? 'Diagn\u00f3stico IEL\u2122 \u00b7 Sesi\u00f3n 2 \u00b7 Entrada' : 'Diagn\u00f3stico IEL\u2122 \u00b7 Sesi\u00f3n 8 \u00b7 Cierre';
   document.getElementById('r-nom').textContent = userName;
   var badge = document.getElementById('r-band');
   badge.textContent = band.nombre;
@@ -578,154 +643,151 @@ function buildResults() {
   document.getElementById('r-sc').innerHTML = globalScore+'<span>/100</span>';
   document.getElementById('r-sc').style.color = band.color;
   document.getElementById('r-desc').textContent = band.desc;
-  document.getElementById('print-hdr').querySelector('h2').textContent = 'IEL™ · ' + (modo==='entrada'?'Diagnóstico de Entrada':'Diagnóstico de Cierre');
-  document.getElementById('print-meta').textContent = userName + ' · ' + diagTimestamp + ' · Edwin Romero | Institute';
+  document.getElementById('print-hdr').querySelector('h2').textContent = 'IEL\u2122 \u00b7 ' + (esEntrada ? 'Diagn\u00f3stico de entrada' : 'Diagn\u00f3stico de cierre');
+  document.getElementById('print-meta').textContent = userName + ' \u00b7 ' + diagTimestamp + ' \u00b7 Edwin Romero | Institute';
 
-  // Delta banner (only cierre)
   buildDeltaBanner(scores, globalScore);
-
-  // Radar
-  buildRadar(scores, globalScore);
-
-  // Ejes detalle
+  buildRadar(scores);
   buildEjesDetalle(scores);
-
-  // Sesiones mapa
   buildSesionesMapa(scores);
-
-  // Código
   buildCodigo(scores);
 
-  // Cierre text
-  document.getElementById('r-cierre-txt').textContent = modo === 'entrada'
-    ? 'Este diagnóstico es el punto de partida de tu proceso EXPONÉNCIATE™. En la Sesión 1 revisaremos cada dimensión en profundidad y diseñaremos la ruta de intervención específica para tu sistema de liderazgo. Conserva tu Código IEL™ — lo necesitarás en la Sesión 8.'
-    : 'Este es el cierre de tu proceso EXPONÉNCIATE™. El Informe ROI alKimétrico™ documenta la transformación real de tu sistema de liderazgo en 8 semanas. No en percepciones — en números.';
+  document.getElementById('r-cierre-txt').textContent = esEntrada
+    ? 'Este diagn\u00f3stico es el punto de partida de tu proceso EXPON\u00c9NCIATE\u2122. En la sesi\u00f3n 2 revisaremos cada dimensi\u00f3n en profundidad y dise\u00f1aremos la ruta de intervenci\u00f3n espec\u00edfica para tu sistema de liderazgo. Conserva tu c\u00f3digo IEL\u2122: lo necesitar\u00e1s en la sesi\u00f3n 8.'
+    : 'Este es el cierre de tu proceso EXPON\u00c9NCIATE\u2122. Tu Informe de cierre alKim\u00e9trico\u2122 documenta con n\u00fameros la transformaci\u00f3n de tu sistema de liderazgo a lo largo de las 8 sesiones.';
 
   goTo('s-r');
 }
+
+function signo(d) { return (d > 0 ? '+' : '') + d; }
+function colorDelta(d) { return d > 0 ? 'var(--ok)' : d < 0 ? 'var(--ko)' : 'var(--mu)'; }
 
 function buildDeltaBanner(scores, globalScore) {
   var wrap = document.getElementById('delta-banner-wrap');
   wrap.innerHTML = '';
   if (modo !== 'cierre' || !scoresEntrada) return;
-  var globalEntrada = Math.round(Object.values(scoresEntrada).reduce(function(a,b){return a+b;},0)/6);
+  var globalEntrada = promedio(scoresEntrada);
   var delta = globalScore - globalEntrada;
-  var deltaColor = delta > 0 ? '#2E6B4F' : delta < 0 ? '#8B1A2A' : 'rgba(255,255,255,.4)';
-  var deltaSign = delta > 0 ? '+' : '';
 
   var banner = document.createElement('div');
   banner.className = 'delta-banner';
-
   var title = document.createElement('p');
-  title.className = 'sec-lbl';
-  title.style.marginBottom = '.75rem';
-  title.textContent = 'ROI alKimétrico™ · Transformación verificada';
+  title.className = 'banner-t';
+  title.textContent = 'Transformaci\u00f3n verificada \u00b7 entrada frente a cierre';
   banner.appendChild(title);
 
   var grid = document.createElement('div');
   grid.className = 'delta-grid';
-
-  var items = [
-    {lbl:'Entrada S2', val:globalEntrada, color:'var(--az)'},
-    {lbl:'Cierre S8', val:globalScore, color:'var(--ex)'},
-    {lbl:'Delta Δ', val:deltaSign+delta, color:deltaColor}
-  ];
-
-  items.forEach(function(item){
+  [
+    {lbl:'Entrada S2', val:globalEntrada, color:'var(--ti)'},
+    {lbl:'Cierre S8', val:globalScore, color:'var(--b4)'},
+    {lbl:'Delta \u0394', val:signo(delta), color:colorDelta(delta)}
+  ].forEach(function(item){
     var div = document.createElement('div');
     var lbl = document.createElement('span');
-    lbl.className = 'delta-item-lbl';
+    lbl.className = 'd-lbl';
     lbl.textContent = item.lbl;
     var val = document.createElement('div');
-    val.className = 'delta-item-val';
+    val.className = 'd-val';
     val.style.color = item.color;
     val.textContent = item.val;
     div.appendChild(lbl);
     div.appendChild(val);
     grid.appendChild(div);
   });
-
   banner.appendChild(grid);
+
+  var t = document.createElement('table');
+  t.className = 'dt';
+  t.id = 'delta-table';
+  var cap = document.createElement('caption');
+  cap.className = 'sr-only';
+  cap.textContent = 'Delta entrada-cierre por dimensi\u00f3n';
+  t.appendChild(cap);
+  var thead = document.createElement('thead');
+  var trh = document.createElement('tr');
+  ['Dimensi\u00f3n','Entrada','Cierre','\u0394'].forEach(function(h){
+    var th = document.createElement('th'); th.scope = 'col'; th.textContent = h; trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  t.appendChild(thead);
+  var tb = document.createElement('tbody');
+  EJES.forEach(function(e){
+    var d = scores[e.id] - scoresEntrada[e.id];
+    var tr = document.createElement('tr');
+    tr.setAttribute('data-eje', e.id);
+    var c1 = document.createElement('td'); c1.textContent = e.nombre;
+    var c2 = document.createElement('td'); c2.textContent = scoresEntrada[e.id];
+    var c3 = document.createElement('td'); c3.textContent = scores[e.id];
+    var c4 = document.createElement('td'); c4.className = 'dd'; c4.style.color = colorDelta(d); c4.textContent = signo(d);
+    [c1,c2,c3,c4].forEach(function(c){ tr.appendChild(c); });
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+  banner.appendChild(t);
   wrap.appendChild(banner);
 }
 
-function buildRadar(scores, globalScore) {
+function buildRadar(scores) {
   var NS = 'http://www.w3.org/2000/svg';
   var svg = document.getElementById('radar-svg');
   while (svg.firstChild) svg.removeChild(svg.firstChild);
-  var cx=160,cy=160,r=110,n=6;
-  var labels = EJES.map(function(e){ return e.nombre.split(' ').slice(0,2).join(' ').toUpperCase(); });
-  var colors = EJES.map(function(e){ return e.color; });
+  var cx=200,cy=168,r=100,n=6;
   var vals = EJES.map(function(e){ return (scores[e.id]||0)/100; });
+  var conEntrada = (modo === 'cierre' && scoresEntrada);
 
   function mkEl(tag,attrs){
     var el = document.createElementNS(NS,tag);
     Object.keys(attrs).forEach(function(k){ el.setAttribute(k,attrs[k]); });
     return el;
   }
-  function pts(f){
-    return Array.from({length:n},function(_,i){
-      var a=(i/n)*2*Math.PI-Math.PI/2;
-      return (cx+r*f*Math.cos(a)).toFixed(1)+','+(cy+r*f*Math.sin(a)).toFixed(1);
+  function ang(i){ return (i/n)*2*Math.PI-Math.PI/2; }
+  function ptsFor(arr){
+    return arr.map(function(v,i){
+      return (cx+r*v*Math.cos(ang(i))).toFixed(1)+','+(cy+r*v*Math.sin(ang(i))).toFixed(1);
     }).join(' ');
   }
 
-  // Grid
   [.25,.5,.75,1].forEach(function(f){
-    svg.appendChild(mkEl('polygon',{points:pts(f),fill:'none',stroke:'rgba(255,255,255,.07)','stroke-width':'1'}));
+    svg.appendChild(mkEl('polygon',{points:ptsFor([f,f,f,f,f,f]),'class':'rd-grid'}));
   });
   for (var i=0;i<n;i++){
-    var a=(i/n)*2*Math.PI-Math.PI/2;
-    svg.appendChild(mkEl('line',{x1:cx,y1:cy,x2:(cx+r*Math.cos(a)).toFixed(1),y2:(cy+r*Math.sin(a)).toFixed(1),stroke:'rgba(255,255,255,.08)','stroke-width':'1'}));
+    svg.appendChild(mkEl('line',{x1:cx,y1:cy,x2:(cx+r*Math.cos(ang(i))).toFixed(1),y2:(cy+r*Math.sin(ang(i))).toFixed(1),'class':'rd-grid'}));
   }
 
-  // Entrada polygon (cierre mode only)
-  if (modo === 'cierre' && scoresEntrada) {
+  if (conEntrada) {
     var valsE = EJES.map(function(e){ return (scoresEntrada[e.id]||0)/100; });
-    var ptsE = Array.from({length:n},function(_,i){
-      var a=(i/n)*2*Math.PI-Math.PI/2;
-      return (cx+r*valsE[i]*Math.cos(a)).toFixed(1)+','+(cy+r*valsE[i]*Math.sin(a)).toFixed(1);
-    }).join(' ');
-    svg.appendChild(mkEl('polygon',{points:ptsE,fill:'rgba(94,138,180,.12)',stroke:'var(--az)','stroke-width':'1.5','stroke-dasharray':'4 3'}));
+    svg.appendChild(mkEl('polygon',{points:ptsFor(valsE),fill:'rgba(198,204,212,.10)',stroke:'#C6CCD4','stroke-width':'1.5','stroke-dasharray':'4 3'}));
   }
 
-  // Current polygon
-  var ptsC = Array.from({length:n},function(_,i){
-    var a=(i/n)*2*Math.PI-Math.PI/2;
-    return (cx+r*vals[i]*Math.cos(a)).toFixed(1)+','+(cy+r*vals[i]*Math.sin(a)).toFixed(1);
-  }).join(' ');
-  svg.appendChild(mkEl('polygon',{points:ptsC,fill:'rgba(184,92,31,.22)',stroke:'var(--ex)','stroke-width':'2'}));
+  svg.appendChild(mkEl('polygon',{points:ptsFor(vals),fill:'rgba(222,154,92,.24)',stroke:'#DE9A5C','stroke-width':'2'}));
 
-  // Dots
   vals.forEach(function(v,i){
-    var a=(i/n)*2*Math.PI-Math.PI/2;
-    var dx=(cx+r*v*Math.cos(a)).toFixed(1),dy=(cy+r*v*Math.sin(a)).toFixed(1);
-    svg.appendChild(mkEl('circle',{cx:dx,cy:dy,r:'5',fill:colors[i],stroke:'var(--ab)','stroke-width':'1.5'}));
+    svg.appendChild(mkEl('circle',{cx:(cx+r*v*Math.cos(ang(i))).toFixed(1),cy:(cy+r*v*Math.sin(ang(i))).toFixed(1),r:'5',fill:EJES[i].color,stroke:'#0A0F1E','stroke-width':'1.5'}));
   });
 
-  // Labels
   for (var j=0;j<n;j++){
-    var aj=(j/n)*2*Math.PI-Math.PI/2;
-    var lx=(cx+(r+24)*Math.cos(aj)).toFixed(1),ly=(cy+(r+24)*Math.sin(aj)).toFixed(1);
-    var anchor=parseFloat(lx)<cx-5?'end':parseFloat(lx)>cx+5?'start':'middle';
-    var t1=mkEl('text',{x:lx,y:(parseFloat(ly)+4).toFixed(1),'text-anchor':anchor,'font-family':'Barlow Condensed,sans-serif','font-size':'8','font-weight':'700',fill:'rgba(255,255,255,.5)','letter-spacing':'0.5'});
-    t1.textContent=labels[j];
-    svg.appendChild(t1);
-    var t2=mkEl('text',{x:lx,y:(parseFloat(ly)+16).toFixed(1),'text-anchor':anchor,'font-family':'Cormorant Garamond,serif','font-size':'13',fill:colors[j]});
-    t2.textContent=scores[EJES[j].id];
-    svg.appendChild(t2);
+    var a = ang(j);
+    var lx = cx+(r+20)*Math.cos(a), ly = cy+(r+20)*Math.sin(a);
+    var anchor = lx < cx-5 ? 'end' : lx > cx+5 ? 'start' : 'middle';
+    var lines = EJES[j].corto.concat([String(scores[EJES[j].id])]);
+    // arriba: el bloque crece hacia arriba; abajo y laterales: hacia abajo
+    var y0 = (j === 0) ? ly - (lines.length*12) + 4 : (j === 3 ? ly + 10 : ly - 6);
+    lines.forEach(function(txt, k){
+      var isVal = k === lines.length-1;
+      var t = mkEl('text',{x:lx.toFixed(1),y:(y0 + k*12 + (isVal ? 3 : 0)).toFixed(1),'text-anchor':anchor,'class':isVal ? 'rd-val' : 'rd-lbl'});
+      if (isVal) t.setAttribute('fill', EJES[j].txt || EJES[j].color);
+      t.textContent = txt;
+      svg.appendChild(t);
+    });
   }
 
-  // Leyenda cierre
-  if (modo === 'cierre' && scoresEntrada) {
-    var lgY = 315;
-    var l1 = mkEl('line',{x1:'40',y1:lgY,x2:'65',y2:lgY,stroke:'var(--az)','stroke-width':'1.5','stroke-dasharray':'4 3'});
-    var lt1 = mkEl('text',{x:'70',y:(lgY+4),'font-family':'Barlow Condensed,sans-serif','font-size':'9',fill:'rgba(255,255,255,.5)'});
-    lt1.textContent='Entrada S2';
-    var l2 = mkEl('line',{x1:'155',y1:lgY,x2:'180',y2:lgY,stroke:'var(--ex)','stroke-width':'2'});
-    var lt2 = mkEl('text',{x:'185',y:(lgY+4),'font-family':'Barlow Condensed,sans-serif','font-size':'9',fill:'rgba(255,255,255,.5)'});
-    lt2.textContent='Cierre S8';
-    svg.appendChild(l1);svg.appendChild(lt1);svg.appendChild(l2);svg.appendChild(lt2);
+  if (conEntrada) {
+    var lgY = 342;
+    svg.appendChild(mkEl('line',{x1:'110',y1:lgY,x2:'135',y2:lgY,stroke:'#C6CCD4','stroke-width':'1.5','stroke-dasharray':'4 3'}));
+    var lt1 = mkEl('text',{x:'140',y:lgY+3,'class':'rd-leg'}); lt1.textContent = 'Entrada S2'; svg.appendChild(lt1);
+    svg.appendChild(mkEl('line',{x1:'225',y1:lgY,x2:'250',y2:lgY,stroke:'#DE9A5C','stroke-width':'2'}));
+    var lt2 = mkEl('text',{x:'255',y:lgY+3,'class':'rd-leg'}); lt2.textContent = 'Cierre S8'; svg.appendChild(lt2);
   }
 }
 
@@ -733,8 +795,8 @@ function buildEjesDetalle(scores) {
   var container = document.getElementById('ejes-det');
   container.innerHTML = '';
   var h3 = document.createElement('h3');
-  h3.style.fontFamily = 'Barlow Condensed,sans-serif'; h3.style.fontSize = '.72rem'; h3.style.fontWeight = '700'; h3.style.letterSpacing = '.2em'; h3.style.textTransform = 'uppercase'; h3.style.color = 'rgba(255,255,255,.4)'; h3.style.marginBottom = '.8rem';
-  h3.textContent = 'Las 6 dimensiones — de mayor a menor entropía';
+  h3.className = 'h3s';
+  h3.textContent = 'Las 6 dimensiones, de mayor a menor entrop\u00eda';
   container.appendChild(h3);
 
   var sorted = EJES.slice().sort(function(a,b){ return scores[a.id]-scores[b.id]; });
@@ -742,42 +804,39 @@ function buildEjesDetalle(scores) {
     var sc = scores[e.id];
     var fi = sc<=40?0:sc<=60?1:sc<=80?2:3;
     var row = document.createElement('div');
-    row.className = 'eje-detalle-row';
-    row.style.cssText = 'border-bottom:1px solid rgba(255,255,255,.07);padding:.8rem 0';
+    row.className = 'ed-row';
+    row.style.setProperty('--c', e.color);
+    row.style.setProperty('--ct', e.txt || e.color);
 
     var hdr = document.createElement('div');
-    hdr.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem';
-
+    hdr.className = 'ed-hdr';
     var nm = document.createElement('span');
-    nm.style.fontFamily = 'Barlow Condensed,sans-serif'; nm.style.fontSize = '.78rem'; nm.style.fontWeight = '700'; nm.style.letterSpacing = '.1em'; nm.style.textTransform = 'uppercase'; nm.style.color = e.color;
+    nm.className = 'ed-nm';
     nm.textContent = e.nombre;
+    hdr.appendChild(nm);
 
-    var scEl = document.createElement('span');
-    scEl.style.fontFamily = 'Cormorant Garamond,serif'; scEl.style.fontSize = '1.4rem'; scEl.style.fontWeight = '300'; scEl.style.color = e.color;
-    scEl.textContent = sc;
-
-    // Delta per eje (cierre only)
     if (modo === 'cierre' && scoresEntrada) {
       var dv = sc - scoresEntrada[e.id];
       var dEl = document.createElement('span');
-      dEl.style.fontFamily = 'Barlow Condensed,sans-serif'; dEl.style.fontSize = '.72rem'; dEl.style.fontWeight = '700'; dEl.style.letterSpacing = '.08em'; dEl.style.color = dv>0?'#2E6B4F':dv<0?'#8B1A2A':'rgba(255,255,255,.3)';
-      dEl.textContent = (dv>0?'+':'')+dv;
-      hdr.appendChild(nm);
+      dEl.className = 'ed-d';
+      dEl.style.color = colorDelta(dv);
+      dEl.textContent = '\u0394 ' + signo(dv) + ' (entrada ' + scoresEntrada[e.id] + ')';
       hdr.appendChild(dEl);
-      hdr.appendChild(scEl);
-    } else {
-      hdr.appendChild(nm);
-      hdr.appendChild(scEl);
     }
+    var scEl = document.createElement('span');
+    scEl.className = 'ed-sc';
+    scEl.textContent = sc;
+    hdr.appendChild(scEl);
 
     var bar = document.createElement('div');
-    bar.style.cssText = 'height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.35rem;overflow:hidden';
+    bar.className = 'ed-bar';
     var fill = document.createElement('div');
-    fill.style.cssText = 'height:100%;border-radius:2px;background:'+e.color+';width:'+sc+'%';
+    fill.className = 'ed-fill';
+    fill.style.width = sc+'%';
     bar.appendChild(fill);
 
     var frase = document.createElement('p');
-    frase.style.cssText = 'font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.55;font-style:italic';
+    frase.className = 'ed-fr';
     frase.textContent = FRASES[e.id][fi];
 
     row.appendChild(hdr);
@@ -790,8 +849,8 @@ function buildEjesDetalle(scores) {
 function buildSesionesMapa(scores) {
   var title = document.getElementById('ses-map-title');
   title.textContent = modo === 'entrada'
-    ? 'Tu mapa de proceso — 8 sesiones calibradas a tu IEL™'
-    : 'Las 8 sesiones — cómo las abordaste';
+    ? 'Tu mapa de proceso: 8 sesiones ajustadas a tu IEL\u2122'
+    : 'Las 8 sesiones: c\u00f3mo las abordaste';
   var container = document.getElementById('ses-map');
   container.innerHTML = '';
   SESIONES.forEach(function(s){
@@ -799,7 +858,7 @@ function buildSesionesMapa(scores) {
     var avg = ejScores.reduce(function(a,b){return a+b;},0)/ejScores.length;
     var intens = avg<=50?'a':avg<=70?'m':'b';
     var intensLbl = avg<=50?'Prioritaria':avg<=70?'Refuerzo':'Base';
-    var priColor = intens==='a'?'#B85C1F':intens==='m'?'#C9A84C':'rgba(255,255,255,.15)';
+    var priColor = intens==='a'?'#DE9A5C':intens==='m'?'#8E4F1B':'rgba(198,204,212,.25)';
 
     var row = document.createElement('div');
     row.className = 'sr';
@@ -808,14 +867,14 @@ function buildSesionesMapa(scores) {
     pri.style.background = priColor;
     var num = document.createElement('span');
     num.className = 'sr-n';
-    num.textContent = s.n;
+    num.textContent = 'S' + s.n;
     var info = document.createElement('div');
     var nb = document.createElement('div');
     nb.className = 'sr-nb';
     nb.textContent = s.nombre;
     var ej = document.createElement('div');
     ej.className = 'sr-ej';
-    ej.textContent = s.ejes.join(' · ');
+    ej.textContent = s.ejes.join(' \u00b7 ');
     info.appendChild(nb);
     info.appendChild(ej);
     var badge = document.createElement('span');
@@ -829,43 +888,56 @@ function buildSesionesMapa(scores) {
   });
 }
 
+function copiarTexto(texto, btn) {
+  function ok() {
+    btn.textContent = '\u2713 Copiado';
+    setTimeout(function(){ btn.textContent = 'Copiar c\u00f3digo'; }, 2000);
+  }
+  function respaldo() {
+    var t = document.createElement('textarea');
+    t.value = texto;
+    t.setAttribute('readonly','');
+    t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(t);
+    ok();
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto).then(ok).catch(respaldo);
+  } else { respaldo(); }
+}
+
 function buildCodigo(scores) {
   var cod = document.getElementById('cod-res');
   cod.innerHTML = '';
-  if (modo === 'cierre') {
-    cod.style.display = 'none';
-    return;
-  }
   var codigo = genCodigo(scores);
+  var esEntrada = modo === 'entrada';
+
   var lbl = document.createElement('p');
   lbl.className = 'cod-lbl';
-  lbl.textContent = 'Tu Código IEL™ — Consérvalo para la Sesión 8';
-  var val = document.createElement('p');
+  lbl.textContent = esEntrada ? 'Tu c\u00f3digo IEL\u2122 de entrada' : 'Tu c\u00f3digo IEL\u2122 de cierre';
+  var ins = document.createElement('p');
+  ins.className = 'cod-ins';
+  ins.textContent = esEntrada
+    ? 'Guarda este c\u00f3digo y ll\u00e9valo a tu sesi\u00f3n. Lo necesitar\u00e1s en la sesi\u00f3n 8 para ver tu transformaci\u00f3n verificada.'
+    : 'Guarda este c\u00f3digo y ll\u00e9valo a tu sesi\u00f3n. Con \u00e9l se elabora tu Informe de cierre alKim\u00e9trico\u2122.';
+  var val = document.createElement('code');
   val.className = 'cod-val';
   val.id = 'cod-val-txt';
   val.textContent = codigo;
   var btn = document.createElement('button');
+  btn.type = 'button';
   btn.className = 'btn-copy';
-  btn.textContent = 'Copiar código';
-  btn.onclick = function() {
-    navigator.clipboard.writeText(codigo).then(function(){
-      btn.textContent = '✓ Copiado';
-      setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2000);
-    }).catch(function(){
-      var t = document.createElement('textarea');
-      t.value = codigo;
-      document.body.appendChild(t);
-      t.select();
-      document.execCommand('copy');
-      document.body.removeChild(t);
-      btn.textContent = '✓ Copiado';
-      setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2000);
-    });
-  };
+  btn.textContent = 'Copiar c\u00f3digo';
+  btn.onclick = function(){ copiarTexto(codigo, btn); };
   var note = document.createElement('p');
   note.className = 'cod-note';
-  note.textContent = 'Este código contiene tus resultados de entrada. Lo necesitarás al completar el IEL™ en la Sesión 8 para ver tu transformación verificada.';
+  note.id = 'cod-priv';
+  note.textContent = 'Privacidad: el c\u00f3digo contiene solo tus seis puntajes y la fecha. No incluye tu nombre ni tus respuestas, y esta herramienta funciona en tu navegador sin enviar datos a ning\u00fan servidor.';
   cod.appendChild(lbl);
+  cod.appendChild(ins);
   cod.appendChild(val);
   cod.appendChild(btn);
   cod.appendChild(note);
