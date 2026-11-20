@@ -670,6 +670,20 @@ body{padding-bottom:84px}
 .irr2 .icov{box-shadow:0 30px 60px rgba(10,15,30,.35),0 0 0 1px rgba(138,106,44,.45)}
 .irr2 .cc{box-shadow:inset 0 0 0 1px rgba(217,192,138,.4),0 24px 50px rgba(10,15,30,.22)}
 .irr2 .cc.cf{background:linear-gradient(160deg,#8B1A2A,#141B2E 75%);box-shadow:inset 0 0 0 1px rgba(217,192,138,.7),0 24px 50px rgba(10,15,30,.28)}
+
+/* LOS PINGÜINOS · bloque del libro, fondo liso sin imagen */
+.pin{background:#0A0F1E;color:var(--mar);border-top:1px solid rgba(217,192,138,.28)}
+.pin .lab{color:var(--dor)}
+.pin .ib::before{background:radial-gradient(closest-side,rgba(217,192,138,.22),transparent 72%)}
+.pin .icov{aspect-ratio:1100/1559;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(217,192,138,.35)}
+.pin h2{font-size:var(--t-h2);margin:0;max-width:16ch;letter-spacing:-.04em}.pin h2 em{color:var(--dor);font-weight:300}
+.pin .il{font-size:var(--t-lead);line-height:1.55;max-width:50ch;color:rgba(244,239,232,.88)}
+.pin .pf{font:italic 300 var(--t-h3)/1.3 'Fraunces',Georgia,serif;color:var(--dor);max-width:34ch}
+.pin .fn{color:rgba(244,239,232,.7);font-size:var(--t-small)}
+.pin .cc.cf{background:linear-gradient(160deg,rgba(217,192,138,.16),#141B2E 75%);box-shadow:inset 0 0 0 1px rgba(217,192,138,.7),0 30px 70px rgba(0,0,0,.35)}
+.pin .pl{list-style:none;display:grid;gap:8px;width:100%;margin:2px 0 4px;padding:0}.pin .pl li{font-size:var(--t-body);color:rgba(244,239,232,.88);padding:10px 0 0;border-top:1px solid rgba(217,192,138,.35)}.pin .pl .pt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dor);border-top:0;padding-top:0}.pin .vd{margin-top:clamp(56px,8vw,110px)}.pin .vd>.lab{margin-bottom:22px}.pin .vf{position:relative;max-width:1080px;margin-inline:auto;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0A0F1E;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(217,192,138,.3);cursor:pointer}.pin .vf video{display:block;width:100%;height:100%;object-fit:cover}.pin .vf .vs{position:absolute;right:14px;bottom:14px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(217,192,138,.5);background:rgba(10,15,30,.7);color:var(--dor);display:grid;place-items:center;font-size:13px;pointer-events:none}.pin .vc{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:1080px;margin:22px auto 0;padding:0}.pin .vc button{font:500 var(--t-small)/1.2 var(--ser,inherit);color:rgba(244,239,232,.82);background:transparent;border:1px solid rgba(217,192,138,.3);border-radius:999px;padding:10px 16px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}.pin .vc button b{color:var(--dor);font-weight:600;margin-right:8px;letter-spacing:.08em}.pin .vc button:hover,.pin .vc button:focus-visible{border-color:var(--dor)}.pin .vc button:focus-visible{outline:2px solid var(--dor2);outline-offset:3px}.pin .vc button[aria-current="true"]{background:var(--dor);border-color:var(--dor);color:#0A0F1E}.pin .vc button[aria-current="true"] b{color:#0A0F1E}@media(max-width:899px){.pin .vf{aspect-ratio:11/15;max-width:min(92vw,420px)}.pin .vf video{object-position:90% 50%}.pin .vc{justify-content:flex-start;max-width:min(92vw,420px)}}
+.pin .pb{display:flex;flex-wrap:wrap;gap:12px}.pin .pl b{color:var(--mar);font-weight:600}
+.pin .pr{font:600 var(--t-small)/1.3 var(--disp);letter-spacing:.04em;color:var(--dor)}
 </style></head>
 <body>
 <div id="prog"></div>
@@ -1041,7 +1055,7 @@ body{padding-bottom:84px}
         <p class="lab rv">IRREVERSIBLE™ · para ti</p>
         <h2 class="rv" style="--d:.1s">Lo que cambies en ti <em>ya no tiene vuelta atrás.</em></h2>
         <p class="il rv">IRREVERSIBLE™ es el libro y el proceso de alquimia personal del Institute. Recorre seis fases, desde la sustancia base hasta una identidad que se sostiene sin esfuerzo, y tú eliges cómo recorrerlas.</p>
-        <div class="bn2 rv"><div><b>214</b><span>páginas</span></div><div><b>6</b><span>fases</span></div><div><b>10</b><span>herramientas</span></div></div>
+        <div class="bn2 rv"><div><b>212</b><span>páginas</span></div><div><b>6</b><span>fases</span></div><div><b>10</b><span>herramientas</span></div></div>
         <ol class="ph6 rv" aria-label="Las seis fases">
           <li><b>Prima Materia</b><span>Sustancia base</span></li>
           <li><b>Nigredo</b><span>Diagnóstico</span></li>
@@ -1066,7 +1080,7 @@ body{padding-bottom:84px}
         <span class="k">Camino I</span>
         <h3>Por tu cuenta</h3>
         <p class="lead2">Lo recorres tú, a tu ritmo.</p>
-        <p>Las 214 páginas del libro y sus herramientas interactivas, fase por fase y con tus propios datos. Sin agenda y sin sesiones.</p>
+        <p>Las 212 páginas del libro y sus herramientas interactivas, fase por fase y con tus propios datos. Sin agenda y sin sesiones.</p>
         <a class="btn" href="https://www.amazon.com/dp/B0HNZ7LYFP" target="_blank" rel="noopener noreferrer" aria-label="Comprar el libro IRREVERSIBLE en Amazon (se abre en una pestaña nueva)">Comprar en Amazon</a>
       </article>
       <article class="cc cf rv" style="--d:.1s">
@@ -1082,6 +1096,42 @@ body{padding-bottom:84px}
   </div>
 </section>
 
+
+<!-- LOS PINGÜINOS QUE DESAFIARON LA GRAVEDAD -->
+<section data-step="p" data-nm="Libro para tu equipo" class="pin sec dark" id="pinguinos">
+  <div class="w">
+    <div class="ig">
+      <figure class="ib rv">
+        <div class="icov" data-zoom="img/pinguinos-portada.jpg" role="button" tabindex="0" aria-label="Ampliar la portada de Los pingüinos que desafiaron la gravedad" style="cursor:zoom-in"><img src="img/pinguinos-portada.jpg" alt="Portada del libro Los pingüinos que desafiaron la gravedad, de Edwin Romero M.: un pingüino con bufanda roja vuela sobre la colonia al amanecer" width="1100" height="1559"></div>
+      </figure>
+      <div class="it">
+        <p class="lab rv">Los pingüinos que desafiaron la gravedad · para tu equipo</p>
+        <h2 class="rv" style="--d:.1s">Lo que a un equipo le cuesta decir, <em>una colonia de pingüinos lo cuenta.</em></h2>
+        <p class="il rv">Una fábula sobre orden interior, inteligencia colectiva y el coraje de volar distinto. Nueve pingüinos, nueve maneras de enfrentar el miedo y una conversación que tu equipo por fin se atreve a tener.</p>
+        <p class="pf rv">Cuando el orden interior aparece, el potencial responde.</p>
+        <div class="bn2 rv"><div><b>9</b><span>personajes</span></div><div><b>13</b><span>ilustraciones</span></div><div><b>165</b><span>páginas</span></div></div>
+      </div>
+    </div>
+    <div class="vd rv"> <p class="lab">Así se lee y se usa · 33 segundos</p> <div class="vf" id="pvf"><video id="pv" muted playsinline loop preload="metadata" poster="img/pinguinos-lector-poster.jpg" aria-label="Recorrido de 33 segundos por la edición digital interactiva: abrir donde lo dejaste, subrayar, reunir las notas, ubicar al equipo y llevar el libro a la acción"><source src="video/pinguinos-lector.mp4" type="video/mp4"></video><span class="vs" id="pvs" aria-hidden="true">❚❚</span></div> <ol class="vc" aria-label="Capítulos del video"><li><button type="button" data-t="0" aria-current="true"><b>01</b>Ábrelo donde lo dejaste</button></li><li><button type="button" data-t="5"><b>02</b>Subraya lo que te toca</button></li><li><button type="button" data-t="12"><b>03</b>Tus notas, juntas</button></li><li><button type="button" data-t="18"><b>04</b>Ubica a tu equipo</button></li><li><button type="button" data-t="24.3"><b>05</b>Del libro a la acción</button></li></ol> </div><script>(function(){var v=document.getElementById("pv"),f=document.getElementById("pvf"),st=document.getElementById("pvs");if(!v)return;var bs=[].slice.call(document.querySelectorAll(".pin .vc button")),ts=bs.map(function(b){return parseFloat(b.dataset.t)}),red=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches,man=false;function ic(){st.textContent=v.paused?"▶":"❚❚"}function go(){var p=v.play();if(p&&p.catch)p.catch(function(){})}v.addEventListener("play",ic);v.addEventListener("pause",ic);v.addEventListener("timeupdate",function(){var i=0;for(var k=0;k<ts.length;k++)if(v.currentTime>=ts[k]-.05)i=k;bs.forEach(function(b,j){b.setAttribute("aria-current",j===i?"true":"false")})});f.addEventListener("click",function(){if(v.paused){man=false;go()}else{man=true;v.pause()}});bs.forEach(function(b){b.addEventListener("click",function(){v.currentTime=parseFloat(b.dataset.t);man=false;go()})});if(red){v.controls=true;st.style.display="none"}else if("IntersectionObserver"in window){new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){if(!man)go()}else v.pause()})},{threshold:.4}).observe(f)}ic();})();</script> <div class="lin irrs rv"> <p class="lab">Una muestra del libro · páginas reales</p> <div class="lr"> <figure><button type="button" data-zoom="img/pin-p10-hd.jpg" aria-label="Ampliar la página de la introducción"><img src="img/pin-p10.jpg" alt="Página del libro Los pingüinos que desafiaron la gravedad: la introducción «Por qué esta no es una fábula más»" loading="lazy" width="800" height="1133"></button><figcaption>Introducción · por qué no es una fábula más</figcaption></figure><figure><button type="button" data-zoom="img/pin-p67-hd.jpg" aria-label="Ampliar la ilustración de Lumo y el albatros"><img src="img/pin-p67.jpg" alt="Página del libro con una ilustración: un albatros le entrega una pluma luminosa a Lumo, el pingüino de la bufanda roja, bajo un cielo estrellado" loading="lazy" width="800" height="1133"></button><figcaption>Lumo y el albatros · una de las 13 ilustraciones</figcaption></figure><figure><button type="button" data-zoom="img/pin-p141-hd.jpg" aria-label="Ampliar la página del vector Myna"><img src="img/pin-p141.jpg" alt="Página del libro con Myna, el vector del criterio, sobre el diagrama del eneagrama con su vector, sus alas y sus movimientos" loading="lazy" width="800" height="1133"></button><figcaption>Los nueve vectores · Myna, el vector del criterio</figcaption></figure> </div> </div> <p class="lab rv" style="margin:clamp(48px,7vw,90px) 0 22px">Dos formas de leerlo</p>
+    <div class="cm">
+      <article class="cc cf rv">
+        <span class="k">Edición digital interactiva</span>
+        <h3>Léela en línea, a tu ritmo</h3>
+        <p class="lead2">Subraya, anota y llévate tus notas.</p>
+        <p>Lectura desde cualquier dispositivo, con subrayado y notas que puedes exportar a PDF, el diario de 21 días y la Canción del Alba que cierra la historia.</p><ul class="pl"><li class="pt">Incluye las guías de</li><li><b>Integración de equipos</b></li><li><b>Lectura en equipo</b></li><li>y dos herramientas dentro del lector: <b>Análisis de entropía</b> y <b>Tablero de ruta de tu equipo</b></li></ul>
+        <p class="pr">US$19,99 · precio de lanzamiento</p>
+        <a class="btn" href="https://pinguinos.edwinromerom.com" target="_blank" rel="noopener noreferrer" aria-label="Conocer la edición digital interactiva de Los pingüinos que desafiaron la gravedad (se abre en una pestaña nueva)">Quiero la edición interactiva</a>
+      </article>
+      <article class="cc rv" style="--d:.1s">
+        <span class="k">Edición impresa</span>
+        <h3>Para regalar o tenerlo en tus manos</h3>
+        <p class="lead2">En tapa blanda, a todo color.</p>
+        <p>La misma fábula completa, con sus trece ilustraciones, para quien prefiere el papel o quiere regalarla a su equipo.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B0HS5NHJ5T" target="_blank" rel="noopener noreferrer" aria-label="Comprar la edición impresa en Amazon (se abre en una pestaña nueva)">Comprar en Amazon</a>
+      </article>
+    </div>
+  </div>
+</section>
 </main>
 
 <button id="stp" type="button"><span class="dots" id="stpd"></span><span class="t"><b id="stpn">Inicio</b><span id="stpt">Comencemos</span></span><span class="ar" aria-hidden="true">↓</span><span class="sr">, ir al siguiente paso</span></button>
